@@ -8,6 +8,7 @@ public class Course {
 	private String name;
 	private int credit;
 	private ArrayList <Writtenexam> writtenExamRegister = new ArrayList <Writtenexam>();
+	private CourseRegister courseRegister;
 	
 	public int getCourseCode() {
 		return courseCode;
@@ -36,7 +37,14 @@ public class Course {
 	}
 	public void addWrittenExam(Writtenexam exam) {
 		writtenExamRegister.add(exam);
-		
 	}
-	
+	public void removeWrittenExam(Writtenexam exam) {
+		writtenExamRegister.remove(exam);
+	}
+	public CourseRegister getCourseRegister() {
+		return courseRegister;
+	}
+	public void setCourseRegister(CourseRegister courseRegister) {
+		this.courseRegister = courseRegister;
+	}
 }
