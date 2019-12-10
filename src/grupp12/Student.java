@@ -1,7 +1,7 @@
 package grupp12;
 
 public class Student {
-	private int studentId;
+	private String studentID;
 	private String name;
 	
 	
@@ -12,11 +12,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getStudentId() {
-		return studentId;
+	public String getStudentId() {
+		return studentID;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setStudentId(String studentID) {
+		this.studentID = studentID;
 	} 
 
 }
