@@ -12,10 +12,10 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getStudentId() {
+	public String getStudentID() {
 		return studentID;
 	}
-	public void setStudentId(String studentID) {
+	public void setStudentID(String studentID) {
 		this.studentID = studentID;
 	} 
 
