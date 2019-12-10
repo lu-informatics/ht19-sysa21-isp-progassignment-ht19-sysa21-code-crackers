@@ -14,15 +14,15 @@ public class CourseRegister {
 		this.courseList = coursList;
 	}
 	
-	public Course findCourse (Course course) {
+	//public Course findCourse (Course course) {
 		
-		for (Course c : this.courseList) {
-			if (c.getCourseCode().equals(course)) {
-				return c;
-			}
-		}
-		       return null;
-	}
+	//	for (Course c : this.courseList) {
+		//	if (c.getCourseCode().equals(course)) {
+		//		return c;
+		//	}
+		//}
+		 //      return null;
+	//}
 	
 	public void addCourse (Course course) {
 		courseList.add(course);
