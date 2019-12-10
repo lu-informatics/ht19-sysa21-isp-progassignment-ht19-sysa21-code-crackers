@@ -1,24 +1,25 @@
 
 package grupp12;
 import java.util.*;
+
 public class StudentRegister {
 
-	private ArrayList <Student> studentregister = new ArrayList <Student> ();
+	private ArrayList <Student> studentRegister = new ArrayList <Student> ();
 
 	
 	public void setStudentregister(ArrayList <Student> studentregister) {
-		this.studentregister = studentregister;
+		this.studentRegister = studentregister;
 	}
 	public ArrayList <Student> getStudentregister() {
-		return studentregister;
+		return studentRegister;
 	}
 
 	
 	public void addStudent(Student student) {
-		studentregister.add(student);
+		studentRegister.add(student);
 	}
-	public String findStudent(Student studentID) {
-		for (Student tmp : this.studentregister) {
+	public Student findStudent(Student studentID) {
+		for (Student tmp : this.studentRegister) {
 			if ( tmp.getStudentID().equals(studentID)) {
 				return tmp;
 				
@@ -27,12 +28,19 @@ public class StudentRegister {
 		return null;
 	}
 	
-	public void removeStudent(String studentID) {
-		for (Student tmp : studentregister) {
-			if ( tmp.getStudentID().equals(studentID)) {
-				remove tmp;
+	public Student removeStudent(Student studentID) {
+		Student tmp = findStudent(studentID);
+		
+		if (tmp != null) {
+			studentRegister.remove(tmp);
+			return tmp;
+		}
+		return null;
+			
 			}
 		}
-	}
+		
+		
 	
-}
+	
+
