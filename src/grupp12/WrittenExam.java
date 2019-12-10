@@ -43,13 +43,13 @@ public class WrittenExam {
 			public void setMaxpoints(int maxpoints) {
 				this.maxpoints = maxpoints;
 			}
-			public void addResults(){
-				
+			public void addResults(Result result){
+				studentResult.add(result);
 			}
 			public Course getCourse() {
 				return course;
 			}
-			public void setCourse(String course) {
+			public void setCourse(Course course) {
 				this.course = course;
 			}
 			public ArrayList<Result> getStudentResult() {
