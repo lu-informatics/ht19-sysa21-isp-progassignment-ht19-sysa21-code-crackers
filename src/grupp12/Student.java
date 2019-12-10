@@ -1,9 +1,9 @@
 package grupp12;
-
+import java.util.*;
 public class Student {
 	private String studentID;
 	private String name;
-	
+	private ArrayList <Result> examresult = new ArrayList<Result> ();
 	
 	
 	public String getName() {
@@ -19,4 +19,10 @@ public class Student {
 		this.studentID = studentID;
 	} 
 
+	public void setExamresult(ArrayList<Result> examresult) {
+		this.examresult = examresult;
+	}
+	public ArrayList <Result> getExamresult () {
+		return examresult;
+	}
 }
