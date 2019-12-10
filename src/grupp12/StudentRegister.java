@@ -18,7 +18,7 @@ public class StudentRegister {
 	}
 	public findStudent(string studentID) {
 		for (Student tmp : studentregister) {
-			if ( tmp.getStudentID()==studentID) {
+			if ( tmp.getStudentID().equals(studentID)) {
 				return tmp;
 				
 			}
@@ -27,7 +27,7 @@ public class StudentRegister {
 	
 	public void removeStudent(string studentID) {
 		for (Student tmp : studentregister) {
-			if ( tmp.getStudentID()==studentID) {
+			if ( tmp.getStudentID().equals(studentID)) {
 				remove tmp;
 			}
 		}
