@@ -29,7 +29,11 @@ public class CourseRegister {
 		public void addCourse (Course course) {
 			courseList.add(course);
 
-			//lägg till remove course och update course
+			//lägg till update course
+		}
+		
+		public void removeCourse (Course course ) {
+			courseList.remove(course);
 		}
 
 
