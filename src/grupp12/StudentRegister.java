@@ -16,18 +16,18 @@ public class StudentRegister {
 	public void addStudent(Student s) {
 		studentlist.add(s);
 	}
-	public findStudent(String studentId) {
+	public findStudent(String studentID) {
 		for (Student tmp : studentlist) {
-			if ( tmp.getStudentId().equals(studentId)) {
+			if ( tmp.getStudentId().equals(studentID)) {
 				return tmp;
 				
 			}
 		}
 	}
 	
-	public removeStudent(studentId) {
+	public removeStudent(studentID) {
 		for (Student tmp : studentlist) {
-			if ( tmp.getStudentId().equals(studentId)) {
+			if ( tmp.getStudentId().equals(studentID)) {
 				remove tmp;
 			}
 		}
