@@ -32,10 +32,24 @@ public class CourseRegister {
 			//lägg till update course
 		}
 		
-		public void removeCourse (Course course ) {
-			courseList.remove(course);
+		public Course removeCourse (Course course ) {
+			Course tmp = findCourse(course);
+				if (tmp != null) {
+				courseList.remove(tmp);
+					return tmp;
 		}
-
+			    	return null;
+		}
+        
+		public Course updateCourse (String course) {
+			
+			Course c = findCourse(course);
+				if (c != null) {
+					c.setName(name);
+				}
+				
+			
+		}
 
 	}
 
