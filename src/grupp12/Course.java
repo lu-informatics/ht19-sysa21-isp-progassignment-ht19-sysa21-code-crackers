@@ -4,16 +4,20 @@ import java.util.ArrayList;
 
 public class Course {
 	
-	private int courseCode;
+
+
+	private String courseCode;
+
 	private String name;
 	private int credit;
 	private ArrayList <Writtenexam> writtenExamRegister = new ArrayList <Writtenexam>();
 	private CourseRegister courseRegister;
 	
-	public int getCourseCode() {
+	public String getCourseCode() {
 		return courseCode;
 	}
-	public void setCourseCode(int courseCode) {
+	public void setCourseCode(String courseCode) {
+
 		this.courseCode = courseCode;
 	}
 	public String getName() {
