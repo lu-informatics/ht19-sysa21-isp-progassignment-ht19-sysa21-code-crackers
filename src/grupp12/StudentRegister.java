@@ -18,7 +18,7 @@ public class StudentRegister {
 	}
 	public findStudent(String studentID) {
 		for (Student tmp : studentlist) {
-			if ( tmp.getStudentId().equals(studentID)) {
+			if ( tmp.getStudentID().equals(studentID)) {
 				return tmp;
 				
 			}
