@@ -16,7 +16,7 @@ public class StudentRegister {
 	public void addStudent(Student student) {
 		studentregister.add(student);
 	}
-	public void findStudent(int studentID) {
+	public findStudent(string studentID) {
 		for (Student tmp : studentregister) {
 			if ( tmp.getStudentID()==studentID) {
 				return tmp;
@@ -25,9 +25,9 @@ public class StudentRegister {
 		}
 	}
 	
-	public removeStudent(studentID) {
+	public void removeStudent(string studentID) {
 		for (Student tmp : studentregister) {
-			if ( tmp.getStudentId()==studentID) {
+			if ( tmp.getStudentID()==studentID) {
 				remove tmp;
 			}
 		}
