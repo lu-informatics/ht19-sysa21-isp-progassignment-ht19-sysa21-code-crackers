@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 public class Course {
 	
+
+
 	private String courseCode;
+
 	private String name;
 	private int credit;
 	private ArrayList <Writtenexam> writtenExamRegister = new ArrayList <Writtenexam>();
@@ -14,6 +17,7 @@ public class Course {
 		return courseCode;
 	}
 	public void setCourseCode(String courseCode) {
+
 		this.courseCode = courseCode;
 	}
 	public String getName() {
