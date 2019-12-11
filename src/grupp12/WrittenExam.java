@@ -10,7 +10,8 @@ public class WrittenExam {
 			private String time;
 			private int maxpoints;
 			private Course course;
-			private ArrayList<Result> studentResult = new ArrayList<Result>();
+			private ArrayList <Student> studentListForExam = new ArrayList <Student> ();
+			
 
 			
 			public String getExamID() {
@@ -43,19 +44,19 @@ public class WrittenExam {
 			public void setMaxpoints(int maxpoints) {
 				this.maxpoints = maxpoints;
 			}
-			public void addResults(Result result){
-				studentResult.add(result);
-			}
+			
 			public Course getCourse() {
 				return course;
 			}
 			public void setCourse(Course course) {
 				this.course = course;
 			}
-			public ArrayList<Result> getStudentResult() {
-				return studentResult;
+			public ArrayList <Student> getStudentListForExam() {
+				return studentListForExam;
 			}
-			public void setStudentResult(ArrayList<Result> studentResult) {
-				this.studentResult = studentResult;
+			public void setStudentListForExam(ArrayList <Student> studentListForExam) {
+				this.studentListForExam = studentListForExam;
+			}
+			
 		}
-}
+
