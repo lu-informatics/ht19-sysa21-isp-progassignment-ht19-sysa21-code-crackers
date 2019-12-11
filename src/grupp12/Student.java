@@ -3,7 +3,9 @@ import java.util.*;
 public class Student {
 	private String studentID;
 	private String name;
+	private StudentRegister studentRegister;
 	private ArrayList <Result> examresult = new ArrayList<Result> ();
+	private ArrayList <WrittenExam> writtenExam = new ArrayList<WrittenExam> ();
 	
 	
 	public String getName() {
@@ -24,5 +26,17 @@ public class Student {
 	}
 	public ArrayList <Result> getExamresult () {
 		return examresult;
+	}
+	public ArrayList <WrittenExam> getWrittenExam() {
+		return writtenExam;
+	}
+	public void setWrittenExam(ArrayList <WrittenExam> writtenExam) {
+		this.writtenExam = writtenExam;
+	}
+	public StudentRegister getStudentRegister() {
+		return studentRegister;
+	}
+	public void setStudentRegister(StudentRegister studentRegister) {
+		this.studentRegister = studentRegister;
 	}
 }
