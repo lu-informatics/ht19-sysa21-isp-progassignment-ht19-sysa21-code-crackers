@@ -32,31 +32,35 @@ public class CourseRegister {
 			
 		}
 		
-		public Course removeCourse (Course courseToBeRemoved) {
-			Course tmp = findCourse(courseToBeRemoved);
+		public void removeCourse (String courseToBeRemoved) {
+			Course tmp = this.findCourse(courseToBeRemoved);
 				if (tmp != null) {
 				courseList.remove(tmp);
-					return tmp;
+					
 		}
-			    	return null;
-		}
+		}	    	
+		
         
 		public void updateCourse (String courseCodeToBeUpdated, String courseNameToBeUpdated, int courseCreditToBeUpdated) {
 			
 			for ( Course c : courseList) {
-			String newCourseCode = courseCodeToBeUpdated;
-			String newName = courseNameToBeUpdated;
-			int newCredit = courseCreditToBeUpdated;
+				
+				if (c.getCourseCode().equals(courseCodeToBeUpdated)) {
 			
-				c.setName(newName);
-				c.setCourseCode(newCourseCode);
-				c.setCredit(newCredit);
+					String newCourseCode = courseCodeToBeUpdated;
+					String newName = courseNameToBeUpdated;
+					int newCredit = courseCreditToBeUpdated;
+			
+					c.setName(newName);
+					c.setCourseCode(newCourseCode);
+					c.setCredit(newCredit);
 				
 			} //lägg till update course
 		
-				}
+			}
 				
 		}
+}
 
 		
 

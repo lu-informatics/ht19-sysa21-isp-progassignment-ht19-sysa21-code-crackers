@@ -38,6 +38,16 @@ public class StudentRegister {
 		return null;
 			
 			}
+	
+	public void updateStudent (String studentToBeUpdated) {
+		
+		for (Student s : studentRegister) {
+			if (s.getStudentID().equals(studentToBeUpdated)) {
+				s.setName(studentToBeUpdated);
+				s.setStudentID(studentToBeUpdated);
+			}
+		}
+	}
 		}
 		
 		
