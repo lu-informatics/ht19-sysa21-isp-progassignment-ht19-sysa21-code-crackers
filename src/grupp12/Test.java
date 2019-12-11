@@ -9,18 +9,34 @@ public class Test {
 		c.setName("ISProjekt");
 		c.setCredit(30);
 		
+		Student s = new Student();
+		s.setName("Gabriel");
+		s.setStudentID("8771");
 		
 		CourseRegister cRegister = new CourseRegister();
 		
-		cRegister
-		
-		
-		
-		
 		Result r = new Result();
-		Student s = new Student();
+		r.setResult(87);
+		r.setLetterGrade();
+		// setLetterGrade String eller int, vad är bäst??
+		
+		
+		
 		StudentRegister sRegister = new StudentRegister();
 		WrittenExam writtenE = new WrittenExam();
+		writtenE.setExamID("JavaTenta1");
+		writtenE.setDate(0612);
+		//setDate String eller int, vad är bäst??
+		writtenE.setLocation("Sparta1");
+		writtenE.setTime("08.00");
+		writtenE.setMaxpoints(100);
+		
+	
+		cRegister.addCourse(c);
+		c.addWrittenExam(writtenE);
+		writtenE.addResults(r);
+		
+		
 	}
 
 }
