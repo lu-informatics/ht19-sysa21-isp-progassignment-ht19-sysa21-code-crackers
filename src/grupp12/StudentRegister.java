@@ -18,37 +18,36 @@ public class StudentRegister {
 	public void addStudent(Student student) {
 		studentRegister.add(student);
 	}
-	public Student findStudent(Student studentID) {
+	public Student findStudent(String studentID) {
 		for (Student tmp : this.studentRegister) {
 			if ( tmp.getStudentID().equals(studentID)) {
 				return tmp;
-				
 			}
 		}
-		return null;
+				return null;
 	}
 	
-	public Student removeStudent(Student studentID) {
+	public Student removeStudent(String studentID) {
 		Student tmp = findStudent(studentID);
 		
 		if (tmp != null) {
 			studentRegister.remove(tmp);
 			return tmp;
 		}
-		return null;
+			return null;
 			
 			}
 	
-	public void updateStudent (String studentToBeUpdated) {
+	public void updateStudentName (String studentToBeUpdated,  String newName) {
 		
-		for (Student s : studentRegister) {
-			if (s.getStudentID().equals(studentToBeUpdated)) {
-				s.setName(studentToBeUpdated);
-				s.setStudentID(studentToBeUpdated);
-			}
-		}
+		Student tmp = findStudent(studentToBeUpdated); 
+			if (tmp != null) {
+					tmp.setName(newName);
+				
+						}
+		
 	}
-		}
+	}
 		
 		
 	
