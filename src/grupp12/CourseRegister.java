@@ -41,26 +41,18 @@ public class CourseRegister {
 		}	    	
 		
         
-		public void updateCourse (String courseCodeToBeUpdated, String courseNameToBeUpdated, int courseCreditToBeUpdated) {
+		public void updateCourse ( String courseToBeUpdated, String newCourse) {
 			
-			for ( Course c : courseList) {
-				
-				if (c.getCourseCode().equals(courseCodeToBeUpdated)) {
-			
-					String newCourseCode = courseCodeToBeUpdated;
-					String newName = courseNameToBeUpdated;
-					int newCredit = courseCreditToBeUpdated;
-			
-					c.setName(newName);
-					c.setCourseCode(newCourseCode);
-					c.setCredit(newCredit);
-				
-			} //lägg till update course
+			Course tmp = findCourse(courseToBeUpdated);
+				if (tmp != null) {
+					tmp.setName(newCourse);
+				}
+			} 
 		
-			}
+			
 				
 		}
-}
+
 
 		
 

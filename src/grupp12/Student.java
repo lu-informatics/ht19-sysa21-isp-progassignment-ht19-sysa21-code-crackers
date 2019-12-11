@@ -33,4 +33,8 @@ public class Student {
 	public void setStudentRegister(StudentRegister studentRegister) {
 		this.studentRegister = studentRegister;
 	}
-}
+	
+	public void addResult (Result result) {
+		examresult.add(result);
+	}
+} 
