@@ -10,12 +10,14 @@ public class Test {
 		c.setCredit(30);
 		
 		Student s = new Student();
+		
 		s.setName("Gabriel");
 		s.setStudentID("8771");
 		
 		CourseRegister cRegister = new CourseRegister();
 		
 		Result r = new Result();
+		
 		r.setResult(87);
 		r.setLetterGrade();
 		// setLetterGrade String eller int, vad är bäst??
@@ -23,6 +25,7 @@ public class Test {
 		
 		
 		StudentRegister sRegister = new StudentRegister();
+		
 		WrittenExam writtenE = new WrittenExam();
 		writtenE.setExamID("JavaTenta1");
 		writtenE.setDate(0612);
