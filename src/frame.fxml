@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -24,17 +25,18 @@
          </children>
       </AnchorPane>
       <BorderPane layoutX="57.0" layoutY="139.0" prefHeight="591.0" prefWidth="640.0">
-         <center>
+         <top>
             <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Student">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="423.0" prefWidth="640.0">
                            <children>
-                              <TextField layoutX="222.0" layoutY="55.0" />
-                              <TextField layoutX="168.0" layoutY="108.0" />
-                              <Label layoutX="14.0" layoutY="46.0" text="Enter Students First Name:" />
-                              <Label layoutX="6.0" layoutY="99.0" text="Enter Students Surname:" />
+                              <TextField layoutX="142.0" layoutY="42.0" />
+                              <Label layoutX="14.0" layoutY="46.0" text="Enter Students Name:" />
+                              <Label layoutX="96.0" layoutY="88.0" text="This student will get this student ID:" />
+                              <Label layoutX="142.0" layoutY="67.0" text=" Both first name and surname" />
+                              <Button layoutX="41.0" layoutY="84.0" mnemonicParsing="false" text="Add" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -46,7 +48,10 @@
                 </Tab>
               </tabs>
             </TabPane>
-         </center>
+         </top>
+         <left>
+            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>
