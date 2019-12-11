@@ -4,8 +4,7 @@ public class Student {
 	private String studentID;
 	private String name;
 	private StudentRegister studentRegister;
-	private ArrayList <Result> examresult = new ArrayList<Result> ();
-	private ArrayList <WrittenExam> writtenExam = new ArrayList<WrittenExam> ();
+	private ArrayList <Result> studentResult = new ArrayList<Result> ();
 	
 	
 	public String getName() {
@@ -21,18 +20,13 @@ public class Student {
 		this.studentID = studentID;
 	} 
 
-	public void setExamresult(ArrayList<Result> examresult) {
-		this.examresult = examresult;
+	public void setStudentResult(ArrayList<Result> studentResult) {
+		this.studentResult = studentResult;
 	}
-	public ArrayList <Result> getExamresult () {
-		return examresult;
+	public ArrayList <Result> getStudentResult () {
+		return studentResult;
 	}
-	public ArrayList <WrittenExam> getWrittenExam() {
-		return writtenExam;
-	}
-	public void setWrittenExam(ArrayList <WrittenExam> writtenExam) {
-		this.writtenExam = writtenExam;
-	}
+
 	public StudentRegister getStudentRegister() {
 		return studentRegister;
 	}
