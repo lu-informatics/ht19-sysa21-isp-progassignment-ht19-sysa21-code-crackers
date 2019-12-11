@@ -10,11 +10,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
+			Parent root = FXMLLoader .Load(this.getClass().getResource("/Frame.fxml"));
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			primaryStage.setTitle("Group 12 - Is-project");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -24,3 +25,10 @@ public class Main extends Application {
 		launch(args);
 	}
 }
+
+
+
+
+
+
+
