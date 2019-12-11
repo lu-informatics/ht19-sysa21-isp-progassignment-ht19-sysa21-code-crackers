@@ -32,14 +32,14 @@ public class CourseRegister {
 			
 		}
 		
-		public Course removeCourse (Course courseToBeRemoved) {
-			Course tmp = findCourse(courseToBeRemoved);
+		public void removeCourse (String courseToBeRemoved) {
+			Course tmp = this.findCourse(courseToBeRemoved);
 				if (tmp != null) {
 				courseList.remove(tmp);
-					return tmp;
+					
 		}
-			    	return null;
-		}
+		}	    	
+		
         
 		public void updateCourse (String courseCodeToBeUpdated, String courseNameToBeUpdated, int courseCreditToBeUpdated) {
 			
