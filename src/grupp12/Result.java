@@ -66,4 +66,16 @@ public class Result {
 	public void addLetterGrade(WrittenExam letterGrade) {
 		writtenexam.add(letterGrade);
 	}
+
+	public void addWrittenExam(WrittenExam writtenExam) {
+		writtenexam.add(writtenExam);
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addStudent(Student student) {
+		studentlist.add(student);
+		// TODO Auto-generated method stub
+		
+	}
 }

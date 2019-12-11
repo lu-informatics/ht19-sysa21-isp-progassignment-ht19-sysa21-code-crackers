@@ -1,6 +1,7 @@
 package grupp12;
 
 public class Test {
+	
 	public static void main(String [] args) {
 		
 		Course c = new Course();
@@ -15,6 +16,8 @@ public class Test {
 		s.setStudentID("8771");
 		
 		CourseRegister cRegister = new CourseRegister();
+		
+		
 		
 		Result r = new Result();
 		
@@ -34,11 +37,19 @@ public class Test {
 		writtenE.setTime("08.00");
 		writtenE.setMaxpoints(100);
 		
-	
+		//Kopplingar:
 		cRegister.addCourse(c);
+		c.setCourseRegister(cRegister);
+		writtenE.setCourse(c);
 		c.addWrittenExam(writtenE);
 		writtenE.addResults(r);
+		r.addWrittenExam(writtenE);
 		
+		r.addStudent(s);
+		s.
+		
+		
+		sRegister.addStudent(s);
 		
 	}
 
