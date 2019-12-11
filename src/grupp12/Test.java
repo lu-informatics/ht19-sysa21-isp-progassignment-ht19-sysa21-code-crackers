@@ -22,7 +22,7 @@ public class Test {
 		Result r = new Result();
 		
 		r.setResult(87);
-		r.setLetterGrade();
+		r.setLetterGrade("A");
 		// setLetterGrade String eller int, vad är bäst??
 		
 		
@@ -43,13 +43,20 @@ public class Test {
 		writtenE.setCourse(c);
 		c.addWrittenExam(writtenE);
 		writtenE.addResults(r);
-		r.addWrittenExam(writtenE);
-		
+			
 		r.addStudent(s);
-		s.
 		
+		// inte kopplat en student till ett resultat ev. "s.getExamresult();"
 		
+		s.setStudentRegister(sRegister);
 		sRegister.addStudent(s);
+		
+		sRegister.updateStudentName("8771", "peter");
+		
+		System.out.println(s.getName());
+		
+		
+		
 		
 	}
 
