@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class WrittenExam {
 			
 			private String examID;
-			private int date;
+			private String date;
 			private String location;
 			private String time;
 			private int maxpoints;
@@ -19,10 +19,10 @@ public class WrittenExam {
 			public void setExamID(String examID) {
 				this.examID = examID;
 			}
-			public int getDate() {
+			public String getDate() {
 				return date;
 			}
-			public void setDate(int date) {
+			public void setDate(String date) {
 				this.date = date;
 			}
 			public String getLocation() {
