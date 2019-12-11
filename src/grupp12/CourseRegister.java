@@ -16,24 +16,24 @@ public class CourseRegister {
 			this.courseList = coursList;
 		}
 
-		public Course findCourse (Course course) {
+		public Course findCourse (String courseToBeFound) {
 
 			for (Course c : this.courseList) {
-				if (c.getCourseCode().equals(course)) {
+				if (c.getCourseCode().equals(courseToBeFound)) {
 					return c;
 				}
 			}
 			       return null;
 		}
 
-		public void addCourse (Course course) {
-			courseList.add(course);
+		public void addCourse (Course courseToBeAdded) {
+			courseList.add(courseToBeAdded);
 
-			//lägg till update course
+			
 		}
 		
-		public Course removeCourse (Course course ) {
-			Course tmp = findCourse(course);
+		public Course removeCourse (Course courseToBeRemoved) {
+			Course tmp = findCourse(courseToBeRemoved);
 				if (tmp != null) {
 				courseList.remove(tmp);
 					return tmp;
@@ -41,16 +41,25 @@ public class CourseRegister {
 			    	return null;
 		}
         
-		public Course updateCourse (String course) {
+		public void updateCourse (String courseCodeToBeUpdated, String courseNameToBeUpdated, int courseCreditToBeUpdated) {
 			
-			Course c = findCourse(course);
-				if (c != null) {
-					c.setName(name);
+			for ( Course c : courseList) {
+			String newCourseCode = courseCodeToBeUpdated;
+			String newName = courseNameToBeUpdated;
+			int newCredit = courseCreditToBeUpdated;
+			
+				c.setName(newName);
+				c.setCourseCode(newCourseCode);
+				c.setCredit(newCredit);
+				
+			} //lägg till update course
+		
 				}
 				
-			
 		}
 
-	}
+		
+
+	
 
 
