@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class WrittenExam {
 			
-			private String examID;
+			private static String examID;
 			private String date;
 			private String location;
 			private String time;
@@ -21,7 +21,7 @@ public class WrittenExam {
 				this.resultList = resultList;
 			}
 			
-			public String getExamID() {
+			public static String getExamID() {
 				return examID;
 			}
 			public void setExamID(String examID) {

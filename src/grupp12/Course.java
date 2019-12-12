@@ -1,15 +1,22 @@
 package grupp12;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 
 public class Course {
 	
 	private static String courseCode;
 	private static String name;
 	private int credit;
-	private ArrayList <WrittenExam> writtenExamRegister = new ArrayList <WrittenExam>();
 	private CourseRegister courseRegister;
-	
+	private HashMap<String, WrittenExam> writtenExamList = new HashMap<String, WrittenExam>();
+
+	public HashMap<String, WrittenExam> getWrittenExamList() {
+		return writtenExamList;
+	}
+	public void setWrittenExamList(HashMap<String, WrittenExam> writtenExamList) {
+		this.writtenExamList = writtenExamList;
+	}
 	public static String getCourseCode() {
 		return courseCode;
 	}
@@ -27,19 +34,12 @@ public class Course {
 	}
 	public void setCredit(int credit) {
 		this.credit = credit;
-	}
-	
-	public ArrayList <WrittenExam> getWrittenExamRegister() {
-		return writtenExamRegister;
-	}
-	public void setWrittenExamRegister(ArrayList <WrittenExam> writtenExamRegister) {
-		this.writtenExamRegister = writtenExamRegister;
-	}
-	public void addWrittenExam(WrittenExam exam) {
-		writtenExamRegister.add(exam);
-	}
-	public void removeWrittenExam(WrittenExam exam) {
-		writtenExamRegister.remove(exam);
+	}	
+	public void add(WrittenExam writtenExam) {
+		this.writtenExamList.put(WrittenExam.getExamID(), writtenExam);
+	}	
+	public void remove(String examID) {
+		this.writtenExamList.remove(examID); 
 	}
 	public CourseRegister getCourseRegister() {
 		return courseRegister;
