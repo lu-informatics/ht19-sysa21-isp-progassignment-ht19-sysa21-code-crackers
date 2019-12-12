@@ -34,7 +34,7 @@ public class Student {
 		this.studentRegister = studentRegister;
 	}
 	
-	public void addResult (Result result) {
-		examresult.add(result);
+	public void addResult(Result result) {
+		studentResult.add(result);
 	}
 } 
