@@ -40,7 +40,7 @@ public class Student {
 	}
 
 	public void addResultToStudent(Result result) {
-		this.studentResultList.put(Result.getResult(),  result);
+		this.studentResultList.put(Result.getResult(),result);
 	}
 	//int counterVarialbe = 10000;
 //	BasicCounter counter = new BasicCounter();
