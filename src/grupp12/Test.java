@@ -41,9 +41,9 @@ public class Test {
 		c.setCourseRegister(cRegister);
 		writtenE.setCourse(c);
 		c.addWrittenExam(writtenE);
-		writtenE.addResults(r);
-			
 		r.addStudent(s);
+		s.addResult(r);
+		// lägg till en writtenExam till  en student
 		
 		// inte kopplat en student till ett resultat ev. "s.getExamresult();"
 		
