@@ -2,12 +2,12 @@ package grupp12;
 import java.util.*;
 public class Student {
 	private static String studentID;
-	private String name;
+	private static String name;
 	private StudentRegister studentRegister;
 	private ArrayList <Result> studentResult = new ArrayList<Result> ();
 	
 	
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -36,5 +36,11 @@ public class Student {
 	
 	public void addResult(Result result) {
 		studentResult.add(result);
+	}
+
+	
+	public static boolean equals(String curName, String oldName) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 } 

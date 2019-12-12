@@ -27,19 +27,19 @@ public class StudentRegister {
 	}
 		
 	
-	public boolean updateStudent(StudentID, oldName, newName) {
-		Student curName = Student.get(name);
-		if (!Student.equals(curName, oldName)||(curName == null && !containsKey(studentID))) {
-			return false;
+	public void replace(String StudentID, String oldName, String newName) {
+		String curName= Student.getName();
+		if ( !Student.equals(curName, oldName) || (curName == null && !containsKey(StudentID))) {
+
 		}
-		
-		Student tmp = findStudent(studentToBeUpdated); 
-			if (tmp != null) {
-					tmp.setName(newName);
-					
+
 	}
-		
+	private boolean containsKey(String courseCode) {
+		// TODO Auto-generated method stub
+		return false;
 	}
+	
+	
 	}
 		
 		
