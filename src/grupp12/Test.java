@@ -13,7 +13,7 @@ public class Test {
 		Student s = new Student();
 		
 		s.setName("Gabriel");
-		s.setStudentID("8771");
+		s.setStudentID("8771"); // Ska ha 5 siffror och ett S i början! 
 		
 		CourseRegister cRegister = new CourseRegister();
 		
@@ -50,7 +50,7 @@ public class Test {
 		s.setStudentRegister(sRegister);
 		sRegister.addStudent(s);
 		
-		sRegister.updateStudentName("8771", "peter");
+		sRegister.updateStudentName("8771", "peter"); //Ska inte kunna uppdatera id, men kanske står för att det är en "key" för tt hitta rätt person? 
 		
 		System.out.println(s.getName());
 		
