@@ -1,20 +1,27 @@
 package grupp12;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WrittenExam {
 			
-			private String examID;
+			private static String examID;
 			private String date;
 			private String location;
 			private String time;
 			private int maxpoints;
 			private Course course;
-			private ArrayList <Result> resultExam = new ArrayList <Result> ();
 			
+			private HashMap<String, Result> resultList = new HashMap<String, Result>();
 
+			public HashMap<String, Result> getResultList() {
+				return resultList;
+			}
+
+			public void setResultList(HashMap<String, Result> resultList) {
+				this.resultList = resultList;
+			}
 			
-			public String getExamID() {
+			public static String getExamID() {
 				return examID;
 			}
 			public void setExamID(String examID) {
@@ -51,12 +58,7 @@ public class WrittenExam {
 			public void setCourse(Course course) {
 				this.course = course;
 			
-			}
-			public ArrayList <Result> getResultExam() {
-				return resultExam;
-			}
-			public void setResultExam(ArrayList <Result> resultExam) {
-				this.resultExam = resultExam;
+			
 			}
 			
 		}

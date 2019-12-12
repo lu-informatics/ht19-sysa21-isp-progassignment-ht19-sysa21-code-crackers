@@ -1,22 +1,29 @@
 package grupp12;
 
-import java.util.ArrayList;
+
+import java.util.HashMap;
 
 public class Course {
 	
 	private static String courseCode;
-	private String name;
+	private static String name;
 	private int credit;
-	private ArrayList <WrittenExam> writtenExamRegister = new ArrayList <WrittenExam>();
 	private CourseRegister courseRegister;
-	
+	private HashMap<String, WrittenExam> writtenExamList = new HashMap<String, WrittenExam>();
+
+	public HashMap<String, WrittenExam> getWrittenExamList() {
+		return writtenExamList;
+	}
+	public void setWrittenExamList(HashMap<String, WrittenExam> writtenExamList) {
+		this.writtenExamList = writtenExamList;
+	}
 	public static String getCourseCode() {
 		return courseCode;
 	}
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -27,24 +34,21 @@ public class Course {
 	}
 	public void setCredit(int credit) {
 		this.credit = credit;
-	}
-	
-	public ArrayList <WrittenExam> getWrittenExamRegister() {
-		return writtenExamRegister;
-	}
-	public void setWrittenExamRegister(ArrayList <WrittenExam> writtenExamRegister) {
-		this.writtenExamRegister = writtenExamRegister;
-	}
-	public void addWrittenExam(WrittenExam exam) {
-		writtenExamRegister.add(exam);
-	}
-	public void removeWrittenExam(WrittenExam exam) {
-		writtenExamRegister.remove(exam);
+	}	
+	public void add(WrittenExam writtenExam) {
+		this.writtenExamList.put(WrittenExam.getExamID(), writtenExam);
+	}	
+	public void remove(String examID) {
+		this.writtenExamList.remove(examID); 
 	}
 	public CourseRegister getCourseRegister() {
 		return courseRegister;
 	}
 	public void setCourseRegister(CourseRegister courseRegister) {
 		this.courseRegister = courseRegister;
+	}
+	public static boolean equals(String curName, String oldName) { //vad betyder detta? wtf
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
