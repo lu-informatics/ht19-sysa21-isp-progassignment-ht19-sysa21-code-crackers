@@ -14,7 +14,7 @@ public void setCourlist(HashMap<String, Course> courlist) {
 	this.courseList = courlist;
 }
 
-public void add(Course course) {
+public void addCourse(Course course) {
 	this.courseList.put(Course.getCourseCode(), course);
 }
 
