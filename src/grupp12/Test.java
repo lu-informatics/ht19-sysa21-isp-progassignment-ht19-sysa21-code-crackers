@@ -31,8 +31,7 @@ public class Test {
 		
 		WrittenExam writtenE = new WrittenExam();
 		writtenE.setExamID("JavaTenta1");
-		writtenE.setDate(0612);
-		//setDate String eller int, vad är bäst??
+		writtenE.setDate("12-12-2019");
 		writtenE.setLocation("Sparta1");
 		writtenE.setTime("08.00");
 		writtenE.setMaxpoints(100);
@@ -42,9 +41,9 @@ public class Test {
 		c.setCourseRegister(cRegister);
 		writtenE.setCourse(c);
 		c.addWrittenExam(writtenE);
-		writtenE.addResults(r);
-			
 		r.addStudent(s);
+		s.addResult(r);
+		// lägg till en writtenExam till  en student
 		
 		// inte kopplat en student till ett resultat ev. "s.getExamresult();"
 		
