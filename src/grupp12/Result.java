@@ -6,10 +6,9 @@ public class Result {
 
 	private int result;
 	private String letterGrade;
-	// private Student student;
-	// private WrittenExam writtenexam;
-	private ArrayList<WrittenExam> writtenexam = new ArrayList<WrittenExam>();
-	private ArrayList<Student> studentlist = new ArrayList<Student>();
+	private Student student;
+	private WrittenExam writtenexam;
+	
 
 	public void setResult(int result) {
 		this.result = result;
@@ -26,43 +25,22 @@ public class Result {
 	public String getLetterGrade() {
 		return letterGrade;
 	}
+	public Student getStudent() {
+		return student;
+	}
 
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	
-	
-
-	 public void setWrittenExam(ArrayList <WrittenExam> writtenexam) {
-	 this.writtenexam = writtenexam;
-	 }
-
-	public ArrayList<WrittenExam> getWrittenexam() {
+	public WrittenExam getWrittenExam () {
 		return writtenexam;
 	}
-
-	public void setStudentlist(ArrayList<Student> studentlist) {
-		this.studentlist = studentlist;
+	
+	public void setWrittenExam (WrittenExam writtenexam) {
+		this.writtenexam = writtenexam;
+	}
 	}
 
-	public ArrayList<Student> getStudentlist() {
-		return studentlist;
-	}
-
-	public void addResult(Student result) {
-		studentlist.add(result);
-	}
-
-	public void addLetterGrade(WrittenExam letterGrade) {
-		writtenexam.add(letterGrade);
-	}
-
-	public void addWrittenExam(WrittenExam writtenExam) {
-		writtenexam.add(writtenExam);
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void addStudent(Student student) {
-		studentlist.add(student);
-		// TODO Auto-generated method stub
-		
-	}
-}
+	
+	
