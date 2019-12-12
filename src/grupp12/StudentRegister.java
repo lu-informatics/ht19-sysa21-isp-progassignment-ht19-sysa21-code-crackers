@@ -28,6 +28,7 @@ public class StudentRegister {
 		
 	
 	public void replace(String studentID, String oldName, String newName) {
+		
 		String curName= studentID.getName();
 		if ( !Student.equals(curName, oldName) || (curName == null && !containsKey(StudentID))) {
 

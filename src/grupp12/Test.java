@@ -17,6 +17,11 @@ public class Test {
 		Student s3 = new Student();
 		Student s4 = new Student();
 		
+		Result r1 = new Result();
+		Result r2 = new Result();
+		Result r3 = new Result();
+		Result r4 = new Result();
+		
 		c1.setCourseCode("sysa21");
 		c1.setName("ISProjekt");
 		c1.setCredit(30);
@@ -62,6 +67,10 @@ public class Test {
 	s4.setName("Gabriel");
 	s4.setStudentID("S10003");
 	
+	wE3.addResultforExam(r1);
+	s1.addResultToStudent(r1);
+	r1.setStudent(s1);
+	r1.setWrittenExam(wE3);
 	
 		
 		Student student = new Student();
