@@ -17,16 +17,16 @@
       <AnchorPane layoutY="-2.0" prefHeight="172.0" prefWidth="155.0">
          <children>
             <TextFlow layoutX="39.900001525878906" layoutY="230.89999389648438" />
-            <ImageView fitHeight="168.0" fitWidth="158.0" layoutX="-6.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="168.0" fitWidth="158.0" layoutX="-17.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Users/Administrator/Downloads/79923120_786477525182478_2734837966374436864_n.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <BorderPane layoutX="57.0" layoutY="139.0" prefHeight="591.0" prefWidth="640.0">
+      <BorderPane layoutX="14.0" layoutY="139.0" prefHeight="591.0" prefWidth="640.0">
          <top>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane prefHeight="448.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Student">
                   <content>
@@ -37,6 +37,8 @@
                               <Label layoutX="96.0" layoutY="88.0" text="This student will get this student ID:" />
                               <Label layoutX="142.0" layoutY="67.0" text=" Both first name and surname" />
                               <Button layoutX="41.0" layoutY="84.0" mnemonicParsing="false" text="Add" />
+                              <Button layoutX="46.0" layoutY="152.0" mnemonicParsing="false" text="Button" />
+                              <Button layoutX="103.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -49,9 +51,6 @@
               </tabs>
             </TabPane>
          </top>
-         <left>
-            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
-         </left>
       </BorderPane>
    </children>
 </AnchorPane>
