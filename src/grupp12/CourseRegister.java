@@ -26,12 +26,17 @@ public void remove(String courseCode) {
 	this.courselist.remove(courseCode);
 } 
 	
-public boolean replace(courseCode, oldName, newName) {
-	Course curName= Course.get(name);
+public void replace(String courseCode, String oldName, String newName) {
+	String curName= Course.getName();
 	if ( !Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
-		return false;
+		return;
 	}
 
+}
+
+private boolean containsKey(String courseCode) {
+	// TODO Auto-generated method stub
+	return false;
 }
 }
 				

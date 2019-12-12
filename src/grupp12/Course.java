@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Course {
 	
 	private static String courseCode;
-	private String name;
+	private static String name;
 	private int credit;
 	private ArrayList <WrittenExam> writtenExamRegister = new ArrayList <WrittenExam>();
 	private CourseRegister courseRegister;
@@ -16,7 +16,7 @@ public class Course {
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
-	public String getName() {
+	public static String getName() {
 		return name;
 	}
 	public void setName(String name) {
@@ -46,5 +46,9 @@ public class Course {
 	}
 	public void setCourseRegister(CourseRegister courseRegister) {
 		this.courseRegister = courseRegister;
+	}
+	public static boolean equals(String curName, String oldName) { //vad betyder detta? wtf
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
