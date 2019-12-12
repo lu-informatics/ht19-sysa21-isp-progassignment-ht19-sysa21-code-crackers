@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Result {
 
 	private int result;
-	private int letterGrade;
+	private String letterGrade;
 	// private Student student;
 	// private WrittenExam writtenexam;
 	private ArrayList<WrittenExam> writtenexam = new ArrayList<WrittenExam>();
@@ -19,11 +19,11 @@ public class Result {
 		return result;
 	}
 
-	public void setLetterGrade(int letterGrade) {
+	public void setLetterGrade(String letterGrade) {
 		this.letterGrade = letterGrade;
 	}
 
-	public int getLetterGrade() {
+	public String getLetterGrade() {
 		return letterGrade;
 	}
 
