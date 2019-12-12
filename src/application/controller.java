@@ -1,4 +1,4 @@
-package grupp12;
+package application;
 
 public class controller {
 
