@@ -3,13 +3,13 @@ package grupp12;
 import java.util.*;
 
 public class Student {
-	private static String studentID;
-	private static String name;
+	private String studentID;
+	private String name;
 	private StudentRegister studentRegister;
 	private HashMap<String, Result> studentResultList = new HashMap<String, Result>();
 	// private BasicCounter counter = new BasicCounter();
 
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 
@@ -17,12 +17,12 @@ public class Student {
 		this.name = name;
 	}
 
-	public static String getStudentID() {
+	public String getStudentID() {
 		return studentID;
 	}
 
 	public void setStudentID(String studentID) {
-		Student.studentID = studentID;
+		this.studentID = studentID;
 	}
 
 	public void setStudentResultList(HashMap<String, Result> studentResultList) {

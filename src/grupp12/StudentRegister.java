@@ -16,7 +16,7 @@ public class StudentRegister {
 
 	
 	public void addStudent(Student student) {
-		this.studentList.put(Student.getStudentID(), student);
+		this.studentList.put(student.getStudentID(), student);
 	}
 	public Student findStudent(String studentID) {
 		return this.studentList.get(studentID);
@@ -27,8 +27,8 @@ public class StudentRegister {
 	}
 		
 	
-	public void replace(String StudentID, String oldName, String newName) {
-		String curName= Student.getName();
+	public void replace(String studentID, String oldName, String newName) {
+		String curName= studentID.getName();
 		if ( !Student.equals(curName, oldName) || (curName == null && !containsKey(StudentID))) {
 
 		}

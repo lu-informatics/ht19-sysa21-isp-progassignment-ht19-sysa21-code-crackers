@@ -53,7 +53,15 @@ public class Test {
 	wE4.setMaxpoints(100);
 	wE4.setCourse(c2);
 	
-	s1.getName()("S10000");
+	s1.setName("David");
+	s1.setStudentID("S10000");
+	s2.setName("Hanna");
+	s2.setStudentID("S10001");
+	s3.setName("Martin");
+	s3.setStudentID("S10002");
+	s4.setName("Gabriel");
+	s4.setStudentID("S10003");
+	
 	
 		
 		Student student = new Student();

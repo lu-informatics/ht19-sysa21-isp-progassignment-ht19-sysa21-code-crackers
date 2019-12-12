@@ -15,7 +15,7 @@ public void setCourlist(HashMap<String, Course> courlist) {
 }
 
 public void addCourse(Course course) {
-	this.courseList.put(Course.getCourseCode(), course);
+	this.courseList.put(course.getCourseCode(), course);
 }
 
 public Course findCourse(String coursCode) {
@@ -27,7 +27,7 @@ public void remove(String courseCode) {
 } 
 	
 public void replace(String courseCode, String oldName, String newName) {
-	String curName= Course.getName();
+	String curName= courseCode.getName();
 	if ( !Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
 
 	}

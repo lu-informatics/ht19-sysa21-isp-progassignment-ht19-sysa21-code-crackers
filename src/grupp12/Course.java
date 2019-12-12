@@ -5,8 +5,8 @@ import java.util.HashMap;
 
 public class Course {
 	
-	private static String courseCode;
-	private static String name;
+	private String courseCode;
+	private String name;
 	private int credit;
 	private CourseRegister courseRegister;
 	private HashMap<String, WrittenExam> writtenExamList = new HashMap<String, WrittenExam>();
@@ -17,13 +17,13 @@ public class Course {
 	public void setWrittenExamList(HashMap<String, WrittenExam> writtenExamList) {
 		this.writtenExamList = writtenExamList;
 	}
-	public static String getCourseCode() {
+	public String getCourseCode() {
 		return courseCode;
 	}
 	public void setCourseCode(String courseCode) {
 		this.courseCode = courseCode;
 	}
-	public static String getName() {
+	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
