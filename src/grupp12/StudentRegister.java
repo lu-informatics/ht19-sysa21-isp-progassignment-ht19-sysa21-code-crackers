@@ -4,19 +4,19 @@ import java.util.*;
 
 public class StudentRegister {
 
-	private ArrayList <Student> studentRegister = new ArrayList <Student> ();
-
+	private HashMap <String, Student> studentList = new HashMap <String, Student>();
 	
-	public void setStudentregister(ArrayList <Student> studentregister) {
-		this.studentRegister = studentregister;
+	public HashMap <String, Student> getStudentList () {
+		return studentList;
 	}
-	public ArrayList <Student> getStudentregister() {
-		return studentRegister;
+	
+	public void setStudentList (HashMap <String, Student> studentList) {
+		this.studentList = studentList;
 	}
 
 	
 	public void addStudent(Student student) {
-		studentRegister.add(student);
+		this.studentList.put(Student.getStudentID(), student);
 	}
 	public Student findStudent(String studentID) {
 		for (Student tmp : this.studentRegister) {
@@ -43,8 +43,8 @@ public class StudentRegister {
 		Student tmp = findStudent(studentToBeUpdated); 
 			if (tmp != null) {
 					tmp.setName(newName);
-				
-						}
+					
+	}
 		
 	}
 	}
