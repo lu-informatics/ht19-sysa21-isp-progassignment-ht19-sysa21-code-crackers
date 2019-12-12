@@ -1,7 +1,7 @@
 package grupp12;
 import java.util.*;
 public class Student {
-	private String studentID;
+	private static String studentID;
 	private String name;
 	private StudentRegister studentRegister;
 	private ArrayList <Result> studentResult = new ArrayList<Result> ();
@@ -13,11 +13,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getStudentID() {
+	public static String getStudentID() {
 		return studentID;
 	}
 	public void setStudentID(String studentID) {
-		this.studentID = studentID;
+		Student.studentID = studentID;
 	} 
 
 	public void setStudentResult(ArrayList<Result> studentResult) {

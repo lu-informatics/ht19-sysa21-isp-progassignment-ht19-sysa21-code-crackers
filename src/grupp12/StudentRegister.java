@@ -19,26 +19,19 @@ public class StudentRegister {
 		this.studentList.put(Student.getStudentID(), student);
 	}
 	public Student findStudent(String studentID) {
-		for (Student tmp : this.studentRegister) {
-			if ( tmp.getStudentID().equals(studentID)) {
-				return tmp;
-			}
-		}
-				return null;
+		return this.studentList.get(studentID);
 	}
 	
-	public Student removeStudent(String studentID) {
-		Student tmp = findStudent(studentID);
+	public void removeStudent(String studentID) {
+		this.studentList.remove(studentID);
+	}
 		
-		if (tmp != null) {
-			studentRegister.remove(tmp);
-			return tmp;
-		}
-			return null;
-			
-			}
 	
-	public void updateStudentName (String studentToBeUpdated,  String newName) {
+	public boolean updateStudent(StudentID, oldName, newName) {
+		Student curName = Student.get(name);
+		if (!Student.equals(curName, oldName)||(curName == null && !containsKey(studentID))) {
+			return false;
+		}
 		
 		Student tmp = findStudent(studentToBeUpdated); 
 			if (tmp != null) {
