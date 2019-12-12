@@ -1,20 +1,18 @@
 package grupp12;
 
-import java.util.ArrayList;
-
 public class Result {
 
-	private static int result;
+	private static String result;
 	private String letterGrade;
 	private Student student;
 	private WrittenExam writtenexam;
 	
 
-	public void setResult(int result) {
+	public void setResult(String result) {
 		this.result = result;
 	}
 
-	public static int getResult() {
+	public static String getResult() {
 		return result;
 	}
 
@@ -40,6 +38,8 @@ public class Result {
 	public void setWrittenExam (WrittenExam writtenexam) {
 		this.writtenexam = writtenexam;
 	}
+	
+	
 	}
 
 	
