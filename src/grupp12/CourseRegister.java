@@ -1,57 +1,36 @@
 package grupp12;
-import java.util.ArrayList;
+import java.util.HashMap;
+
 
 public class CourseRegister {
 
+private HashMap<String, Course> courslist = new HashMap<String, Course>();
 
+public HashMap<String, Course> getCourlist() {
+	return courslist;
+}
 
+public void setCourlist(HashMap<String, Course> courlist) {
+	this.courslist = courlist;
+}
 
-		private ArrayList <Course> courseList = new ArrayList <Course> ();
+public void add(Course course) {
+	this.courslist.put(Course.getCourseCode(), course);
+}
 
-		public ArrayList <Course> getCoursList() {
-			return courseList;
-		}
+public Course findCourse(String coursCode) {
+	return this.courslist.get(coursCode);
+}
 
-		public void setCoursList(ArrayList <Course> coursList) {
-			this.courseList = coursList;
-		}
+public void remove(String courseCode) {
+	this.courslist.remove(courseCode);
+}
+	
+public boolean replace(coursCode, name, newName)
+}
 
-		public Course findCourse (String courseToBeFound) {
-
-			for (Course c : this.courseList) {
-				if (c.getCourseCode().equals(courseToBeFound)) {
-					return c;
-				}
-			}
-			       return null;
-		}
-
-		public void addCourse (Course courseToBeAdded) {
-			courseList.add(courseToBeAdded);
-
-			
-		}
-		
-		public void removeCourse (String courseToBeRemoved) {
-			Course tmp = this.findCourse(courseToBeRemoved);
-				if (tmp != null) {
-				courseList.remove(tmp);
-					
-		}
-		}	    	
-		
-        
-		public void updateCourse ( String courseToBeUpdated, String newCourse) {
-			
-			Course tmp = findCourse(courseToBeUpdated);
-				if (tmp != null) {
-					tmp.setName(newCourse);
-				}
-			} 
-		
-			
 				
-		}
+
 
 
 		

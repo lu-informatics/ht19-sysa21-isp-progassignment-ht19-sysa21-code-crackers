@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Course {
 	
-	private String courseCode;
+	private static String courseCode;
 	private String name;
 	private int credit;
 	private ArrayList <WrittenExam> writtenExamRegister = new ArrayList <WrittenExam>();
 	private CourseRegister courseRegister;
 	
-	public String getCourseCode() {
+	public static String getCourseCode() {
 		return courseCode;
 	}
 	public void setCourseCode(String courseCode) {
