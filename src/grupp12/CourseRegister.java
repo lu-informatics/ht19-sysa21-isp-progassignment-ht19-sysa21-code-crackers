@@ -29,7 +29,7 @@ public void remove(String courseCode) {
 public void replace(String courseCode, String oldName, String newName) {
 	String curName= Course.getName();
 	if ( !Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
-		return;
+
 	}
 
 }
