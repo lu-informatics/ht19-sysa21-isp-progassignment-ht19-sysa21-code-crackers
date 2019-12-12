@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Result {
 
-	private int result;
+	private static int result;
 	private String letterGrade;
 	private Student student;
 	private WrittenExam writtenexam;
@@ -14,7 +14,7 @@ public class Result {
 		this.result = result;
 	}
 
-	public int getResult() {
+	public static int getResult() {
 		return result;
 	}
 
