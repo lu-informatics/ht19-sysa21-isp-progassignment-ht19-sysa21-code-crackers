@@ -2,9 +2,9 @@ package grupp12;
 import java.util.*;
 public class Student {
 	private static String studentID;
-	private static String name;
+	private static  String name;
 	private StudentRegister studentRegister;
-	private ArrayList <Result> studentResult = new ArrayList<Result> ();
+	private HashMap <String, Result> studentResultList= new HashMap <String, Result> ();
 	
 	
 	public static String getName() {
@@ -20,22 +20,13 @@ public class Student {
 		Student.studentID = studentID;
 	} 
 
-	public void setStudentResult(ArrayList<Result> studentResult) {
-		this.studentResult = studentResult;
-	}
-	public ArrayList <Result> getStudentResult () {
-		return studentResult;
-	}
-
-	public StudentRegister getStudentRegister() {
-		return studentRegister;
-	}
-	public void setStudentRegister(StudentRegister studentRegister) {
-		this.studentRegister = studentRegister;
+	public void setStudentResultList(HashMap <String, Result> studentResultList) {
+		this.studentResultList= studentResultList;
 	}
 	
-	public void addResult(Result result) {
-		studentResult.add(result);
+	public HashMap <String, Result>getStudentResultList() {
+		return studentResultList;
+		
 	}
 
 	
