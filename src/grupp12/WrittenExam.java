@@ -57,9 +57,14 @@ public class WrittenExam {
 			}
 			public void setCourse(Course course) {
 				this.course = course;
-			
-			
 			}
+				
+			public void addResultforExam(Result result) {
+				
+				this.resultList.put(Result.getResult(), result);
+		}
+			
+			
 			
 		}
 
