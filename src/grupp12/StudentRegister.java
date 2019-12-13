@@ -32,8 +32,8 @@ public class StudentRegister {
 		Student tmp = findStudent(studentID);
 		if (tmp != null) {
 
-			String curName = studentID.getName();
-			if (!Student.equals(curName, oldName) || (curName == null && !containsKey(StudentID))) {
+			String curName = tmp.getName();
+			if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
 			}
 		}
 

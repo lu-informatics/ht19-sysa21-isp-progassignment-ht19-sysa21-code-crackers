@@ -29,7 +29,7 @@ public class CourseRegister {
 	public void replace(String courseCode, String oldName, String newName) {
 		Course tmp = findCourse(courseCode);
 		if (tmp != null) {
-			String curName = courseCode.getName();
+			String curName = tmp.getName();
 			if (!Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
 
 			}
