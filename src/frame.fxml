@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -37,8 +39,13 @@
                               <Label layoutX="96.0" layoutY="88.0" text="This student will get this student ID:" />
                               <Label layoutX="142.0" layoutY="67.0" text=" Both first name and surname" />
                               <Button layoutX="41.0" layoutY="84.0" mnemonicParsing="false" text="Add" />
-                              <Button layoutX="46.0" layoutY="152.0" mnemonicParsing="false" text="Button" />
-                              <Button layoutX="103.0" layoutY="140.0" mnemonicParsing="false" text="Button" />
+                              <Button layoutX="46.0" layoutY="152.0" mnemonicParsing="false" text="Remove" />
+                              <Button layoutX="103.0" layoutY="140.0" mnemonicParsing="false" text="Find" />
+                              <TableView layoutX="377.0" layoutY="105.0" prefHeight="200.0" prefWidth="200.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="Studentlist" />
+                                </columns>
+                              </TableView>
                            </children>
                         </AnchorPane>
                   </content>
