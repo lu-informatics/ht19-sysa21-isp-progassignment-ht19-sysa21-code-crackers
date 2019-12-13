@@ -26,16 +26,18 @@ public class CourseRegister {
 		this.courseList.remove(courseCode);
 	}
 
-	public void replace(String courseCode, String oldName, String newName) {
+	public void replace(String courseCode, String newName) {
 		Course tmp = findCourse(courseCode);
 		if (tmp != null) {
-			String curName = tmp.getName();
-			if (!Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
-
+			
+			//String curName = tmp.getName();
+			//if (!Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
+			
+			tmp.setName(newName);
 			}
 		}
 
-	}
+	
 
 	private boolean containsKey(String courseCode) {
 		// TODO Auto-generated method stub

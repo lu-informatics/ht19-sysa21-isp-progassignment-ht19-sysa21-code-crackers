@@ -116,6 +116,13 @@ public class Test {
 
 		c1.setCourseRegister(courseregister);
 		c2.setCourseRegister(courseregister);
+		
+		
+		studentregister.replace("S10003", "Peter");
+		System.out.println(studentregister.getStudentList());
+		System.out.println(courseregister.getCourselist());
+		
+		System.out.println(s4.getName());
 
 		//Alla kopplingar gjorda
 		
