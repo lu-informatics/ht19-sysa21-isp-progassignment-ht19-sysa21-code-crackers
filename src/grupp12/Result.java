@@ -2,7 +2,7 @@ package grupp12;
 
 public class Result {
 
-	private static String result;
+	private String result;
 	private String letterGrade;
 	private Student student;
 	private WrittenExam writtenexam;
@@ -11,7 +11,7 @@ public class Result {
 		this.result = result;
 	}
 
-	public static String getResult() {
+	public String getResult() {
 		return result;
 	}
 
