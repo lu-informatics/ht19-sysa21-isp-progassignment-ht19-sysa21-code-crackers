@@ -125,10 +125,13 @@ public class Test {
 		System.out.println(s4.getName());
 		
 		
-		for (Student student : studentregister.getStudentList().values()) {
-			System.out.println(student.getStudentID() + student.getName()+ student.getStudentRegister());
+		for (Student student : studentregister.getStudentList().values()) { //skriver ut students ID kopplat till namnet den har
+			System.out.println(student.getStudentID() + student.getName());
 		}
 		
+		for (Course course : courseregister.getCourselist().values()) {
+			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
+		}
 		 
 		//Alla kopplingar gjorda
 		
