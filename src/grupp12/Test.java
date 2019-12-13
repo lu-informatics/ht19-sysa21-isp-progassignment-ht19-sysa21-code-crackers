@@ -132,6 +132,9 @@ public class Test {
 		for (Course course : courseregister.getCourselist().values()) {
 			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
 		}
+		
+			System.out.println(studentregister.findStudent("S10002"));
+		
 		 
 		//Alla kopplingar gjorda
 		

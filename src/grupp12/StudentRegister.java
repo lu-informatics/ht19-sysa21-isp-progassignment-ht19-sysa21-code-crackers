@@ -21,7 +21,13 @@ public class StudentRegister {
 	}
 
 	public Student findStudent(String studentID) {
-		return this.studentList.get(studentID);
+	//	return this.studentList.get(studentID);
+		for (Student s : studentList.values()) {
+			if (s.getName().equals(studentID)) {
+				return s;
+			}
+		}
+		return null;
 	}
 
 	public void removeStudent(String studentID) {
