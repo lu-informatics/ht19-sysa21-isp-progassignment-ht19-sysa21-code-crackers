@@ -98,22 +98,28 @@ public class Test {
 		s2.setStudentRegister(studentregister);
 		s3.setStudentRegister(studentregister);
 		s4.setStudentRegister(studentregister);
-		
+
 		c1.add(wE4);
 		c1.add(wE3);
 		c2.add(wE2);
 		c2.add(wE1);
-		
+
 		wE1.setCourse(c2);
 		wE2.setCourse(c2);
 		wE3.setCourse(c1);
 		wE4.setCourse(c1);
+
+		CourseRegister courseregister = new CourseRegister();
+
+		courseregister.addCourse(c1);
+		courseregister.addCourse(c2);
+
+		c1.setCourseRegister(courseregister);
+		c2.setCourseRegister(courseregister);
+
+		//Alla kopplingar gjorda
 		
 		
-		
-		
-		System.out.println(s1.getName() + s1.getStudentID());
-		System.out.println(s4.getStudentRegister());
 	}
 
 }
