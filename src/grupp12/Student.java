@@ -34,7 +34,7 @@ public class Student {
 
 	}
 
-	public static boolean equals(String curName, String oldName) {
+	public boolean equals(String curName, String oldName) {
 		// TODO Auto-generated method stub
 		return false;
 	}
