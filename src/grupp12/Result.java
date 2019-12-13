@@ -6,7 +6,6 @@ public class Result {
 	private String letterGrade;
 	private Student student;
 	private WrittenExam writtenexam;
-	
 
 	public void setResult(String result) {
 		this.result = result;
@@ -23,6 +22,7 @@ public class Result {
 	public String getLetterGrade() {
 		return letterGrade;
 	}
+
 	public Student getStudent() {
 		return student;
 	}
@@ -30,17 +30,13 @@ public class Result {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
-	
-	public WrittenExam getWrittenExam () {
+
+	public WrittenExam getWrittenExam() {
 		return writtenexam;
 	}
-	
-	public void setWrittenExam (WrittenExam writtenexam) {
+
+	public void setWrittenExam(WrittenExam writtenexam) {
 		this.writtenexam = writtenexam;
 	}
-	
-	
-	}
 
-	
-	
+}
