@@ -34,10 +34,6 @@ public class Student {
 
 	}
 
-	public boolean equals(String curName, String oldName) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	public void addResultToStudent(Result result) {
 		this.studentResultList.put(result.getResult(), result);

@@ -6,11 +6,11 @@ public class CourseRegister {
 
 	private HashMap<String, Course> courseList = new HashMap<String, Course>();
 
-	public HashMap<String, Course> getCourselist() {
+	public HashMap<String, Course> getCourseList() {
 		return courseList;
 	}
 
-	public void setCourlist(HashMap<String, Course> courlist) {
+	public void setCourList(HashMap<String, Course> courlist) {
 		this.courseList = courlist;
 	}
 

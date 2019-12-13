@@ -133,7 +133,7 @@ public class Test {
 			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
 		}
 		
-			System.out.println(studentregister.findStudent("S10002"));
+			System.out.println(studentregister.findStudent("S10000"));
 		
 		 
 		//Alla kopplingar gjorda

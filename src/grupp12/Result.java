@@ -5,7 +5,7 @@ public class Result {
 	private String result;
 	private String letterGrade;
 	private Student student;
-	private WrittenExam writtenexam;
+	private WrittenExam writtenExam;
 
 	public void setResult(String result) {
 		this.result = result;
@@ -32,11 +32,11 @@ public class Result {
 	}
 
 	public WrittenExam getWrittenExam() {
-		return writtenexam;
+		return writtenExam;
 	}
 
 	public void setWrittenExam(WrittenExam writtenexam) {
-		this.writtenexam = writtenexam;
+		this.writtenExam = writtenexam;
 	}
 
 }

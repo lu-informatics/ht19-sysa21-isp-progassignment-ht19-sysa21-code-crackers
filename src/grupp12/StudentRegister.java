@@ -23,7 +23,7 @@ public class StudentRegister {
 	public Student findStudent(String studentID) {
 	//	return this.studentList.get(studentID);
 		for (Student s : studentList.values()) {
-			if (s.getName().equals(studentID)) {
+			if (s.getStudentID().equals(studentID)) {
 				return s;
 			}
 		}
