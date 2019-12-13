@@ -76,7 +76,7 @@ public class Test {
 		s2.addResultToStudent(r2);
 		r2.setStudent(s2);
 		r2.setWrittenExam(wE2);
-		
+
 		wE1.addResultforExam(r3);
 		s3.addResultToStudent(r3);
 		r3.setStudent(s3);
@@ -86,11 +86,17 @@ public class Test {
 		s4.addResultToStudent(r4);
 		r4.setStudent(s4);
 		r4.setWrittenExam(wE4);
-		
-		
 
-	
+		StudentRegister studentregister = new StudentRegister();
 
+		studentregister.addStudent(s1);
+		studentregister.addStudent(s2);
+		studentregister.addStudent(s3);
+		studentregister.addStudent(s4);
+
+		s1.setstudentRegister(studentregister);
+		
+		System.out.println(s1.getName() + s1.getStudentID());
 
 	}
 
