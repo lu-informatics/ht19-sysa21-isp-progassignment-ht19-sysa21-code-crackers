@@ -6,11 +6,11 @@ public class CourseRegister {
 
 	private HashMap<String, Course> courseList = new HashMap<String, Course>();
 
-	public HashMap<String, Course> getCourselist() {
+	public HashMap<String, Course> getCourseList() {
 		return courseList;
 	}
 
-	public void setCourlist(HashMap<String, Course> courlist) {
+	public void setCourList(HashMap<String, Course> courlist) {
 		this.courseList = courlist;
 	}
 
@@ -18,9 +18,13 @@ public class CourseRegister {
 		this.courseList.put(course.getCourseCode(), course);
 	}
 
-	public Course findCourse(String coursCode) {
-		return this.courseList.get(coursCode);
-	}
+	public Course findCourse(String courseCode) {
+		for (Course c : courseList.values()) {
+			if(c.getCourseCode().contentEquals(courseCode)) {
+		
+		return c;
+	}}
+		return null;}
 
 	public void remove(String courseCode) {
 		this.courseList.remove(courseCode);
