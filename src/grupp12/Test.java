@@ -1,4 +1,8 @@
+
+
 package grupp12;
+
+import java.util.HashMap;
 
 public class Test {
 
@@ -120,6 +124,13 @@ public class Test {
 		//Alla kopplingar gjorda
 		
 		
-	}
-
+		System.out.println(s1.getStudentID());
+		System.out.println(r1.getStudent());
+		System.out.println(wE1.getLocation());
+		System.out.println(c1.getName());
+		System.out.println(wE1.getExamID() + wE1.getCourse());
+		System.out.println(c1.getCourseCode());
+		System.out.println(r2.getStudent());
+		
+}
 }
