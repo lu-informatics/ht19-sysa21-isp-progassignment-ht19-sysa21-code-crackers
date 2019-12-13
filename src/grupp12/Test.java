@@ -2,8 +2,6 @@
 
 package grupp12;
 
-import java.util.HashMap;
-
 public class Test {
 
 	public static void main(String[] args) {
@@ -91,17 +89,17 @@ public class Test {
 		r4.setStudent(s4);
 		r4.setWrittenExam(wE4);
 
-		StudentRegister studentregister = new StudentRegister();
+		StudentRegister studentRegister = new StudentRegister();
 
-		studentregister.addStudent(s1);
-		studentregister.addStudent(s2);
-		studentregister.addStudent(s3);
-		studentregister.addStudent(s4);
+		studentRegister.addStudent(s1);
+		studentRegister.addStudent(s2);
+		studentRegister.addStudent(s3);
+		studentRegister.addStudent(s4);
 
-		s1.setStudentRegister(studentregister);
-		s2.setStudentRegister(studentregister);
-		s3.setStudentRegister(studentregister);
-		s4.setStudentRegister(studentregister);
+		s1.setStudentRegister(studentRegister);
+		s2.setStudentRegister(studentRegister);
+		s3.setStudentRegister(studentRegister);
+		s4.setStudentRegister(studentRegister);
 
 		c1.add(wE4);
 		c1.add(wE3);
@@ -113,13 +111,13 @@ public class Test {
 		wE3.setCourse(c1);
 		wE4.setCourse(c1);
 
-		CourseRegister courseregister = new CourseRegister();
+		CourseRegister courseRegister = new CourseRegister();
 
-		courseregister.addCourse(c1);
-		courseregister.addCourse(c2);
+		courseRegister.addCourse(c1);
+		courseRegister.addCourse(c2);
 
-		c1.setCourseRegister(courseregister);
-		c2.setCourseRegister(courseregister);
+		c1.setCourseRegister(courseRegister);
+		c2.setCourseRegister(courseRegister);
 
 		//Alla kopplingar gjorda
 		
