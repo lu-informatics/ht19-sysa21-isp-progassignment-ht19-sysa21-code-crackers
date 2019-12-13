@@ -123,7 +123,13 @@ public class Test {
 		System.out.println(courseregister.getCourselist());
 		
 		System.out.println(s4.getName());
-
+		
+		
+		for (Student student : studentregister.getStudentList().values()) {
+			System.out.println(student.getStudentID() + student.getName()+ student.getStudentRegister());
+		}
+		
+		 
 		//Alla kopplingar gjorda
 		
 		
