@@ -36,7 +36,7 @@ public class Course {
 		this.credit = credit;
 	}	
 	public void add(WrittenExam writtenExam) {
-		this.writtenExamList.put(WrittenExam.getExamID(), writtenExam);
+		this.writtenExamList.put(writtenExam.getExamID(), writtenExam);
 	}	
 	public void remove(String examID) {
 		this.writtenExamList.remove(examID); 
