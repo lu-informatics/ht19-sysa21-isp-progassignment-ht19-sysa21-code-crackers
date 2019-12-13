@@ -39,8 +39,6 @@ public class CourseRegister {
 
 	
 
-	private boolean containsKey(String courseCode) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
+	
 }
