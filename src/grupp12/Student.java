@@ -45,6 +45,14 @@ public class Student {
 	// int counterVarialbe = 10000;
 //	BasicCounter counter = new BasicCounter();
 
+	public StudentRegister getStudentRegister() {
+		return studentRegister;
+	}
+
+	public void setStudentRegister(StudentRegister studentRegister) {
+		this.studentRegister = studentRegister;
+	}
+
 	// public void up () {
 	// ++ this.countervariable
 
