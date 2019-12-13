@@ -120,7 +120,7 @@ public class Test {
 		
 		studentregister.replace("S10003", "Peter");
 		System.out.println(studentregister.getStudentList());
-		System.out.println(courseregister.getCourselist());
+		System.out.println(courseregister.getCourseList());
 		
 		System.out.println(s4.getName());
 		
@@ -129,7 +129,7 @@ public class Test {
 			System.out.println(student.getStudentID() + student.getName());
 		}
 		
-		for (Course course : courseregister.getCourselist().values()) {
+		for (Course course : courseregister.getCourseList().values()) {
 			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
 		}
 		
