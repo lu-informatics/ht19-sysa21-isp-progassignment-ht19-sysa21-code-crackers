@@ -72,6 +72,20 @@ public class Test {
 		r1.setStudent(s1);
 		r1.setWrittenExam(wE3);
 
+		wE2.addResultforExam(r2);
+		s2.addResultToStudent(r2);
+		r2.setStudent(s2);
+		r2.setWrittenExam(wE2);
+		
+		wE1.addResultforExam(r3);
+		s3.addResultToStudent(r3);
+		r3.setStudent(s3);
+		r3.setWrittenExam(wE1);
+
+		wE4.addResultforExam(r4);
+		s4.addResultToStudent(r4);
+		r4.setStudent(s4);
+		r4.setWrittenExam(wE4);
 		
 		
 
