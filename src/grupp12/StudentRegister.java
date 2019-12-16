@@ -46,12 +46,13 @@ public class StudentRegister {
 		}
 
 	
-public String addStudentID() {
-	int i = 10000;
-	final String s = "S";
-	for (i, , i++)
-}
-		return S + i;
+	   Counter[] hits = new Counter[n];
+	   final String s = "S";
+       for (int i = 10000; i < 99999; i++) {
+           hits[i] = new Counter("counter" + i);
+           return (s+hits[i]);
+       }
+		
 }
 	
 
