@@ -47,7 +47,7 @@ public class StudentRegister {
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
 				
 		}
-		public static int () {
+		public String generateID(Student studentID) {
 			int max = 99999; 
 		    int min = 10000; 
 		    int range = max - min + 10000; 
@@ -60,7 +60,7 @@ public class StudentRegister {
 		        	return rand;
 		}
 }
-		}
+		
 	}
 }
 
