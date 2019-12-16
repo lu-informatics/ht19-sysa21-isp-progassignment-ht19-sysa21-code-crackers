@@ -34,7 +34,7 @@ public class StudentRegister {
 		this.studentList.remove(studentID);
 	}
 
-	public void replace(String studentID, String newName) {
+	public Student replace(String studentID, String newName) {
 
 		Student tmp = findStudent(studentID);
 		if (tmp != null) {
@@ -43,10 +43,17 @@ public class StudentRegister {
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
 				tmp.setName(newName);
 			}
+			return tmp;
 		}
 
 	
-
+public String addStudentID() {
+	int i = 10000;
+	final String s = "S";
+	for (i, , i++)
+}
+		return S + i;
+}
 	
 
 }
