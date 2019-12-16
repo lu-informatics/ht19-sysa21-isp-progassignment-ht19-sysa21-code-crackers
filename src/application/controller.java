@@ -10,9 +10,9 @@ import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import 
+import java.util.URL;
 
-import java.net.URL;
+
 import java.util.ListResourceBundle;
 
 public class controller {
@@ -29,7 +29,7 @@ public class controller {
 	@FXML
 	private TextField txtCourseCode;
 	@FXML
-	private TextField txtCourseCredit;
+	private  txtCourseCredit;
 	@FXML
 	private Button btnAddStudent;
 	@FXML
@@ -47,7 +47,7 @@ public class controller {
 	@FXML
 	private Button btnUpdateCourse;
 	
-	@FXML
+	
 	@FXML
 	private Button txtPrint;
 	@FXML
@@ -56,7 +56,9 @@ public class controller {
 	public void btnAddStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		Student tmpStudent = new Student(studentName, studentID);
+		Student tmpStudent = new Student();
+		tmpStudent.setName(studentName);
+		tmpStudent.setStudentID(studentID);
 		studentRegister.addStudent(tmpStudent);
 
 	}
@@ -64,8 +66,11 @@ public class controller {
 	public void btnAddCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseCredit = txtCourseCredit.getText();
-		Course tmpCourse = new Course(courseName, courseCode, courseCredit);
+		//int courseCredit = txtCourseCredit.gette();
+		Course tmpCourse = new Course();
+		tmpCourse.setCourseCode(courseCode);
+		//tmpCourse.setCredit(courseCredit);
+		tmpCourse.setName(courseName);
 		courseRegister.addCourse(tmpCourse);
 
 	}
@@ -73,14 +78,16 @@ public class controller {
 	public void btnRemoveCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseCredit = txtCourseCredit.getText();
-		Course tmpCourse = courseRegister.remove(courseCode);
-			if ( tmpCourse == null) {
+			Course tmpCourse = courseRegister.getCourseList().get(courseCode); 
+		
+				if ( tmpCourse == null) {
 				txtInfoScreen.setText("The course you searched for could not be found.");
 			}
-		
-
-	}
+				else 
+					tmpCourse.remove(courseName);
+				
+			}
+	
 	
 	public void btnRemoveStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
