@@ -112,7 +112,7 @@
                                                             </AnchorPane>
                                                       </content>
                                                     </Tab>
-                                                      <Tab text="Delete">
+                                                      <Tab text="Remove">
                                                          <content>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                                                <children>
@@ -120,12 +120,11 @@
                                                                   <Button layoutX="86.0" layoutY="97.0" mnemonicParsing="false" text="Find" />
                                                                   <Label layoutX="111.0" layoutY="163.0" text="Do you want to delete this course?" />
                                                                   <Label layoutX="56.0" layoutY="122.0" text="Response:" />
-                                                                  <Button layoutX="96.0" layoutY="107.0" mnemonicParsing="false" text="Find" />
+                                                                  <TextField layoutX="163.0" layoutY="58.0" />
                                                                </children>
                                                             </AnchorPane>
                                                          </content>
                                                       </Tab>
-                                                      <Tab text="Remove" />
                                                   </tabs>
                                                 </TabPane>
                                              </children></AnchorPane>
