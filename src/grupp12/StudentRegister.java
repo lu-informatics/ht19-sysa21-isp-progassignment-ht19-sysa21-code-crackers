@@ -1,6 +1,7 @@
 
 package grupp12;
-
+import java.lang.Math;
+import java.util.Random;
 import java.util.HashMap;
 
 public class StudentRegister {
@@ -21,40 +22,54 @@ public class StudentRegister {
 	}
 
 	public Student findStudent(String studentID) {
-	//	return this.studentList.get(studentID);
+	  //	return this.studentList.get(studentID);
 		for (Student s : studentList.values()) {
 			if (s.getStudentID().equals(studentID)) {
+				
 				return s;
-			}
-		}
-		return null;
+				
+				
+	}
+	}
+				return null;
 	}
 
 	public void removeStudent(String studentID) {
 		this.studentList.remove(studentID);
 	}
 
-	public Student replace(String studentID, String newName) {
+	public void replace(String studentID, String newName) {
 
 		Student tmp = findStudent(studentID);
 		if (tmp != null) {
-
+            tmp.setName(newName);
 			//String curName = tmp.getName();
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
-				tmp.setName(newName);
-			}
-			return tmp;
+				
+		}
 		}
 
-	
-	   Counter[] hits = new Counter[n];
-	   final String s = "S";
-       for (int i = 10000; i < 99999; i++) {
-           hits[i] = new Counter("counter" + i);
-           return (s+hits[i]);
-       }
+<<<<<<< HEAD
+	public static int () {
+	int max = 99999; 
+    int min = 10000; 
+    int range = max - min + 10000; 
+
+    for (int i = 10000; i < 99999; i++) { 
+        int rand = (int)(Math.random() * range) + min;
+        if (i != null) {
+        	String s ="S";
+        	s += rand ;
+        	return rand;
+	 }
+	}
 		
+	}
 }
+=======
 	
 
-}
+>>>>>>> ef4fb9436c7101932f70e55a9f388f498e7661ae
+	
+
+
