@@ -10,10 +10,11 @@ import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import java.util.URL;
+
 
 
 import java.util.ListResourceBundle;
+import java.util.Scanner;
 
 public class controller {
 	
@@ -29,7 +30,9 @@ public class controller {
 	@FXML
 	private TextField txtCourseCode;
 	@FXML
-	private  txtCourseCredit;
+	private  TextField txtNewStudentName;
+	@FXML
+	private  TextField txtNewCourseName;
 	@FXML
 	private Button btnAddStudent;
 	@FXML
@@ -66,17 +69,17 @@ public class controller {
 	public void btnAddCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		//int courseCredit = txtCourseCredit.gette();
+												//int courseCredit = txtCourseCredit.gette();
 		Course tmpCourse = new Course();
 		tmpCourse.setCourseCode(courseCode);
-		//tmpCourse.setCredit(courseCredit);
+												//tmpCourse.setCredit(courseCredit);
 		tmpCourse.setName(courseName);
 		courseRegister.addCourse(tmpCourse);
 
 	}
 	
 	public void btnRemoveCourse_Click(ActionEvent event) {
-		String courseName = txtCourseName.getText();
+															// String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 			Course tmpCourse = courseRegister.getCourseList().get(courseCode); 
 		
@@ -85,61 +88,75 @@ public class controller {
 			}
 					else 
 					tmpCourse.remove(courseCode);
-				
+				txtInfoScreen.setText("The course has been removed from list.");
 			}
 	
 	
 	public void btnRemoveStudent_Click(ActionEvent event) {
-		String studentName = txtStudentName.getText();
+																//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		Student tmpStudent = studentRegister.removeStudent(studentID); // void, retrunera student 
+		Student tmpStudent = studentRegister.getStudentList().get(studentID); // void, retrunera student 
 			if ( tmpStudent == null) {
-				txtInfoScreen.setText("The student you searched for could not be found.");
+					txtInfoScreen.setText("The student you searched for could not be found.");
+			
 			}
-		
+			else 
+				tmpStudent.getStudentRegister().removeStudent(studentID);
+					txtInfoScreen.setText("The student has been removed from list.");
+			
 
 	}
 	
-	public Student btnUpdateStudent_Click(ActionEvent event) {
+	public void btnUpdateStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		String studentNewName;
-		
-		studentRegister.replace(studentID, studentNewName); // returnera student 
-		
-			if ( tmpStudent == null) {
-				txtInfoScreen.setText("The student you searched for could not be found.");
+		String studentNewName = txtNewStudentName.getText(); // skapade en ny textsträng.
+			studentRegister.replace(studentID, studentNewName); // hur retunerar vi tillbaka studenten??
 				
-				
+			txtInfoScreen.setText("the students name has been updated");
 			}
-			else 
-					txtInfoScreen.setText("The student you have choosen has been updated");
+				//if ( studentRegister.findStudent(studentID) == null) {
+				//	txtInfoScreen.setText("The student you searched for could not be found.");
+				
+			 
+				//else 
+					//studentRegister.replace(studentID, studentNewName); // returnera student	
+						//txtInfoScreen.setText("The student you have choosen has been updated");
+					
+						
+		
 
-	}
+	
 	
 	public void btnUpdateCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseNewName;
-		Student tmpCourse = courseRegister.replace(courseCode, courseName);
-			if ( tmpCourse == null) {
-				txtInfoScreen.setText("The course you searched for could not be found.");
-			}
-			else 
-				txtInfoScreen.setText("The course you have choosen has been updated");
-		
-
+		String courseNewName = txtNewCourseName.getText(); // skapade en ny textsträng.
+		courseRegister.replace(courseCode, courseNewName); // hur retunerar vi tillbaka kursen? 
+			
+			txtInfoScreen.setText("The course name has been updated.");
+		//if ( courseRegister.getCourseList().get(courseCode) == null) {
+				//txtInfoScreen.setText("The course you searched for could not be found.");
+			
 	}
+		
+				//else 
+				//txtInfoScreen.setText("The course you have choosen has been updated");
+					
+					
+
+	
 	
 	//Vet inte om denna metod är rätt..
 	
 	public void btnFindStudent_Click(ActionEvent event) {
 		String studentID = txtStudentID.getText();
 		Student tmpStudent = studentRegister.findStudent(studentID);
-		
+			
+			txtInfoScreen.appendText(tmpStudent.getName() + ", " + tmpStudent.getStudentID());  
 		//txtInfoScreen.setText(tmpStudent.getStudentID());
 		//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
-			txtInfoScreen.appendText(tmpStudent.getName() + ", " + tmpStudent.getStudentID());  
+			
 		}
 
 	//}
@@ -149,13 +166,15 @@ public class controller {
 		public void btnFindCourse_Click(ActionEvent event) {
 			String courseCode = txtCourseCode.getText();
 			Course tmpCourse = courseRegister.findCourse(courseCode);
-			
+				txtInfoScreen.appendText(tmpCourse.getName() + ", " + tmpCourse.getCourseCode() + ", " + tmpCourse.getCredit());  
+
 			//txtInfoScreen.setText(tmpStudent.getStudentID());
 			//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
-				txtInfoScreen.appendText(tmpCourse.getName() + ", " + tmpCourse.getCourseCode() + ", " + tmpCourse.getCredit());  
 			}
-
 		//}
+		
+
+		
 	
 
 }
