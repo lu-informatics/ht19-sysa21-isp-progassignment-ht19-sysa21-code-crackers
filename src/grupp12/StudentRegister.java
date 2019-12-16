@@ -46,7 +46,13 @@ public class StudentRegister {
 		}
 
 	
-
+public String addStudentID() {
+	int i = 10000;
+	final String s = "S";
+	for (i, , i++)
+}
+		return S + i;
+}
 	
 
 }
