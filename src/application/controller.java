@@ -31,17 +31,23 @@ public class controller {
 	@FXML
 	private TextField txtCourseCredit;
 	@FXML
-	private TextField txtAccount;
+	private Button btnAddStudent;
 	@FXML
-	private Button btnAdd;
+	private Button btnRemoveStudent;
 	@FXML
-	private Button btnRemove;
+	private Button btnFindStudent;
 	@FXML
-	private Button btnFind;
+	private Button btnUpdateStudent;
 	@FXML
-	private Button btnUpdate;
+	private Button btnAddCourse;
 	@FXML
-	private Button txtAddAccount;
+	private Button btnRemoveCourse;
+	@FXML
+	private Button btnFindCourse;
+	@FXML
+	private Button btnUpdateCourse;
+	
+	@FXML
 	@FXML
 	private Button txtPrint;
 	@FXML
@@ -87,7 +93,7 @@ public class controller {
 
 	}
 	
-	public void btnUpdateStudent_Click(ActionEvent event) {
+	public Student btnUpdateStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		String studentNewName;
