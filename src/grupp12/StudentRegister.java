@@ -47,29 +47,21 @@ public class StudentRegister {
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
 				
 		}
+		public static int () {
+			int max = 99999; 
+		    int min = 10000; 
+		    int range = max - min + 10000; 
+
+		    for (int i = 10000; i < 99999; i++) { 
+		        int rand = (int)(Math.random() * range) + min;
+		        if (i != null) {
+		        	String s ="S";
+		        	s += rand ;
+		        	return rand;
 		}
-
-<<<<<<< HEAD
-	public static int () {
-	int max = 99999; 
-    int min = 10000; 
-    int range = max - min + 10000; 
-
-    for (int i = 10000; i < 99999; i++) { 
-        int rand = (int)(Math.random() * range) + min;
-        if (i != null) {
-        	String s ="S";
-        	s += rand ;
-        	return rand;
-	 }
-	}
-		
+}
+		}
 	}
 }
-=======
-	
-
->>>>>>> ef4fb9436c7101932f70e55a9f388f498e7661ae
-	
 
 
