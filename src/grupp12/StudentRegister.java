@@ -21,40 +21,35 @@ public class StudentRegister {
 	}
 
 	public Student findStudent(String studentID) {
-	//	return this.studentList.get(studentID);
+	  //	return this.studentList.get(studentID);
 		for (Student s : studentList.values()) {
 			if (s.getStudentID().equals(studentID)) {
+				
 				return s;
-			}
-		}
-		return null;
+				
+				
+	}
+	}
+				return null;
 	}
 
 	public void removeStudent(String studentID) {
 		this.studentList.remove(studentID);
 	}
 
-	public Student replace(String studentID, String newName) {
+	public void replace(String studentID, String newName) {
 
 		Student tmp = findStudent(studentID);
 		if (tmp != null) {
-
+            tmp.setName(newName);
 			//String curName = tmp.getName();
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
-				tmp.setName(newName);
-			}
-			return tmp;
+				
+		}
 		}
 
 	
-	   Counter[] hits = new Counter[n];
-	   final String s = "S";
-       for (int i = 10000; i < 99999; i++) {
-           hits[i] = new Counter("counter" + i);
-           return (s+hits[i]);
-       }
-		
-}
+
 	
 
 }
