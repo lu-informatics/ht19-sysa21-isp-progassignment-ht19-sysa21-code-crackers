@@ -121,49 +121,33 @@ public class controller {
 		
 
 	}
-
-	public void btnFind_Click(ActionEvent event) {
-		String pNumber = txtPersonNbr.getText();
-		Person tmpPerson = reg.findPerson(pNumber);
+	
+	//Vet inte om denna metod är rätt..
+	
+	public void btnFindStudent_Click(ActionEvent event) {
+		String studentID = txtStudentID.getText();
+		Student tmpStudent = studentRegister.findStudent(studentID);
 		
-		txtInfoScreen.setText(tmpPerson.getName() + " äger dessa konton: ");
-		for (Account account : tmpPerson.getAccountList()) { 
-			txtInfoScreen.appendText( account.getNbr()+ ". " +" Saldot på kontot är: " + account.getbalance() + "kr. ");  
+		//txtInfoScreen.setText(tmpStudent.getStudentID());
+		//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
+			txtInfoScreen.appendText(tmpStudent.getName() + ", " + tmpStudent.getStudentID());  
 		}
 
-	}
-
-	public void btnRemove_Click(ActionEvent event) {
-		String pNumber = txtPersonNbr.getText();
-				Person p = reg.removePerson(pNumber);
-				if (p == null) {
-					txtInfoScreen.setText("Personen kunde inte hittas");
-				}
-	}
-
-	public void ButtonAddAccount(ActionEvent event) {
-		Account a1 = new Account();
-		a1.setnbr(txtAccount.getText());
-		String pNumber = txtPersonNbr.getText();
-		Person tmpPerson = reg.findPerson(pNumber);
-		tmpPerson.addAccount(a1);
-		txtAccount.setText("");
-	}
-
-	public void ButtonPrint(ActionEvent event) {
-		String pNumber = txtPersonNbr.getText(); 
-		Person tmpPerson = reg.findPerson(pNumber);
-		
-		if (tmpPerson == null) {
-			txtInfoScreen.setText("person borttagen");
-		}
-		else {
-			txtInfoScreen.setText(tmpPerson.getName() + " äger dessa konton: ");
-			for (Account account : tmpPerson.getAccountList()) { 
-				txtInfoScreen.appendText("\n" + account.getNbr() + "." + " Saldot på kontot är: " + account.getbalance()+" kr. ");
+	//}
+	
+	//Vet inte om denna metod är rätt..
+	
+		public void btnFindCourse_Click(ActionEvent event) {
+			String courseCode = txtCourseCode.getText();
+			Course tmpCourse = courseRegister.findCourse(courseCode);
+			
+			//txtInfoScreen.setText(tmpStudent.getStudentID());
+			//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
+				txtInfoScreen.appendText(tmpCourse.getName() + ", " + tmpCourse.getCourseCode() + ", " + tmpCourse.getCredit());  
 			}
-		}
-	}
-}
+
+		//}
+	
 
 }
+	
