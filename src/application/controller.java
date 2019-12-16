@@ -83,8 +83,8 @@ public class controller {
 				if ( tmpCourse == null) {
 				txtInfoScreen.setText("The course you searched for could not be found.");
 			}
-				else 
-					tmpCourse.remove(courseName);
+					else 
+					tmpCourse.remove(courseCode);
 				
 			}
 	
@@ -92,7 +92,7 @@ public class controller {
 	public void btnRemoveStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		Student tmpStudent = studentRegister.removeStudent(studentID);
+		Student tmpStudent = studentRegister.removeStudent(studentID); // void, retrunera student 
 			if ( tmpStudent == null) {
 				txtInfoScreen.setText("The student you searched for could not be found.");
 			}
@@ -104,7 +104,9 @@ public class controller {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		String studentNewName;
-		Student tmpStudent = studentRegister.replace(studentID, studentNewName);
+		
+		studentRegister.replace(studentID, studentNewName); // returnera student 
+		
 			if ( tmpStudent == null) {
 				txtInfoScreen.setText("The student you searched for could not be found.");
 				
