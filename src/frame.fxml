@@ -2,54 +2,97 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="730.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutY="-2.0" prefHeight="172.0" prefWidth="155.0">
-         <children>
-            <TextFlow layoutX="39.900001525878906" layoutY="230.89999389648438" />
-         </children>
-      </AnchorPane>
-      <BorderPane layoutX="14.0" layoutY="139.0" prefHeight="591.0" prefWidth="640.0">
-         <top>
-            <TabPane prefHeight="403.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
-              <tabs>
-                <Tab text="Course">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="656.0">
-                           <children>
-                              <TabPane layoutX="-3.0" prefHeight="339.0" prefWidth="646.0" tabClosingPolicy="UNAVAILABLE">
+      <VBox prefHeight="600.0" prefWidth="900.0">
+        <children>
+          <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+              <AnchorPane>
+                <children>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefHeight="27.0" prefWidth="183.0" style="&#10;" text="Contoso University" textAlignment="CENTER" wrapText="false">
+                    <font>
+                      <Font size="18.0" fx:id="x1" />
+                    </font>
+                    <textFill>
+                      <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                    </textFill>
+                  </Label>
+                </children>
+              </AnchorPane>
+              <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+                <content>
+                  <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+                    <children>
+                              <TabPane layoutX="-3.0" layoutY="-5.0" prefHeight="551.0" prefWidth="434.0" tabClosingPolicy="UNAVAILABLE">
                                 <tabs>
-                                  <Tab text="Add">
-                                       <content>
-                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                  <Tab text="Student">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <Button layoutX="191.0" layoutY="23.0" mnemonicParsing="false" text="Add" />
-                                                <Label layoutX="9.0" layoutY="18.0" prefHeight="17.0" prefWidth="167.0" text="Skriv in kurs som ska läggas till" />
+                                                <TabPane layoutX="1.0" prefHeight="494.0" prefWidth="433.0" tabClosingPolicy="UNAVAILABLE">
+                                                  <tabs>
+                                                    <Tab text="Add">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="462.0" prefWidth="457.0">
+                                                               <children>
+                                                                  <Label layoutX="14.0" layoutY="53.0" text="Name of the Student:" />
+                                                                  <Button layoutX="26.0" layoutY="95.0" mnemonicParsing="false" text="Add" />
+                                                                  <TextField layoutX="147.0" layoutY="49.0" />
+                                                                  <Label layoutX="114.0" layoutY="99.0" text="The Student will get an ID automatically" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                    <Tab text="Update">
+                                                      <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Label layoutX="14.0" layoutY="49.0" text="Enter the students name:" />
+                                                                  <TextField layoutX="193.0" layoutY="45.0" />
+                                                                  <TextField layoutX="193.0" layoutY="93.0" />
+                                                                  <Label layoutX="27.0" layoutY="97.0" text="Enter the new name" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                      </content>
+                                                    </Tab>
+                                                  </tabs>
+                                                </TabPane>
                                              </children>
                                           </AnchorPane>
-                                       </content>
-                                    </Tab>
-                                  <Tab text="Update" />
+                                    </content>
+                                  </Tab>
+                                  <Tab text="Course">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </Tab>
                                 </tabs>
                               </TabPane>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Student">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </top>
-      </BorderPane>
+                    </children>
+                  </AnchorPane>
+                </content>
+              </ScrollPane>
+              <AnchorPane>
+                <children>
+                  <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Register" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <TextArea layoutX="5.0" layoutY="54.0" prefHeight="480.0" prefWidth="211.0" />
+                </children>
+              </AnchorPane>
+            </items>
+          </SplitPane>
+        </children>
+      </VBox>
    </children>
 </AnchorPane>
