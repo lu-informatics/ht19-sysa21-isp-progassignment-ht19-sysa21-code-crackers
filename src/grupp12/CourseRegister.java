@@ -23,11 +23,8 @@ public class CourseRegister {
 			if(c.getCourseCode().contentEquals(courseCode)) {
 		
 		return c;
-	}
-	}
-		return null;
-		
-	}
+	}}
+		return null;}
 
 	public void remove(String courseCode) {
 		this.courseList.remove(courseCode);

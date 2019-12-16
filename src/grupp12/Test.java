@@ -119,7 +119,7 @@ public class Test {
 		
 		
 		studentregister.replace("S10003", "Peter");
-		System.out.println(studentregister.getStudentList().get(studentregister));
+		System.out.println(studentregister.getStudentList());
 		System.out.println(courseregister.getCourseList());
 		
 		System.out.println(s4.getName());
@@ -133,7 +133,7 @@ public class Test {
 			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
 		}
 		
-			System.out.println(studentregister.findStudent("S10003").getName());
+			System.out.println(studentregister.findStudent("S10000"));
 		
 		 
 		//Alla kopplingar gjorda
