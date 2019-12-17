@@ -67,7 +67,7 @@ public class controller {
 	public void btnAddCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseCredit = txtCourseCredit.getText();
+		int courseCredit = txtCourseCredit.getText();
 		Course tmpCourse = new Course();
 		tmpCourse.setCourseCode(courseCode);
 		tmpCourse.setCredit(courseCredit); // ändra från txtCourseCredit till en btnCourseCredit? 
