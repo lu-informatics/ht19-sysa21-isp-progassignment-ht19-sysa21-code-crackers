@@ -17,6 +17,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.BoxLayout;
 import javax.swing.JTextPane;
+import javax.swing.JButton;
+import javax.swing.JTextArea;
 
 public class Swing {
 
@@ -82,6 +84,19 @@ public class Swing {
 		
 		JPanel panel_6 = new JPanel();
 		tabbedPane_2.addTab("Remove Student", null, panel_6, null);
+		panel_6.setLayout(null);
+		
+		JLabel lblEnterTheStudent = new JLabel("Enter the name of the student that you want to update");
+		lblEnterTheStudent.setBounds(10, 65, 310, 24);
+		panel_6.add(lblEnterTheStudent);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(330, 65, 101, 22);
+		panel_6.add(textArea);
+		
+		JButton btnFind = new JButton("Find");
+		btnFind.setBounds(340, 98, 89, 23);
+		panel_6.add(btnFind);
 		
 		JPanel panel_7 = new JPanel();
 		tabbedPane_2.addTab("Update Student", null, panel_7, null);

@@ -44,22 +44,18 @@ public class StudentRegister {
             tmp.setName(newName);
 			//String curName = tmp.getName();
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
+            
+          
 		}		
 		}
-		public String generateID(Student studentID) {
-			int max = 99999; 
-		    int min = 10000; 
-		    int range = max - min + 10000; 
-
-		    for (int i = 10000; i < 99999; i++) { 
-		        int rand = (int)(Math.random() * range) + min;
-		        	if (i == null) {
-		        	String e = "" + rand;
-		        	String s ="S";
-		        	s += e ;
-		        	return s;
-		}
-}
+	
+	public String generateID() {
+		int max = 99999;
+		int min = 10000;
+		int range = max - min + 10000;
+		Random rand = new Random();
 		
+		return String.format("S-%04d", rand.nextInt(range));
 	}
+
 }
