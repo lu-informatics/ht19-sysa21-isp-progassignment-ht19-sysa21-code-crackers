@@ -1,10 +1,13 @@
-package grupp12;
+package control;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import 
+import model.Course;
+import model.CourseRegister;
+import model.Student;
+import model.StudentRegister;
 
 import java.net.URL;
 import java.util.ListResourceBundle;
