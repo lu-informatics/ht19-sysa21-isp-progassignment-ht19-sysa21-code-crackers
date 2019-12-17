@@ -12,9 +12,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
 import java.awt.SystemColor;
-import com.jgoodies.forms.layout.FormLayout;
-import com.jgoodies.forms.layout.ColumnSpec;
-import com.jgoodies.forms.layout.RowSpec;
+//import com.jgoodies.forms.layout.FormLayout;
+//import com.jgoodies.forms.layout.ColumnSpec;
+//import com.jgoodies.forms.layout.RowSpec;
 import javax.swing.BoxLayout;
 import javax.swing.JTextPane;
 
