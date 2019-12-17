@@ -54,7 +54,7 @@ public class StudentRegister {
 		int range = max - min + 10000;
 		Random rand = new Random();
 		
-		return String.format("S-%04d", rand.nextInt(range));
+		return String.format("S-%05d", rand.nextInt(range));
 	}
 
 }
