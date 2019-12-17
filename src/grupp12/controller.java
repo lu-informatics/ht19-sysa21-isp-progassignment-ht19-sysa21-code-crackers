@@ -1,10 +1,4 @@
-package application;
-import grupp12.Course;
-import grupp12.CourseRegister;
-import grupp12.Result;
-import grupp12.Student;
-import grupp12.StudentRegister;
-import grupp12.WrittenExam;
+package grupp12;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.Button;
