@@ -1,8 +1,13 @@
 package model;
 
+import java.util.List;
+import java.util.Map;
+import java.util.*;
+
 public class Test {
 
 	public static void main(String[] args) {
+		StudentRegister sR = new StudentRegister();
 
 		Course c1 = new Course();
 		Course c2 = new Course();
@@ -136,6 +141,20 @@ public class Test {
 
 		// Alla kopplingar gjorda
 
+		Map<String, Student> studentDb = new HashMap<String, Student>();
+		List<Student> students = new ArrayList<Student>();
+		
+	//	students.add(new Student (sR.generateID());
+		
+		for(Student stud : students) {
+			if(studentDb.containsKey(stud.getStudentID())) {
+				System.out.println("Student already exists");}
+				else {
+					System.out.println("Student " + stud.getStudentID()+ "added");
+					studentDb.put(stud.getStudentID(), stud);
+				}
+			}
+		}
 	}
 
-}
+
