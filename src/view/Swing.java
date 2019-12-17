@@ -20,6 +20,7 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JRadioButton;
+import java.awt.Choice;
 
 public class Swing {
 
@@ -32,6 +33,9 @@ public class Swing {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_10;
 
 	/**
 	 * Launch the application.
@@ -256,6 +260,73 @@ public class Swing {
 		JButton btnNewButton_4 = new JButton("Update");
 		btnNewButton_4.setBounds(189, 142, 89, 23);
 		panel_3.add(btnNewButton_4);
+		
+		JPanel panel_8 = new JPanel();
+		tabbedPane_1.addTab("Exam", null, panel_8, null);
+		panel_8.setLayout(null);
+		
+		JLabel lblNewLabel_12 = new JLabel("Exam ID");
+		lblNewLabel_12.setBounds(10, 52, 46, 14);
+		panel_8.add(lblNewLabel_12);
+		
+		textField_7 = new JTextField();
+		textField_7.setBounds(152, 49, 86, 20);
+		panel_8.add(textField_7);
+		textField_7.setColumns(10);
+		
+		JLabel lblNewLabel_13 = new JLabel("Enter the date");
+		lblNewLabel_13.setBounds(10, 83, 99, 14);
+		panel_8.add(lblNewLabel_13);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(152, 80, 86, 20);
+		panel_8.add(textField_8);
+		textField_8.setColumns(10);
+		
+		JLabel lblNewLabel_14 = new JLabel("Choose the location");
+		lblNewLabel_14.setBounds(10, 131, 111, 14);
+		panel_8.add(lblNewLabel_14);
+		
+		JLabel lblNewLabel_15 = new JLabel("Enter max points");
+		lblNewLabel_15.setBounds(10, 246, 132, 14);
+		panel_8.add(lblNewLabel_15);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(152, 243, 86, 20);
+		panel_8.add(textField_10);
+		textField_10.setColumns(10);
+		
+		JLabel lblNewLabel_16 = new JLabel("yymmdd"); //SKA VI HA EN LITEN KALENDER HÄR SOM MAN KAN VÄLJA FRÅN? Som i hans exempel på föreläsning där han kollade fram hur många dagar februari hade
+		lblNewLabel_16.setBounds(172, 100, 46, 14);
+		panel_8.add(lblNewLabel_16);
+		
+		JRadioButton rdbtnNewRadioButton_3 = new JRadioButton("Room A123");
+		rdbtnNewRadioButton_3.setBounds(154, 127, 109, 23);
+		panel_8.add(rdbtnNewRadioButton_3);
+		
+		JRadioButton rdbtnNewRadioButton_4 = new JRadioButton("Room A167");
+		rdbtnNewRadioButton_4.setBounds(154, 152, 109, 23);
+		panel_8.add(rdbtnNewRadioButton_4);
+		
+		JRadioButton rdbtnNewRadioButton_5 = new JRadioButton("Room B198");
+		rdbtnNewRadioButton_5.setBounds(154, 178, 109, 23);
+		panel_8.add(rdbtnNewRadioButton_5);
+		
+		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Room B067");
+		rdbtnNewRadioButton_6.setBounds(152, 200, 109, 23);
+		panel_8.add(rdbtnNewRadioButton_6);
+		
+		JButton btnNewButton_5 = new JButton("Add Exam to Course");
+		btnNewButton_5.setBounds(149, 296, 89, 23);
+		panel_8.add(btnNewButton_5);
+		
+		JLabel lblNewLabel_17 = new JLabel("Choose what exam to add to the course:");
+		lblNewLabel_17.setBounds(10, 27, 46, 14);
+		panel_8.add(lblNewLabel_17);
+		
+		Choice choice = new Choice();
+		choice.setBounds(210, 23, 28, 20);
+		panel_8.add(choice);
 		
 		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.addTab("Register", null, tabbedPane_3, null);
