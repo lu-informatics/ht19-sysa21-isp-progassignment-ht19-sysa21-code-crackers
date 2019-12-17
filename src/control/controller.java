@@ -70,16 +70,16 @@ public class controller {
 		String courseCredit = txtCourseCredit.getText();
 		Course tmpCourse = new Course();
 		tmpCourse.setCourseCode(courseCode);
-		tmpCourse.setCredit(courseCredit); // ändra från int till string? 
+		tmpCourse.setCredit(courseCredit); // ändra från txtCourseCredit till en btnCourseCredit? 
 		tmpCourse.setName(courseName);
 		courseRegister.addCourse(tmpCourse);
 
 	}
 	
 	public void btnRemoveCourse_Click(ActionEvent event) {
-		String courseName = txtCourseName.getText();
+		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseCredit = txtCourseCredit.getText();
+		//String courseCredit = txtCourseCredit.getText();
 		 courseRegister.remove(courseCode);
 			
 		 if(courseCode == null) {
@@ -91,7 +91,7 @@ public class controller {
 	
 	
 	public void btnRemoveStudent_Click(ActionEvent event) {
-		String studentName = txtStudentName.getText();
+		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		studentRegister.removeStudent(studentID);
 			if ( studentID == null) {
@@ -102,26 +102,26 @@ public class controller {
 
 	}
 	
-	public Student btnUpdateStudent_Click(ActionEvent event) {
-		String studentName = txtStudentName.getText();
+	public void btnUpdateStudent_Click(ActionEvent event) {
+		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		String studentNewName = txtStudentNewName.getText();
 		studentRegister.replace(studentID, studentNewName);
 			if ( studentID == null) {
-				txtInfoScreen.setText("The student you searched for could not be found.");
+				txtInfoScreen.setText("The student you tried to update could not be found.");
 				
 				
 			}
 			else 
 					txtInfoScreen.setText("The student you have choosen has been updated");
-
+				
 	}
 	
 	public void btnUpdateCourse_Click(ActionEvent event) {
-		String courseName = txtCourseName.getText();
+		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		String courseNewName = txtCourseNewName.getText();
-		courseRegister.replace(courseCode, courseName);
+		courseRegister.replace(courseCode, courseNewName);
 			if ( courseCode == null) {
 				txtInfoScreen.setText("The course you searched for could not be found.");
 			}
