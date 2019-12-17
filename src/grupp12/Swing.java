@@ -16,8 +16,6 @@ import java.awt.SystemColor;
 public class Swing {
 
 	private JFrame frame;
-	private JTextField txtHereYouCan;
-	private JTextField txtContosoUniversity;
 
 	/**
 	 * Launch the application.
@@ -47,46 +45,46 @@ public class Swing {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 845, 645);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 850, 598);
+		tabbedPane.setBounds(0, 10, 783, 536);
 		frame.getContentPane().add(tabbedPane);
 		
-		JPanel panel_3 = new JPanel();
-		tabbedPane.addTab("Home", null, panel_3, null);
-		SpringLayout sl_panel_3 = new SpringLayout();
-		panel_3.setLayout(sl_panel_3);
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Contoso University", null, tabbedPane_1, null);
 		
-		txtContosoUniversity = new JTextField();
-		sl_panel_3.putConstraint(SpringLayout.NORTH, txtContosoUniversity, 10, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.WEST, txtContosoUniversity, 10, SpringLayout.WEST, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.SOUTH, txtContosoUniversity, 118, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.EAST, txtContosoUniversity, 196, SpringLayout.WEST, panel_3);
-		txtContosoUniversity.setBackground(Color.WHITE);
-		txtContosoUniversity.setForeground(Color.GRAY);
-		txtContosoUniversity.setFont(new Font("Times New Roman", Font.PLAIN, 22));
-		txtContosoUniversity.setText("Contoso University");
-		panel_3.add(txtContosoUniversity);
-		txtContosoUniversity.setColumns(10);
+		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Students", null, tabbedPane_2, null);
 		
-		JPanel panel = new JPanel();
-		tabbedPane.addTab("Student", null, panel, null);
-		panel.setLayout(new BorderLayout(0, 0));
+		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_2.addTab("Add Student", null, tabbedPane_3, null);
 		
-		txtHereYouCan = new JTextField();
-		txtHereYouCan.setForeground(Color.BLACK);
-		txtHereYouCan.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtHereYouCan.setText("Here you can add, rename and remove a student from the Universiety ");
-		panel.add(txtHereYouCan, BorderLayout.NORTH);
-		txtHereYouCan.setColumns(10);
+		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_2.addTab("Remove Student", null, tabbedPane_4, null);
 		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("Course", null, panel_1, null);
+		JTabbedPane tabbedPane_5 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_2.addTab("Update Student", null, tabbedPane_5, null);
 		
-		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("Register", null, panel_2, null);
+		JTabbedPane tabbedPane_6 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Courses", null, tabbedPane_6, null);
+		
+		JTabbedPane tabbedPane_7 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_6.addTab("Add Course", null, tabbedPane_7, null);
+		
+		JTabbedPane tabbedPane_8 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_6.addTab("Remove Course", null, tabbedPane_8, null);
+		
+		JTabbedPane tabbedPane_9 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_6.addTab("Update Course", null, tabbedPane_9, null);
+		
+		JTabbedPane tabbedPane_10 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Register", null, tabbedPane_10, null);
+		
+		JTabbedPane tabbedPane_11 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_10.addTab("Student Register", null, tabbedPane_11, null);
+		
+		JTabbedPane tabbedPane_12 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_10.addTab("Course Register", null, tabbedPane_12, null);
 	}
 }
