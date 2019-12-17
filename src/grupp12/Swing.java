@@ -1,12 +1,14 @@
 package grupp12;
-
+import javax.swing.ButtonGroup;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 public class Swing {
 
 	private JFrame frame;
+	private JTextField txtContosoUniversety;
 
 	/**
 	 * Launch the application.
@@ -36,8 +38,14 @@ public class Swing {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 845, 645);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		txtContosoUniversety = new JTextField();
+		txtContosoUniversety.setText("Contoso Universety");
+		txtContosoUniversety.setBounds(49, 48, 203, 59);
+		frame.getContentPane().add(txtContosoUniversety);
+		txtContosoUniversety.setColumns(10);
 	}
-
 }
