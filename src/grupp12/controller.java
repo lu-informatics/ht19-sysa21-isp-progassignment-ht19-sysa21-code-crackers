@@ -17,9 +17,13 @@ public class controller {
 	@FXML
 	private TextField txtStudentName;
 	@FXML
+	private TextField txtStudentNewName;
+	@FXML
 	private TextField txtStudentID;
 	@FXML
 	private TextField txtCourseName;
+	@FXML
+	private TextField txtCourseNewName;
 	@FXML
 	private TextField txtCourseCode;
 	@FXML
@@ -41,7 +45,7 @@ public class controller {
 	@FXML
 	private Button btnUpdateCourse;
 	
-	@FXML
+
 	@FXML
 	private Button txtPrint;
 	@FXML
@@ -50,7 +54,9 @@ public class controller {
 	public void btnAddStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		Student tmpStudent = new Student(studentName, studentID);
+		Student tmpStudent = new Student();
+		tmpStudent.setName(studentName);
+		tmpStudent.setStudentID(studentID);
 		studentRegister.addStudent(tmpStudent);
 
 	}
@@ -59,7 +65,10 @@ public class controller {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		String courseCredit = txtCourseCredit.getText();
-		Course tmpCourse = new Course(courseName, courseCode, courseCredit);
+		Course tmpCourse = new Course();
+		tmpCourse.setCourseCode(courseCode);
+		tmpCourse.setCredit(courseCredit); // ändra från int till string? 
+		tmpCourse.setName(courseName);
 		courseRegister.addCourse(tmpCourse);
 
 	}
@@ -68,31 +77,34 @@ public class controller {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		String courseCredit = txtCourseCredit.getText();
-		Course tmpCourse = courseRegister.remove(courseCode);
-			if ( tmpCourse == null) {
+		 courseRegister.remove(courseCode);
+			
+		 if(courseCode == null) {
 				txtInfoScreen.setText("The course you searched for could not be found.");
 			}
-		
-
+		 else 
+			 	txtInfoScreen.setText("The course has been removed");
 	}
+	
 	
 	public void btnRemoveStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		Student tmpStudent = studentRegister.removeStudent(studentID);
-			if ( tmpStudent == null) {
+		studentRegister.removeStudent(studentID);
+			if ( studentID == null) {
 				txtInfoScreen.setText("The student you searched for could not be found.");
 			}
-		
+			else 
+				txtInfoScreen.setText("The student has been removed");
 
 	}
 	
 	public Student btnUpdateStudent_Click(ActionEvent event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
-		String studentNewName;
-		Student tmpStudent = studentRegister.replace(studentID, studentNewName);
-			if ( tmpStudent == null) {
+		String studentNewName = txtStudentNewName.getText();
+		studentRegister.replace(studentID, studentNewName);
+			if ( studentID == null) {
 				txtInfoScreen.setText("The student you searched for could not be found.");
 				
 				
@@ -105,9 +117,9 @@ public class controller {
 	public void btnUpdateCourse_Click(ActionEvent event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
-		String courseNewName;
-		Student tmpCourse = courseRegister.replace(courseCode, courseName);
-			if ( tmpCourse == null) {
+		String courseNewName = txtCourseNewName.getText();
+		courseRegister.replace(courseCode, courseName);
+			if ( courseCode == null) {
 				txtInfoScreen.setText("The course you searched for could not be found.");
 			}
 			else 
