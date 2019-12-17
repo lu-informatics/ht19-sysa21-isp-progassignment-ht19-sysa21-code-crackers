@@ -56,11 +56,14 @@ public class Swing {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		frame.getContentPane().add(tabbedPane);
 		
+		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Contoso University", null, tabbedPane_4, null);
+		
 		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.addTab("Students", null, tabbedPane_2, null);
 		
 		JPanel panel = new JPanel();
-		tabbedPane_2.addTab("New tab", null, panel, null);
+		tabbedPane_2.addTab("Add Student", null, panel, null);
 		panel.setLayout(null);
 		
 		JLabel lblEnterStudentsName = new JLabel("Enter Students name");
@@ -76,5 +79,32 @@ public class Swing {
 		txtTheStudentWill.setBounds(36, 131, 113, 19);
 		panel.add(txtTheStudentWill);
 		txtTheStudentWill.setColumns(10);
+		
+		JPanel panel_6 = new JPanel();
+		tabbedPane_2.addTab("Remove Student", null, panel_6, null);
+		
+		JPanel panel_7 = new JPanel();
+		tabbedPane_2.addTab("Update Student", null, panel_7, null);
+		
+		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Course", null, tabbedPane_1, null);
+		
+		JPanel panel_1 = new JPanel();
+		tabbedPane_1.addTab("Add Course", null, panel_1, null);
+		
+		JPanel panel_2 = new JPanel();
+		tabbedPane_1.addTab("Remove Course", null, panel_2, null);
+		
+		JPanel panel_3 = new JPanel();
+		tabbedPane_1.addTab("Update Course", null, panel_3, null);
+		
+		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.addTab("Register", null, tabbedPane_3, null);
+		
+		JPanel panel_4 = new JPanel();
+		tabbedPane_3.addTab("Student Register", null, panel_4, null);
+		
+		JPanel panel_5 = new JPanel();
+		tabbedPane_3.addTab("Course Register", null, panel_5, null);
 	}
 }
