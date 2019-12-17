@@ -12,10 +12,16 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
 import java.awt.SystemColor;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import javax.swing.BoxLayout;
+import javax.swing.JTextPane;
 
 public class Swing {
 
 	private JFrame frame;
+	private JTextField txtTheStudentWill;
 
 	/**
 	 * Launch the application.
@@ -45,46 +51,30 @@ public class Swing {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setLayout(null);
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 10, 783, 536);
 		frame.getContentPane().add(tabbedPane);
-		
-		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("Contoso University", null, tabbedPane_1, null);
 		
 		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.addTab("Students", null, tabbedPane_2, null);
 		
-		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_2.addTab("Add Student", null, tabbedPane_3, null);
+		JPanel panel = new JPanel();
+		tabbedPane_2.addTab("New tab", null, panel, null);
+		panel.setLayout(null);
 		
-		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_2.addTab("Remove Student", null, tabbedPane_4, null);
+		JLabel lblEnterStudentsName = new JLabel("Enter Students name");
+		lblEnterStudentsName.setBounds(40, 56, 109, 29);
+		panel.add(lblEnterStudentsName);
 		
-		JTabbedPane tabbedPane_5 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_2.addTab("Update Student", null, tabbedPane_5, null);
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(160, 66, 102, 19);
+		panel.add(textPane);
 		
-		JTabbedPane tabbedPane_6 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("Courses", null, tabbedPane_6, null);
-		
-		JTabbedPane tabbedPane_7 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_6.addTab("Add Course", null, tabbedPane_7, null);
-		
-		JTabbedPane tabbedPane_8 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_6.addTab("Remove Course", null, tabbedPane_8, null);
-		
-		JTabbedPane tabbedPane_9 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_6.addTab("Update Course", null, tabbedPane_9, null);
-		
-		JTabbedPane tabbedPane_10 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.addTab("Register", null, tabbedPane_10, null);
-		
-		JTabbedPane tabbedPane_11 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_10.addTab("Student Register", null, tabbedPane_11, null);
-		
-		JTabbedPane tabbedPane_12 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_10.addTab("Course Register", null, tabbedPane_12, null);
+		txtTheStudentWill = new JTextField();
+		txtTheStudentWill.setText("The student will get this Student ID");
+		txtTheStudentWill.setBounds(36, 131, 113, 19);
+		panel.add(txtTheStudentWill);
+		txtTheStudentWill.setColumns(10);
 	}
 }
