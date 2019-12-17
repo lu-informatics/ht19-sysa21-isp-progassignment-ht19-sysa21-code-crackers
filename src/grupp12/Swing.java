@@ -7,10 +7,16 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.SpringLayout;
 
 public class Swing {
 
 	private JFrame frame;
+	private JTextField txtHereYouCan;
+	private JTextField txtContosoUniversity;
 
 	/**
 	 * Launch the application.
@@ -45,11 +51,34 @@ public class Swing {
 		frame.getContentPane().setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 821, 598);
+		tabbedPane.setBounds(0, 0, 850, 598);
 		frame.getContentPane().add(tabbedPane);
+		
+		JPanel panel_3 = new JPanel();
+		tabbedPane.addTab("Home", null, panel_3, null);
+		SpringLayout sl_panel_3 = new SpringLayout();
+		panel_3.setLayout(sl_panel_3);
+		
+		txtContosoUniversity = new JTextField();
+		sl_panel_3.putConstraint(SpringLayout.NORTH, txtContosoUniversity, 86, SpringLayout.NORTH, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.WEST, txtContosoUniversity, 293, SpringLayout.WEST, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.SOUTH, txtContosoUniversity, 140, SpringLayout.NORTH, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.EAST, txtContosoUniversity, 497, SpringLayout.WEST, panel_3);
+		txtContosoUniversity.setFont(new Font("Times New Roman", Font.PLAIN, 22));
+		txtContosoUniversity.setText("Contoso University");
+		panel_3.add(txtContosoUniversity);
+		txtContosoUniversity.setColumns(10);
 		
 		JPanel panel = new JPanel();
 		tabbedPane.addTab("Student", null, panel, null);
+		panel.setLayout(new BorderLayout(0, 0));
+		
+		txtHereYouCan = new JTextField();
+		txtHereYouCan.setForeground(Color.BLACK);
+		txtHereYouCan.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		txtHereYouCan.setText("Here you can add, rename and remove a student from the Universiety ");
+		panel.add(txtHereYouCan, BorderLayout.NORTH);
+		txtHereYouCan.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		tabbedPane.addTab("Course", null, panel_1, null);
