@@ -20,11 +20,13 @@ public class CourseRegister {
 
 	public Course findCourse(String courseCode) {
 		for (Course c : courseList.values()) {
-			if(c.getCourseCode().contentEquals(courseCode)) {
-		
-		return c;
-	}}
-		return null;}
+			if (c.getCourseCode().contentEquals(courseCode)) {
+
+				return c;
+			}
+		}
+		return null;
+	}
 
 	public void remove(String courseCode) {
 		this.courseList.remove(courseCode);
@@ -33,16 +35,13 @@ public class CourseRegister {
 	public void replace(String courseCode, String newName) {
 		Course tmp = findCourse(courseCode);
 		if (tmp != null) {
-			
-			//String curName = tmp.getName();
-			//if (!Course.equals(curName, oldName) || (curName == null && !containsKey(courseCode))) {
-			
+
+			// String curName = tmp.getName();
+			// if (!Course.equals(curName, oldName) || (curName == null &&
+			// !containsKey(courseCode))) {
+
 			tmp.setName(newName);
-			}
 		}
+	}
 
-	
-
-
-	
 }

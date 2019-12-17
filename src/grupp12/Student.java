@@ -34,7 +34,6 @@ public class Student {
 
 	}
 
-
 	public void addResultToStudent(Result result) {
 		this.studentResultList.put(result.getResult(), result);
 	}

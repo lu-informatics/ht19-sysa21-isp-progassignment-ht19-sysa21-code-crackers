@@ -116,29 +116,26 @@ public class Test {
 
 		c1.setCourseRegister(courseregister);
 		c2.setCourseRegister(courseregister);
-		
-		
+
 		studentregister.replace("S10003", "Peter");
 		System.out.println(studentregister.getStudentList());
 		System.out.println(courseregister.getCourseList());
-		
+
 		System.out.println(s4.getName());
-		
-		
-		for (Student student : studentregister.getStudentList().values()) { //skriver ut students ID kopplat till namnet den har
+
+		for (Student student : studentregister.getStudentList().values()) { // skriver ut students ID kopplat till
+																			// namnet den har
 			System.out.println(student.getStudentID() + student.getName());
 		}
-		
+
 		for (Course course : courseregister.getCourseList().values()) {
 			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
 		}
-		
-			System.out.println(studentregister.findStudent("S10000"));
-		
-		 
-		//Alla kopplingar gjorda
-		
-		
+
+		System.out.println(studentregister.findStudent("S10000"));
+
+		// Alla kopplingar gjorda
+
 	}
 
 }

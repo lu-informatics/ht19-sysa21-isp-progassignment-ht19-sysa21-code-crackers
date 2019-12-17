@@ -1,5 +1,6 @@
 
 package grupp12;
+
 import java.lang.Math;
 import java.util.Random;
 import java.util.HashMap;
@@ -7,7 +8,6 @@ import java.util.HashMap;
 public class StudentRegister {
 
 	private HashMap<String, Student> studentList = new HashMap<String, Student>();
-	
 
 	public HashMap<String, Student> getStudentList() {
 		return studentList;
@@ -16,22 +16,21 @@ public class StudentRegister {
 	public void setStudentList(HashMap<String, Student> studentList) {
 		this.studentList = studentList;
 	}
-  
+
 	public void addStudent(Student student) {
 		this.studentList.put(student.getStudentID(), student);
 	}
 
 	public Student findStudent(String studentID) {
-	  //	return this.studentList.get(studentID);
+		// return this.studentList.get(studentID);
 		for (Student s : studentList.values()) {
 			if (s.getStudentID().equals(studentID)) {
-				
+
 				return s;
-				
-				
-	}
-	}
-				return null;
+
+			}
+		}
+		return null;
 	}
 
 	public void removeStudent(String studentID) {
@@ -63,5 +62,3 @@ public class StudentRegister {
 		}
 	}
 }
-
-
