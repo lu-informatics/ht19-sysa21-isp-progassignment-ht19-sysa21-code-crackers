@@ -45,7 +45,7 @@ public class StudentRegister {
             tmp.setName(newName);
 			//String curName = tmp.getName();
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
-				
+		}		
 		}
 		public String generateID(Student studentID) {
 			int max = 99999; 
