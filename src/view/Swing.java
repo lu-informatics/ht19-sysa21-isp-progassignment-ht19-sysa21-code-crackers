@@ -1,4 +1,4 @@
-package grupp12;
+package view;
 import javax.swing.ButtonGroup;
 import java.awt.EventQueue;
 

@@ -1,5 +1,5 @@
 
-package grupp12;
+package model;
 
 import java.lang.Math;
 import java.util.Random;
@@ -53,7 +53,7 @@ public class StudentRegister {
 
 		    for (int i = 10000; i < 99999; i++) { 
 		        int rand = (int)(Math.random() * range) + min;
-		        if (i != null) {
+		        if (i = null) {
 		        	String s ="S";
 		        	s += rand ;
 		        	return rand;
