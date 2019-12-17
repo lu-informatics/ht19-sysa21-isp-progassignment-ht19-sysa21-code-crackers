@@ -1,7 +1,6 @@
 
 package model;
 
-import java.lang.Math;
 import java.util.Random;
 import java.util.HashMap;
 
