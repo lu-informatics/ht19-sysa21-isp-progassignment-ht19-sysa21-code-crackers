@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
+import java.awt.SystemColor;
 
 public class Swing {
 
@@ -60,10 +61,12 @@ public class Swing {
 		panel_3.setLayout(sl_panel_3);
 		
 		txtContosoUniversity = new JTextField();
-		sl_panel_3.putConstraint(SpringLayout.NORTH, txtContosoUniversity, 86, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.WEST, txtContosoUniversity, 293, SpringLayout.WEST, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.SOUTH, txtContosoUniversity, 140, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.EAST, txtContosoUniversity, 497, SpringLayout.WEST, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.NORTH, txtContosoUniversity, 10, SpringLayout.NORTH, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.WEST, txtContosoUniversity, 10, SpringLayout.WEST, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.SOUTH, txtContosoUniversity, 118, SpringLayout.NORTH, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.EAST, txtContosoUniversity, 196, SpringLayout.WEST, panel_3);
+		txtContosoUniversity.setBackground(Color.WHITE);
+		txtContosoUniversity.setForeground(Color.GRAY);
 		txtContosoUniversity.setFont(new Font("Times New Roman", Font.PLAIN, 22));
 		txtContosoUniversity.setText("Contoso University");
 		panel_3.add(txtContosoUniversity);
