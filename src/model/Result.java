@@ -2,16 +2,16 @@ package model;
 
 public class Result {
 
-	private double result;
+	private String result;
 	private String letterGrade;
 	private Student student;
 	private WrittenExam writtenExam;
 
-	public void setResult(double result) {
+	public void setResult(String result) {
 		this.result = result;
 	}
 
-	public double getResult() {
+	public String getResult() {
 		return result;
 	}
 
@@ -39,11 +39,12 @@ public class Result {
 		this.writtenExam = writtenexam;
 	}
 	
-	public void CalcExamGrade(String letterGrade) {
+}
+	//public void CalcExamGrade(String letterGrade) {
 		
 	
-			
-			if(result < 50) {
+		
+/*			if(result < 50) {
 				this.letterGrade = "U";
 			}else if(result >= 50&& result< 55){
 				this.letterGrade = "E";
@@ -57,6 +58,6 @@ public class Result {
 				this.letterGrade = "A";
 			}
 		}
+*/
 
 
-}
