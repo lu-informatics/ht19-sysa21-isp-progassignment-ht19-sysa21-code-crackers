@@ -21,6 +21,7 @@ import model.CourseRegister;
 import model.Student;
 import model.StudentRegister;
 
+import javax.swing.Action;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 
@@ -64,7 +65,7 @@ public class controller {
 	
 	private JTextArea txtInfoScreen;
 
-	public void btnAddStudent_Click(ActionEvent event) {
+	public void btnAddStudent_Click(Action event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		Student tmpStudent = new Student();
@@ -74,7 +75,7 @@ public class controller {
 
 	}
 	
-	public void btnAddCourse_Click(ActionEvent event) {
+	public void btnAddCourse_Click(Action event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		int courseCredit = txtCourseCredit.getText();
@@ -86,7 +87,7 @@ public class controller {
 
 	}
 	
-	public void btnRemoveCourse_Click(ActionEvent event) {
+	public void btnRemoveCourse_Click(Action event) {
 		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		//String courseCredit = txtCourseCredit.getText();
@@ -100,7 +101,7 @@ public class controller {
 	}
 	
 	
-	public void btnRemoveStudent_Click(ActionEvent event) {
+	public void btnRemoveStudent_Click(Action event) {
 		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		studentRegister.removeStudent(studentID);
@@ -112,7 +113,7 @@ public class controller {
 
 	}
 	
-	public void btnUpdateStudent_Click(ActionEvent event) {
+	public void btnUpdateStudent_Click(Action event) {
 		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		String studentNewName = txtStudentNewName.getText();
@@ -127,7 +128,7 @@ public class controller {
 				
 	}
 	
-	public void btnUpdateCourse_Click(ActionEvent event) {
+	public void btnUpdateCourse_Click(Action event) {
 		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		String courseNewName = txtCourseNewName.getText();
@@ -143,7 +144,7 @@ public class controller {
 	
 	//Vet inte om denna metod är rätt..
 	
-	public void btnFindStudent_Click(ActionEvent event) {
+	public void btnFindStudent_Click(Action event) {
 		String studentID = txtStudentID.getText();
 		Student tmpStudent = studentRegister.findStudent(studentID);
 		
@@ -156,7 +157,7 @@ public class controller {
 	
 	//Vet inte om denna metod är rätt..
 	
-		public void btnFindCourse_Click(ActionEvent event) {
+		public void btnFindCourse_Click(Action event) {
 			String courseCode = txtCourseCode.getText();
 			Course tmpCourse = courseRegister.findCourse(courseCode);
 			
