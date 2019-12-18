@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.Font;
@@ -51,8 +50,6 @@ import java.awt.Button;
 import java.awt.Panel;
 import javax.swing.JList;
 
-
-
 public class Swing {
 
 	private JFrame frame;
@@ -63,7 +60,6 @@ public class Swing {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_10;
-
 
 	/**
 	 * Launch the application.
@@ -98,7 +94,6 @@ public class Swing {
 		frame.getContentPane().setLayout(null);
 
 		frame.getContentPane().setLayout(new BorderLayout(0, 0));
-		
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(SystemColor.controlLtHighlight);
@@ -111,20 +106,12 @@ public class Swing {
 		tabbedPane_4.setFont(new Font("Microsoft JhengHei", Font.BOLD, 16));
 		tabbedPane.addTab("Contoso University", null, tabbedPane_4, null);
 
+		// JLabel lblNewLabel_18 = new JLabel(""); //Lägga in bild på contosouniversity
+		// Image img = new ImageIcon
+		// (this.getClass().getResource("/school.jpg")).getImage();
 
-
-		
-		JPanel panel_9 = new JPanel();
-		tabbedPane_4.addTab("Home", null, panel_9, null);
-		panel_9.setLayout(null);
-		
-		//JLabel lblNewLabel_18 = new JLabel("");  //Lägga in bild på contosouniversity
-		//Image img = new ImageIcon (this.getClass().getResource("/school.jpg")).getImage();
-		
-		
-		//lblNewLabel_18.setBounds(10, 22, 432, 273);
-		//panel_9.add(lblNewLabel_18);
-		
+		// lblNewLabel_18.setBounds(10, 22, 432, 273);
+		// panel_9.add(lblNewLabel_18);
 
 		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -197,7 +184,7 @@ public class Swing {
 		JLabel lblResponse = new JLabel("Response:");
 		lblResponse.setBounds(44, 263, 68, 14);
 		panel_6.add(lblResponse);
-		
+
 		Choice choice_1 = new Choice();
 		choice_1.setBounds(304, 69, 114, 26);
 		panel_6.add(choice_1);
@@ -241,11 +228,11 @@ public class Swing {
 		btnNewButton_1.setBorder(new LineBorder(SystemColor.controlText, 1, true));
 		btnNewButton_1.setBounds(426, 55, 89, 23);
 		panel_7.add(btnNewButton_1);
-		
+
 		Choice choice_2 = new Choice();
 		choice_2.setBounds(307, 59, 109, 20);
 		panel_7.add(choice_2);
-		
+
 		Button button_1 = new Button("No");
 		button_1.setBounds(346, 162, 70, 22);
 		panel_7.add(button_1);
@@ -398,76 +385,74 @@ public class Swing {
 		btnNewButton_5.setBounds(142, 266, 96, 23);
 		panel_8.add(btnNewButton_5);
 
-
 		JLabel lblNewLabel_17 = new JLabel("Add exam to course:");
 		lblNewLabel_17.setBounds(10, 27, 183, 14);
 
-		
-		JLabel lblNewLabel_17 = new JLabel("Choose what exam to add to the course:");
-		lblNewLabel_17.setBounds(10, 27, 46, 14);
+		JLabel lblNewLabel_18 = new JLabel("Choose what exam to add to the course:");
+		lblNewLabel_18.setBounds(10, 27, 46, 14);
 
 		panel_8.add(lblNewLabel_17);
 
 		Choice choice = new Choice();
 		choice.setBounds(142, 23, 96, 20);
 		panel_8.add(choice);
-		
+
 		JDateChooser dateChooser = new JDateChooser();
 		dateChooser.setBounds(112, 63, 126, 20);
 		panel_8.add(dateChooser);
-		
+
 		JLabel lblNewLabel_16 = new JLabel("Choose Date:");
 		lblNewLabel_16.setBounds(10, 63, 86, 14);
 		panel_8.add(lblNewLabel_16);
-		
+
 		Label label_1 = new Label("Response:");
 		label_1.setBounds(21, 308, 62, 22);
 		panel_8.add(label_1);
-		
+
 		Panel panel_10 = new Panel();
 		tabbedPane_1.addTab("Remove Exam", null, panel_10, null);
 		panel_10.setLayout(null);
-		
+
 		JLabel lblNewLabel_21 = new JLabel("Select exam:");
 		lblNewLabel_21.setBounds(51, 61, 94, 14);
 		panel_10.add(lblNewLabel_21);
-		
+
 		Choice choice_5 = new Choice();
 		choice_5.setBounds(162, 55, 166, 23);
 		panel_10.add(choice_5);
-		
+
 		Button button_2 = new Button("Remove");
 		button_2.setBounds(162, 118, 70, 22);
 		panel_10.add(button_2);
-		
+
 		JPanel panel_9 = new JPanel();
-		tabbedPane.addTab("Results", null, panel_9, null);
+		tabbedPane.addTab("New tab", null, panel_9, null);
 		panel_9.setLayout(null);
-		
+
 		JLabel lblNewLabel_12 = new JLabel("Select student:");
 		lblNewLabel_12.setBounds(44, 41, 104, 14);
 		panel_9.add(lblNewLabel_12);
-		
-		JLabel lblNewLabel_18 = new JLabel("Select exam:");
-		lblNewLabel_18.setBounds(44, 116, 87, 14);
-		panel_9.add(lblNewLabel_18);
-		
-		JLabel lblNewLabel_20 = new JLabel("Enter amount of points:");
-		lblNewLabel_20.setBounds(44, 193, 114, 14);
+
+		JLabel lblNewLabel_20 = new JLabel("Select exam:");
+		lblNewLabel_20.setBounds(44, 116, 87, 14);
 		panel_9.add(lblNewLabel_20);
-		
+
+		JLabel lblNewLabel_22 = new JLabel("Enter amount of points:");
+		lblNewLabel_22.setBounds(44, 193, 114, 14);
+		panel_9.add(lblNewLabel_22);
+
 		Choice choice_3 = new Choice();
 		choice_3.setBounds(209, 35, 104, 20);
 		panel_9.add(choice_3);
-		
+
 		Choice choice_4 = new Choice();
 		choice_4.setBounds(211, 110, 102, 20);
 		panel_9.add(choice_4);
-		
+
 		TextField textField_7 = new TextField();
 		textField_7.setBounds(209, 193, 104, 22);
 		panel_9.add(textField_7);
-		
+
 		Button button = new Button("Add result");
 		button.setBounds(230, 267, 70, 22);
 		panel_9.add(button);
