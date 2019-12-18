@@ -33,7 +33,6 @@ import javax.swing.border.BevelBorder;
 public class Swing {
 
 	private JFrame frame;
-	private JTextField txtTheStudentWill;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -112,18 +111,13 @@ public class Swing {
 		textPane.setBounds(219, 54, 117, 29);
 		panel.add(textPane);
 		
-		txtTheStudentWill = new JTextField();
-		txtTheStudentWill.setDisabledTextColor(Color.GRAY);
-		txtTheStudentWill.setSelectedTextColor(new Color(255, 255, 255));
-		txtTheStudentWill.setSelectionColor(new Color(240, 255, 255));
-		txtTheStudentWill.setBackground(SystemColor.controlLtHighlight);
-		txtTheStudentWill.setCaretColor(Color.LIGHT_GRAY);
-		txtTheStudentWill.setBorder(new LineBorder(SystemColor.textInactiveText, 1, true));
-		txtTheStudentWill.setFont(new Font("Tahoma", Font.BOLD, 10));
-		txtTheStudentWill.setText("The student will get this Student ID");
-		txtTheStudentWill.setBounds(19, 131, 191, 19);
-		panel.add(txtTheStudentWill);
-		txtTheStudentWill.setColumns(10);
+		JLabel lblNewLabel_19 = new JLabel("The student will get this student ID:");
+		lblNewLabel_19.setBounds(58, 152, 46, 14);
+		panel.add(lblNewLabel_19);
+		
+		JButton btnNewButton_6 = new JButton("Add Student");
+		btnNewButton_6.setBounds(408, 70, 89, 23);
+		panel.add(btnNewButton_6);
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(SystemColor.controlLtHighlight);
@@ -149,7 +143,7 @@ public class Swing {
 		btnFind.setBounds(363, 102, 55, 23);
 		panel_6.add(btnFind);
 		
-		JLabel lblEnterTheNew = new JLabel("Enter the new name of the student");
+		JLabel lblEnterTheNew = new JLabel("Choose the student you want to update:");
 		lblEnterTheNew.setBounds(26, 171, 203, 14);
 		panel_6.add(lblEnterTheNew);
 		
@@ -170,6 +164,10 @@ public class Swing {
 		JLabel lblResponse = new JLabel("Response:");
 		lblResponse.setBounds(44, 263, 68, 14);
 		panel_6.add(lblResponse);
+		
+		JLabel lblNewLabel_18 = new JLabel("The person you want to update is:");
+		lblNewLabel_18.setBounds(33, 129, 46, 14);
+		panel_6.add(lblNewLabel_18);
 		
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
