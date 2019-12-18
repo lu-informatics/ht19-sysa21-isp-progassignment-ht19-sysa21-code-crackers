@@ -150,7 +150,7 @@ public class controller {
 		
 		//txtInfoScreen.setText(tmpStudent.getStudentID());
 		//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
-			txtInfoScreen.appendText(tmpStudent.getName() + ", " + tmpStudent.getStudentID());  
+			txtInfoScreen.append(tmpStudent.getStudentName() + ", " + tmpStudent.getStudentID());  
 		}
 
 	//}
@@ -163,7 +163,7 @@ public class controller {
 			
 			//txtInfoScreen.setText(tmpStudent.getStudentID());
 			//for (Student student : tmpStudent.getStudentRegister().findStudent(studentID)) { 
-				txtInfoScreen.appendText(tmpCourse.getName() + ", " + tmpCourse.getCourseCode() + ", " + tmpCourse.getCredit());  
+				txtInfoScreen.append(tmpCourse.getStudentName() + ", " + tmpCourse.getCourseCode() + ", " + tmpCourse.getCredit());  
 			}
 
 		//}

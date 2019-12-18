@@ -40,7 +40,7 @@ public class StudentRegister {
 
 		Student tmp = findStudent(studentID);
 		if (tmp != null) {
-            tmp.setName(newName);
+            tmp.setStudentName(newName);
 			//String curName = tmp.getName();
 			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
             

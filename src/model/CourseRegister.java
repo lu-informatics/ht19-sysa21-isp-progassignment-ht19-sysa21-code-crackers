@@ -41,7 +41,7 @@ public class CourseRegister {
 			// if (!Course.equals(curName, oldName) || (curName == null &&
 			// !containsKey(courseCode))) {
 
-			tmp.setName(newName);
+			tmp.setCourseName(newName);
 		}
 	}
 	public String generateCourseID() {
