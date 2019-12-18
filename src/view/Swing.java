@@ -2,10 +2,16 @@ package view;
 
 import javax.swing.ButtonGroup;
 import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -58,6 +64,7 @@ public class Swing {
 	private JTextField textField_6;
 	private JTextField textField_10;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -87,20 +94,39 @@ public class Swing {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBackground(SystemColor.controlLtHighlight);
+<<<<<<< HEAD
 		frame.getContentPane().setLayout(null);
 
+=======
+		frame.getContentPane().setLayout(new BorderLayout(0, 0));
+		
+>>>>>>> 1a6fb4b8aa94bc226cadc5b11f83c481d3909fa1
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane.setFont(new Font("Microsoft JhengHei", Font.BOLD, 14));
 		tabbedPane.setForeground(Color.DARK_GRAY);
-		tabbedPane.setBounds(0, 0, 612, 405);
 		frame.getContentPane().add(tabbedPane);
 
 		JTabbedPane tabbedPane_4 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_4.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_4.setFont(new Font("Microsoft JhengHei", Font.BOLD, 16));
 		tabbedPane.addTab("Contoso University", null, tabbedPane_4, null);
+<<<<<<< HEAD
 
+=======
+		
+		JPanel panel_9 = new JPanel();
+		tabbedPane_4.addTab("Home", null, panel_9, null);
+		panel_9.setLayout(null);
+		
+		//JLabel lblNewLabel_18 = new JLabel("");  //Lägga in bild på contosouniversity
+		//Image img = new ImageIcon (this.getClass().getResource("/school.jpg")).getImage();
+		
+		
+		//lblNewLabel_18.setBounds(10, 22, 432, 273);
+		//panel_9.add(lblNewLabel_18);
+		
+>>>>>>> 1a6fb4b8aa94bc226cadc5b11f83c481d3909fa1
 		JTabbedPane tabbedPane_2 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		tabbedPane_2.setBackground(SystemColor.controlLtHighlight);
@@ -372,9 +398,15 @@ public class Swing {
 		JButton btnNewButton_5 = new JButton("Add Exam");
 		btnNewButton_5.setBounds(142, 266, 96, 23);
 		panel_8.add(btnNewButton_5);
+<<<<<<< HEAD
 
 		JLabel lblNewLabel_17 = new JLabel("Add exam to course:");
 		lblNewLabel_17.setBounds(10, 27, 183, 14);
+=======
+		
+		JLabel lblNewLabel_17 = new JLabel("Choose what exam to add to the course:");
+		lblNewLabel_17.setBounds(10, 27, 46, 14);
+>>>>>>> 1a6fb4b8aa94bc226cadc5b11f83c481d3909fa1
 		panel_8.add(lblNewLabel_17);
 
 		Choice choice = new Choice();

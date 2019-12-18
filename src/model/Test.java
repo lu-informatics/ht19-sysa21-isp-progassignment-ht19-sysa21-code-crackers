@@ -39,28 +39,28 @@ public class Test {
 		wE1.setDate("22 maj 2020");
 		wE1.setLocation("Spartavägen 1");
 		wE1.setTime("08:00");
-		wE1.setMaxpoints(100);
+		wE1.setMaxPoints(100);
 		wE1.setCourse(c1);
 
 		wE2.setExamID("E10001");
 		wE2.setDate("22 maj 2020");
 		wE2.setLocation("Spartavägen 1");
 		wE2.setTime("08:00");
-		wE2.setMaxpoints(100);
+		wE2.setMaxPoints(100);
 		wE2.setCourse(c2);
 
 		wE3.setExamID("E10002");
 		wE3.setDate("22 maj 2020");
 		wE3.setLocation("Spartavägen 1");
 		wE3.setTime("08:00");
-		wE3.setMaxpoints(100);
+		wE3.setMaxPoints(100);
 		wE3.setCourse(c1);
 
 		wE4.setExamID("E10003");
 		wE4.setDate("22 maj 2020");
 		wE4.setLocation("Spartavägen 1");
 		wE4.setTime("08:00");
-		wE4.setMaxpoints(100);
+		wE4.setMaxPoints(100);
 		wE4.setCourse(c2);
 
 		s1.setName("David");

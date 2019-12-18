@@ -8,7 +8,7 @@ public class WrittenExam {
 	private String date;
 	private String location;
 	private String time;
-	private int maxpoints;
+	private double maxPoints;
 	private Course course;
 
 	private HashMap<String, Result> resultList = new HashMap<String, Result>();
@@ -53,12 +53,12 @@ public class WrittenExam {
 		this.time = time;
 	}
 
-	public int getMaxpoints() {
-		return maxpoints;
+	public double getMaxPoints() {
+		return maxPoints;
 	}
 
-	public void setMaxpoints(int maxpoints) {
-		this.maxpoints = maxpoints;
+	public void setMaxPoints(int maxPoints) {
+		this.maxPoints = maxPoints;
 	}
 
 	public Course getCourse() {
