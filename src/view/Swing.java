@@ -384,7 +384,7 @@ public class Swing {
 		btnNewButton_5.setBounds(149, 296, 89, 23);
 		panel_8.add(btnNewButton_5);
 		
-		JLabel lblNewLabel_17 = new JLabel("Choose what exam to add to the course:");
+		JLabel lblNewLabel_17 = new JLabel("Choose which exam to add to the course:");
 		lblNewLabel_17.setBounds(10, 27, 46, 14);
 		panel_8.add(lblNewLabel_17);
 		
