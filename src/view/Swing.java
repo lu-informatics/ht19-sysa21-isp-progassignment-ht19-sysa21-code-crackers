@@ -89,6 +89,9 @@ public class Swing {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(SystemColor.controlLtHighlight);
+		frame.setFont(new Font("Courier New", Font.PLAIN, 12));
+		frame.setForeground(Color.WHITE);
 		frame.setBackground(SystemColor.controlLtHighlight);
 
 		frame.getContentPane().setLayout(null);
@@ -118,32 +121,32 @@ public class Swing {
 		tabbedPane_2.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane.addTab("Students", null, tabbedPane_2, null);
 
-		JPanel panel = new JPanel();
-		panel.setForeground(SystemColor.desktop);
-		panel.setBackground(SystemColor.controlLtHighlight);
-		tabbedPane_2.addTab("Add Student", null, panel, null);
-		panel.setLayout(null);
+		JPanel AnswerStudentID = new JPanel();
+		AnswerStudentID.setForeground(SystemColor.desktop);
+		AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
+		tabbedPane_2.addTab("Add Student", null, AnswerStudentID, null);
+		AnswerStudentID.setLayout(null);
 
 		JLabel lblEnterStudentsName = new JLabel("Enter Students name:");
 		lblEnterStudentsName.setForeground(SystemColor.controlText);
 		lblEnterStudentsName.setBackground(SystemColor.controlText);
 		lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
-		lblEnterStudentsName.setBounds(19, 66, 176, 29);
-		panel.add(lblEnterStudentsName);
+		lblEnterStudentsName.setBounds(352, 95, 176, 29);
+		AnswerStudentID.add(lblEnterStudentsName);
 
-		JTextPane textPane = new JTextPane();
-		textPane.setSelectionColor(SystemColor.controlLtHighlight);
-		textPane.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
-		textPane.setBounds(219, 54, 117, 29);
-		panel.add(textPane);
+		JTextPane textPane_StudentName = new JTextPane();
+		textPane_StudentName.setSelectionColor(SystemColor.controlLtHighlight);
+		textPane_StudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
+		textPane_StudentName.setBounds(490, 84, 117, 29);
+		AnswerStudentID.add(textPane_StudentName);
 
-		JLabel lblNewLabel_19 = new JLabel("The student will get this student ID:");
-		lblNewLabel_19.setBounds(58, 152, 176, 14);
-		panel.add(lblNewLabel_19);
+		JLabel Label_Student = new JLabel("The student will get this student ID:");
+		Label_Student.setBounds(352, 162, 176, 14);
+		AnswerStudentID.add(Label_Student);
 
 		JButton btnNewButton_6 = new JButton("Add Student");
-		btnNewButton_6.setBounds(408, 70, 89, 23);
-		panel.add(btnNewButton_6);
+		btnNewButton_6.setBounds(633, 99, 89, 23);
+		AnswerStudentID.add(btnNewButton_6);
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(SystemColor.controlLtHighlight);
