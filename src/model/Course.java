@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Course {
 
 	private String courseCode;
-	private String name;
+	private String courseName;
 	private int credit;
 	private CourseRegister courseRegister;
 	private HashMap<String, WrittenExam> writtenExamList = new HashMap<String, WrittenExam>();
@@ -26,12 +26,12 @@ public class Course {
 		this.courseCode = courseCode;
 	}
 
-	public String getName() {
-		return name;
+	public String getCourseName() {
+		return courseName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCourseName(String courseName) {
+		this.courseName = courseName;
 	}
 
 	public int getCredit() {

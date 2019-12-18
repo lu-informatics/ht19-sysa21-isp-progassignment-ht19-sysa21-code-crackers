@@ -4,17 +4,17 @@ import java.util.*;
 
 public class Student {
 	private String studentID;
-	private String name;
+	private String StudentName;
 	private StudentRegister studentRegister;
 	private HashMap<String, Result> studentResultList = new HashMap<String, Result>();
 	// private BasicCounter counter = new BasicCounter();
 
-	public String getName() {
-		return name;
+	public String getStudentName() {
+		return StudentName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentName(String studentName) {
+		this.StudentName = studentName;
 	}
 
 	public String getStudentID() {
