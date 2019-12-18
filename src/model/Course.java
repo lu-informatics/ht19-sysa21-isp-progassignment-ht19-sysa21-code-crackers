@@ -57,9 +57,14 @@ public class Course {
 	public void setCourseRegister(CourseRegister courseRegister) {
 		this.courseRegister = courseRegister;
 	}
+	public WrittenExam findExam(String examID) {
+		for (WrittenExam e : writtenExamList.values()) {
+			if (e.getExamID().equals(examID)) {
 
-	public static boolean equals(String curName, String oldName) { // vad betyder detta? wtf
-		// TODO Auto-generated method stub
-		return false;
-	}
+				return e;
+
+			}
+		}
+		return null;
+}
 }

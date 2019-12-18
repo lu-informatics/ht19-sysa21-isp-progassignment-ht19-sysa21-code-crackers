@@ -37,8 +37,10 @@ public class Student {
 	public void addResultToStudent(Result result) {
 		this.studentResultList.put(result.getResult(), result);
 	}
-	// int counterVarialbe = 10000;
-//	BasicCounter counter = new BasicCounter();
+	public void addWrittenExamToStudent(WrittenExam exam) {
+		this.studentResultList.put(WrittenExam.getExamID(), exam);
+	}
+	
 
 	public StudentRegister getStudentRegister() {
 		return studentRegister;
@@ -48,7 +50,6 @@ public class Student {
 		this.studentRegister = studentRegister;
 	}
 
-	// public void up () {
-	// ++ this.countervariable
+
 
 }
