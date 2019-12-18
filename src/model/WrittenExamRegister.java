@@ -12,8 +12,8 @@ public HashMap<String, WrittenExam> getExamList() {
 		return examList;
 	}
 
-	public void setExamList(HashMap<String, WrittenExam> studentList) {
-		this.examList = studentList;
+	public void setExamList(HashMap<String, WrittenExam> examList) {
+		this.examList = examList;
 	}
 
 	public void addExam(WrittenExam exam) {
@@ -37,7 +37,7 @@ public HashMap<String, WrittenExam> getExamList() {
 
 	
 	
-	public String generateID() {
+	public String generateExamID() {
 		int max = 99999;
 		int min = 10000;
 		int range = max - min + 10000;
