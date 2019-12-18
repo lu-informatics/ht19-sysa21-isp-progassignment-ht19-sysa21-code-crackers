@@ -28,11 +28,11 @@ public class Test {
 		Result r4 = new Result();
 
 		c1.setCourseCode("sysa21");
-		c1.setName("ISProjekt");
+		c1.setCourseName("ISProjekt");
 		c1.setCredit(30);
 
 		c2.setCourseCode("sysa22");
-		c2.setName("Modelering");
+		c2.setCourseName("Modelering");
 		c2.setCredit(55);
 
 		wE1.setExamID("E10000");
@@ -63,13 +63,13 @@ public class Test {
 		wE4.setMaxPoints(100);
 		wE4.setCourse(c2);
 
-		s1.setName("David");
+		s1.setStudentName("David");
 		s1.setStudentID("S10000");
-		s2.setName("Hanna");
+		s2.setStudentName("Hanna");
 		s2.setStudentID("S10001");
-		s3.setName("Martin");
+		s3.setStudentName("Martin");
 		s3.setStudentID("S10002");
-		s4.setName("Gabriel");
+		s4.setStudentName("Gabriel");
 		s4.setStudentID("S10003");
 
 		wE3.addResultforExam(r1);
@@ -126,15 +126,15 @@ public class Test {
 		System.out.println(studentregister.getStudentList());
 		System.out.println(courseregister.getCourseList());
 
-		System.out.println(s4.getName());
+		System.out.println(s4.getStudentName());
 
 		for (Student student : studentregister.getStudentList().values()) { // skriver ut students ID kopplat till
 																			// namnet den har
-			System.out.println(student.getStudentID() + student.getName());
+			System.out.println(student.getStudentID() + student.getStudentName());
 		}
 
 		for (Course course : courseregister.getCourseList().values()) {
-			System.out.println(course.getCourseCode() + course.getName() + course.getCredit());
+			System.out.println(course.getCourseCode() + course.getCourseName() + course.getCredit());
 		}
 
 		System.out.println(studentregister.findStudent("S10000"));
