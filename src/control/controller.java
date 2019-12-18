@@ -1,60 +1,71 @@
 package control;
-import javafx.event.ActionEvent;
-import javafx.fxml.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+//import javafx.event.ActionEvent;
+//import javafx.fxml.*;
+//import javafx.scene.control.Button;
+//import javafx.scene.control.TextArea;
+//import javafx.scene.control.TextField;
+//import model.Course;
+//import model.CourseRegister;
+//import model.Student;
+//import model.StudentRegister;
+
+//import java.net.URL;
+//import java.util.ListResourceBundle;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 import model.Course;
 import model.CourseRegister;
 import model.Student;
 import model.StudentRegister;
 
-import java.net.URL;
-import java.util.ListResourceBundle;
+import javax.swing.Action;
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 
 public class controller {
 	
 	CourseRegister courseRegister = new CourseRegister();
 	StudentRegister studentRegister = new StudentRegister();
 
-	@FXML
-	private TextField txtStudentName;
-	@FXML
-	private TextField txtStudentNewName;
-	@FXML
-	private TextField txtStudentID;
-	@FXML
-	private TextField txtCourseName;
-	@FXML
-	private TextField txtCourseNewName;
-	@FXML
-	private TextField txtCourseCode;
-	@FXML
-	private TextField txtCourseCredit;
-	@FXML
-	private Button btnAddStudent;
-	@FXML
-	private Button btnRemoveStudent;
-	@FXML
-	private Button btnFindStudent;
-	@FXML
-	private Button btnUpdateStudent;
-	@FXML
-	private Button btnAddCourse;
-	@FXML
-	private Button btnRemoveCourse;
-	@FXML
-	private Button btnFindCourse;
-	@FXML
-	private Button btnUpdateCourse;
 	
+	private JTextField txtStudentName;
+	
+	private JTextField txtStudentNewName;
+	
+	private JTextField txtStudentID;
+	
+	private JTextField txtCourseName;
+	
+	private JTextField txtCourseNewName;
+	
+	private JTextField txtCourseCode;
+	
+	private JTextField txtCourseCredit;
+	
+	private JButton btnAddStudent;
+	
+	private JButton btnRemoveStudent;
+	
+	private JButton btnFindStudent;
+	
+	private JButton btnUpdateStudent;
+	
+	private JButton btnAddCourse;
+	
+	private JButton btnRemoveCourse;
+	
+	private JButton btnFindCourse;
+	
+	private JButton btnUpdateCourse;
+	
+	private JButton txtPrint;
+	
+	private JTextArea txtInfoScreen;
 
-	@FXML
-	private Button txtPrint;
-	@FXML
-	private TextArea txtInfoScreen;
-
-	public void btnAddStudent_Click(ActionEvent event) {
+	public void btnAddStudent_Click(Action event) {
 		String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		Student tmpStudent = new Student();
@@ -64,7 +75,7 @@ public class controller {
 
 	}
 	
-	public void btnAddCourse_Click(ActionEvent event) {
+	public void btnAddCourse_Click(Action event) {
 		String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		int courseCredit = txtCourseCredit.getText();
@@ -76,7 +87,7 @@ public class controller {
 
 	}
 	
-	public void btnRemoveCourse_Click(ActionEvent event) {
+	public void btnRemoveCourse_Click(Action event) {
 		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		//String courseCredit = txtCourseCredit.getText();
@@ -90,7 +101,7 @@ public class controller {
 	}
 	
 	
-	public void btnRemoveStudent_Click(ActionEvent event) {
+	public void btnRemoveStudent_Click(Action event) {
 		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		studentRegister.removeStudent(studentID);
@@ -102,7 +113,7 @@ public class controller {
 
 	}
 	
-	public void btnUpdateStudent_Click(ActionEvent event) {
+	public void btnUpdateStudent_Click(Action event) {
 		//String studentName = txtStudentName.getText();
 		String studentID = txtStudentID.getText();
 		String studentNewName = txtStudentNewName.getText();
@@ -117,7 +128,7 @@ public class controller {
 				
 	}
 	
-	public void btnUpdateCourse_Click(ActionEvent event) {
+	public void btnUpdateCourse_Click(Action event) {
 		//String courseName = txtCourseName.getText();
 		String courseCode = txtCourseCode.getText();
 		String courseNewName = txtCourseNewName.getText();
@@ -133,7 +144,7 @@ public class controller {
 	
 	//Vet inte om denna metod är rätt..
 	
-	public void btnFindStudent_Click(ActionEvent event) {
+	public void btnFindStudent_Click(Action event) {
 		String studentID = txtStudentID.getText();
 		Student tmpStudent = studentRegister.findStudent(studentID);
 		
@@ -146,7 +157,7 @@ public class controller {
 	
 	//Vet inte om denna metod är rätt..
 	
-		public void btnFindCourse_Click(ActionEvent event) {
+		public void btnFindCourse_Click(Action event) {
 			String courseCode = txtCourseCode.getText();
 			Course tmpCourse = courseRegister.findCourse(courseCode);
 			
