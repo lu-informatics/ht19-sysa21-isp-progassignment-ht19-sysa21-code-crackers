@@ -48,7 +48,7 @@ public class StudentRegister {
 		}		
 		}
 	
-	public String generateID() {
+	public String generateStudentID() {
 		int max = 99999;
 		int min = 10000;
 		int range = max - min + 10000;
