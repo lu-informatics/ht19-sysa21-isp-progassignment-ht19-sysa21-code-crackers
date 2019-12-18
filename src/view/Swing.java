@@ -18,6 +18,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
 import java.awt.SystemColor;
+
+import javax.swing.Action;
 //import com.jgoodies.forms.layout.FormLayout;
 //import com.jgoodies.forms.layout.ColumnSpec;
 //import com.jgoodies.forms.layout.RowSpec;
@@ -42,6 +44,8 @@ import java.text.ParseException;
 
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import com.toedter.calendar.JDateChooser;
+
+import model.Student;
 
 import java.util.Date;
 import java.awt.Label;
@@ -141,10 +145,21 @@ public class Swing {
 		lblNewLabel_19.setBounds(58, 152, 176, 14);
 		panel.add(lblNewLabel_19);
 
-		JButton btnNewButton_6 = new JButton("Add Student");
-		btnNewButton_6.setBounds(408, 70, 89, 23);
-		panel.add(btnNewButton_6);
-
+		JButton btnAddStudent = new JButton("Add Student");
+//		btnAddStudent.addActionListener(new ActionListener() {
+	//	public void actionPerformed(ActionEvent e) {
+	//		String StudentName = textPane_StudentName.getStudentName();
+	//		String [] tmpStudent = controller.addStudent(StudentName);
+	//		if (tmpStudent != null) {
+	//			String StudentName = Label_Student.getstudentName();
+	//		}
+	//		}
+	//});
+	
+		btnAddStudent.setBounds(408, 70, 89, 23);
+		panel.add(btnAddStudent);
+	
+		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(SystemColor.controlLtHighlight);
 		panel_6.setFont(new Font("Microsoft JhengHei", Font.BOLD, 14));
