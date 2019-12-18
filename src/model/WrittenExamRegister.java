@@ -1,9 +1,10 @@
 package model;
+import java.util.Random;
+import java.util.HashMap;
+
 
 public class WrittenExamRegister {
 
-import java.util.Random;
-import java.util.HashMap;
 
 private HashMap<String, WrittenExam> examList = new HashMap<String, WrittenExam>();
 
@@ -19,8 +20,15 @@ public HashMap<String, WrittenExam> getExamList() {
 		this.examList.put(examList.getExamID(), exam);
 	}
 
-	public Student findStudent(String studentID) {
+	public WrittenExam findExam(String examID) {
+		for (WrittenExam e : examList.values()) {
+			if (e.getExamID().equals(examID)) {
 
+				return e;
+
+			}
+		}
+		return null;
 	}
 
 	public void removeExam(String examID) {
