@@ -28,6 +28,8 @@ import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+
 import java.awt.Choice;
 import javax.swing.border.LineBorder;
 import javax.swing.border.CompoundBorder;
@@ -45,7 +47,11 @@ import java.text.ParseException;
 import javax.swing.JFormattedTextField.AbstractFormatter;
 import com.toedter.calendar.JDateChooser;
 
+import control.controller;
+import model.CourseRegister;
 import model.Student;
+import model.StudentRegister;
+import model.WrittenExamRegister;
 
 import java.util.Date;
 import java.awt.Label;
@@ -64,6 +70,11 @@ public class Swing {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_10;
+	private controller controller1;
+	private StudentRegister studentRegister;
+	private CourseRegister courseRegister;
+	private WrittenExamRegister writtenExamRegister;
+	
 
 	/**
 	 * Launch the application.
@@ -125,29 +136,6 @@ public class Swing {
 		tabbedPane_2.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane.addTab("Students", null, tabbedPane_2, null);
 
-		JPanel AnswerStudentID = new JPanel();
-		AnswerStudentID.setForeground(SystemColor.desktop);
-		AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
-		tabbedPane_2.addTab("Add Student", null, AnswerStudentID, null);
-		AnswerStudentID.setLayout(null);
-
-		JLabel lblEnterStudentsName = new JLabel("Enter Students name:");
-		lblEnterStudentsName.setForeground(SystemColor.controlText);
-		lblEnterStudentsName.setBackground(SystemColor.controlText);
-		lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
-		lblEnterStudentsName.setBounds(352, 95, 176, 29);
-		AnswerStudentID.add(lblEnterStudentsName);
-
-		JTextPane textPane_StudentName = new JTextPane();
-		textPane_StudentName.setSelectionColor(SystemColor.controlLtHighlight);
-		textPane_StudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
-		textPane_StudentName.setBounds(490, 84, 117, 29);
-		AnswerStudentID.add(textPane_StudentName);
-
-		JLabel Label_Student = new JLabel("The student will get this student ID:");
-		Label_Student.setBounds(352, 162, 176, 14);
-		AnswerStudentID.add(Label_Student);
-
 
 		JButton btnAddStudent = new JButton("Add Student");
 //		btnAddStudent.addActionListener(new ActionListener() {
@@ -161,13 +149,6 @@ public class Swing {
 	//});
 	
 		btnAddStudent.setBounds(408, 70, 89, 23);
-	//	panel.add(btnAddStudent);
-	
-		
-
-		JButton btnNewButton_6 = new JButton("Add Student");
-		btnNewButton_6.setBounds(633, 99, 89, 23);
-		AnswerStudentID.add(btnNewButton_6);
 
 
 		JPanel panel_6 = new JPanel();
@@ -241,15 +222,25 @@ public class Swing {
 		lblNewLabel_2.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(23, 162, 228, 14);
 		panel_7.add(lblNewLabel_2);
+		
+		Choice choice_2 = new Choice();
+		choice_2.setBounds(307, 59, 109, 20);
+		panel_7.add(choice_2);
 
-		JButton btnNewButton = new JButton("Yes");
+		JButton btnNewButton = new JButton("Remove Student");
 		btnNewButton.setBorder(new LineBorder(SystemColor.window, 1, true));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				String studentId = choice_2.getSelectedItem();
+				StudentRegister student = choice_2.getSelectedItem();
+				if (!studentId.equals("")) {
+					Student removeThisStudent = controller1.btnRemoveStudent_Click();
+				}
 			}
 		});
 		btnNewButton.setBackground(SystemColor.window);
-		btnNewButton.setBounds(245, 159, 78, 23);
+		btnNewButton.setBounds(245, 159, 109, 23);
 		panel_7.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("Find");
@@ -258,14 +249,77 @@ public class Swing {
 		btnNewButton_1.setBounds(426, 55, 89, 23);
 		panel_7.add(btnNewButton_1);
 
-		Choice choice_2 = new Choice();
-		choice_2.setBounds(307, 59, 109, 20);
-		panel_7.add(choice_2);
+		
+		
+				JPanel AnswerStudentID = new JPanel();
+				AnswerStudentID.setForeground(SystemColor.desktop);
+				AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
+				tabbedPane_2.addTab("Add Student", null, AnswerStudentID, null);
+				AnswerStudentID.setLayout(null);
+				
+				
+				
+						JLabel lblEnterStudentsName = new JLabel("Enter Students name:");
+						lblEnterStudentsName.setForeground(SystemColor.controlText);
+						lblEnterStudentsName.setBackground(SystemColor.controlText);
+						lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
+						lblEnterStudentsName.setBounds(74, 84, 176, 29);
+						AnswerStudentID.add(lblEnterStudentsName);
+						
+					
+						
+								JTextPane textPane_StudentName = new JTextPane();
+								textPane_StudentName.setSelectionColor(SystemColor.controlLtHighlight);
+								textPane_StudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
+								textPane_StudentName.setBounds(490, 84, 117, 29);
+								AnswerStudentID.add(textPane_StudentName);
+								
+								JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
+								tabbedPane_3.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
+								tabbedPane.addTab("Register", null, tabbedPane_3, null);
+								
+								JTextArea textArea = new JTextArea (20, 20);
+								
+								JScrollPane panel_4 = new JScrollPane(textArea);
+								tabbedPane_3.addTab("Student Register", null, panel_4, null);
+								panel_4.setLayout(null);
 
-		Button button_1 = new Button("No");
-		button_1.setBounds(346, 162, 70, 22);
-		panel_7.add(button_1);
+								
+										
+										JButton btnNewButton_6 = new JButton("Add Student");
+										btnNewButton_6.addActionListener(new ActionListener() {
+											public void actionPerformed(ActionEvent e) {
+												String studentName = textField.getText();
+												String studentId = textField_2.getText();
+												textPane_StudentName.setText(studentName);
+												studentId = studentRegister.generateStudentID(); 
+												controller1.btnAddStudent_Click(studentName, studentId);
+												
+												frame.getContentPane().add(btnNewButton_6);
+												
+												// koppla randomGenerator till add-knappen och textruta
+												if (btnNewButton_6 != null) {
+												
+												JLabel Label_Student = new JLabel("The student will get this student ID:" + studentId );
+												Label_Student.setBounds(74, 144, 176, 14);
+												AnswerStudentID.add(Label_Student);
+												
+												
+												}	
+											}
+										});
+												btnNewButton_6.setBounds(286, 88, 89, 23);
+												AnswerStudentID.add(btnNewButton_6);
+											
+											;
+											
+											JLabel Label_Student = new JLabel("The student will get this student ID:"  );
+											Label_Student.setBounds(74, 144, 176, 14);
+											AnswerStudentID.add(Label_Student);
+											
+												//	panel.add(btnAddStudent);
 
+								
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_1.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_1.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
@@ -490,18 +544,11 @@ public class Swing {
 		button.setBounds(230, 267, 70, 22);
 		panel_9.add(button);
 
-		JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_3.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
-		tabbedPane.addTab("Register", null, tabbedPane_3, null);
-
-		JPanel panel_4 = new JPanel();
-		tabbedPane_3.addTab("Student Register", null, panel_4, null);
-		panel_4.setLayout(null);
-
 		JTextPane textPane_1 = new JTextPane();
+		//studentRegister.getStudentList();
 		textPane_1.setBounds(10, 11, 400, 198);
 		panel_4.add(textPane_1);
-
+		
 		JPanel panel_5 = new JPanel();
 		tabbedPane_3.addTab("Course Register", null, panel_5, null);
 		panel_5.setLayout(null);

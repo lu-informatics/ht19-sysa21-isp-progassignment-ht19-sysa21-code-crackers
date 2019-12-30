@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Course {
@@ -8,13 +9,13 @@ public class Course {
 	private String courseName;
 	private int credit;
 	private CourseRegister courseRegister;
-	private HashMap<String, WrittenExam> writtenExamList = new HashMap<String, WrittenExam>();
+	private ArrayList<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
-	public HashMap<String, WrittenExam> getWrittenExamList() {
+	public ArrayList<WrittenExam> getWrittenExamList() {
 		return writtenExamList;
 	}
 
-	public void setWrittenExamList(HashMap<String, WrittenExam> writtenExamList) {
+	public void setWrittenExamList(ArrayList<WrittenExam> writtenExamList) {
 		this.writtenExamList = writtenExamList;
 	}
 
@@ -43,7 +44,7 @@ public class Course {
 	}
 
 	public void add(WrittenExam writtenExam) {
-		this.writtenExamList.put(writtenExam.getExamID(), writtenExam);
+		this.writtenExamList.add(writtenExam);
 	}
 
 	public void remove(String examID) {
@@ -58,7 +59,7 @@ public class Course {
 		this.courseRegister = courseRegister;
 	}
 	public WrittenExam findExam(String examID) {
-		for (WrittenExam e : writtenExamList.values()) {
+		for (WrittenExam e : writtenExamList) {
 			if (e.getExamID().equals(examID)) {
 
 				return e;

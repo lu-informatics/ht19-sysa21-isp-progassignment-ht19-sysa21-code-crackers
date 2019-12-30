@@ -1,27 +1,28 @@
 package model;
 import java.util.Random;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
 public class WrittenExamRegister {
 
 
-private HashMap<String, WrittenExam> examList = new HashMap<String, WrittenExam>();
+private ArrayList<WrittenExam> examList = new ArrayList<WrittenExam>();
 
-public HashMap<String, WrittenExam> getExamList() {
+public ArrayList<WrittenExam> getExamList() {
 		return examList;
 	}
 
-	public void setExamList(HashMap<String, WrittenExam> examList) {
+	public void setExamList(ArrayList<WrittenExam> examList) {
 		this.examList = examList;
 	}
 
 	public void addExam(WrittenExam exam) {
-		this.examList.put(examList.getExamID(), exam);
+		this.examList.add(exam);
 	}
 
 	public WrittenExam findExam(String examID) {
-		for (WrittenExam e : examList.values()) {
+		for (WrittenExam e : examList) {
 			if (e.getExamID().equals(examID)) {
 
 				return e;

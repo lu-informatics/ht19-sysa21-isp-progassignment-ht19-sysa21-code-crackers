@@ -1,6 +1,7 @@
 package model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class WrittenExam {
 
@@ -11,13 +12,13 @@ public class WrittenExam {
 	private double maxPoints;
 	private Course course;
 
-	private HashMap<String, Result> resultList = new HashMap<String, Result>();
+	private ArrayList<Result> resultList = new ArrayList<Result>();
 
-	public HashMap<String, Result> getResultList() {
+	public ArrayList<Result> getResultList() {
 		return resultList;
 	}
 
-	public void setResultList(HashMap<String, Result> resultList) {
+	public void setResultList(ArrayList<Result> resultList) {
 		this.resultList = resultList;
 	}
 
@@ -71,7 +72,7 @@ public class WrittenExam {
 
 	public void addResultforExam(Result result) {
 
-		this.resultList.put(result.getResult(), result);
+		this.resultList.add(result);
 	}
 
 }

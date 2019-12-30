@@ -1,27 +1,27 @@
 package model;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CourseRegister {
 
-	private HashMap<String, Course> courseList = new HashMap<String, Course>();
+	private ArrayList<Course> courseList = new ArrayList<Course>();
 
-	public HashMap<String, Course> getCourseList() {
+	public ArrayList<Course> getCourseList() {
 		return courseList;
 	}
 
-	public void setCourList(HashMap<String, Course> courlist) {
+	public void setCourList(ArrayList<Course> courlist) {
 		this.courseList = courlist;
 	}
 
 	public void addCourse(Course course) {
-		this.courseList.put(course.getCourseCode(), course);
+		this.courseList.add(course);
 	}
 
 	public Course findCourse(String courseCode) {
-		for (Course c : courseList.values()) {
-			if (c.getCourseCode().contentEquals(courseCode)) {
+		for (Course c : courseList) {
+			if (c.getCourseCode().equals(courseCode)) {
 
 				return c;
 			}
@@ -29,20 +29,23 @@ public class CourseRegister {
 		return null;
 	}
 
-	public void remove(String courseCode) {
-		this.courseList.remove(courseCode);
+	public Course removeCourse (String courseCode) {
+		Course tmpCourse = this.findCourse(courseCode);
+			if (tmpCourse != null) {
+				this.courseList.remove(tmpCourse);
+				
+			}
+				return null;
 	}
 
-	public void replace(String courseCode, String newName) {
-		Course tmp = findCourse(courseCode);
-		if (tmp != null) {
-
-			// String curName = tmp.getName();
-			// if (!Course.equals(curName, oldName) || (curName == null &&
-			// !containsKey(courseCode))) {
-
-			tmp.setCourseName(newName);
+	public Course updateCourse(String courseCode, String newCourseName) {
+		Course foundCourse = this.findCourse(courseCode);
+			if (courseCode != null) {
+				foundCourse.setCourseName(newCourseName);
+					return foundCourse;
+		
 		}
+					return null;
 	}
 	public String generateCourseID() {
 		int max = 99999;

@@ -2,50 +2,55 @@
 package model;
 
 import java.util.Random;
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 public class StudentRegister {
 
-	private HashMap<String, Student> studentList = new HashMap<String, Student>();
+	private ArrayList<Student> studentList = new ArrayList<Student>();
 
-	public HashMap<String, Student> getStudentList() {
+	public ArrayList<Student> getStudentList() {
 		return studentList;
 	}
 
-	public void setStudentList(HashMap<String, Student> studentList) {
+	public void setStudentList(ArrayList<Student> studentList) {
 		this.studentList = studentList;
 	}
 
 	public void addStudent(Student student) {
-		this.studentList.put(student.getStudentID(), student);
+		this.studentList.add(student);
 	}
 
 	public Student findStudent(String studentID) {
-		// return this.studentList.get(studentID);
-		for (Student s : studentList.values()) {
+		for (Student s : studentList) {
 			if (s.getStudentID().equals(studentID)) {
 
 				return s;
 
 			}
 		}
-		return null;
+				return null;
 	}
 
-	public void removeStudent(String studentID) {
-		this.studentList.remove(studentID);
+	public Student removeStudent(String studentID) {
+		Student tmpStudent = this.findStudent(studentID);
+			if (studentID != null) {
+				this.studentList.remove(tmpStudent);
+			}
+				return null;
 	}
 
-	public void replace(String studentID, String newName) {
+	public Student updateStudent (String studentID, String newName) {
 
-		Student tmp = findStudent(studentID);
-		if (tmp != null) {
-            tmp.setStudentName(newName);
-			//String curName = tmp.getName();
-			//if (!Student.equals(curName, oldName) || (curName == null && !containsKey(studentID))) {
+		Student foundStudent = this.findStudent(studentID);
+			if (foundStudent != null) {
+				foundStudent.setStudentName(newName);
+				return foundStudent;
             
           
 		}		
+				return null;
+			
 		}
 	
 	public String generateStudentID() {

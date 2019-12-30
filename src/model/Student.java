@@ -6,8 +6,8 @@ public class Student {
 	private String studentID;
 	private String StudentName;
 	private StudentRegister studentRegister;
-	private HashMap<String, Result> studentResultList = new HashMap<String, Result>();
-	// private BasicCounter counter = new BasicCounter();
+	private ArrayList<Result> studentResultList = new ArrayList<Result>();
+	
 
 	public String getStudentName() {
 		return StudentName;
@@ -25,20 +25,20 @@ public class Student {
 		this.studentID = studentID;
 	}
 
-	public void setStudentResultList(HashMap<String, Result> studentResultList) {
+	public void setStudentResultList(ArrayList<Result> studentResultList) {
 		this.studentResultList = studentResultList;
 	}
 
-	public HashMap<String, Result> getStudentResultList() {
+	public ArrayList<Result> getStudentResultList() {
 		return studentResultList;
 
 	}
 
 	public void addResultToStudent(Result result) {
-		this.studentResultList.put(result.getResult(), result);
+		this.studentResultList.add(result);
 	}
 	public void addWrittenExamToStudent(WrittenExam exam) {
-		this.studentResultList.put(WrittenExam.getExamID(), exam);
+		this.studentResultList.add(exam);
 	}
 	
 
