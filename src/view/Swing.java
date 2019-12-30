@@ -233,9 +233,9 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 				
 				String studentId = choice_2.getSelectedItem();
-				StudentRegister student = choice_2.getSelectedItem();
+				StudentRegister student;
 				if (!studentId.equals("")) {
-					Student removeThisStudent = controller1.btnRemoveStudent_Click();
+					Student removeThisStudent;
 				}
 			}
 		});
@@ -263,16 +263,8 @@ public class Swing {
 						lblEnterStudentsName.setForeground(SystemColor.controlText);
 						lblEnterStudentsName.setBackground(SystemColor.controlText);
 						lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
-						lblEnterStudentsName.setBounds(74, 84, 176, 29);
+						lblEnterStudentsName.setBounds(10, 42, 202, 29);
 						AnswerStudentID.add(lblEnterStudentsName);
-						
-					
-						
-								JTextPane textPane_StudentName = new JTextPane();
-								textPane_StudentName.setSelectionColor(SystemColor.controlLtHighlight);
-								textPane_StudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.GRAY));
-								textPane_StudentName.setBounds(490, 84, 117, 29);
-								AnswerStudentID.add(textPane_StudentName);
 								
 								JTabbedPane tabbedPane_3 = new JTabbedPane(JTabbedPane.TOP);
 								tabbedPane_3.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
@@ -284,41 +276,68 @@ public class Swing {
 								tabbedPane_3.addTab("Student Register", null, panel_4, null);
 								panel_4.setLayout(null);
 
+								JTextPane textPane_enterStudentName = new JTextPane();
+								textPane_enterStudentName.setBackground(Color.LIGHT_GRAY);
+								textPane_enterStudentName.setBounds(222, 51, 148, 20);
+								AnswerStudentID.add(textPane_enterStudentName);
+								
+								JLabel lblEnterYourStudent = new JLabel("Enter your student ID:");
+								lblEnterYourStudent.setBackground(Color.BLACK);
+								lblEnterYourStudent.setBounds(10, 101, 175, 14);
+								AnswerStudentID.add(lblEnterYourStudent);
+								
+								JTextPane textPane_enterStudentID = new JTextPane();
+								textPane_enterStudentID.setBackground(Color.LIGHT_GRAY);
+								textPane_enterStudentID.setBounds(222, 95, 119, 20);
+								AnswerStudentID.add(textPane_enterStudentID);
+								
+								JLabel lblYourStudentId = new JLabel("your student ID must consist of six number");
+								lblYourStudentId.setBounds(10, 126, 307, 14);
+								AnswerStudentID.add(lblYourStudentId);
+								
+								JTextArea textArea_1 = new JTextArea();
+								textArea_1.setBackground(Color.LIGHT_GRAY);
+								textArea_1.setBounds(33, 169, 243, 57);
+								AnswerStudentID.add(textArea_1);
+																						
 								
 										
-										JButton btnNewButton_6 = new JButton("Add Student");
-										btnNewButton_6.addActionListener(new ActionListener() {
-											public void actionPerformed(ActionEvent e) {
-												String studentName = textField.getText();
-												String studentId = textField_2.getText();
-												textPane_StudentName.setText(studentName);
-												studentId = studentRegister.generateStudentID(); 
-												controller1.btnAddStudent_Click(studentName, studentId);
+		JButton btnNewButton_6 = new JButton("Add Student");
+		btnNewButton_6.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			
+			String studentID = textField.getText();
+			String studentName = textField_2.getText();
+			
+			if (!studentID.equals("") && !studentName.equals("")) {
+				if (controller1.btnFindStudent_Click(studentID) == null) {
+					Student addThisStudent = new Student (studentID, studentName);
+					controller1.btnAddStudent_Click(addThisStudent);
+					textArea.setText("This student has been added to the studentregister.");
+				}
+				else if (controller1.btnFindStudent_Click(studentID) != null) {
+					textArea.setText("This student has already been registered.");
+				}
+			}
+			
+			else {
+				textArea.setText("Put valid information in fields: student-ID, student name");
+			}
+			textField.setText("");
+			textField_2.setText("");
+		}	
+		
+		});
+				btnNewButton_6.setBounds(281, 153, 89, 23);
+				AnswerStudentID.add(btnNewButton_6);
+			
 												
-												frame.getContentPane().add(btnNewButton_6);
 												
-												// koppla randomGenerator till add-knappen och textruta
-												if (btnNewButton_6 != null) {
-												
-												JLabel Label_Student = new JLabel("The student will get this student ID:" + studentId );
-												Label_Student.setBounds(74, 144, 176, 14);
-												AnswerStudentID.add(Label_Student);
-												
-												
-												}	
-											}
-										});
-												btnNewButton_6.setBounds(286, 88, 89, 23);
-												AnswerStudentID.add(btnNewButton_6);
+								
 											
 											;
 											
-											JLabel Label_Student = new JLabel("The student will get this student ID:"  );
-											Label_Student.setBounds(74, 144, 176, 14);
-											AnswerStudentID.add(Label_Student);
-											
-												//	panel.add(btnAddStudent);
-
+																				//	panel.add(btnAddStudent)
 								
 		JTabbedPane tabbedPane_1 = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_1.setBackground(SystemColor.controlLtHighlight);
