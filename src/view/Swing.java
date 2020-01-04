@@ -308,7 +308,7 @@ public class Swing {
 			
 			String studentID = textField.getText();
 			String studentName = textField_2.getText();
-			//Customer foundCustomer = controller.searchCustomerinList(customerNbr);
+			//Student foundStudent = controller.btnFindStudent_Click(studentID);
 
 			
 			if (!studentID.equals("") && !studentName.equals("")) {
