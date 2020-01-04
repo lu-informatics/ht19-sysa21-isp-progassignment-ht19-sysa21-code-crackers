@@ -309,19 +309,20 @@ public class Swing {
 			String studentID = textField.getText();
 			String studentName = textField_2.getText();
 			
+			
 			if (!studentID.equals("") && !studentName.equals("")) {
 				if (controller1.btnFindStudent_Click(studentID) == null) {
 					Student addThisStudent = new Student (studentID, studentName);
 					controller1.btnAddStudent_Click(addThisStudent);
-					textArea.setText("This student has been added to the studentregister.");
+					textArea_1.setText("This student has been added to the studentregister.");
 				}
 				else if (controller1.btnFindStudent_Click(studentID) != null) {
-					textArea.setText("This student has already been registered.");
+					textArea_1.setText("This student has already been registered.");
 				}
 			}
 			
 			else {
-				textArea.setText("Put valid information in fields: student-ID, student name");
+				textArea_1.setText("Put valid information in fields: student-ID, student name");
 			}
 			textField.setText("");
 			textField_2.setText("");
