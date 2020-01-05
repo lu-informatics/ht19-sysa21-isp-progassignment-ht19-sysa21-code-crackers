@@ -1,6 +1,8 @@
 package view;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
@@ -48,6 +50,7 @@ import javax.swing.JFormattedTextField.AbstractFormatter;
 import com.toedter.calendar.JDateChooser;
 
 import control.controller;
+import model.Course;
 import model.CourseRegister;
 import model.Student;
 import model.StudentRegister;
@@ -74,6 +77,7 @@ public class Swing {
 	private StudentRegister studentRegister;
 	private CourseRegister courseRegister;
 	private WrittenExamRegister writtenExamRegister;
+	private JTextPane textPane_enterStudentName;
 	
 
 	/**
@@ -306,13 +310,14 @@ public class Swing {
 		btnNewButton_6.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			String studentID = textField.getText();
-			String studentName = textField_2.getText();
+			String studentName = textPane_enterStudentName.getText();
+			String studentID = textPane_enterStudentID.getText();
+			
 			//Student foundStudent = controller.btnFindStudent_Click(studentID);
 
 			
 			if (!studentID.equals("") && !studentName.equals("")) {
-				if (controller1.btnFindStudent_Click(studentID) == null) {
+			 if (controller1.btnFindStudent_Click(studentID) == null) {
 					Student addThisStudent = new Student (studentID, studentName);
 					controller1.btnAddStudent_Click(addThisStudent);
 					textArea_1.setText("This student has been added to the studentregister.");
@@ -321,12 +326,16 @@ public class Swing {
 					textArea_1.setText("This student has already been registered.");
 				}
 			}
+		
+		
 			
 			else {
 				textArea_1.setText("Put valid information in fields: student-ID, student name");
 			}
-			textField.setText("");
-			textField_2.setText("");
+		
+			textPane_enterStudentName.setText("");
+			textPane_enterStudentID.setText("");
+			
 		}	
 		
 		});
@@ -350,6 +359,7 @@ public class Swing {
 		panel_1.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_1.addTab("Add Course", null, panel_1, null);
 		panel_1.setLayout(null);
+		
 
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("7,5 points");
 		rdbtnNewRadioButton.setBackground(SystemColor.controlLtHighlight);
@@ -366,14 +376,43 @@ public class Swing {
 		rdbtnNewRadioButton_2.setBounds(212, 161, 109, 23);
 		panel_1.add(rdbtnNewRadioButton_2);
 
+		ButtonGroup group = new ButtonGroup ();
+		group.add(rdbtnNewRadioButton);
+		group.add(rdbtnNewRadioButton_1);
+		group.add(rdbtnNewRadioButton_2);
+		
+
+		JButton btnNewButton_2 = new JButton("Add Course");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed (ActionEvent e) {
+				String courseName = textField_2.getText();
+				String courseCode = textField_3.getText();
+				//int courseCredit = group;
+				if (!courseName.equals("") && !courseCode.equals("")) {
+					if (controller1.btnFindCourse_Click(courseCode) == null) {
+						Course addThisCourse = new Course (courseName, courseCode);
+						
+						
+						
+					}
+				}
+				
+				
+			}
+		});
+		
+		
+		
+		
 		JLabel lblNewLabel_3 = new JLabel("Enter the course name:");
 		lblNewLabel_3.setBounds(20, 14, 160, 14);
 		panel_1.add(lblNewLabel_3);
 
-		JButton btnNewButton_2 = new JButton("Add Course");
-		btnNewButton_2.setBounds(214, 203, 89, 23);
-		panel_1.add(btnNewButton_2);
+		
 
+		btnNewButton_2.setBounds(214, 203, 89, 23);
+		panel_1.add(btnNewButton_2); 
+		
 		JLabel lblNewLabel_4 = new JLabel("Enter the course code:");
 		lblNewLabel_4.setBounds(20, 54, 149, 14);
 		panel_1.add(lblNewLabel_4);

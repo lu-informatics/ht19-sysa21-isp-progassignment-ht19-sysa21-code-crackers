@@ -11,6 +11,13 @@ public class Course {
 	private CourseRegister courseRegister;
 	private ArrayList<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
+	public Course(String courseName, String courseCode) {
+		this.courseName = courseName;
+		this.courseCode = courseCode;
+	}
+
+	
+
 	public ArrayList<WrittenExam> getWrittenExamList() {
 		return writtenExamList;
 	}
