@@ -155,13 +155,14 @@ public class Test {
 			System.out.println(courseRegister.findCourse("sysa21"));
 		}
 
-		for (Student studentX : studentRegister.getStudentList()) {
-			for (Result G : studentX.getStudentResultList()) {
-				System.out.println(G.getLetterGrade());
+				for ( Student ss : studentRegister.getStudentList()) {
+					for (Result H : ss.getStudentResultList()) {
+						System.out.println(H.getStudent().getStudentName() + H.getLetterGrade());
+					}
+				}
+			
 
-			}
-
-		}
+		
 		c1.remove("E10003");
 		for (WrittenExam tmp : c1.getWrittenExamList()) {
 			System.out.println("Exam: " + tmp.getExamID());
@@ -173,3 +174,4 @@ public class Test {
 		}
 	}
 }
+
