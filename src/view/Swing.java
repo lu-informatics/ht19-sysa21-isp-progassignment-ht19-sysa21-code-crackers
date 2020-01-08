@@ -387,7 +387,7 @@ public class Swing {
 			public void actionPerformed (ActionEvent e) {
 				String courseName = textField_2.getText();
 				String courseCode = textField_3.getText();
-				//int courseCredit = group;
+			//	int courseCredit = group.setSelected(m, b); // vilka paramentrar?
 				if (!courseName.equals("") && !courseCode.equals("")) {
 					if (controller1.btnFindCourse_Click(courseCode) == null) {
 						Course addThisCourse = new Course (courseName, courseCode);

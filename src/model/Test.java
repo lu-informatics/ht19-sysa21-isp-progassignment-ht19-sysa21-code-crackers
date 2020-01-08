@@ -137,7 +137,7 @@ public class Test {
 		Student student = studentRegister.updateStudent("S10000", "Jenny");
 		System.out.println("Student: " + student.getStudentID() + ", " + student.getStudentName());
 
-		Student studentTmp = studentRegister.removeStudent("S10000"); //Medvetna om att studentTmp inte används, hitta lösning! 
+		 studentRegister.removeStudent("S10000"); //Medvetna om att studentTmp inte används, hitta lösning! 
 		for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println("Students: " + tmp.getStudentName() + " " + tmp.getStudentID());
 		}
@@ -148,7 +148,7 @@ public class Test {
 				Course course = courseRegister.updateCourse("sysa21", "Hejsan svejsan");
 				System.out.println("Course: " + course.getCourseName() + ", " + course.getCourseCode()); 
 
-				Course tmpCourse = courseRegister.removeCourse("sysa21");
+				 courseRegister.removeCourse("sysa21");
 				for ( Course courseX : courseRegister.getCourseList()) {
 				System.out.println("Courses: " +courseX.getCourseName() + " ," +  courseX.getCourseCode());
 				System.out.println(courseRegister.findCourse("sysa21"));
@@ -159,10 +159,13 @@ public class Test {
 				System.out.println(G.getLetterGrade() + " " + G.getStudent().getStudentName() + " " + G.getResult());
 				
 					}
+				}
+			
+					c1.remove("E10003");
+					for (WrittenExam tmp : c1.getWrittenExamList()) {
+						System.out.println("Exam: " + tmp.getExamID());
+					}
 				
-				
-					
-			}
 		}
 	}
 
