@@ -9,10 +9,10 @@ public class Student {
 	private ArrayList<Result> studentResultList = new ArrayList<Result>();
 	
 
-	public Student(String studentID, String studentName) {
-		this.studentID = studentID;
-		this.StudentName = studentName;
-	}
+	//public Student(String studentID, String studentName) {
+	//	this.studentID = studentID;
+		//this.StudentName = studentName;
+	//}
 
 	public String getStudentName() {
 		return StudentName;
