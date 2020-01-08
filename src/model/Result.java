@@ -35,8 +35,8 @@ public class Result {
 		return writtenExam;
 	}
 
-	public void setWrittenExam(WrittenExam writtenexam) {
-		this.writtenExam = writtenexam;
+	public void setWrittenExam(WrittenExam writtenExam) {
+		this.writtenExam = writtenExam;
 	}
 	
 }
