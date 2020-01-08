@@ -1,4 +1,4 @@
-package model;
+/*package model;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,6 +48,6 @@ public ArrayList<WrittenExam> getExamList() {
 	}
 
 }
-
+*/
 
 
