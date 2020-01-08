@@ -8,6 +8,8 @@ public class Test {
 	public static void main(String[] args) {
 
 		StudentRegister studentRegister = new StudentRegister();
+		
+		CourseRegister courseRegister = new CourseRegister();
 
 		Course c1 = new Course();
 		Course c2 = new Course();
@@ -122,8 +124,6 @@ public class Test {
 		result3.setResult("63");
 		result4.setResult("11");
 
-		CourseRegister courseRegister = new CourseRegister();
-
 		courseRegister.addCourse(c1);
 		courseRegister.addCourse(c2);
 
@@ -137,7 +137,7 @@ public class Test {
 		Student student = studentRegister.updateStudent("S10000", "Jenny");
 		System.out.println("Student: " + student.getStudentID() + ", " + student.getStudentName());
 
-		Student studentTmp = studentRegister.removeStudent("S10000");
+		Student studentTmp = studentRegister.removeStudent("S10000"); //Medvetna om att studentTmp inte används, hitta lösning! 
 		for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println("Students: " + tmp.getStudentName() + " " + tmp.getStudentID());
 		}
@@ -158,9 +158,12 @@ public class Test {
 					for ( Result G : studentX.getStudentResultList()) {
 				System.out.println(G.getLetterGrade() + " " + G.getStudent().getStudentName() + " " + G.getResult());
 				
+					}
 				
+				
+					
 			}
 		}
 	}
-}
+
 
