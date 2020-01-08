@@ -113,17 +113,20 @@ public class Test {
 		writtenExam3.setCourse(c1);
 		writtenExam4.setCourse(c1);
 		
+
+		
 		
 /*
-		result1.setLetterGrade("A");
 		result2.setLetterGrade("B");
 		result3.setLetterGrade("C");
 		result4.setLetterGrade("U");
 */
 		result1.CalcExamGrade(100);
-		result2.CalcExamGrade(54);
+		result2.CalcExamGrade(100);
 		result3.CalcExamGrade(100);
-		result4.CalcExamGrade(34);
+		result4.CalcExamGrade(100);
+		
+		result1.setResult(99);
 
 		courseRegister.addCourse(c1);
 		courseRegister.addCourse(c2);
@@ -157,12 +160,12 @@ public class Test {
 
 				for ( Student ss : studentRegister.getStudentList()) {
 					for (Result H : ss.getStudentResultList()) {
-						System.out.println(H.getStudent().getStudentName() + H.getLetterGrade());
+						System.out.println(H.getStudent().getStudentName() + " Grade: " +H.getLetterGrade() + " " + H.getResult());
 					}
 				}
 			
 
-		
+/*		
 		c1.remove("E10003");
 		for (WrittenExam tmp : c1.getWrittenExamList()) {
 			System.out.println("Exam: " + tmp.getExamID());
@@ -172,6 +175,8 @@ public class Test {
 			}
 		
 		System.out.println(result1.getLetterGrade() + " " + result2.getLetterGrade());
-	}
+	
+	
+	*/}
 }
 
