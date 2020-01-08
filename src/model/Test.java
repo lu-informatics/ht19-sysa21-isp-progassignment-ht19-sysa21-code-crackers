@@ -120,6 +120,28 @@ public class Test {
 		c1.setCourseRegister(courseRegister);
 		c2.setCourseRegister(courseRegister);
 
-	}
+		for (Student tmp : studentRegister.getStudentList()) {
+			System.out.println("Namn: " + tmp.getStudentName() + " StudentID: " + tmp.getStudentID());
+		}
 
+		Student student = studentRegister.updateStudent("S10000", "Jenny");
+		System.out.println("Student: " + student.getStudentID() + ", " + student.getStudentName());
+
+		Student studentTmp = studentRegister.removeStudent("S10000");
+		for (Student tmp : studentRegister.getStudentList()) {
+			System.out.println("Students: " + tmp.getStudentName() + " " + tmp.getStudentID());
+
+			for (Course c : courseRegister.getCourseList()) {
+				System.out.println("Namn: " + c.getCourseName() + " CourseCode " + c.getCourseCode());
+				
+				Course course = courseRegister.updateCourse("sysa21", "Hejsan svejsan");	
+				System.out.println("Course: " + course.getCourseName() + ", " + course.getCourseCode());
+				
+				Course tmpCourse = courseRegister.removeCourse("sysa21");
+				for ( Course x : tmpCourse.getCourseRegister()
+					System.out.println("Courses: " + x.getCourseName() + "CourseCode: " + x.getCourseCode());
+					
+			}
+				}
+			}
 }
