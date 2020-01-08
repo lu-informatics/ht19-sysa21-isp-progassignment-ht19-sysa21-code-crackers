@@ -34,7 +34,7 @@ public class StudentRegister {
 
 	public Student removeStudent(String studentID) {
 		Student tmpStudent = this.findStudent(studentID);
-			if (studentID != null) {
+			if (tmpStudent != null) {
 				this.studentList.remove(tmpStudent);
 			}
 				return null;

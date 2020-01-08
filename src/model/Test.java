@@ -158,14 +158,17 @@ public class Test {
 				System.out.println(G.getLetterGrade() + " " + G.getStudent().getStudentName() + " " + G.getResult());
 				
 					}
-				}
 			
+				}
 					c1.remove("E10003");
 					for (WrittenExam tmp : c1.getWrittenExamList()) {
 						System.out.println("Exam: " + tmp.getExamID());
 					}
+					for ( WrittenExam wee : c1.getWrittenExamList()) {
+						System.out.println(wee.getExamID()+ " " + wee.getLocation()) ;
 				
-		}
+					}	
 	}
+}
 
 

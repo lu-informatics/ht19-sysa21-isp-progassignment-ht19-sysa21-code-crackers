@@ -55,8 +55,8 @@ public class Course {
 
 	public void remove(String examID) {
 		WrittenExam tmpExam = this.findExam(examID);
-		if (examID != null){
-			this.writtenExamList.remove(examID);
+		if (tmpExam != null){
+			this.writtenExamList.remove(tmpExam);
 		}
 	}
 	
