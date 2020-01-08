@@ -53,12 +53,11 @@ public class Course {
 		this.writtenExamList.add(writtenExam);
 	}
 
-	public WrittenExam remove(String examID) {
+	public void remove(String examID) {
 		WrittenExam tmpExam = this.findExam(examID);
 		if (examID != null){
 			this.writtenExamList.remove(examID);
 		}
-		return tmpExam;
 	}
 	
 
