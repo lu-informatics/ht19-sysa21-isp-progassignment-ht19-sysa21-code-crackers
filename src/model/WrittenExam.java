@@ -71,7 +71,6 @@ public class WrittenExam {
 	}
 
 	public void addResultforExam(Result result) {
-
 		this.resultList.add(result);
 	}
 
