@@ -119,12 +119,12 @@ public class Test {
 		result2.setLetterGrade("B");
 		result3.setLetterGrade("C");
 		result4.setLetterGrade("U");
-
+*/
 		result1.CalcExamGrade(100);
 		result2.CalcExamGrade(54);
 		result3.CalcExamGrade(100);
 		result4.CalcExamGrade(34);
-*/
+
 		courseRegister.addCourse(c1);
 		courseRegister.addCourse(c2);
 
@@ -169,9 +169,9 @@ public class Test {
 		}
 		for (WrittenExam wee : c1.getWrittenExamList()) {
 			System.out.println(wee.getExamID() + " " + wee.getLocation() + " " + wee.getMaxPoints() + " " + wee.getTime() + " " + wee.getDate());
-			
-
-		}
+			}
+		
+		System.out.println(result1.getLetterGrade() + " " + result2.getLetterGrade());
 	}
 }
 
