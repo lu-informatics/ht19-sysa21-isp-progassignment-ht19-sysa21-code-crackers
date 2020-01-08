@@ -39,9 +39,9 @@ public class Student {
 
 	}
 	
-	public Result findResult(String result) {
+	public Result findResult(int result) {
 		for (Result r : studentResultList) {
-			if(r.getResult().equals(result)) {
+			if(r.getResult() ==result) {
 				return r;
 			}
 		}
