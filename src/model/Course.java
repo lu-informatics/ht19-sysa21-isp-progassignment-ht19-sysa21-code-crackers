@@ -53,7 +53,7 @@ public class Course {
 		this.writtenExamList.add(writtenExam);
 	}
 
-	public void remove(String examID) {
+	public void remove(WrittenExam examID) {
 		this.writtenExamList.remove(examID);
 	}
 
