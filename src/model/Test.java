@@ -167,7 +167,8 @@ public class Test {
 			System.out.println("Exam: " + tmp.getExamID());
 		}
 		for (WrittenExam wee : c1.getWrittenExamList()) {
-			System.out.println(wee.getExamID() + " " + wee.getLocation());
+			System.out.println(wee.getExamID() + " " + wee.getLocation() + " " + wee.getMaxPoints() + " " + wee.getTime() + " " + wee.getDate());
+			
 
 		}
 	}
