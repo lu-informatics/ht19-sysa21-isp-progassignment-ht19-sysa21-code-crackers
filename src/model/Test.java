@@ -3,31 +3,29 @@ package model;
 import java.util.List;
 import java.util.*;
 
-
-
 public class Test {
 
 	public static void main(String[] args) {
-		
+
 		StudentRegister studentRegister = new StudentRegister();
 
 		Course c1 = new Course();
 		Course c2 = new Course();
 
-		WrittenExam wE1 = new WrittenExam();
-		WrittenExam wE2 = new WrittenExam();
-		WrittenExam wE3 = new WrittenExam();
-		WrittenExam wE4 = new WrittenExam();
+		WrittenExam writtenExam1 = new WrittenExam();
+		WrittenExam writtenExam2 = new WrittenExam();
+		WrittenExam writtenExam3 = new WrittenExam();
+		WrittenExam writtenExam4 = new WrittenExam();
 
-		Student s1 = new Student();
-		Student s2 = new Student();
-		Student s3 = new Student();
-		Student s4 = new Student();
+		Student student1 = new Student();
+		Student student2 = new Student();
+		Student student3 = new Student();
+		Student student4 = new Student();
 
-		Result r1 = new Result();
-		Result r2 = new Result();
-		Result r3 = new Result();
-		Result r4 = new Result();
+		Result result1 = new Result();
+		Result result2 = new Result();
+		Result result3 = new Result();
+		Result result4 = new Result();
 
 		c1.setCourseCode("sysa21");
 		c1.setCourseName("ISProjekt");
@@ -37,122 +35,91 @@ public class Test {
 		c2.setCourseName("Modelering");
 		c2.setCredit(55);
 
-		wE1.setExamID("E10000");
-		wE1.setDate("22 maj 2020");
-		wE1.setLocation("Spartavägen 1");
-		wE1.setTime("08:00");
-		wE1.setMaxPoints(100);
-		wE1.setCourse(c1);
+		writtenExam1.setExamID("E10000");
+		writtenExam1.setDate("22 maj 2020");
+		writtenExam1.setLocation("Spartavägen 1");
+		writtenExam1.setTime("08:00");
+		writtenExam1.setMaxPoints(100);
+		writtenExam1.setCourse(c1);
 
-		wE2.setExamID("E10001");
-		wE2.setDate("22 maj 2020");
-		wE2.setLocation("Spartavägen 1");
-		wE2.setTime("08:00");
-		wE2.setMaxPoints(100);
-		wE2.setCourse(c2);
+		writtenExam2.setExamID("E10001");
+		writtenExam2.setDate("22 maj 2020");
+		writtenExam2.setLocation("Spartavägen 1");
+		writtenExam2.setTime("08:00");
+		writtenExam2.setMaxPoints(100);
+		writtenExam2.setCourse(c2);
 
-		wE3.setExamID("E10002");
-		wE3.setDate("22 maj 2020");
-		wE3.setLocation("Spartavägen 1");
-		wE3.setTime("08:00");
-		wE3.setMaxPoints(100);
-		wE3.setCourse(c1);
+		writtenExam3.setExamID("E10002");
+		writtenExam3.setDate("22 maj 2020");
+		writtenExam3.setLocation("Spartavägen 1");
+		writtenExam3.setTime("08:00");
+		writtenExam3.setMaxPoints(100);
+		writtenExam3.setCourse(c1);
 
-		wE4.setExamID("E10003");
-		wE4.setDate("22 maj 2020");
-		wE4.setLocation("Spartavägen 1");
-		wE4.setTime("08:00");
-		wE4.setMaxPoints(100);
-		wE4.setCourse(c2);
+		writtenExam4.setExamID("E10003");
+		writtenExam4.setDate("22 maj 2020");
+		writtenExam4.setLocation("Spartavägen 1");
+		writtenExam4.setTime("08:00");
+		writtenExam4.setMaxPoints(100);
+		writtenExam4.setCourse(c2);
 
-		s1.setStudentName("David");
-		s1.setStudentID("S10000");
-		s2.setStudentName("Hanna");
-		s2.setStudentID("S10001");
-		s3.setStudentName("Martin");
-		s3.setStudentID("S10002");
-		s4.setStudentName("Gabriel");
-		s4.setStudentID("S10003");
+		student1.setStudentName("David");
+		student1.setStudentID("S10000");
+		student2.setStudentName("Hanna");
+		student2.setStudentID("S10001");
+		student3.setStudentName("Martin");
+		student3.setStudentID("S10002");
+		student4.setStudentName("Gabriel");
+		student4.setStudentID("S10003");
 
-		wE3.addResultforExam(r1);
-		s1.addResultToStudent(r1);
-		r1.setStudent(s1);
-		r1.setWrittenExam(wE3);
+		writtenExam3.addResultforExam(result1);
+		student1.addResultToStudent(result1);
+		result1.setStudent(student1);
+		result1.setWrittenExam(writtenExam3);
 
-		wE2.addResultforExam(r2);
-		s2.addResultToStudent(r2);
-		r2.setStudent(s2);
-		r2.setWrittenExam(wE2);
+		writtenExam2.addResultforExam(result2);
+		student2.addResultToStudent(result2);
+		result2.setStudent(student2);
+		result2.setWrittenExam(writtenExam2);
 
-		wE1.addResultforExam(r3);
-		s3.addResultToStudent(r3);
-		r3.setStudent(s3);
-		r3.setWrittenExam(wE1);
+		writtenExam1.addResultforExam(result3);
+		student3.addResultToStudent(result3);
+		result3.setStudent(student3);
+		result3.setWrittenExam(writtenExam1);
 
-		wE4.addResultforExam(r4);
-		s4.addResultToStudent(r4);
-		r4.setStudent(s4);
-		r4.setWrittenExam(wE4);
+		writtenExam4.addResultforExam(result4);
+		student4.addResultToStudent(result4);
+		result4.setStudent(student4);
+		result4.setWrittenExam(writtenExam4);
 
-		StudentRegister studentregister = new StudentRegister();
+		studentRegister.addStudent(student1);
+		studentRegister.addStudent(student2);
+		studentRegister.addStudent(student3);
+		studentRegister.addStudent(student4);
 
-		studentregister.addStudent(s1);
-		studentregister.addStudent(s2);
-		studentregister.addStudent(s3);
-		studentregister.addStudent(s4);
+		student1.setStudentRegister(studentRegister);
+		student2.setStudentRegister(studentRegister);
+		student3.setStudentRegister(studentRegister);
+		student4.setStudentRegister(studentRegister);
 
-		s1.setStudentRegister(studentregister);
-		s2.setStudentRegister(studentregister);
-		s3.setStudentRegister(studentregister);
-		s4.setStudentRegister(studentregister);
+		c1.add(writtenExam4);
+		c1.add(writtenExam3);
+		c2.add(writtenExam2);
+		c2.add(writtenExam1);
 
-		c1.add(wE4);
-		c1.add(wE3);
-		c2.add(wE2);
-		c2.add(wE1);
+		writtenExam1.setCourse(c2);
+		writtenExam2.setCourse(c2);
+		writtenExam3.setCourse(c1);
+		writtenExam4.setCourse(c1);
 
-		wE1.setCourse(c2);
-		wE2.setCourse(c2);
-		wE3.setCourse(c1);
-		wE4.setCourse(c1);
+		CourseRegister courseRegister = new CourseRegister();
 
-		CourseRegister courseregister = new CourseRegister();
+		courseRegister.addCourse(c1);
+		courseRegister.addCourse(c2);
 
-		courseregister.addCourse(c1);
-		courseregister.addCourse(c2);
+		c1.setCourseRegister(courseRegister);
+		c2.setCourseRegister(courseRegister);
 
-		c1.setCourseRegister(courseregister);
-		c2.setCourseRegister(courseregister);
-
-	
-	//	studentregister.getStudentList()("S10003", "Peter"); 
-		System.out.println(studentregister.getStudentList());
-		System.out.println(courseregister.getCourseList());
-
-		System.out.println(s4.getStudentName());
-
-		for (Student student : studentregister.getStudentList()) { // skriver ut students ID kopplat till
-																			// namnet den har
-			System.out.println(student.getStudentID() + student.getStudentName());
-		}
-
-		for (Course course : courseregister.getCourseList()) {
-			System.out.println(course.getCourseCode() + course.getCourseName() + course.getCredit());
-		}
-
-		System.out.println(studentregister.findStudent("S10000"));
-
-		// Alla kopplingar gjorda
-
-		
-		
-	//	students.add(new Student (sR.generateID());
-		
-		
-			}
-		
-		
-		
 	}
 
-
+}
