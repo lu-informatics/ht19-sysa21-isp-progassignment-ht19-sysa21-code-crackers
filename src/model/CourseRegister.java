@@ -11,8 +11,8 @@ public class CourseRegister {
 		return courseList;
 	}
 
-	public void setCourList(ArrayList<Course> courlist) {
-		this.courseList = courlist;
+	public void setCourList(ArrayList<Course> courseList) {
+		this.courseList = courseList;
 	}
 
 	public void addCourse(Course course) {
