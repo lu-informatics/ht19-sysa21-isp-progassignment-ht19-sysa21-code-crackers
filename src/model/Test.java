@@ -111,6 +111,16 @@ public class Test {
 		writtenExam2.setCourse(c2);
 		writtenExam3.setCourse(c1);
 		writtenExam4.setCourse(c1);
+		
+		result1.setLetterGrade("A");
+		result2.setLetterGrade("B");
+		result3.setLetterGrade("C");
+		result4.setLetterGrade("U");
+		
+		result1.setResult("100");
+		result2.setResult("84");
+		result3.setResult("63");
+		result4.setResult("11");
 
 		CourseRegister courseRegister = new CourseRegister();
 
@@ -130,18 +140,27 @@ public class Test {
 		Student studentTmp = studentRegister.removeStudent("S10000");
 		for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println("Students: " + tmp.getStudentName() + " " + tmp.getStudentID());
+		}
 
 			for (Course c : courseRegister.getCourseList()) {
 				System.out.println("Namn: " + c.getCourseName() + " CourseCode " + c.getCourseCode());
-				
-				Course course = courseRegister.updateCourse("sysa21", "Hejsan svejsan");	
-				System.out.println("Course: " + course.getCourseName() + ", " + course.getCourseCode());
-				
+			}
+				Course course = courseRegister.updateCourse("sysa21", "Hejsan svejsan");
+				System.out.println("Course: " + course.getCourseName() + ", " + course.getCourseCode()); 
+
 				Course tmpCourse = courseRegister.removeCourse("sysa21");
-				for ( Course x : tmpCourse.getCourseRegister()
-					System.out.println("Courses: " + x.getCourseName() + "CourseCode: " + x.getCourseCode());
-					
-			}
+				for ( Course courseX : courseRegister.getCourseList()) {
+				System.out.println("Courses: " +courseX.getCourseName() + " ," +  courseX.getCourseCode());
+				System.out.println(courseRegister.findCourse("sysa21"));
 				}
+		
+				for ( Student studentX : studentRegister.getStudentList()) {
+					for ( Result G : studentX.getStudentResultList()) {
+				System.out.println(G.getLetterGrade() + " " + G.getStudent().getStudentName() + " " + G.getResult());
+				
+				
 			}
+		}
+	}
 }
+
