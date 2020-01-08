@@ -52,7 +52,7 @@ public class Result {
 	
 }
 */
-	public void CalcExamGrade(int results) {
+	public void CalcExamGrade() {
 		
 			if(result < 50) {
 				this.letterGrade = "U";
