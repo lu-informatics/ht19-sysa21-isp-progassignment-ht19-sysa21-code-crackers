@@ -11,7 +11,7 @@ public class CourseRegister {
 		return courseList;
 	}
 
-	public void setCourList(ArrayList<Course> courseList) {
+	public void setCourseList(ArrayList<Course> courseList) {
 		this.courseList = courseList;
 	}
 
@@ -29,7 +29,7 @@ public class CourseRegister {
 		return null;
 	}
 
-	public Course removeCourse (String courseCode) {
+	public Course removeCourse(String courseCode) {
 		Course tmpCourse = this.findCourse(courseCode);
 			if (tmpCourse != null) {
 				this.courseList.remove(tmpCourse);
