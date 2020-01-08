@@ -42,10 +42,10 @@ public class StudentRegister {
 
 	public Student updateStudent (String studentID, String newName) {
 
-		Student foundStudent = this.findStudent(studentID);
-			if (foundStudent != null) {
-				foundStudent.setStudentName(newName);
-				return foundStudent;
+		Student tmpStudent = this.findStudent(studentID);
+			if (tmpStudent != null) {
+				tmpStudent.setStudentName(newName);
+				return tmpStudent;
             
           
 		}		
