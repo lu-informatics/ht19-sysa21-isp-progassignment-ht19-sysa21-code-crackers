@@ -38,13 +38,29 @@ public class Student {
 		return studentResultList;
 
 	}
+	
+	public Result findResult(String result) {
+		for (Result r : studentResultList) {
+			if(r.getResult().equals(result)) {
+				return r;
+			}
+		}
+		return null;
+	}
 
 	public void addResultToStudent(Result result) {
 		this.studentResultList.add(result);
 	}
-	public void addWrittenExamToStudent(WrittenExam exam) {
-		this.studentResultList.add(exam);
-	}
+	//public void addWrittenExam(Result result, String examID) {
+		//for(Result r : studentResultList) {
+		
+				
+				
+		//	}
+		//}
+		
+		
+//	}
 	
 
 	public StudentRegister getStudentRegister() {
