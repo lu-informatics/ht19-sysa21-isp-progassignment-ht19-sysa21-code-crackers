@@ -10,8 +10,8 @@ public class Test {
 
 		CourseRegister courseRegister = new CourseRegister();
 
-		Course c1 = new Course("sysa21", "IS-Projekt");
-		Course c2 = new Course("sysa22", "Modellering");
+		Course c1 = new Course("C10000", "IS-Projekt");
+		Course c2 = new Course("C10001", "Modellering");
 
 		WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
@@ -149,13 +149,13 @@ public class Test {
 		for (Course c : courseRegister.getCourseList()) {
 			System.out.println("Namn: " + c.getCourseName() + " CourseCode " + c.getCourseCode());
 		}
-		Course course = courseRegister.updateCourse("sysa21", "Hejsan svejsan");
+		Course course = courseRegister.updateCourse("C10000", "Hejsan svejsan");
 		System.out.println("Course: " + course.getCourseName() + ", " + course.getCourseCode());
 
-		courseRegister.removeCourse("sysa21");
+		courseRegister.removeCourse("C10000");
 		for (Course courseX : courseRegister.getCourseList()) {
 			System.out.println("Courses: " + courseX.getCourseName() + " ," + courseX.getCourseCode());
-			System.out.println(courseRegister.findCourse("sysa21"));
+			System.out.println(courseRegister.findCourse("C10000"));
 		}
 
 				for ( Student ss : studentRegister.getStudentList()) {
