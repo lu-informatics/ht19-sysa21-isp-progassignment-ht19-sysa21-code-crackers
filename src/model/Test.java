@@ -164,7 +164,17 @@ public class Test {
 					}
 				}
 			
-
+				courseRegister.generateCourseID();
+			
+				for (Student stud : studentList) {
+					if (stud.getStudentID().equals(studentID)) {
+						System.out.println("Student already exists");
+					}	else {
+						System.out.println("Student: " + student.getStudentID() + "added...");
+						stud.getStudentID()args;
+					}
+					
+				}
 /*		
 		c1.remove("E10003");
 		for (WrittenExam tmp : c1.getWrittenExamList()) {
