@@ -76,7 +76,7 @@ public class Swing {
 	private controller controller1;
 	private StudentRegister studentRegister;
 	private CourseRegister courseRegister;
-	private WrittenExamRegister writtenExamRegister;
+	//private WrittenExamRegister writtenExamRegister;
 	private JTextPane textPane_enterStudentName;
 	
 
