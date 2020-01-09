@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Course {
 
@@ -76,6 +77,17 @@ public class Course {
 
 			}
 		}
+	
 		return null;
-}
+	}
+		
+		public String generateCourseID() {
+			int max = 99999;
+			int min = 10000;
+			int range = max - min + 10000;
+			Random rand = new Random();
+			
+			return String.format("C-%05d", rand.nextInt(range));
+		}
+
 }
