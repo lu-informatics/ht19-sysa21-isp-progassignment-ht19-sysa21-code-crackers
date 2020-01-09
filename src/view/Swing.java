@@ -194,14 +194,21 @@ public class Swing {
 		JLabel lblResponse = new JLabel("Response:");
 		lblResponse.setBounds(44, 263, 68, 14);
 		panel_6.add(lblResponse);
-
-		Choice choice_1 = new Choice();
-		choice_1.setBounds(304, 69, 114, 26);
-		panel_6.add(choice_1);
 		
 		JLabel label_2 = new JLabel("Response:");
 		label_2.setBounds(44, 126, 68, 14);
 		panel_6.add(label_2);
+		
+		JComboBox ChooseStudentComboBox = new JComboBox();
+		ChooseStudentComboBox.setBounds(167, 73, 134, 21);
+		panel_6.add(ChooseStudentComboBox);
+		private void fillStudentPicker() {
+			String[] allStudentNames= controller1.retrieveAllStudentNames();
+			for( int i=0; i< allStudentNames.length; i++) {
+				comboBoxStudentPicker.addItem(allStudentNames [i] );
+				
+			}
+		}
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
