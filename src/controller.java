@@ -1,5 +1,5 @@
-package control;
-//import javafx.event.ActionEvent;
+
+
 //Hej
 //import javafx.fxml.*;
 //import javafx.scene.control.Button;
@@ -17,67 +17,59 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import control.CourseController;
+import control.StudentController;
 import model.Course;
-import model.CourseRegister;
 import model.Student;
-import model.StudentRegister;
 
 import javax.swing.Action;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 
 public class controller {
-	
-	CourseRegister courseRegister = new CourseRegister();
-	StudentRegister studentRegister = new StudentRegister();
-	
+
+	CourseController courseController = new CourseController();
+	StudentController studentController = new StudentController();
 
 	public void btnAddStudent_Click(Student addThisStudent) {
-		studentRegister.addStudent(addThisStudent);
+		studentController.addStudent(addThisStudent);
 
 	}
-	
+
 	public void btnAddCourse_Click(Course addThisCourse) {
-		courseRegister.addCourse(addThisCourse);
-		
+		courseController.addCourse(addThisCourse);
 
 	}
-	
+
 	public Course btnRemoveCourse_Click(String courseCode) {
-		return courseRegister.removeCourse(courseCode);
-		
+		return courseController.removeCourse(courseCode);
+
 	}
-	
-	
+
 	public Student btnRemoveStudent_Click(String studentID) {
-		return studentRegister.removeStudent(studentID);
-		
+		return studentController.removeStudent(studentID);
+
 	}
-	
+
 	public Student btnUpdateStudent_Click(String studentName, String studentID) {
-		return studentRegister.updateStudent(studentID, studentName); // ska studentID också ändras?
-		
+		return studentController.updateStudent(studentID, studentName); // ska studentID också ändras?
+
 	}
-	
+
 	public Course btnUpdateCourse_Click(String courseCode, String courseName) {
-		return courseRegister.updateCourse(courseCode, courseName);
-		
+		return courseController.updateCourse(courseCode, courseName);
 
 	}
-	
-	
+
 	public Student btnFindStudent_Click(String studentID) {
-		return studentRegister.findStudent(studentID);
-		 
-		}
+		return studentController.findStudent(studentID);
 
-	
-		public Course btnFindCourse_Click(String courseCode) {
-			return courseRegister.findCourse(courseCode);
-			}
+	}
 
-		//}
-	
+	public Course btnFindCourse_Click(String courseCode) {
+		return courseController.findCourse(courseCode);
+	}
+
+	// }
 
 }
-	

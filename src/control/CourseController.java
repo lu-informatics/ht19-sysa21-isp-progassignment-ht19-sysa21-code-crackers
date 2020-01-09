@@ -1,9 +1,11 @@
-package model;
+package control;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class CourseRegister {
+import model.Course;
+
+public class CourseController {
 
 	private ArrayList<Course> courseList = new ArrayList<Course>();
 
@@ -16,7 +18,15 @@ public class CourseRegister {
 	}
 
 	public void addCourse(Course course) {
-		this.courseList.add(course);
+		boolean corseAdded = false;
+		while (!corseAdded) {
+			String courseID = this.generateCourseID();
+			if (this.findCourse(courseID) == null) {
+				course.setCourseCode(courseID);
+				this.courseList.add(course);
+				corseAdded = true;
+			}
+		}
 	}
 
 	public Course findCourse(String courseCode) {
@@ -31,21 +41,30 @@ public class CourseRegister {
 
 	public Course removeCourse(String courseCode) {
 		Course tmpCourse = this.findCourse(courseCode);
-			if (tmpCourse != null) {
-				this.courseList.remove(tmpCourse);
-				
-			}
-				return null;
+		if (tmpCourse != null) {
+			this.courseList.remove(tmpCourse);
+
+		}
+		return null;
 	}
 
 	public Course updateCourse(String courseCode, String newCourseName) {
 		Course foundCourse = this.findCourse(courseCode);
-			if (courseCode != null) {
-				foundCourse.setCourseName(newCourseName);
-					return foundCourse;
-		
+		if (courseCode != null) {
+			foundCourse.setCourseName(newCourseName);
+			return foundCourse;
+
 		}
-					return null;
+		return null;
+	}
+
+	private String generateCourseID() {
+		int max = 99999;
+		int min = 10000;
+		int range = max - min + 10000;
+		Random rand = new Random();
+
+		return String.format("C%05d", rand.nextInt(range));
 	}
 
 }
