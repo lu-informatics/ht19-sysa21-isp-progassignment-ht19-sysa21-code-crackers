@@ -78,6 +78,8 @@ public class Swing {
 	private CourseRegister courseRegister;
 	//private WrittenExamRegister writtenExamRegister;
 	private JTextPane textPane_enterStudentName;
+	private JTextField textField_1;
+	private JTextField textField_8;
 	
 
 	/**
@@ -279,21 +281,11 @@ public class Swing {
 								JScrollPane panel_4 = new JScrollPane(textArea);
 								tabbedPane_3.addTab("Student Register", null, panel_4, null);
 								panel_4.setLayout(null);
-
-								JTextPane textPane_enterStudentName = new JTextPane();
-								textPane_enterStudentName.setBackground(Color.LIGHT_GRAY);
-								textPane_enterStudentName.setBounds(222, 51, 148, 20);
-								AnswerStudentID.add(textPane_enterStudentName);
 								
 								JLabel lblEnterYourStudent = new JLabel("Enter your student ID:");
 								lblEnterYourStudent.setBackground(Color.BLACK);
 								lblEnterYourStudent.setBounds(10, 101, 175, 14);
 								AnswerStudentID.add(lblEnterYourStudent);
-								
-								JTextPane textPane_enterStudentID = new JTextPane();
-								textPane_enterStudentID.setBackground(Color.LIGHT_GRAY);
-								textPane_enterStudentID.setBounds(222, 95, 119, 20);
-								AnswerStudentID.add(textPane_enterStudentID);
 								
 								JLabel lblYourStudentId = new JLabel("your student ID must consist of six number");
 								lblYourStudentId.setBounds(10, 126, 307, 14);
@@ -310,8 +302,8 @@ public class Swing {
 		btnNewButton_6.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			String studentName = textPane_enterStudentName.getText();
-			String studentID = textPane_enterStudentID.getText();
+			String studentName = textField_enterStudentName.getText();
+			String studentID = textField_enterStudentID.getText();
 			
 			//Student foundStudent = controller.btnFindStudent_Click(studentID);
 
@@ -341,6 +333,16 @@ public class Swing {
 		});
 				btnNewButton_6.setBounds(281, 153, 89, 23);
 				AnswerStudentID.add(btnNewButton_6);
+				
+				textField_1 = new JTextField();
+				textField_1.setBounds(222, 47, 86, 20);
+				AnswerStudentID.add(textField_1);
+				textField_1.setColumns(10);
+				
+				textField_8 = new JTextField();
+				textField_8.setBounds(222, 98, 86, 20);
+				AnswerStudentID.add(textField_8);
+				textField_8.setColumns(10);
 			
 												
 												
