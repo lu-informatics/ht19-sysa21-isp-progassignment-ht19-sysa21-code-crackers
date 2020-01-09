@@ -9,7 +9,7 @@ public class WrittenExam {
 	private String date;
 	private String location;
 	private String time;
-	private double maxPoints;
+	private double maxPoints = 100;
 	private Course course;
 
 	private ArrayList<Result> resultList = new ArrayList<Result>();

@@ -2,10 +2,12 @@ package model;
 
 import java.util.*;
 
+import control.StudentController;
+
 public class Student {
 	private String studentID;
 	private String StudentName;
-	private StudentRegister studentRegister;
+	private StudentController studentRegister;
 	private ArrayList<Result> studentResultList = new ArrayList<Result>();
 	
 
@@ -63,21 +65,12 @@ public class Student {
 //	}
 	
 
-	public StudentRegister getStudentRegister() {
+	public StudentController getStudentRegister() {
 		return studentRegister;
 	}
 
-	public void setStudentRegister(StudentRegister studentRegister) {
+	public void setStudentRegister(StudentController studentRegister) {
 		this.studentRegister = studentRegister;
-	}
-
-	public String generateStudentID() {
-		int max = 99999;
-		int min = 10000;
-		int range = max - min + 10000;
-		Random rand = new Random();
-		
-		return String.format("S-%05d", rand.nextInt(range));
 	}
 
 }

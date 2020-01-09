@@ -3,12 +3,14 @@ package model;
 import java.util.ArrayList;
 import java.util.Random;
 
+import control.CourseController;
+
 public class Course {
 
 	private String courseCode;
 	private String courseName;
 	private int credit;
-	private CourseRegister courseRegister;
+	private CourseController courseRegister;
 	private ArrayList<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
 	public Course(String courseName, String courseCode) {
@@ -64,11 +66,11 @@ public class Course {
 	}
 	
 
-	public CourseRegister getCourseRegister() {
+	public CourseController getCourseRegister() {
 		return courseRegister;
 	}
 
-	public void setCourseRegister(CourseRegister courseRegister) {
+	public void setCourseRegister(CourseController courseRegister) {
 		this.courseRegister = courseRegister;
 	}
 	public WrittenExam findExam(String examID) {
@@ -83,13 +85,8 @@ public class Course {
 		return null;
 	}
 		
-		public String generateCourseID() {
-			int max = 99999;
-			int min = 10000;
-			int range = max - min + 10000;
-			Random rand = new Random();
-			
-			return String.format("C-%05d", rand.nextInt(range));
-		}
+	
+		
+		
 
 }

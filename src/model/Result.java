@@ -52,24 +52,7 @@ public class Result {
 	
 }
 */
-	public void CalcExamGrade(int result) {
-		
-		
-		
-			if(result < 50) {
-				this.letterGrade = "U";
-			}else if(result >= 50&& result< 55){
-				this.letterGrade = "E";
-			}else if(result >= 55 && result < 65) {
-				this.letterGrade = "D";
-			}else if(result >= 65 && result < 75) {
-				this.letterGrade = "C";
-			}else if(result >= 75 && result < 85) {
-				this.letterGrade = "B";
-			}else if(result >= 85 && result <=100) {
-				this.letterGrade = "A";
-			}
-		}
+
 	
 
 }
