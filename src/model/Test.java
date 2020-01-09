@@ -2,13 +2,16 @@ package model;
 
 import java.util.*;
 
+import control.CourseController;
+import control.StudentController;
+
 public class Test {
 
 	public static void main(String[] args) {
 
-		StudentRegister studentRegister = new StudentRegister();
+		StudentController studentRegister = new StudentController();
 
-		CourseRegister courseRegister = new CourseRegister();
+		CourseController courseRegister = new CourseController();
 
 		Course c1 = new Course("sysa21", "IS-Projekt");
 		Course c2 = new Course("sysa22", "Modellering");
@@ -20,7 +23,7 @@ public class Test {
 
 		Student student1 = new Student("David", "S10003");
 		Student student2 = new Student("Martin", "S1002");
-		Student student3 = new Student("Jenny, ", "S10001"); 
+		Student student3 = new Student("Jenny, ", "S10001");
 		Student student4 = new Student("Hanna", "S10000");
 
 		Result result1 = new Result();
@@ -112,20 +115,16 @@ public class Test {
 		writtenExam2.setCourse(c2);
 		writtenExam3.setCourse(c1);
 		writtenExam4.setCourse(c1);
-		
 
-		
-		
-/*
-		result2.setLetterGrade("B");
-		result3.setLetterGrade("C");
-		result4.setLetterGrade("U");
-*/
+		/*
+		 * result2.setLetterGrade("B"); result3.setLetterGrade("C");
+		 * result4.setLetterGrade("U");
+		 */
 		result1.CalcExamGrade(100);
 		result2.CalcExamGrade(100);
 		result3.CalcExamGrade(100);
 		result4.CalcExamGrade(100);
-		
+
 		result1.setResult(99);
 
 		courseRegister.addCourse(c1);
@@ -158,31 +157,30 @@ public class Test {
 			System.out.println(courseRegister.findCourse("sysa21"));
 		}
 
-				for ( Student ss : studentRegister.getStudentList()) {
-					for (Result H : ss.getStudentResultList()) {
-						System.out.println(H.getStudent().getStudentName() + " Grade: " +H.getLetterGrade() + " " + H.getResult());
-					}
-				}
-			
-				c1.generateCourseID();
-				for ( Course cc : courseRegister.getCourseList()) {
-					if (cc.getCourseCode()!= null);
-					System.out.println("CourseCode: " + cc.getCourseCode() + "CourseName: " + cc.getCourseName());
-				}
-		
-					
-				}
-/*		
-		c1.remove("E10003");
-		for (WrittenExam tmp : c1.getWrittenExamList()) {
-			System.out.println("Exam: " + tmp.getExamID());
-		}
-		for (WrittenExam wee : c1.getWrittenExamList()) {
-			System.out.println(wee.getExamID() + " " + wee.getLocation() + " " + wee.getMaxPoints() + " " + wee.getTime() + " " + wee.getDate());
+		for (Student ss : studentRegister.getStudentList()) {
+			for (Result H : ss.getStudentResultList()) {
+				System.out.println(
+						H.getStudent().getStudentName() + " Grade: " + H.getLetterGrade() + " " + H.getResult());
 			}
-		
-		System.out.println(result1.getLetterGrade() + " " + result2.getLetterGrade());
-	
-	
-	*/}
+		}
 
+		c2.setCourseCode(c2.generateCourseID());
+		for (Course cc : courseRegister.getCourseList()) {
+			if (cc.getCourseCode() != null)
+				;
+			System.out.println("CourseCode: " + cc.getCourseCode()  + " CourseName: " + cc.getCourseName());
+		}
+
+	}
+	/*
+	 * c1.remove("E10003"); for (WrittenExam tmp : c1.getWrittenExamList()) {
+	 * System.out.println("Exam: " + tmp.getExamID()); } for (WrittenExam wee :
+	 * c1.getWrittenExamList()) { System.out.println(wee.getExamID() + " " +
+	 * wee.getLocation() + " " + wee.getMaxPoints() + " " + wee.getTime() + " " +
+	 * wee.getDate()); }
+	 * 
+	 * System.out.println(result1.getLetterGrade() + " " +
+	 * result2.getLetterGrade());
+	 * 
+	 * 
+	 */}
