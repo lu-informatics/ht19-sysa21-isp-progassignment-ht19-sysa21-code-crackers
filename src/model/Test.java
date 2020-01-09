@@ -10,8 +10,8 @@ public class Test {
 
 		CourseRegister courseRegister = new CourseRegister();
 
-		Course c1 = new Course();
-		Course c2 = new Course();
+		Course c1 = new Course("sysa21", "IS-Projekt");
+		Course c2 = new Course("sysa22", "Modellering");
 
 		WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
@@ -32,7 +32,7 @@ public class Test {
 		c1.setCourseName("ISProjekt");
 		c1.setCredit(30);
 
-	//	c2.setCourseCode("sysa22");
+		c2.setCourseCode("sysa22");
 		c2.setCourseName("Modelering");
 		c2.setCredit(55);
 
