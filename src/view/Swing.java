@@ -31,12 +31,12 @@ import javax.swing.border.MatteBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-import control.controller;
+
+import control.CourseController;
+import control.ExamController;
+import control.StudentController;
 import model.Course;
-import model.CourseRegister;
 import model.Student;
-import model.StudentRegister;
-//import model.WrittenExamRegister;
 
 public class Swing {
 
@@ -48,14 +48,12 @@ public class Swing {
 	private JTextField textField_CourseToBeUpdated;
 	private JTextField textField_NewNameForCourse;
 	private JTextField textField_10;
-	private controller controller1 = new controller();
-	private StudentRegister studentRegister;
-	private CourseRegister courseRegister;
-	//private WrittenExamRegister writtenExamRegister;
+	private StudentController studentController;
+	private CourseController courseController;
+	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterStudentID;
-	
 
 	/**
 	 * Launch the application.
@@ -117,20 +115,18 @@ public class Swing {
 		tabbedPane_Student.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_program.addTab("Students", null, tabbedPane_Student, null);
 
-
 		JButton btnAddStudent = new JButton("Add Student");
 //		btnAddStudent.addActionListener(new ActionListener() {
-	//	public void actionPerformed(ActionEvent e) {
-	//		String StudentName = textPane_StudentName.getStudentName();
-	//		String [] tmpStudent = controller.addStudent(StudentName);
-	//		if (tmpStudent != null) {
-	//			String StudentName = Label_Student.getstudentName();
-	//		}
-	//		}
-	//});
-	
-		btnAddStudent.setBounds(408, 70, 89, 23);
+		// public void actionPerformed(ActionEvent e) {
+		// String StudentName = textPane_StudentName.getStudentName();
+		// String [] tmpStudent = controller.addStudent(StudentName);
+		// if (tmpStudent != null) {
+		// String StudentName = Label_Student.getstudentName();
+		// }
+		// }
+		// });
 
+		btnAddStudent.setBounds(408, 70, 89, 23);
 
 		JPanel panel_UpdateStudent = new JPanel();
 		panel_UpdateStudent.setBackground(SystemColor.controlLtHighlight);
@@ -172,178 +168,160 @@ public class Swing {
 		lblResponse.setBounds(44, 263, 68, 14);
 		panel_UpdateStudent.add(lblResponse);
 
-		Choice choice_StudentList = new Choice(); //gör combobox
+		Choice choice_StudentList = new Choice(); // gör combobox
 		choice_StudentList.setBounds(304, 69, 114, 26);
 		panel_UpdateStudent.add(choice_StudentList);
-		
+
 		JLabel response_StudentUpdate = new JLabel("Response:");
 		response_StudentUpdate.setBounds(44, 126, 68, 14);
 		panel_UpdateStudent.add(response_StudentUpdate);
 
-		
-		
-				JPanel AnswerStudentID = new JPanel();
-				AnswerStudentID.setForeground(SystemColor.desktop);
-				AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
-				tabbedPane_Student.addTab("Add Student", null, AnswerStudentID, null);
-				AnswerStudentID.setLayout(null);
-				
-				
-				
-						JLabel lblEnterStudentsName = new JLabel("Enter Students name:");
-						lblEnterStudentsName.setForeground(SystemColor.controlText);
-						lblEnterStudentsName.setBackground(SystemColor.controlText);
-						lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
-						lblEnterStudentsName.setBounds(10, 42, 202, 29);
-						AnswerStudentID.add(lblEnterStudentsName);
-								
-								JTabbedPane tabbedPane_Register = new JTabbedPane(JTabbedPane.TOP);
-								tabbedPane_Register.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
-								tabbedPane_program.addTab("Register", null, tabbedPane_Register, null);
-								
-								JTextArea textArea_StudentRegister = new JTextArea (20, 20);
-								
-								JScrollPane panel_StudentRegister = new JScrollPane(textArea_StudentRegister);
-								tabbedPane_Register.addTab("Student Register", null, panel_StudentRegister, null);
-								panel_StudentRegister.setLayout(null);
-								
-								JLabel lblEnterYourStudent = new JLabel("Enter your student ID:");
-								lblEnterYourStudent.setBackground(Color.BLACK);
-								lblEnterYourStudent.setBounds(10, 101, 175, 14);
-								AnswerStudentID.add(lblEnterYourStudent);
-								
-								JLabel lblYourStudentId = new JLabel("your student ID must consist of six number");
-								lblYourStudentId.setBounds(10, 126, 307, 14);
-								AnswerStudentID.add(lblYourStudentId);
-								
-								JTextArea textArea_AddStudent = new JTextArea();
-								textArea_AddStudent.setBackground(Color.LIGHT_GRAY);
-								textArea_AddStudent.setBounds(33, 169, 243, 57);
-								AnswerStudentID.add(textArea_AddStudent);
-																						
-								
-										
+		JPanel AnswerStudentID = new JPanel();
+		AnswerStudentID.setForeground(SystemColor.desktop);
+		AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
+		tabbedPane_Student.addTab("Add Student", null, AnswerStudentID, null);
+		AnswerStudentID.setLayout(null);
+
+		JLabel lblEnterStudentsName = new JLabel("Enter Students name:");
+		lblEnterStudentsName.setForeground(SystemColor.controlText);
+		lblEnterStudentsName.setBackground(SystemColor.controlText);
+		lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
+		lblEnterStudentsName.setBounds(10, 42, 202, 29);
+		AnswerStudentID.add(lblEnterStudentsName);
+
+		JTabbedPane tabbedPane_Register = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane_Register.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
+		tabbedPane_program.addTab("Register", null, tabbedPane_Register, null);
+
+		JTextArea textArea_StudentRegister = new JTextArea(20, 20);
+
+		JScrollPane panel_StudentRegister = new JScrollPane(textArea_StudentRegister);
+		tabbedPane_Register.addTab("Student Register", null, panel_StudentRegister, null);
+		panel_StudentRegister.setLayout(null);
+
+		JLabel lblEnterYourStudent = new JLabel("Enter your student ID:");
+		lblEnterYourStudent.setBackground(Color.BLACK);
+		lblEnterYourStudent.setBounds(10, 101, 175, 14);
+		AnswerStudentID.add(lblEnterYourStudent);
+
+		JLabel lblYourStudentId = new JLabel("your student ID must consist of six number");
+		lblYourStudentId.setBounds(10, 126, 307, 14);
+		AnswerStudentID.add(lblYourStudentId);
+
+		JTextArea textArea_AddStudent = new JTextArea();
+		textArea_AddStudent.setBackground(Color.LIGHT_GRAY);
+		textArea_AddStudent.setBounds(33, 169, 243, 57);
+		AnswerStudentID.add(textArea_AddStudent);
+
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			
-			String studentName = textField_EnterStudentName.getText();
-			String studentID = textField_EnterStudentID.getText();
-			
-			//Student foundStudent = controller.btnFindStudent_Click(studentID);
-			
-			
-			if (!studentID.equals("") && !studentName.equals("")) {
-				if (controller1.btnFindStudent_Click(studentID) == null) {
-					
-					Student addThisStudent = new Student (studentID, studentName);
-					controller1.btnAddStudent_Click(addThisStudent);
-					textArea_AddStudent.setText("This student has been added to the studentregister.");
-					
-				}
-				else if (controller1.btnFindStudent_Click(studentID) != null) {
-					textArea_AddStudent.setText("This student has already been registered.");
-				}
-			}
-		
-		
-			
-			else {
-				textArea_AddStudent.setText("Put valid information in fields: student-ID, student name");
-			}
-		
-			textField_EnterStudentName.setText("");
-			textField_EnterStudentID.setText("");
-			
-		}	
-		
-		});
-				btnAddStudentButton.setBounds(281, 153, 89, 23);
-				AnswerStudentID.add(btnAddStudentButton);
-				
-				textField_EnterStudentName = new JTextField();
-				textField_EnterStudentName.setBounds(222, 47, 86, 20);
-				AnswerStudentID.add(textField_EnterStudentName);
-				textField_EnterStudentName.setColumns(10);
-				
-				textField_EnterStudentID = new JTextField();
-				textField_EnterStudentID.setBounds(222, 98, 86, 20);
-				AnswerStudentID.add(textField_EnterStudentID);
-				textField_EnterStudentID.setColumns(10);
-				
-						JPanel panel_RemoveStudent = new JPanel();
-						panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
-						tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
-						panel_RemoveStudent.setLayout(null); 
-						
-						
-								JLabel label = new JLabel("");
-								label.setBounds(52, 51, 48, 14);
-								panel_RemoveStudent.add(label);
-								
-										JLabel lbl_StudentToBeRemoved = new JLabel("Select the student to remove:");
-										lbl_StudentToBeRemoved.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
-										lbl_StudentToBeRemoved.setBounds(23, 51, 203, 28);
-										panel_RemoveStudent.add(lbl_StudentToBeRemoved);
-										
-												JLabel lbl_ResponseForRemovedStudent = new JLabel("Response:");
-												lbl_ResponseForRemovedStudent.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
-												lbl_ResponseForRemovedStudent.setBounds(23, 101, 78, 14);
-												panel_RemoveStudent.add(lbl_ResponseForRemovedStudent);
-												
-														JLabel lbl_DoYouWantToRemove = new JLabel("Do you want to remove this student?");
-														lbl_DoYouWantToRemove.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
-														lbl_DoYouWantToRemove.setBounds(23, 162, 228, 14);
-														panel_RemoveStudent.add(lbl_DoYouWantToRemove);
-														
-				//Choice choice_2 = new Choice();
-			//	choice_2.setBounds(307, 59, 109, 20);
-				//panel_7.add(choice_2);
-				JComboBox<Student> boxStudentRemove = new JComboBox<Student>();
-				boxStudentRemove.setBounds(307, 59, 109, 20);
-				panel_RemoveStudent.add(boxStudentRemove);
-				StudentRegister studentRegister = new StudentRegister();
-				
-					for (Student tmp : studentRegister.getStudentList() ) {
-						if (tmp !=null) {
-							boxStudentRemove.addItem(tmp);
-						}
-					
-				}
-				
-														
-														
-			JButton btnRemoveStudent = new JButton("Remove Student");
-			btnRemoveStudent.setBorder(new LineBorder(SystemColor.window, 1, true));
-			btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-																		
-																		
-	//		String studentId = choice_2.getSelectedItem();
-		//	if (!studentId.equals("")) {
-			//	controller1.btnRemoveStudent_Click(studentId);
+
+				String studentName = textField_EnterStudentName.getText();
+			//	String studentID = textField_EnterStudentID.getText();
+
+				// Student foundStudent = controller.btnFindStudent_Click(studentID);
+
+				if (!studentName.equals("")) {
+					studentController.addStudent(studentName);
+				}
+				/*	if (studentController.btnFindStudent_Click(studentID) == null) {
+
+						Student addThisStudent = new Student(studentID, studentName);
+						controller1.btnAddStudent_Click(addThisStudent);
+						textArea_AddStudent.setText("This student has been added to the studentregister.");
+
+					} else if (controller1.btnFindStudent_Click(studentID) != null) {
+						textArea_AddStudent.setText("This student has already been registered.");
+					}
+				}*/
+
+				else {
+					textArea_AddStudent.setText("Put valid information in fields: student-ID, student name");
+				}
+
+				textField_EnterStudentName.setText("");
+				textField_EnterStudentID.setText("");
+
+			}
+
+		});
+		btnAddStudentButton.setBounds(281, 153, 89, 23);
+		AnswerStudentID.add(btnAddStudentButton);
+
+		textField_EnterStudentName = new JTextField();
+		textField_EnterStudentName.setBounds(222, 47, 86, 20);
+		AnswerStudentID.add(textField_EnterStudentName);
+		textField_EnterStudentName.setColumns(10);
+
+		textField_EnterStudentID = new JTextField();
+		textField_EnterStudentID.setBounds(222, 98, 86, 20);
+		AnswerStudentID.add(textField_EnterStudentID);
+		textField_EnterStudentID.setColumns(10);
+
+		JPanel panel_RemoveStudent = new JPanel();
+		panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
+		tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
+		panel_RemoveStudent.setLayout(null);
+
+		JLabel label = new JLabel("");
+		label.setBounds(52, 51, 48, 14);
+		panel_RemoveStudent.add(label);
+
+		JLabel lbl_StudentToBeRemoved = new JLabel("Select the student to remove:");
+		lbl_StudentToBeRemoved.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
+		lbl_StudentToBeRemoved.setBounds(23, 51, 203, 28);
+		panel_RemoveStudent.add(lbl_StudentToBeRemoved);
+
+		JLabel lbl_ResponseForRemovedStudent = new JLabel("Response:");
+		lbl_ResponseForRemovedStudent.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
+		lbl_ResponseForRemovedStudent.setBounds(23, 101, 78, 14);
+		panel_RemoveStudent.add(lbl_ResponseForRemovedStudent);
+
+		JLabel lbl_DoYouWantToRemove = new JLabel("Do you want to remove this student?");
+		lbl_DoYouWantToRemove.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
+		lbl_DoYouWantToRemove.setBounds(23, 162, 228, 14);
+		panel_RemoveStudent.add(lbl_DoYouWantToRemove);
+
+		// Choice choice_2 = new Choice();
+		// choice_2.setBounds(307, 59, 109, 20);
+		// panel_7.add(choice_2);
+		JComboBox<Student> boxStudentRemove = new JComboBox<Student>();
+		boxStudentRemove.setBounds(307, 59, 109, 20);
+		panel_RemoveStudent.add(boxStudentRemove);
+		StudentController studentRegister = new StudentController();
+
+		for (Student tmp : studentRegister.getStudentList()) {
+			if (tmp != null) {
+				boxStudentRemove.addItem(tmp);
+			}
+
+		}
+
+		JButton btnRemoveStudent = new JButton("Remove Student");
+		btnRemoveStudent.setBorder(new LineBorder(SystemColor.window, 1, true));
+		btnRemoveStudent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				 Student student = (Student) boxStudentRemove.getSelectedItem();
+				 studentController.removeStudent(student.getStudentID());
 			
-	//	}
-	}
-});
-	btnRemoveStudent.setBackground(SystemColor.window);
-	btnRemoveStudent.setBounds(245, 159, 109, 23);
-	panel_RemoveStudent.add(btnRemoveStudent);
-																
-	JButton btnNewButton_1 = new JButton("Find");
-	btnNewButton_1.setBackground(SystemColor.controlLtHighlight);
-	btnNewButton_1.setBorder(new LineBorder(SystemColor.controlText, 1, true));
-	btnNewButton_1.setBounds(426, 55, 89, 23);
-	panel_RemoveStudent.add(btnNewButton_1);
-			
-												
-												
-								
-											
-											;
-											
-		//	panel.add(btnAddStudent)
-								
+			}
+		});
+		btnRemoveStudent.setBackground(SystemColor.window);
+		btnRemoveStudent.setBounds(245, 159, 109, 23);
+		panel_RemoveStudent.add(btnRemoveStudent);
+
+		JButton btnNewButton_1 = new JButton("Find");
+		btnNewButton_1.setBackground(SystemColor.controlLtHighlight);
+		btnNewButton_1.setBorder(new LineBorder(SystemColor.controlText, 1, true));
+		btnNewButton_1.setBounds(426, 55, 89, 23);
+		panel_RemoveStudent.add(btnNewButton_1);
+
+		;
+
+		// panel.add(btnAddStudent)
+
 		JTabbedPane tabbedPane_Course = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Course.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_Course.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
@@ -353,7 +331,6 @@ public class Swing {
 		panel_AddCourse.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_Course.addTab("Add Course", null, panel_AddCourse, null);
 		panel_AddCourse.setLayout(null);
-		
 
 		JRadioButton rdbtn_7_5points = new JRadioButton("7,5 points");
 		rdbtn_7_5points.setBackground(SystemColor.controlLtHighlight);
@@ -370,43 +347,36 @@ public class Swing {
 		rdbtn_30points.setBounds(212, 161, 109, 23);
 		panel_AddCourse.add(rdbtn_30points);
 
-		ButtonGroup group = new ButtonGroup ();
+		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtn_7_5points);
 		group.add(rdbtn_15points);
 		group.add(rdbtn_30points);
-		
 
-		JButton btnAddCourse = new JButton("Add Course");
+		/*JButton btnAddCourse = new JButton("Add Course");
 		btnAddCourse.addActionListener(new ActionListener() {
-			public void actionPerformed (ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
 				String courseCode = textField_EnterCourseCode.getText();
-			//	int courseCredit = group.setSelected(m, b); // vilka paramentrar?
+				// int courseCredit = group.setSelected(m, b); // vilka paramentrar?
 				if (!courseName.equals("") && !courseCode.equals("")) {
-					if (controller1.btnFindCourse_Click(courseCode) == null) {
-						Course addThisCourse = new Course (courseName, courseCode);
-						
-						
-						
+					if (courseController.findCourse(courseCode)(courseCode) == null) {
+						Course addThisCourse = new Course(courseName, courseCode);
+
 					}
 				}
-				
-				
+
 			}
-		});
-		
-		
-		
-		
+	
+		}
+	});*/
+
 		JLabel lbl_AddCourseEnterName = new JLabel("Enter the course name:");
 		lbl_AddCourseEnterName.setBounds(20, 14, 160, 14);
 		panel_AddCourse.add(lbl_AddCourseEnterName);
 
-		
+	//	btnAddCourse.setBounds(214, 203, 89, 23);
+		//panel_AddCourse.add(btnAddCourse);
 
-		btnAddCourse.setBounds(214, 203, 89, 23);
-		panel_AddCourse.add(btnAddCourse); 
-		
 		JLabel lbl_EnterCourseCode = new JLabel("Enter the course code:");
 		lbl_EnterCourseCode.setBounds(20, 54, 149, 14);
 		panel_AddCourse.add(lbl_EnterCourseCode);
@@ -451,7 +421,7 @@ public class Swing {
 		JLabel lbl_DoYouWantToRemoveCourse = new JLabel("Do you want to remove this course?");
 		lbl_DoYouWantToRemoveCourse.setBounds(32, 123, 191, 14);
 		panel_RemoveCourse.add(lbl_DoYouWantToRemoveCourse);
-		
+
 		JButton btn_NoRemoveCourse = new JButton("No");
 		btn_NoRemoveCourse.setBounds(346, 119, 86, 23);
 		panel_RemoveCourse.add(btn_NoRemoveCourse);
@@ -598,11 +568,11 @@ public class Swing {
 		btn_AddResult.setBounds(230, 267, 70, 22);
 		panel_Result.add(btn_AddResult);
 
-		//JTextPane textPane_EnterStudentName = new JTextPane();
-		//studentRegister.getStudentList();
-		//textPane_EnterStudentName.setBounds(10, 11, 400, 198);
-		//panel_RemoveCourse.add(textPane_EnterStudentName);
-		
+		// JTextPane textPane_EnterStudentName = new JTextPane();
+		// studentRegister.getStudentList();
+		// textPane_EnterStudentName.setBounds(10, 11, 400, 198);
+		// panel_RemoveCourse.add(textPane_EnterStudentName);
+
 		JPanel panel_CourseRegister = new JPanel();
 		tabbedPane_Register.addTab("Course Register", null, panel_CourseRegister, null);
 		panel_CourseRegister.setLayout(null);
