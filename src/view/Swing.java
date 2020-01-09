@@ -78,7 +78,7 @@ public class Swing {
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_1;
 	private JTextField textField_8;
-	
+	JComboBox<String> ChooseStudentComboBox;
 
 	/**
 	 * Launch the application.
@@ -199,16 +199,18 @@ public class Swing {
 		label_2.setBounds(44, 126, 68, 14);
 		panel_6.add(label_2);
 		
+		/*
 		JComboBox ChooseStudentComboBox = new JComboBox();
 		ChooseStudentComboBox.setBounds(167, 73, 134, 21);
 		panel_6.add(ChooseStudentComboBox);
-		private void fillStudentPicker() {
+		private void ) {
 			String[] allStudentNames= controller1.retrieveAllStudentNames();
 			for( int i=0; i< allStudentNames.length; i++) {
-				comboBoxStudentPicker.addItem(allStudentNames [i] );
+				this.ChooseStudentComboBox.addItem(allStudentNames [i] );
 				
 			}
 		}
+		*/
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
