@@ -62,15 +62,13 @@ import java.awt.TextField;
 import java.awt.Button;
 import java.awt.Panel;
 import javax.swing.JList;
+import javax.swing.JComboBox;
 
 public class Swing {
 
 	private JFrame frame;
 	private JTextField textField;
-	private JTextField textField_2;
 	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_10;
 	private controller controller1 = new controller();
@@ -404,32 +402,19 @@ public class Swing {
 				
 			}
 		});
-		
-		
-		
-		
-		JLabel lblNewLabel_3 = new JLabel("Enter the course name:");
-		lblNewLabel_3.setBounds(20, 14, 160, 14);
-		panel_1.add(lblNewLabel_3);
 
 		
 
 		btnNewButton_2.setBounds(214, 203, 89, 23);
 		panel_1.add(btnNewButton_2); 
 		
-		JLabel lblNewLabel_4 = new JLabel("Enter the course code:");
+		JLabel lblNewLabel_4 = new JLabel("Enter the name of the course:");
 		lblNewLabel_4.setBounds(20, 54, 149, 14);
 		panel_1.add(lblNewLabel_4);
 
 		JLabel lblNewLabel_5 = new JLabel("Select amount of points:");
 		lblNewLabel_5.setBounds(59, 116, 131, 14);
 		panel_1.add(lblNewLabel_5);
-
-		textField_2 = new JTextField();
-		textField_2.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
-		textField_2.setBounds(190, 12, 86, 20);
-		panel_1.add(textField_2);
-		textField_2.setColumns(10);
 
 		textField_3 = new JTextField();
 		textField_3.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
@@ -442,13 +427,8 @@ public class Swing {
 		panel_2.setLayout(null);
 
 		JLabel lblNewLabel_6 = new JLabel("Enter the course you want to remove:");
-		lblNewLabel_6.setBounds(0, 45, 240, 14);
+		lblNewLabel_6.setBounds(20, 45, 191, 14);
 		panel_2.add(lblNewLabel_6);
-
-		textField_4 = new JTextField();
-		textField_4.setBounds(250, 42, 86, 20);
-		panel_2.add(textField_4);
-		textField_4.setColumns(10);
 
 		JLabel lblNewLabel_7 = new JLabel("Response:");
 		lblNewLabel_7.setBounds(33, 81, 77, 14);
@@ -465,6 +445,10 @@ public class Swing {
 		JButton button_3 = new JButton("No");
 		button_3.setBounds(346, 119, 86, 23);
 		panel_2.add(button_3);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(221, 41, 141, 22);
+		panel_2.add(comboBox);
 
 		JPanel panel_3 = new JPanel();
 		tabbedPane_1.addTab("Update Course", null, panel_3, null);
@@ -474,17 +458,12 @@ public class Swing {
 		lblNewLabel_9.setBounds(23, 38, 159, 14);
 		panel_3.add(lblNewLabel_9);
 
-		textField_5 = new JTextField();
-		textField_5.setBounds(192, 35, 86, 20);
-		panel_3.add(textField_5);
-		textField_5.setColumns(10);
-
 		JLabel lblNewLabel_10 = new JLabel("Enter the new name:");
 		lblNewLabel_10.setBounds(41, 103, 119, 14);
 		panel_3.add(lblNewLabel_10);
 
 		textField_6 = new JTextField();
-		textField_6.setBounds(192, 100, 86, 20);
+		textField_6.setBounds(192, 100, 119, 20);
 		panel_3.add(textField_6);
 		textField_6.setColumns(10);
 
@@ -493,8 +472,12 @@ public class Swing {
 		panel_3.add(lblNewLabel_11);
 
 		JButton btnNewButton_4 = new JButton("Update");
-		btnNewButton_4.setBounds(189, 142, 89, 23);
+		btnNewButton_4.setBounds(212, 143, 89, 23);
 		panel_3.add(btnNewButton_4);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(192, 34, 119, 22);
+		panel_3.add(comboBox_1);
 
 		JPanel panel_8 = new JPanel();
 		tabbedPane_1.addTab("Add Exam", null, panel_8, null);
@@ -507,7 +490,7 @@ public class Swing {
 		lblNewLabel_14.setBounds(10, 110, 111, 14);
 		panel_8.add(lblNewLabel_14);
 
-		JLabel lblNewLabel_15 = new JLabel("The exam will have 100 points");
+		JLabel lblNewLabel_15 = new JLabel("The Exam will get this ID");
 		lblNewLabel_15.setBounds(10, 224, 144, 14);
 		panel_8.add(lblNewLabel_15);
 
@@ -581,6 +564,10 @@ public class Swing {
 		Button button_2 = new Button("Remove");
 		button_2.setBounds(162, 118, 70, 22);
 		panel_10.add(button_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Response: ");
+		lblNewLabel_3.setBounds(163, 159, 46, 14);
+		panel_10.add(lblNewLabel_3);
 
 		JPanel panel_9 = new JPanel();
 		tabbedPane.addTab("Results", null, panel_9, null);
