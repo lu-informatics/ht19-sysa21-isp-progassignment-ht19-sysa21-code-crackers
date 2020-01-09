@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 
 public class WrittenExam {
@@ -72,6 +73,14 @@ public class WrittenExam {
 
 	public void addResultforExam(Result result) {
 		this.resultList.add(result);
+	}
+	public String generateCourseID() {
+		int max = 99999;
+		int min = 10000;
+		int range = max - min + 10000;
+		Random rand = new Random();
+		
+		return String.format("E-%05d", rand.nextInt(range));
 	}
 
 }
