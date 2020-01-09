@@ -531,6 +531,12 @@ public class Swing {
 		JRadioButton rdbtnNewRadioButton_6 = new JRadioButton("Room B067");
 		rdbtnNewRadioButton_6.setBounds(152, 184, 109, 23);
 		panel_8.add(rdbtnNewRadioButton_6);
+		
+		ButtonGroup groupRoom = new ButtonGroup ();
+		groupRoom.add(rdbtnNewRadioButton_3);
+		groupRoom.add(rdbtnNewRadioButton_4);
+		groupRoom.add(rdbtnNewRadioButton_5);
+		groupRoom.add(rdbtnNewRadioButton_6);
 
 		JButton btnNewButton_5 = new JButton("Add Exam");
 		btnNewButton_5.setBounds(142, 266, 96, 23);
