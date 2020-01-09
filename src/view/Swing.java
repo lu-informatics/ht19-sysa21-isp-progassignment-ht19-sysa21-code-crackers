@@ -73,7 +73,7 @@ public class Swing {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_10;
-	private controller controller1;
+	private controller controller1 = new controller();
 	private StudentRegister studentRegister;
 	private CourseRegister courseRegister;
 	//private WrittenExamRegister writtenExamRegister;
@@ -306,13 +306,15 @@ public class Swing {
 			String studentID = textField_8.getText();
 			
 			//Student foundStudent = controller.btnFindStudent_Click(studentID);
-
+			
 			
 			if (!studentID.equals("") && !studentName.equals("")) {
-			 if (controller1.btnFindStudent_Click(studentID) == null) {
+				if (controller1.btnFindStudent_Click(studentID) == null) {
+					
 					Student addThisStudent = new Student (studentID, studentName);
 					controller1.btnAddStudent_Click(addThisStudent);
 					textArea_1.setText("This student has been added to the studentregister.");
+					
 				}
 				else if (controller1.btnFindStudent_Click(studentID) != null) {
 					textArea_1.setText("This student has already been registered.");
