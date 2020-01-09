@@ -53,6 +53,17 @@ public class StudentRegister {
 			
 		}
 	
+	public String[] retrieveAllStudentsNames() {
+		String [] allStudents = new String[studentList.size()];
+		int i = 0;
+		
+		for(Student tmpS : studentList) {
+			allStudents[i] = tmpS.getStudentName();
+			i++;
+		}
+		return allStudents;
+	}
+	
 
 
 }

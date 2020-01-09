@@ -28,11 +28,11 @@ public class Test {
 		Result result3 = new Result();
 		Result result4 = new Result();
 
-		c1.setCourseCode("sysa21");
+		c1.setCourseCode("C10000");
 		c1.setCourseName("ISProjekt");
 		c1.setCredit(30);
 
-		c2.setCourseCode("sysa22");
+		c2.setCourseCode("C10001");
 		c2.setCourseName("Modelering");
 		c2.setCredit(55);
 

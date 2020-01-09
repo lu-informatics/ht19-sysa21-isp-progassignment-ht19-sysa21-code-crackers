@@ -75,6 +75,10 @@ public class controller {
 		public Course btnFindCourse_Click(String courseCode) {
 			return courseRegister.findCourse(courseCode);
 			}
+		
+		public String[] retrieveAllStudentNames() {
+			return studentRegister.retrieveAllStudentsNames();
+		}
 
 		//}
 	
