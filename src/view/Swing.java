@@ -54,7 +54,7 @@ import model.Course;
 import model.CourseRegister;
 import model.Student;
 import model.StudentRegister;
-import model.WrittenExamRegister;
+//import model.WrittenExamRegister;
 
 import java.util.Date;
 import java.awt.Label;
@@ -302,8 +302,8 @@ public class Swing {
 		btnNewButton_6.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			String studentName = textField_enterStudentName.getText();
-			String studentID = textField_enterStudentID.getText();
+			String studentName = textField_1.getText();
+			String studentID = textField_8.getText();
 			
 			//Student foundStudent = controller.btnFindStudent_Click(studentID);
 
@@ -325,8 +325,8 @@ public class Swing {
 				textArea_1.setText("Put valid information in fields: student-ID, student name");
 			}
 		
-			textPane_enterStudentName.setText("");
-			textPane_enterStudentID.setText("");
+			textField_1.setText("");
+			textField_8.setText("");
 			
 		}	
 		

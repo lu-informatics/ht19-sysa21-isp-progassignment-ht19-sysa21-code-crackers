@@ -18,10 +18,10 @@ public class Test {
 		WrittenExam writtenExam3 = new WrittenExam();
 		WrittenExam writtenExam4 = new WrittenExam();
 
-		Student student1 = new Student();
-		Student student2 = new Student();
-		Student student3 = new Student();
-		Student student4 = new Student();
+		Student student1 = new Student("David", "S10003");
+		Student student2 = new Student("Martin", "S1002");
+		Student student3 = new Student("Jenny, ", "S10001"); 
+		Student student4 = new Student("Hanna", "S10000");
 
 		Result result1 = new Result();
 		Result result2 = new Result();
