@@ -32,7 +32,7 @@ public class Test {
 		c1.setCourseName("ISProjekt");
 		c1.setCredit(30);
 
-		c2.setCourseCode("sysa22");
+	//	c2.setCourseCode("sysa22");
 		c2.setCourseName("Modelering");
 		c2.setCredit(55);
 
@@ -164,15 +164,12 @@ public class Test {
 					}
 				}
 			
-				courseRegister.generateCourseID();
-			
-				for (Student stud : studentList) {
-					if (stud.getStudentID().equals(studentID)) {
-						System.out.println("Student already exists");
-					}	else {
-						System.out.println("Student: " + student.getStudentID() + "added...");
-						stud.getStudentID()args;
-					}
+				c1.generateCourseID();
+				for ( Course cc : courseRegister.getCourseList()) {
+					if (cc.getCourseCode()!= null);
+					System.out.println("CourseCode: " + cc.getCourseCode() + "CourseName: " + cc.getCourseName());
+				}
+		
 					
 				}
 /*		
@@ -188,5 +185,4 @@ public class Test {
 	
 	
 	*/}
-}
 
