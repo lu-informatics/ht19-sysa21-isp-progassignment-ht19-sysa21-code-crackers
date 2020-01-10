@@ -17,13 +17,14 @@ public class CourseController {
 		this.courseList = courseList;
 	}
 
-	public void addCourse(String courseName) {
+	public void addCourse(String courseName,int credits) {
 		boolean corseAdded = false;
 		while (!corseAdded) {
 			String courseID = this.generateCourseID();
 			if (this.findCourse(courseID) == null) {
-				Course course = new Course(courseID,courseName);
+				Course course = new Course(courseID,courseName, credits);
 				course.setCourseCode(courseID);
+				course.setCredit(credits);
 				this.courseList.add(course);
 				corseAdded = true;
 			}

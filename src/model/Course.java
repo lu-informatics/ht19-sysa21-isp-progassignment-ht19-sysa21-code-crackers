@@ -9,9 +9,10 @@ public class Course {
 	private int credit;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
-	public Course(String courseCode, String courseName) {
+	public Course(String courseCode, String courseName, int courseCredits) {
 		this.courseName = courseName;
 		this.courseCode = courseCode;
+		this.credit = courseCredits;
 	}
 
 	public List<WrittenExam> getWrittenExamList() {

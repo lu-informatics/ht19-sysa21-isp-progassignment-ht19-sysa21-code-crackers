@@ -20,13 +20,17 @@ public class ExamController {
 		this.examList = examList;
 	}
 
-	public void addExam(WrittenExam exam) {
+	public void addExam(String date, String location, String time) {
 		boolean examAdded = false;
 		while (!examAdded) {
 			String examID = this.generateExamID();
 			if (this.findExam(examID) == null) {
-				WrittenExam ex = new WrittenExam();
+				WrittenExam ex = new WrittenExam(examID, date, location, time);
 				ex.setExamID(examID);
+				ex.setMaxPoints(100); //borde inte behöva adda 100 då det är satt från början.
+				ex.setDate(date);
+				ex.setLocation(location);
+				ex.setTime(time);
 				this.examList.add(ex);
 				examAdded = true;
 			}
