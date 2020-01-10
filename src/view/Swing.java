@@ -220,7 +220,7 @@ public class Swing {
 				
 
 				else {
-					textArea_AddStudent.setText("Put valid information in fields: student-ID, student name");
+					textArea_AddStudent.setText("Put valid information in fields: student name");
 				}
 
 				textField_EnterStudentName.setText("");
