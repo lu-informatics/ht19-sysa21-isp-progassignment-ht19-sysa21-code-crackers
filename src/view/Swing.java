@@ -352,14 +352,14 @@ public class Swing {
 		group.add(rdbtn_15points);
 		group.add(rdbtn_30points);
 
-		/*JButton btnAddCourse = new JButton("Add Course");
+		JButton btnAddCourse = new JButton("Add Course");
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
 				String courseCode = textField_EnterCourseCode.getText();
 				// int courseCredit = group.setSelected(m, b); // vilka paramentrar?
 				if (!courseName.equals("") && !courseCode.equals("")) {
-					if (courseController.findCourse(courseCode)(courseCode) == null) {
+					if (courseController.findCourse(courseCode) == null) {
 						Course addThisCourse = new Course(courseName, courseCode);
 
 					}
@@ -367,8 +367,8 @@ public class Swing {
 
 			}
 	
-		}
-	});*/
+		
+	});
 
 		JLabel lbl_AddCourseEnterName = new JLabel("Enter the course name:");
 		lbl_AddCourseEnterName.setBounds(20, 14, 160, 14);
