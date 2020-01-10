@@ -331,21 +331,19 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
+				int selectbButton = group.getSelection();
+						
 				if (!courseName.equals("")) {
 					System.out.println("hej");
-					
-					courseController.addCourse(courseName);
-				//	courseController.addCourse(p);
-					
-					
+					courseController.addCourse(courseName, );
 				}
-				
-			
 			group.clearSelection();	
 			textField_EnterCourseName.setText("");
+				if(!courseName.equals("")) {
 			choice_RemoveCourse.add(courseName);
 			choice_UpdateCourse.add(courseName);
 			
+				}
 			
 			}
 	
@@ -381,10 +379,14 @@ public class Swing {
 		JButton btn_YesRemoveCourse = new JButton("Remove course");
 		btn_YesRemoveCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String p = choice_RemoveStudent.getSelectedItem();
 				courseController.removeCourse(p);
 				choice_RemoveStudent.remove(p);
 				choice_UpdateStudent.remove(p);
+				
+				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
+				
 			}
 		});
 		btn_YesRemoveCourse.setBounds(250, 119, 107, 23);
