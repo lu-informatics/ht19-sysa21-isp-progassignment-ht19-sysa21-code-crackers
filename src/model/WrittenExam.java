@@ -13,6 +13,7 @@ public class WrittenExam {
 	private Course course;
 
 	private List<Result> resultList = new ArrayList<Result>();
+	
 
 	public List<Result> getResultList() {
 		return resultList;

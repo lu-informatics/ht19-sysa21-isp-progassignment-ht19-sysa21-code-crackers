@@ -43,11 +43,9 @@ public class Swing {
 	private JFrame frame;
 	private JTextField textField_NewStudentName;
 	private JTextField textField_EnterCourseName;
-	private JTextField textField_CourseToRemove;
-	private JTextField textField_CourseToBeUpdated;
 	private JTextField textField_NewNameForCourse;
 	private StudentController studentController = new StudentController ();
-	private CourseController courseController;
+	private CourseController courseController = new CourseController();
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
@@ -198,27 +196,12 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 
 				String studentName = textField_EnterStudentName.getText();
-			//	String studentID = textField_EnterStudentID.getText();
-
-				// Student foundStudent = controller.btnFindStudent_Click(studentID);
 
 				if (!studentName.equals("")) {
 					studentController.addStudent(studentName);
 					textArea_AddStudent.setText("The student has been registered");
-					
-				
-				//	if (studentController.btnFindStudent_Click(studentID) == null) {
-
-					//	Student addThisStudent = new Student(studentID, studentName);
-						//controller1.btnAddStudent_Click(addThisStudent);
-					//	textArea_AddStudent.setText("This student has been added to the studentregister.");
-
-					//} else if ((studentID) != null) {
-						//textArea_AddStudent.setText("This student has already been registered.");
 				}
 			
-				
-
 				else {
 					textArea_AddStudent.setText("Put valid information in fields: student name");
 				}
@@ -285,9 +268,6 @@ public class Swing {
 					choice_UpdateStudent.remove(p);
 					choice_SelectStudentForResult.remove(p);
 					lbl_ResponseForRemovedStudent.setText("Response: " + p + " " + "has been removed");
-					
-				// Student student = (Student) boxStudentRemove.getSelectedItem();
-				// studentController.removeStudent(student.getStudentID());
 			
 			}
 		});
@@ -323,6 +303,22 @@ public class Swing {
 		rdbtn_30points.setBackground(SystemColor.controlLtHighlight);
 		rdbtn_30points.setBounds(212, 161, 109, 23);
 		panel_AddCourse.add(rdbtn_30points);
+		
+		JPanel panel_RemoveCourse = new JPanel();
+		tabbedPane_Course.addTab("Remove Course", null, panel_RemoveCourse, null);
+		panel_RemoveCourse.setLayout(null);
+		
+		Choice choice_RemoveCourse = new Choice();
+		choice_RemoveCourse.setBounds(250, 39, 107, 20);
+		panel_RemoveCourse.add(choice_RemoveCourse);
+		
+		JPanel panel_UpdateCourse = new JPanel();
+		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
+		panel_UpdateCourse.setLayout(null);
+		
+		Choice choice_UpdateCourse = new Choice();
+		choice_UpdateCourse.setBounds(235, 32, 86, 20);
+		panel_UpdateCourse.add(choice_UpdateCourse);
 
 		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtn_7_5points);
@@ -335,15 +331,22 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
-				// int courseCredit = group.setSelected(m, b); // vilka paramentrar?
-				//if (!courseName.equals("") && !courseCode.equals("")) {
-					//if (courseController.findCourse(courseCode) == null) {
-						//Course addThisCourse = new Course(courseName, courseCode);
-
-					//}
+				if (!courseName.equals("")) {
+					System.out.println("hej");
+					
+					courseController.addCourse(courseName);
+				//	courseController.addCourse(p);
+					
+					
+				}
+				
 			
-				//}
-
+			group.clearSelection();	
+			textField_EnterCourseName.setText("");
+			choice_RemoveCourse.add(courseName);
+			choice_UpdateCourse.add(courseName);
+			
+			
 			}
 	
 		
@@ -367,47 +370,25 @@ public class Swing {
 		lblNewLabel.setBounds(59, 252, 84, 14);
 		panel_AddCourse.add(lblNewLabel);
 
-		JPanel panel_RemoveCourse = new JPanel();
-		tabbedPane_Course.addTab("Remove Course", null, panel_RemoveCourse, null);
-		panel_RemoveCourse.setLayout(null);
-
 		JLabel lbl_EnterCourseToRemove = new JLabel("Enter the course you want to remove:");
 		lbl_EnterCourseToRemove.setBounds(33, 45, 240, 14);
 		panel_RemoveCourse.add(lbl_EnterCourseToRemove);
-
-		textField_CourseToRemove = new JTextField();
-		textField_CourseToRemove.setBounds(250, 42, 86, 20);
-		panel_RemoveCourse.add(textField_CourseToRemove);
-		textField_CourseToRemove.setColumns(10);
 
 		JLabel lbl_ResponseForRemoveCourse = new JLabel("Response:");
 		lbl_ResponseForRemoveCourse.setBounds(33, 164, 77, 14);
 		panel_RemoveCourse.add(lbl_ResponseForRemoveCourse);
 
-		JButton btn_YesRemoveCourse = new JButton("Yes");
-		btn_YesRemoveCourse.setBounds(250, 119, 86, 23);
+		JButton btn_YesRemoveCourse = new JButton("Remove course");
+		btn_YesRemoveCourse.setBounds(250, 119, 107, 23);
 		panel_RemoveCourse.add(btn_YesRemoveCourse);
 
 		JLabel lbl_DoYouWantToRemoveCourse = new JLabel("Do you want to remove this course?");
 		lbl_DoYouWantToRemoveCourse.setBounds(32, 123, 191, 14);
 		panel_RemoveCourse.add(lbl_DoYouWantToRemoveCourse);
 
-		JButton btn_NoRemoveCourse = new JButton("No");
-		btn_NoRemoveCourse.setBounds(346, 119, 86, 23);
-		panel_RemoveCourse.add(btn_NoRemoveCourse);
-
-		JPanel panel_UpdateCourse = new JPanel();
-		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
-		panel_UpdateCourse.setLayout(null);
-
 		JLabel lbl_CourseToBeUpdated = new JLabel("Choose the course to be updated:");
 		lbl_CourseToBeUpdated.setBounds(23, 38, 189, 14);
 		panel_UpdateCourse.add(lbl_CourseToBeUpdated);
-
-		textField_CourseToBeUpdated = new JTextField();
-		textField_CourseToBeUpdated.setBounds(235, 35, 86, 20);
-		panel_UpdateCourse.add(textField_CourseToBeUpdated);
-		textField_CourseToBeUpdated.setColumns(10);
 
 		JLabel lbl_NewNameForCourse = new JLabel("Enter the new name:");
 		lbl_NewNameForCourse.setBounds(41, 103, 119, 14);
@@ -425,6 +406,7 @@ public class Swing {
 		JButton btnUpdateCourse = new JButton("Update");
 		btnUpdateCourse.setBounds(232, 142, 89, 23);
 		panel_UpdateCourse.add(btnUpdateCourse);
+		
 
 		JPanel panel_AddExam = new JPanel();
 		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
