@@ -224,10 +224,11 @@ public class Swing {
 				}
 
 				textField_EnterStudentName.setText("");
+					if (!studentName.equals("")) {
 				choice_RemoveStudent.add(studentName);
 				choice_UpdateStudent.add(studentName);
 				choice_SelectStudentForResult.add(studentName);
-				
+					}
 
 			
 
