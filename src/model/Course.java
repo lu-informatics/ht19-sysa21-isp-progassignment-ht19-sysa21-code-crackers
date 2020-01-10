@@ -9,7 +9,7 @@ public class Course {
 	private int credit;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
-	public Course(String courseName, String courseCode) {
+	public Course(String courseCode, String courseName) {
 		this.courseName = courseName;
 		this.courseCode = courseCode;
 	}
