@@ -6,10 +6,10 @@ public class Course {
 
 	private String courseCode;
 	private String courseName;
-	private int credit;
+	private double credit;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
-	public Course(String courseCode, String courseName, int courseCredits) {
+	public Course(String courseCode, String courseName, double courseCredits) {
 		this.courseName = courseName;
 		this.courseCode = courseCode;
 		this.credit = courseCredits;
@@ -39,11 +39,11 @@ public class Course {
 		this.courseName = courseName;
 	}
 
-	public int getCredit() {
+	public double getCredit() {
 		return credit;
 	}
 
-	public void setCredit(int credit) {
+	public void setCredit(double credit) {
 		this.credit = credit;
 	}
 //Ta bort det under!?
