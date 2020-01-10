@@ -48,7 +48,7 @@ public class Swing {
 	private JTextField textField_CourseToBeUpdated;
 	private JTextField textField_NewNameForCourse;
 	private JTextField textField_10;
-	private StudentController studentController;
+	private StudentController studentController = new StudentController ();
 	private CourseController courseController;
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
@@ -114,19 +114,6 @@ public class Swing {
 		tabbedPane_Student.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		tabbedPane_Student.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_program.addTab("Students", null, tabbedPane_Student, null);
-
-		JButton btnAddStudent = new JButton("Add Student");
-//		btnAddStudent.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent e) {
-		// String StudentName = textPane_StudentName.getStudentName();
-		// String [] tmpStudent = controller.addStudent(StudentName);
-		// if (tmpStudent != null) {
-		// String StudentName = Label_Student.getstudentName();
-		// }
-		// }
-		// });
-
-		btnAddStudent.setBounds(408, 70, 89, 23);
 
 		JPanel panel_UpdateStudent = new JPanel();
 		panel_UpdateStudent.setBackground(SystemColor.controlLtHighlight);
@@ -224,17 +211,20 @@ public class Swing {
 
 				if (!studentName.equals("")) {
 					studentController.addStudent(studentName);
+					textArea_AddStudent.setText("The student has been registered");
+					
+				
+				//	if (studentController.btnFindStudent_Click(studentID) == null) {
+
+					//	Student addThisStudent = new Student(studentID, studentName);
+						//controller1.btnAddStudent_Click(addThisStudent);
+					//	textArea_AddStudent.setText("This student has been added to the studentregister.");
+
+					//} else if ((studentID) != null) {
+						//textArea_AddStudent.setText("This student has already been registered.");
 				}
-				/*	if (studentController.btnFindStudent_Click(studentID) == null) {
-
-						Student addThisStudent = new Student(studentID, studentName);
-						controller1.btnAddStudent_Click(addThisStudent);
-						textArea_AddStudent.setText("This student has been added to the studentregister.");
-
-					} else if (controller1.btnFindStudent_Click(studentID) != null) {
-						textArea_AddStudent.setText("This student has already been registered.");
-					}
-				}*/
+			
+				
 
 				else {
 					textArea_AddStudent.setText("Put valid information in fields: student-ID, student name");
@@ -243,9 +233,9 @@ public class Swing {
 				textField_EnterStudentName.setText("");
 				textField_EnterStudentID.setText("");
 
-			}
+			
 
-		});
+		}});
 		btnAddStudentButton.setBounds(281, 153, 89, 23);
 		AnswerStudentID.add(btnAddStudentButton);
 
@@ -263,6 +253,7 @@ public class Swing {
 		panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
 		tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
 		panel_RemoveStudent.setLayout(null);
+		
 
 		JLabel label = new JLabel("");
 		label.setBounds(52, 51, 48, 14);
