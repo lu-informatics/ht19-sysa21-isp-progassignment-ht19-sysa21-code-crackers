@@ -1,9 +1,10 @@
 package model;
 
-import java.util.*;
-
 import control.CourseController;
 import control.StudentController;
+import control.ExamController;
+
+import java.util.*;
 
 public class Test {
 
@@ -13,8 +14,10 @@ public class Test {
 
 		CourseController courseRegister = new CourseController();
 
-		Course c1 = new Course("sysa21", "IS-Projekt");
-		Course c2 = new Course("sysa22", "Modellering");
+		ExamController examRegister = new ExamController();
+
+		Course course1 = new Course("", "IS-Projekt");
+		Course course2 = new Course("", "Modellering");
 
 		WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
@@ -31,41 +34,41 @@ public class Test {
 		Result result3 = new Result();
 		Result result4 = new Result();
 
-		c1.setCourseCode("sysa21");
-		c1.setCourseName("ISProjekt");
-		c1.setCredit(30);
+		course1.setCourseCode("sysa21");
+		course1.setCourseName("ISProjekt");
+		course1.setCredit(30);
 
-		c2.setCourseCode("sysa22");
-		c2.setCourseName("Modelering");
-		c2.setCredit(55);
+		course2.setCourseCode("sysa22");
+		course2.setCourseName("Modelering");
+		course2.setCredit(55);
 
 		writtenExam1.setExamID("E10000");
 		writtenExam1.setDate("22 maj 2020");
 		writtenExam1.setLocation("Spartavägen 1");
 		writtenExam1.setTime("08:00");
 		writtenExam1.setMaxPoints(100);
-		writtenExam1.setCourse(c1);
+		writtenExam1.setCourse(course1);
 
 		writtenExam2.setExamID("E10001");
 		writtenExam2.setDate("22 maj 2020");
 		writtenExam2.setLocation("Spartavägen 1");
 		writtenExam2.setTime("08:00");
 		writtenExam2.setMaxPoints(100);
-		writtenExam2.setCourse(c2);
+		writtenExam2.setCourse(course2);
 
 		writtenExam3.setExamID("E10002");
 		writtenExam3.setDate("22 maj 2020");
 		writtenExam3.setLocation("Spartavägen 1");
 		writtenExam3.setTime("08:00");
 		writtenExam3.setMaxPoints(100);
-		writtenExam3.setCourse(c1);
+		writtenExam3.setCourse(course1);
 
 		writtenExam4.setExamID("E10003");
 		writtenExam4.setDate("22 maj 2020");
 		writtenExam4.setLocation("Spartavägen 1");
 		writtenExam4.setTime("08:00");
 		writtenExam4.setMaxPoints(100);
-		writtenExam4.setCourse(c2);
+		writtenExam4.setCourse(course2);
 
 		student1.setStudentName("David");
 		student1.setStudentID("S10000");
@@ -96,44 +99,46 @@ public class Test {
 		result4.setStudent(student4);
 		result4.setWrittenExam(writtenExam4);
 
-		studentRegister.addStudent(student1);
-		studentRegister.addStudent(student2);
-		studentRegister.addStudent(student3);
-		studentRegister.addStudent(student4);
+		studentRegister.addStudent(student1.getStudentName());
+		studentRegister.addStudent(student2.getStudentName());
+		studentRegister.addStudent(student3.getStudentName());
+		studentRegister.addStudent(student4.getStudentName());
+		
+		course1.add(writtenExam4);
+		course1.add(writtenExam3);
+		course2.add(writtenExam2);
+		course2.add(writtenExam1);
 
-		student1.setStudentRegister(studentRegister);
-		student2.setStudentRegister(studentRegister);
-		student3.setStudentRegister(studentRegister);
-		student4.setStudentRegister(studentRegister);
-
-		c1.add(writtenExam4);
-		c1.add(writtenExam3);
-		c2.add(writtenExam2);
-		c2.add(writtenExam1);
-
-		writtenExam1.setCourse(c2);
-		writtenExam2.setCourse(c2);
-		writtenExam3.setCourse(c1);
-		writtenExam4.setCourse(c1);
+		writtenExam1.setCourse(course2);
+		writtenExam2.setCourse(course2);
+		writtenExam3.setCourse(course1);
+		writtenExam4.setCourse(course1);
 
 		/*
 		 * result2.setLetterGrade("B"); result3.setLetterGrade("C");
 		 * result4.setLetterGrade("U");
 		 */
-		result1.CalcExamGrade(100);
+	/*	result1.CalcExamGrade(100);
 		result2.CalcExamGrade(100);
-		result3.CalcExamGrade(100);
+		result3.CalcExamGrade(100); //DETTA BEHÖVS VÄL INTE VARA MED? 
 		result4.CalcExamGrade(100);
+		*/
 
 		result1.setResult(99);
+		result2.setResult(50);
+		result3.setResult(30);
+		result4.setResult(70);
 
-		courseRegister.addCourse(c1);
-		courseRegister.addCourse(c2);
+		courseRegister.addCourse(course1);
+		courseRegister.addCourse(course2);
 
-		c1.setCourseRegister(courseRegister);
-		c2.setCourseRegister(courseRegister);
+	/*	course1.setCourseRegister(courseRegister);
+		course2.setCourseRegister(courseRegister);
+		*/
+		
+		
 
-		for (Student tmp : studentRegister.getStudentList()) {
+	/*	for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println("Namn: " + tmp.getStudentName() + " StudentID: " + tmp.getStudentID());
 		}
 
@@ -164,14 +169,14 @@ public class Test {
 			}
 		}
 
-		c2.setCourseCode(c2.generateCourseID());
+		course2.setCourseCode(course2.generateCourseID());
 		for (Course cc : courseRegister.getCourseList()) {
 			if (cc.getCourseCode() != null)
 				;
-			System.out.println("CourseCode: " + cc.getCourseCode()  + " CourseName: " + cc.getCourseName());
+			System.out.println("CourseCode: " + cc.getCourseCode() + " CourseName: " + cc.getCourseName());
 		}
-
-	}
+*/
+	
 	/*
 	 * c1.remove("E10003"); for (WrittenExam tmp : c1.getWrittenExamList()) {
 	 * System.out.println("Exam: " + tmp.getExamID()); } for (WrittenExam wee :
@@ -183,4 +188,17 @@ public class Test {
 	 * result2.getLetterGrade());
 	 * 
 	 * 
-	 */}
+	 */
+		studentRegister.updateStudent("S10001", "Klas");
+		System.out.println(student2.getStudentName());
+		for (Student tmp : studentRegister.getStudentList()) {
+			System.out.println(student1.getStudentID()+ " " + student1.getStudentName());
+		}
+	
+	studentRegister.removeStudent("S10001");
+	for (Student tmp : studentRegister.getStudentList()) {
+		System.out.println("Studenter" + tmp.getStudentName() + tmp.getStudentID());
+	
+}
+
+
