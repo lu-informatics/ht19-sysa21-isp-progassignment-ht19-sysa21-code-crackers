@@ -144,9 +144,9 @@ public class Swing {
 		lblResponse.setBounds(44, 263, 68, 14);
 		panel_UpdateStudent.add(lblResponse);
 
-		Choice choice_StudentList = new Choice(); // gör combobox
-		choice_StudentList.setBounds(304, 69, 114, 26);
-		panel_UpdateStudent.add(choice_StudentList);
+		Choice choice_UpdateStudent = new Choice(); // gör combobox
+		choice_UpdateStudent.setBounds(304, 69, 114, 26);
+		panel_UpdateStudent.add(choice_UpdateStudent);
 
 		JPanel AnswerStudentID = new JPanel();
 		AnswerStudentID.setForeground(SystemColor.desktop);
@@ -175,6 +175,23 @@ public class Swing {
 		textArea_AddStudent.setBackground(Color.LIGHT_GRAY);
 		textArea_AddStudent.setBounds(31, 92, 243, 57);
 		AnswerStudentID.add(textArea_AddStudent);
+		
+		JPanel panel_RemoveStudent = new JPanel();
+		panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
+		tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
+		panel_RemoveStudent.setLayout(null);
+		
+		 Choice choice_RemoveStudent = new Choice();
+		 choice_RemoveStudent.setBounds(307, 59, 109, 20);
+		 panel_RemoveStudent.add(choice_RemoveStudent);
+		 
+		 JPanel panel_Result = new JPanel();
+			tabbedPane_program.addTab("Results", null, panel_Result, null);
+			panel_Result.setLayout(null);
+		 
+		 Choice choice_SelectStudentForResult = new Choice();
+			choice_SelectStudentForResult.setBounds(209, 35, 104, 20);
+			panel_Result.add(choice_SelectStudentForResult);
 
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.addActionListener(new ActionListener() {
@@ -207,7 +224,10 @@ public class Swing {
 				}
 
 				textField_EnterStudentName.setText("");
-				textField_EnterStudentID.setText("");
+				choice_RemoveStudent.add(studentName);
+				choice_UpdateStudent.add(studentName);
+				choice_SelectStudentForResult.add(studentName);
+				
 
 			
 
@@ -220,10 +240,6 @@ public class Swing {
 		AnswerStudentID.add(textField_EnterStudentName);
 		textField_EnterStudentName.setColumns(10);
 
-		JPanel panel_RemoveStudent = new JPanel();
-		panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
-		tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
-		panel_RemoveStudent.setLayout(null);
 		
 
 		JLabel label = new JLabel("");
@@ -245,28 +261,25 @@ public class Swing {
 		lbl_DoYouWantToRemove.setBounds(23, 162, 228, 14);
 		panel_RemoveStudent.add(lbl_DoYouWantToRemove);
 
-		// Choice choice_2 = new Choice();
-		// choice_2.setBounds(307, 59, 109, 20);
-		// panel_7.add(choice_2);
-		JComboBox<Student> boxStudentRemove = new JComboBox<Student>();
-		boxStudentRemove.setBounds(203, 56, 142, 20);
-		panel_RemoveStudent.add(boxStudentRemove);
-		StudentController studentRegister = new StudentController();
+		//JComboBox<Student> boxStudentRemove = new JComboBox<Student>();
+		//boxStudentRemove.setBounds(203, 56, 142, 20);
+		//panel_RemoveStudent.add(boxStudentRemove);
+		//StudentController studentRegister = new StudentController();
 
-		for (Student tmp : studentRegister.getStudentList()) {
-			if (tmp != null) {
-				boxStudentRemove.addItem(tmp);
-			}
+		//for (Student tmp : studentRegister.getStudentList()) {
+			//if (tmp != null) {
+				//boxStudentRemove.addItem(tmp);
+			//}
 
-		}
+		//}
 
 		JButton btnRemoveStudent = new JButton("Remove Student");
 		btnRemoveStudent.setBorder(new LineBorder(SystemColor.window, 1, true));
 		btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				 Student student = (Student) boxStudentRemove.getSelectedItem();
-				 studentController.removeStudent(student.getStudentID());
+				// Student student = (Student) boxStudentRemove.getSelectedItem();
+				// studentController.removeStudent(student.getStudentID());
 			
 			}
 		});
@@ -315,12 +328,13 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
 				// int courseCredit = group.setSelected(m, b); // vilka paramentrar?
-				if (!courseName.equals("") && !courseCode.equals("")) {
-					if (courseController.findCourse(courseCode) == null) {
-						Course addThisCourse = new Course(courseName, courseCode);
+				//if (!courseName.equals("") && !courseCode.equals("")) {
+					//if (courseController.findCourse(courseCode) == null) {
+						//Course addThisCourse = new Course(courseName, courseCode);
 
-					}
-				}
+					//}
+			
+				//}
 
 			}
 	
@@ -480,9 +494,6 @@ public class Swing {
 		btn_RemoveExam.setBounds(162, 118, 70, 22);
 		panel_RemoveExam.add(btn_RemoveExam);
 
-		JPanel panel_Result = new JPanel();
-		tabbedPane_program.addTab("Results", null, panel_Result, null);
-		panel_Result.setLayout(null);
 
 		JLabel lbl_SelectStudentForResult = new JLabel("Select student:");
 		lbl_SelectStudentForResult.setBounds(44, 41, 104, 14);
@@ -496,9 +507,6 @@ public class Swing {
 		lbl_EnterAmountOfPoints.setBounds(44, 193, 114, 14);
 		panel_Result.add(lbl_EnterAmountOfPoints);
 
-		Choice choice_SelectStudentForResult = new Choice();
-		choice_SelectStudentForResult.setBounds(209, 35, 104, 20);
-		panel_Result.add(choice_SelectStudentForResult);
 
 		Choice choice_SelectExamForResult = new Choice();
 		choice_SelectExamForResult.setBounds(211, 110, 102, 20);
