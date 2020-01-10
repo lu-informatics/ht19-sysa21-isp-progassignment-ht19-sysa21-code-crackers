@@ -319,6 +319,14 @@ public class Swing {
 		Choice choice_UpdateCourse = new Choice();
 		choice_UpdateCourse.setBounds(235, 32, 86, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
+		
+		JPanel panel_AddExam = new JPanel();
+		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
+		panel_AddExam.setLayout(null);
+		
+		Choice choice_AddExamToCourse = new Choice();
+		choice_AddExamToCourse.setBounds(142, 23, 96, 20);
+		panel_AddExam.add(choice_AddExamToCourse);
 
 		ButtonGroup group = new ButtonGroup();
 		group.add(rdbtn_7_5points);
@@ -331,18 +339,18 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
-				int selectbButton = group.getSelection();
+				//int selectbButton = group.getSelection();
 						
 				if (!courseName.equals("")) {
 					System.out.println("hej");
-					courseController.addCourse(courseName, );
+				//	courseController.addCourse(courseName, );
 				}
 			group.clearSelection();	
 			textField_EnterCourseName.setText("");
 				if(!courseName.equals("")) {
 			choice_RemoveCourse.add(courseName);
 			choice_UpdateCourse.add(courseName);
-			
+			choice_AddExamToCourse.add(courseName);			
 				}
 			
 			}
@@ -384,6 +392,7 @@ public class Swing {
 				courseController.removeCourse(p);
 				choice_RemoveStudent.remove(p);
 				choice_UpdateStudent.remove(p);
+				choice_AddExamToCourse.remove(p);
 				
 				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
 				
@@ -416,11 +425,6 @@ public class Swing {
 		JButton btnUpdateCourse = new JButton("Update");
 		btnUpdateCourse.setBounds(232, 142, 89, 23);
 		panel_UpdateCourse.add(btnUpdateCourse);
-		
-
-		JPanel panel_AddExam = new JPanel();
-		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
-		panel_AddExam.setLayout(null);
 
 		JLabel lblNewLabel_13 = new JLabel("Enter the date");
 		lblNewLabel_13.setBounds(10, 83, 99, 14);
@@ -454,17 +458,13 @@ public class Swing {
 		btnAddExam.setBounds(142, 266, 96, 23);
 		panel_AddExam.add(btnAddExam);
 
-		JLabel lbl_AddExamToCourse = new JLabel("Add exam to course:");
+		JLabel lbl_AddExamToCourse = new JLabel("Add course to exam:");
 		lbl_AddExamToCourse.setBounds(10, 27, 111, 14);
 
 		JLabel lblNewLabel_18 = new JLabel("Choose what exam to add to the course:");
 		lblNewLabel_18.setBounds(10, 27, 46, 14);
 
 		panel_AddExam.add(lbl_AddExamToCourse);
-
-		Choice choice_AddExamToCourse = new Choice();
-		choice_AddExamToCourse.setBounds(142, 23, 96, 20);
-		panel_AddExam.add(choice_AddExamToCourse);
 
 		JDateChooser dateChooser_ToExam = new JDateChooser();
 		dateChooser_ToExam.setBounds(112, 63, 126, 20);
