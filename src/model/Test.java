@@ -16,14 +16,14 @@ public class Test {
 
 		ExamController examRegister = new ExamController();
 
-		Course course1 = new Course("", "IS-Projekt");
-		Course course2 = new Course("", "Modellering");
+		Course course1 = new Course("", "IS-Projekt", 7.5);
+		Course course2 = new Course("", "Modellering", 15);
 
-		WrittenExam writtenExam1 = new WrittenExam();
+	/*	WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
 		WrittenExam writtenExam3 = new WrittenExam();
 		WrittenExam writtenExam4 = new WrittenExam();
-
+*/
 		Student student1 = new Student("S10003", "David");
 		Student student2 = new Student("S10002", "Martin");
 		Student student3 = new Student("S10001, ", "Jenny");
