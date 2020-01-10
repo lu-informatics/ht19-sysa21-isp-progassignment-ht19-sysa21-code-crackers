@@ -67,9 +67,6 @@ public class WrittenExam {
 		return maxPoints;
 	}
 
-	public void setMaxPoints(int maxPoints) {
-		this.maxPoints = maxPoints;
-	}
 
 	public Course getCourse() {
 		return course;

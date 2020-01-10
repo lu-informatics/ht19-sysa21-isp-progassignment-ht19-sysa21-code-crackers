@@ -27,7 +27,7 @@ public class ExamController {
 			if (this.findExam(examID) == null) {
 				WrittenExam ex = new WrittenExam(examID, date, location, time);
 				ex.setExamID(examID);
-				ex.setMaxPoints(100); //borde inte behöva adda 100 då det är satt från början.
+				ex.getMaxPoints(); 
 				ex.setDate(date);
 				ex.setLocation(location);
 				ex.setTime(time);
