@@ -254,7 +254,7 @@ public class Swing {
 
 		JLabel lbl_ResponseForRemovedStudent = new JLabel("Response:");
 		lbl_ResponseForRemovedStudent.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
-		lbl_ResponseForRemovedStudent.setBounds(22, 193, 78, 14);
+		lbl_ResponseForRemovedStudent.setBounds(22, 193, 243, 20);
 		panel_RemoveStudent.add(lbl_ResponseForRemovedStudent);
 
 		JLabel lbl_DoYouWantToRemove = new JLabel("Do you want to remove this student?");
@@ -284,6 +284,8 @@ public class Swing {
 					choice_RemoveStudent.remove(p);
 					choice_UpdateStudent.remove(p);
 					choice_SelectStudentForResult.remove(p);
+					lbl_ResponseForRemovedStudent.setText("Response: " + p + " " + "has been removed");
+					
 				// Student student = (Student) boxStudentRemove.getSelectedItem();
 				// studentController.removeStudent(student.getStudentID());
 			
