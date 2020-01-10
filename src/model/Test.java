@@ -16,7 +16,7 @@ public class Test {
 
 		ExamController examRegister = new ExamController();
 
-		Course course1 = new Course("", "IS-Projekt", 7.5);
+		Course course1 = new Course("", "IS-Projekt", 15);
 		Course course2 = new Course("", "Modellering", 15);
 
 	/*	WrittenExam writtenExam1 = new WrittenExam();
