@@ -2,14 +2,10 @@ package model;
 
 import java.util.*;
 
-import control.StudentController;
-
 public class Student {
 	private String studentID;
 	private String StudentName;
-	private StudentController studentRegister;
-	private ArrayList<Result> studentResultList = new ArrayList<Result>();
-	
+	private List<Result> studentResultList = new ArrayList<Result>();
 
 	public Student(String studentID, String studentName) {
 		this.studentID = studentID;
@@ -32,18 +28,18 @@ public class Student {
 		this.studentID = studentID;
 	}
 
-	public void setStudentResultList(ArrayList<Result> studentResultList) {
+	public void setStudentResultList(List<Result> studentResultList) {
 		this.studentResultList = studentResultList;
 	}
 
-	public ArrayList<Result> getStudentResultList() {
+	public List<Result> getStudentResultList() {
 		return studentResultList;
 
 	}
-	
+
 	public Result findResult(int result) {
 		for (Result r : studentResultList) {
-			if(r.getResult() ==result) {
+			if (r.getResult() == result) {
 				return r;
 			}
 		}
@@ -52,25 +48,6 @@ public class Student {
 
 	public void addResultToStudent(Result result) {
 		this.studentResultList.add(result);
-	}
-	//public void addWrittenExam(Result result, String examID) {
-		//for(Result r : studentResultList) {
-		
-				
-				
-		//	}
-		//}
-		
-		
-//	}
-	
-
-	public StudentController getStudentRegister() {
-		return studentRegister;
-	}
-
-	public void setStudentRegister(StudentController studentRegister) {
-		this.studentRegister = studentRegister;
 	}
 
 }

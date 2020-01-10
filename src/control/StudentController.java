@@ -1,7 +1,7 @@
 
 package control;
 
-import java.util.Random;
+import java.util.*;
 
 import model.Course;
 import model.Student;
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 
 public class StudentController {
 
-	private ArrayList<Student> studentList = new ArrayList<Student>();
+	private List<Student> studentList = new ArrayList<Student>();
 
-	public ArrayList<Student> getStudentList() {
+	public List<Student> getStudentList() {
 		return studentList;
 	}
 
-	public void setStudentList(ArrayList<Student> studentList) {
+	public void setStudentList(List<Student> studentList) {
 		this.studentList = studentList;
 	}
 

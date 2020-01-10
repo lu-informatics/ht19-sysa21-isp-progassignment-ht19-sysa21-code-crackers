@@ -1,24 +1,22 @@
 package control;
 
-import java.util.Random;
+import java.util.*;
 
 import model.Result;
 import model.Student;
 import model.WrittenExam;
 
-import java.util.ArrayList;
-
 import java.util.List;
 
 public class ExamController {
 
-	private ArrayList<WrittenExam> examList = new ArrayList<WrittenExam>();
+	private List<WrittenExam> examList = new ArrayList<WrittenExam>();
 
-	public ArrayList<WrittenExam> getExamList() {
+	public List<WrittenExam> getExamList() {
 		return examList;
 	}
 
-	public void setExamList(ArrayList<WrittenExam> examList) {
+	public void setExamList(List<WrittenExam> examList) {
 		this.examList = examList;
 	}
 
@@ -74,7 +72,9 @@ public class ExamController {
 		} else if (result >= 85 && result <= 100) {
 			return "A";
 		}
+		else {
 		return "U";
+	}
 	}
 
 }

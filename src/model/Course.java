@@ -1,17 +1,14 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
 
-import control.CourseController;
 
 public class Course {
 
 	private String courseCode;
 	private String courseName;
 	private int credit;
-	private CourseController courseRegister;
-	private ArrayList<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
+	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
 	public Course(String courseName, String courseCode) {
 		this.courseName = courseName;
@@ -22,11 +19,11 @@ public class Course {
 
 	
 
-	public ArrayList<WrittenExam> getWrittenExamList() {
+	public List<WrittenExam> getWrittenExamList() {
 		return writtenExamList;
 	}
 
-	public void setWrittenExamList(ArrayList<WrittenExam> writtenExamList) {
+	public void setWrittenExamList(List<WrittenExam> writtenExamList) {
 		this.writtenExamList = writtenExamList;
 	}
 
@@ -66,13 +63,8 @@ public class Course {
 	}
 	
 
-	public CourseController getCourseRegister() {
-		return courseRegister;
-	}
 
-	public void setCourseRegister(CourseController courseRegister) {
-		this.courseRegister = courseRegister;
-	}
+	
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : writtenExamList) {
 			if (e.getExamID().equals(examID)) {

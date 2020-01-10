@@ -1,6 +1,6 @@
 
 
-//Hej
+/*Hej
 //import javafx.fxml.*;
 //import javafx.scene.control.Button;
 //import javafx.scene.control.TextArea;
@@ -73,3 +73,4 @@ public class controller {
 	// }
 
 }
+*/

@@ -1,15 +1,15 @@
 package control;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.*;
+
 
 import model.Course;
 
 public class CourseController {
 
-	private ArrayList<Course> courseList = new ArrayList<Course>();
+	private List<Course> courseList = new ArrayList<Course>();
 
-	public ArrayList<Course> getCourseList() {
+	public List<Course> getCourseList() {
 		return courseList;
 	}
 

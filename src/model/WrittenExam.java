@@ -1,6 +1,6 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class WrittenExam {
@@ -12,13 +12,13 @@ public class WrittenExam {
 	private double maxPoints = 100;
 	private Course course;
 
-	private ArrayList<Result> resultList = new ArrayList<Result>();
+	private List<Result> resultList = new ArrayList<Result>();
 
-	public ArrayList<Result> getResultList() {
+	public List<Result> getResultList() {
 		return resultList;
 	}
 
-	public void setResultList(ArrayList<Result> resultList) {
+	public void setResultList(List<Result> resultList) {
 		this.resultList = resultList;
 	}
 
