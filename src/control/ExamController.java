@@ -21,6 +21,15 @@ public class ExamController {
 	}
 
 	public void addExam(WrittenExam exam) {
+		boolean examAdded = false;
+		while (!examAdded) {
+			String examID = this.generateExamID();
+			if (this.findExam(examID) == null) {
+				WrittenExam ex = new WrittenExam();
+				ex.setExamID(examID);
+				this.examList.add(ex);
+			}
+		}
 		this.examList.add(exam);
 	}
 
@@ -36,7 +45,11 @@ public class ExamController {
 	}
 
 	public void removeExam(String examID) {
-		this.examList.remove(examID);
+		WrittenExam tmpExam = this.findExam(examID);
+		if (tmpExam != null) {
+			this.examList.remove(tmpExam);
+		}
+
 	}
 
 	public String generateExamID() {
@@ -45,7 +58,7 @@ public class ExamController {
 		int range = max - min + 10000;
 		Random rand = new Random();
 
-		return String.format("E-%05d", rand.nextInt(range));
+		return String.format("E%05d", rand.nextInt(range));
 	}
 
 	public void generateLettergrade(String examID, Student student, int points) {
@@ -71,10 +84,9 @@ public class ExamController {
 			return "B";
 		} else if (result >= 85 && result <= 100) {
 			return "A";
+		} else {
+			return "U";
 		}
-		else {
-		return "U";
-	}
 	}
 
 }

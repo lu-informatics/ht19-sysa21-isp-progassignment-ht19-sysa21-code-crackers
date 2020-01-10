@@ -2,7 +2,6 @@ package model;
 
 import java.util.*;
 
-
 public class Course {
 
 	private String courseCode;
@@ -14,10 +13,6 @@ public class Course {
 		this.courseName = courseName;
 		this.courseCode = courseCode;
 	}
-
-	
-
-	
 
 	public List<WrittenExam> getWrittenExamList() {
 		return writtenExamList;
@@ -50,21 +45,18 @@ public class Course {
 	public void setCredit(int credit) {
 		this.credit = credit;
 	}
-
-	public void add(WrittenExam writtenExam) {
+//Ta bort det under!?
+/*	public void add(WrittenExam writtenExam) {
 		this.writtenExamList.add(writtenExam);
 	}
 
 	public void remove(String examID) {
 		WrittenExam tmpExam = this.findExam(examID);
-		if (tmpExam != null){
+		if (tmpExam != null) {
 			this.writtenExamList.remove(tmpExam);
 		}
 	}
-	
 
-
-	
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : writtenExamList) {
 			if (e.getExamID().equals(examID)) {
@@ -73,12 +65,9 @@ public class Course {
 
 			}
 		}
-	
+
 		return null;
-	}
-		
+	}*/
 	
-		
-		
 
 }
