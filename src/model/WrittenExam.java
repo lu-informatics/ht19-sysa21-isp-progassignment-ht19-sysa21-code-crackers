@@ -9,11 +9,19 @@ public class WrittenExam {
 	private String date;
 	private String location;
 	private String time;
-	private double maxPoints = 100;
+	private final int maxPoints = 100;
 	private Course course;
 
 	private List<Result> resultList = new ArrayList<Result>();
 
+	public WrittenExam(String examID, String date, String location, String time) {
+		this.examID = examID;
+		this.date = date;
+		this.location = location;
+		this.time = time;
+	}
+	
+	
 	public List<Result> getResultList() {
 		return resultList;
 	}
