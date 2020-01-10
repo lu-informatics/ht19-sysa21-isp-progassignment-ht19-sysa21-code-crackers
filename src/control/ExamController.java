@@ -28,9 +28,10 @@ public class ExamController {
 				WrittenExam ex = new WrittenExam();
 				ex.setExamID(examID);
 				this.examList.add(ex);
+				examAdded = true;
 			}
 		}
-		this.examList.add(exam);
+		//this.examList.add(exam);
 	}
 
 	public WrittenExam findExam(String examID) {
