@@ -49,5 +49,6 @@ public class Student {
 	public void addResultToStudent(Result result) {
 		this.studentResultList.add(result);
 	}
+	
 
 }
