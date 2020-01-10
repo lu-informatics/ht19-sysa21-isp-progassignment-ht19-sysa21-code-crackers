@@ -279,6 +279,11 @@ public class Swing {
 		btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
+					String p = choice_RemoveStudent.getSelectedItem();
+					studentController.removeStudent(p);
+					choice_RemoveStudent.remove(p);
+					choice_UpdateStudent.remove(p);
+					choice_SelectStudentForResult.remove(p);
 				// Student student = (Student) boxStudentRemove.getSelectedItem();
 				// studentController.removeStudent(student.getStudentID());
 			
