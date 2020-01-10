@@ -379,6 +379,14 @@ public class Swing {
 		panel_RemoveCourse.add(lbl_ResponseForRemoveCourse);
 
 		JButton btn_YesRemoveCourse = new JButton("Remove course");
+		btn_YesRemoveCourse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String p = choice_RemoveStudent.getSelectedItem();
+				courseController.removeCourse(p);
+				choice_RemoveStudent.remove(p);
+				choice_UpdateStudent.remove(p);
+			}
+		});
 		btn_YesRemoveCourse.setBounds(250, 119, 107, 23);
 		panel_RemoveCourse.add(btn_YesRemoveCourse);
 
