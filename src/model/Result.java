@@ -37,23 +37,7 @@ public class Result {
 
 	public void setWrittenExam(WrittenExam writtenexam) {
 		this.writtenExam = writtenexam;
-		
-		
-	}
-	
-/*	public void generateLetterGrade() {
-		int res = this.getResult();
-		
-		if(res >= 85) {
-			this.setLetterGrade("A");
-		}
-		if(res >= 75 && res )
-	}
-	
-}
-*/
 
-	
+	}
 
 }
-
