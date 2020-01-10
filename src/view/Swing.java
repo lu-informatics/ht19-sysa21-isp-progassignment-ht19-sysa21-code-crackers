@@ -304,6 +304,12 @@ public class Swing {
 		rdbtn_30points.setBounds(212, 161, 109, 23);
 		panel_AddCourse.add(rdbtn_30points);
 		
+		ButtonGroup groupPoints = new ButtonGroup();
+		groupPoints.add(rdbtn_7_5points);
+		groupPoints.add(rdbtn_15points);
+		groupPoints.add(rdbtn_30points);
+		
+		
 		JPanel panel_RemoveCourse = new JPanel();
 		tabbedPane_Course.addTab("Remove Course", null, panel_RemoveCourse, null);
 		panel_RemoveCourse.setLayout(null);
@@ -328,10 +334,6 @@ public class Swing {
 		choice_AddExamToCourse.setBounds(142, 23, 96, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
 
-		ButtonGroup group = new ButtonGroup();
-		group.add(rdbtn_7_5points);
-		group.add(rdbtn_15points);
-		group.add(rdbtn_30points);
 		
 		JButton btnAddCourse = new JButton("Add Course");
 		btnAddCourse.setBounds(200, 214, 121, 23);
@@ -345,7 +347,7 @@ public class Swing {
 					System.out.println("hej");
 				//	courseController.addCourse(courseName, );
 				}
-			group.clearSelection();	
+			groupPoints.clearSelection();	
 			textField_EnterCourseName.setText("");
 				if(!courseName.equals("")) {
 			choice_RemoveCourse.add(courseName);
@@ -450,9 +452,10 @@ public class Swing {
 		panel_AddExam.add(rdbtn_RoomB067);
 		
 		ButtonGroup groupRoom = new ButtonGroup();
-		groupRoom.add(rdbtn_7_5points);
-		groupRoom.add(rdbtn_15points);
-		groupRoom.add(rdbtn_30points);
+		groupRoom.add(rdnbtn_RoomA123);
+		groupRoom.add(rdbtn_RoomA167);
+		groupRoom.add(rdbtn_RoomB198);
+		groupRoom.add(rdbtn_RoomB067);
 
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(142, 266, 96, 23);
