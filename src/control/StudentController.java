@@ -3,7 +3,6 @@ package control;
 
 import java.util.*;
 
-import model.Course;
 import model.Student;
 
 import java.util.ArrayList;
