@@ -31,7 +31,6 @@ public class ExamController {
 				examAdded = true;
 			}
 		}
-		//this.examList.add(exam);
 	}
 
 	public WrittenExam findExam(String examID) {
