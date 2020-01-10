@@ -38,15 +38,13 @@ public class StudentController {
 		return null;
 	}
 
-	public Student updateStudent(String studentID, String newName) {
+	public void updateStudent(String studentID, String newName) {
 
 		Student tmpStudent = this.findStudent(studentID);
 		if (tmpStudent != null) {
 			tmpStudent.setStudentName(newName);
-			return tmpStudent;
 
 		}
-		return null;
 
 	}
 
