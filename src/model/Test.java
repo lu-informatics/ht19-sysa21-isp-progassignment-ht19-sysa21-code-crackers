@@ -33,7 +33,7 @@ public class Test {
 		
 		studentRegister.updateStudent("S1003", "John");
 		
-		System.out.println(student1.getStudentName());
+		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
 
 }
 
