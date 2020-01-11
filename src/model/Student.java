@@ -4,20 +4,20 @@ import java.util.*;
 
 public class Student {
 	private String studentID;
-	private String StudentName;
+	private String name;
 	private List<Result> studentResultList = new ArrayList<Result>();
 
 	public Student(String studentID, String studentName) {
 		this.studentID = studentID;
-		this.StudentName = studentName;
+		this.name = studentName;
 	}
 
 	public String getStudentName() {
-		return StudentName;
+		return name;
 	}
 
 	public void setStudentName(String studentName) {
-		this.StudentName = studentName;
+		this.name = studentName;
 	}
 
 	public String getStudentID() {
@@ -37,7 +37,7 @@ public class Student {
 
 	}
 
-	public Result findResult(int result) {
+	public Result findResult(int result) { //Behöver vi denna?
 		for (Result r : studentResultList) {
 			if (r.getResult() == result) {
 				return r;

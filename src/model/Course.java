@@ -6,13 +6,13 @@ public class Course {
 
 	private String courseCode;
 	private String courseName;
-	private double credit;
+	private double credits;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
 	public Course(String courseCode, String courseName, double courseCredits) {
 		this.courseName = courseName;
 		this.courseCode = courseCode;
-		this.credit = courseCredits;
+		this.credits = courseCredits;
 	}
 
 	public List<WrittenExam> getWrittenExamList() {
@@ -40,35 +40,11 @@ public class Course {
 	}
 
 	public double getCredit() {
-		return credit;
+		return credits;
 	}
 
 	public void setCredit(double credit) {
-		this.credit = credit;
+		this.credits = credit;
 	}
-//Ta bort det under!?
-/*	public void add(WrittenExam writtenExam) {
-		this.writtenExamList.add(writtenExam);
-	}
-
-	public void remove(String examID) {
-		WrittenExam tmpExam = this.findExam(examID);
-		if (tmpExam != null) {
-			this.writtenExamList.remove(tmpExam);
-		}
-	}
-
-	public WrittenExam findExam(String examID) {
-		for (WrittenExam e : writtenExamList) {
-			if (e.getExamID().equals(examID)) {
-
-				return e;
-
-			}
-		}
-
-		return null;
-	}*/
-	
 
 }
