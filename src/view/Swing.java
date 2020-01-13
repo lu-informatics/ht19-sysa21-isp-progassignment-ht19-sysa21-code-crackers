@@ -507,6 +507,33 @@ public class Swing {
 		JButton btnUpdateCourse = new JButton("Update course");
 		btnUpdateCourse.setBounds(191, 142, 130, 23);
 		panel_UpdateCourse.add(btnUpdateCourse);
+		btnUpdateCourse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+		String updateCourse = choice_UpdateCourse.getSelectedItem();
+		String newName = textField_NewNameForCourse.getText();
+		String [] courseParts = updateCourse.split(",");
+		
+			if (!newName.equals("")) {
+				
+		courseController.updateCourse(courseParts[1], newName);
+		
+
+		choice_RemoveCourse.remove(updateCourse);
+		choice_UpdateCourse.remove(updateCourse);
+		choice_AddExamToCourse.remove(updateCourse);
+		
+		choice_RemoveCourse.add(newName);
+		choice_UpdateCourse.add(newName);
+		choice_AddExamToCourse.add(newName);
+		
+		
+		
+		
+		
+			}
+			}
+		});
 
 		JLabel lblNewLabel_13 = new JLabel("Enter the date");
 		lblNewLabel_13.setBounds(10, 83, 99, 14);
