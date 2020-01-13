@@ -3,6 +3,7 @@ package control;
 import java.util.*;
 
 import model.Course;
+import model.WrittenExam;
 
 public class CourseController {
 
@@ -57,6 +58,7 @@ public class CourseController {
 		}
 
 	}
+
 
 	private String generateCourseID() {
 		Random rand = new Random();
