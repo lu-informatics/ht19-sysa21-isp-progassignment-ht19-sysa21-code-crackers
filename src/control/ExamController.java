@@ -5,6 +5,7 @@ import java.util.*;
 import model.Result;
 import model.Student;
 import model.WrittenExam;
+import 
 
 import java.util.List;
 
@@ -20,10 +21,11 @@ public class ExamController {
 		this.examList = examList;
 	}
 
-	public void addExam(String date, String location, String time) {
+	public void addExamToCourse(String courseCode, String date, String location, String time) {
 		boolean examAdded = false;
 		while (!examAdded) {
 			String examID = this.generateExamID();
+			for(Course tmpC : CourseControll)
 			if (this.findExam(examID) == null) {
 				WrittenExam ex = new WrittenExam(date, location, time);
 				for (WrittenExam we : examList) {
@@ -54,7 +56,7 @@ public class ExamController {
 		return null;
 	}
 
-	public void removeExam(String examID) {
+	public void removeExamFromCourse(String examID) {
 		WrittenExam tmpExam = this.findExam(examID);
 		if (tmpExam != null) {
 			this.examList.remove(tmpExam);
