@@ -293,9 +293,9 @@ public class Swing {
 					choice_UpdateStudent.remove(p);
 					choice_SelectStudentForResult.remove(p);
 					lbl_ResponseForRemovedStudent.setText("Response: " + p + " " + "has been removed");
-					for (Student tmp : studentController.getStudentList()) {
-						System.out.println(tmp.getStudentID() + tmp.getStudentName());
-					}
+					//for (Student tmp : studentController.getStudentList()) {
+						//System.out.println(tmp.getStudentID() + tmp.getStudentName());
+					//}
 					
 			}
 		});
@@ -429,10 +429,15 @@ public class Swing {
 		btn_YesRemoveCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				String p = choice_RemoveStudent.getSelectedItem();
-				courseController.removeCourse(p);
-				choice_RemoveStudent.remove(p);
-				choice_UpdateStudent.remove(p);
+				String p = choice_RemoveCourse.getSelectedItem();
+				String [] pParts = p.split(",");
+				
+				courseController.removeCourse(pParts [1]);
+				
+				
+				
+				choice_RemoveCourse.remove(p);
+				choice_UpdateCourse.remove(p);
 				choice_AddExamToCourse.remove(p);
 				
 				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
