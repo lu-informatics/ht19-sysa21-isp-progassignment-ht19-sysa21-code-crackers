@@ -134,14 +134,8 @@ public class Swing {
 		panel_UpdateStudent.add(textField_NewStudentName);
 		textField_NewStudentName.setColumns(10);
 
-		JButton btnUpdate = new JButton("Update student");
-		btnUpdate.setBackground(SystemColor.controlLtHighlight);
-		btnUpdate.setBorder(new LineBorder(SystemColor.controlText, 1, true));
-		btnUpdate.setBounds(188, 205, 125, 23);
-		panel_UpdateStudent.add(btnUpdate);
-
 		JLabel lblResponse = new JLabel("Response:");
-		lblResponse.setBounds(44, 263, 68, 14);
+		lblResponse.setBounds(44, 263, 356, 14);
 		panel_UpdateStudent.add(lblResponse);
 
 		Choice choice_UpdateStudent = new Choice(); // gör combobox
@@ -238,6 +232,36 @@ public class Swing {
 		textField_EnterStudentName.setBounds(166, 47, 142, 20);
 		AnswerStudentID.add(textField_EnterStudentName);
 		textField_EnterStudentName.setColumns(10);
+		
+		JButton btnUpdate = new JButton("Update student");
+		btnUpdate.setBackground(SystemColor.controlLtHighlight);
+		btnUpdate.setBorder(new LineBorder(SystemColor.controlText, 1, true));
+		btnUpdate.setBounds(188, 205, 125, 23);
+		panel_UpdateStudent.add(btnUpdate);
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			String p = choice_UpdateStudent.getSelectedItem();
+			String textUpdateStudent = textField_NewStudentName.getText();
+			
+			String [] pParts = p.split(",");
+			
+			if (!textUpdateStudent.equals("")) {
+			
+			studentController.updateStudent(pParts[1], textUpdateStudent);
+			
+			choice_RemoveStudent.remove(p);
+			choice_UpdateStudent.remove(p);
+			choice_SelectStudentForResult.remove(p);
+			choice_RemoveStudent.add(textUpdateStudent + " ," + pParts[1]);
+			choice_UpdateStudent.add(textUpdateStudent + " ," + pParts[1]);
+			choice_SelectStudentForResult.add(textUpdateStudent+ " ," + pParts[1]);
+			
+			lblResponse.setText(p + " :" + "has changed name too" + " " + textUpdateStudent);
+			
+			}	
+			}
+			});
 		
 		JLabel lblNewLabel_1 = new JLabel("Valid characters a-z, A-Z");
 		lblNewLabel_1.setBounds(20, 75, 176, 14);
@@ -386,7 +410,7 @@ public class Swing {
 				}
 				        
 						
-				        choice_RemoveCourse.removeAll(); /// funkar inte som den ska
+				        choice_RemoveCourse.removeAll(); 
 						choice_UpdateCourse.removeAll();
 						choice_AddExamToCourse.removeAll();
 				for (Course tmp : courseController.getCourseList()) {
@@ -394,14 +418,15 @@ public class Swing {
 				
 			
 				if(!courseName.equals("")) {
+				groupPoints.clearSelection();		
 			choice_RemoveCourse.add(p + " ," + courseName + " ," + ans);
 			choice_UpdateCourse.add(p + " ," + courseName + " ," + ans);
 			choice_AddExamToCourse.add(p + " ," + courseName + " ," + ans);	
 			
 				}
 				}
-				groupPoints.clearSelection();	
-				textField_EnterCourseName.setText("");
+				
+				
 			
 			}
 	
@@ -525,6 +550,11 @@ public class Swing {
 		Choice choice_SelectExam = new Choice();
 		choice_SelectExam.setBounds(162, 55, 166, 23);
 		panel_RemoveExam.add(choice_SelectExam);
+		
+		Label label_AddExamRespons = new Label("Response");
+		label_AddExamRespons.setBounds(21, 308, 194, 22);
+		panel_AddExam.add(label_AddExamRespons);
+
 
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
@@ -547,14 +577,19 @@ public class Swing {
 		
 			if (!pickedCourse.equals("")) {
 				//if ()) 
-				System.out.println("hej");
+				
 				examController.addExam(date, ans, time);
 				
 				choice_SelectExam.add(ans + " ," + date + " ," + time);
 				
 				
+				label_AddExamRespons.setText("The exam has been added to the picked course");
 			}
 			
+			else {
+				
+				label_AddExamRespons.setText("Put in valid information");
+			}
 				
 				
 			}
@@ -572,10 +607,6 @@ public class Swing {
 		JLabel lbl_ChooseDateToExam = new JLabel("Choose Date:");
 		lbl_ChooseDateToExam.setBounds(10, 96, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
-
-		Label label_1 = new Label("Response");
-		label_1.setBounds(21, 308, 62, 22);
-		panel_AddExam.add(label_1);
 
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");

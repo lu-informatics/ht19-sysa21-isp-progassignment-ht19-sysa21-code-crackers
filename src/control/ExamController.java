@@ -27,7 +27,7 @@ public class ExamController {
 			if (this.findExam(examID) == null) {
 				WrittenExam ex = new WrittenExam(date, location, time);
 				for (WrittenExam we : examList) {
-					//if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
+					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
 
 						ex.setExamID(examID);
 						ex.getMaxPoints();
@@ -41,7 +41,7 @@ public class ExamController {
 				}
 			}
 		}
-	//}
+	}
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
