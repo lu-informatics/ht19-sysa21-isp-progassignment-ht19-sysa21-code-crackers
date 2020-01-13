@@ -51,7 +51,6 @@ public class Swing {
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
-	private JTextField textField_EnterExamName;
 
 	/**
 	 * Launch the application.
@@ -372,7 +371,6 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
-				//String p Enumeration<E>ts.toString();
 				String ans = "";
 				for (Enumeration <AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
 				AbstractButton b = button.nextElement();
@@ -380,19 +378,30 @@ public class Swing {
 					 ans = b.getText();
 				}
 				}
-				//int selectbButton = group.getSelection();
-						
-				if (!courseName.equals("")) {
+				
+					if (!courseName.equals("")) {
 					
-					courseController.addCourse(courseName, ans);
+						courseController.addCourse(courseName, ans);
+						
 				}
-			groupPoints.clearSelection();	
-			textField_EnterCourseName.setText("");
+				        
+						
+				        choice_RemoveCourse.removeAll(); /// funkar inte som den ska
+						choice_UpdateCourse.removeAll();
+						choice_AddExamToCourse.removeAll();
+				for (Course tmp : courseController.getCourseList()) {
+					String p = tmp.getCourseCode();
+				
+			
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(courseName + " ," + ans);
-			choice_UpdateCourse.add(courseName + " ," + ans);
-			choice_AddExamToCourse.add(courseName + " ," + ans);			
+			choice_RemoveCourse.add(p + " ," + courseName + " ," + ans);
+			choice_UpdateCourse.add(p + " ," + courseName + " ," + ans);
+			choice_AddExamToCourse.add(p + " ," + courseName + " ," + ans);	
+			
 				}
+				}
+				groupPoints.clearSelection();	
+				textField_EnterCourseName.setText("");
 			
 			}
 	
@@ -482,18 +491,22 @@ public class Swing {
 		JRadioButton rdnbtn_RoomA123 = new JRadioButton("Room A123");
 		rdnbtn_RoomA123.setBounds(176, 136, 109, 23);
 		panel_AddExam.add(rdnbtn_RoomA123);
+		rdnbtn_RoomA123.setName("Room A123");
 
 		JRadioButton rdbtn_RoomA167 = new JRadioButton("Room A167");
 		rdbtn_RoomA167.setBounds(176, 162, 109, 23);
 		panel_AddExam.add(rdbtn_RoomA167);
+		rdbtn_RoomA167.setName("Room A167");
 
 		JRadioButton rdbtn_RoomB198 = new JRadioButton("Room B198");
 		rdbtn_RoomB198.setBounds(176, 188, 109, 23);
 		panel_AddExam.add(rdbtn_RoomB198);
+		rdbtn_RoomB198.setName("Room B198");
 
 		JRadioButton rdbtn_RoomB067 = new JRadioButton("Room B067");
 		rdbtn_RoomB067.setBounds(176, 215, 109, 23);
 		panel_AddExam.add(rdbtn_RoomB067);
+		rdbtn_RoomB067.setName("Room B067");
 		
 		ButtonGroup groupRoom = new ButtonGroup();
 		groupRoom.add(rdnbtn_RoomA123);
@@ -504,26 +517,48 @@ public class Swing {
 		JDateChooser dateChooser_ToExam = new JDateChooser();
 		dateChooser_ToExam.setBounds(182, 96, 123, 20);
 		panel_AddExam.add(dateChooser_ToExam);
+		
+		Panel panel_RemoveExam = new Panel();
+		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
+		panel_RemoveExam.setLayout(null);
+		
+		Choice choice_SelectExam = new Choice();
+		choice_SelectExam.setBounds(162, 55, 166, 23);
+		panel_RemoveExam.add(choice_SelectExam);
 
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
 		panel_AddExam.add(btnAddExam);
 		btnAddExam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			String pickedCourse =	choice_AddExamToCourse.getSelectedItem();
-			String examName = textField_EnterExamName.getText();
-			String date = dateChooser_ToExam.getDateFormatString();
+			
+		    String pickedCourse = choice_AddExamToCourse.getSelectedItem();
+			
+			String date = dateChooser_ToExam.getDateFormatString();	
+			String ans = "";
+			String time = "08:00";
+				for (Enumeration <AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
+					AbstractButton b = button.nextElement();
+						if (b.isSelected()) {
+						 ans = b.getText();
+						}
+				}
 		
-			if (!pickedCourse.equals("") && !examName.equals("") && !date.isBlank()) {
-				//if ())
-				//examController.addExam(date, location, time);
+		
+			if (!pickedCourse.equals("")) {
+				//if ()) 
+				System.out.println("hej");
+				examController.addExam(date, ans, time);
+				
+				choice_SelectExam.add(ans + " ," + date + " ," + time);
+				
+				
 			}
 			
 				
 				
 			}
-		});
+			});
 
 		JLabel lbl_AddExamToCourse = new JLabel("Add course to exam:");
 		lbl_AddExamToCourse.setBounds(10, 27, 153, 14);
@@ -541,27 +576,13 @@ public class Swing {
 		Label label_1 = new Label("Response");
 		label_1.setBounds(21, 308, 62, 22);
 		panel_AddExam.add(label_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Enter Exam Name:*");
-		lblNewLabel_2.setBounds(10, 63, 111, 14);
-		panel_AddExam.add(lblNewLabel_2);
-		
-		textField_EnterExamName = new JTextField();
-		textField_EnterExamName.setBounds(182, 65, 123, 20);
-		panel_AddExam.add(textField_EnterExamName);
-		textField_EnterExamName.setColumns(10);
 
-		Panel panel_RemoveExam = new Panel();
-		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
-		panel_RemoveExam.setLayout(null);
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
 		panel_RemoveExam.add(lbl_SelectExam);
 
-		Choice choice_SelectExam = new Choice();
-		choice_SelectExam.setBounds(162, 55, 166, 23);
-		panel_RemoveExam.add(choice_SelectExam);
+		
 
 		Button btn_RemoveExam = new Button("Remove");
 		btn_RemoveExam.setBounds(162, 118, 70, 22);

@@ -25,17 +25,23 @@ public class ExamController {
 		while (!examAdded) {
 			String examID = this.generateExamID();
 			if (this.findExam(examID) == null) {
-				WrittenExam ex = new WrittenExam(examID, date, location, time);
-				ex.setExamID(examID);
-				ex.getMaxPoints(); 
-				ex.setDate(date);
-				ex.setLocation(location);
-				ex.setTime(time);
-				this.examList.add(ex);
-				examAdded = true;
+				WrittenExam ex = new WrittenExam(date, location, time);
+				for (WrittenExam we : examList) {
+					//if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
+
+						ex.setExamID(examID);
+						ex.getMaxPoints();
+						ex.setDate(date);
+						ex.setLocation(location);
+						ex.setTime(time);
+						
+						this.examList.add(ex);
+						examAdded = true;
+					}
+				}
 			}
 		}
-	}
+	//}
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
@@ -57,12 +63,13 @@ public class ExamController {
 	}
 
 	private String generateExamID() {
+		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = max - min + 10000;
-		Random rand = new Random();
+		int range = rand.nextInt(max-min) + min;
+		
 
-		return String.format("E%05d", rand.nextInt(range));
+		return String.format("E%05d", range);
 	}
 
 	public void generateLettergrade(String examID, Student student, int points) {
