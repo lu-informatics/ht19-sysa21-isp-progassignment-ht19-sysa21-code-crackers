@@ -16,12 +16,12 @@ public class CourseController {
 		this.courseList = courseList;
 	}
 
-	public void addCourse(String courseName, int credits) {
+	public void addCourse(String courseName, String credits) {
 		boolean corseAdded = false;
 		while (!corseAdded) {
 			String courseID = this.generateCourseID();
 			if (this.findCourse(courseID) == null) {
-				Course course = new Course(courseID, courseName, credits);
+				Course course = new Course( courseName, credits);
 				course.setCourseCode(courseID);
 				course.setCredit(credits);
 				this.courseList.add(course);

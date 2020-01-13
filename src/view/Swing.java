@@ -12,7 +12,9 @@ import java.awt.SystemColor;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Enumeration;
 
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -49,7 +51,7 @@ public class Swing {
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
-	private JTextField textField;
+	private JTextField textField_EnterExamName;
 
 	/**
 	 * Launch the application.
@@ -206,14 +208,27 @@ public class Swing {
 				else {
 					textArea_AddStudent.setText("Put valid information in fields: student name");
 				}
+				
+				choice_RemoveStudent.removeAll();
+				choice_UpdateStudent.removeAll();
+				choice_SelectStudentForResult.removeAll();
+				
+				
+				
+				for (Student tmp : studentController.getStudentList()) {
+					String p = tmp.getStudentID();
+					String sName = tmp.getStudentName();
+				
 
 				textField_EnterStudentName.setText("");
 					if (!studentName.equals("")) {
-				choice_RemoveStudent.add(studentName);
-				choice_UpdateStudent.add(studentName);
-				choice_SelectStudentForResult.add(studentName);
+						
+				choice_RemoveStudent.add(sName + " ," + p);
+				choice_UpdateStudent.add(sName + " ," + p);
+				choice_SelectStudentForResult.add(sName + " ," + p);
+				
 					}
-
+				}
 			
 
 		}});
@@ -268,12 +283,20 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 
 					String p = choice_RemoveStudent.getSelectedItem();
-					studentController.removeStudent(p);
+					
+					String [] pParts = p.split(",");
+					
+					
+					studentController.removeStudent(pParts [1]);
+					
 					choice_RemoveStudent.remove(p);
 					choice_UpdateStudent.remove(p);
 					choice_SelectStudentForResult.remove(p);
 					lbl_ResponseForRemovedStudent.setText("Response: " + p + " " + "has been removed");
-			
+					for (Student tmp : studentController.getStudentList()) {
+						System.out.println(tmp.getStudentID() + tmp.getStudentName());
+					}
+					
 			}
 		});
 		btnRemoveStudent.setBackground(SystemColor.window);
@@ -298,16 +321,19 @@ public class Swing {
 		rdbtn_7_5points.setBackground(SystemColor.controlLtHighlight);
 		rdbtn_7_5points.setBounds(212, 112, 109, 23);
 		panel_AddCourse.add(rdbtn_7_5points);
+		rdbtn_7_5points.setName("7,5");
 
 		JRadioButton rdbtn_15points = new JRadioButton("15 points");
 		rdbtn_15points.setBackground(SystemColor.controlLtHighlight);
 		rdbtn_15points.setBounds(212, 138, 109, 23);
 		panel_AddCourse.add(rdbtn_15points);
+		rdbtn_15points.setName("15");
 
 		JRadioButton rdbtn_30points = new JRadioButton("30 points");
 		rdbtn_30points.setBackground(SystemColor.controlLtHighlight);
 		rdbtn_30points.setBounds(212, 161, 109, 23);
 		panel_AddCourse.add(rdbtn_30points);
+		rdbtn_30points.setName("30");
 		
 		ButtonGroup groupPoints = new ButtonGroup();
 		groupPoints.add(rdbtn_7_5points);
@@ -346,18 +372,26 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
+				//String p Enumeration<E>ts.toString();
+				String ans = "";
+				for (Enumeration <AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
+				AbstractButton b = button.nextElement();
+					if (b.isSelected()) {
+					 ans = b.getText();
+				}
+				}
 				//int selectbButton = group.getSelection();
 						
 				if (!courseName.equals("")) {
-					System.out.println("hej");
-				//	courseController.addCourse(courseName, );
+					
+					courseController.addCourse(courseName, ans);
 				}
 			groupPoints.clearSelection();	
 			textField_EnterCourseName.setText("");
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(courseName);
-			choice_UpdateCourse.add(courseName);
-			choice_AddExamToCourse.add(courseName);			
+			choice_RemoveCourse.add(courseName + " ," + ans);
+			choice_UpdateCourse.add(courseName + " ," + ans);
+			choice_AddExamToCourse.add(courseName + " ," + ans);			
 				}
 			
 			}
@@ -461,10 +495,30 @@ public class Swing {
 		groupRoom.add(rdbtn_RoomA167);
 		groupRoom.add(rdbtn_RoomB198);
 		groupRoom.add(rdbtn_RoomB067);
+		
+		JDateChooser dateChooser_ToExam = new JDateChooser();
+		dateChooser_ToExam.setBounds(182, 96, 123, 20);
+		panel_AddExam.add(dateChooser_ToExam);
 
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
 		panel_AddExam.add(btnAddExam);
+		btnAddExam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			String pickedCourse =	choice_AddExamToCourse.getSelectedItem();
+			String examName = textField_EnterExamName.getText();
+			String date = dateChooser_ToExam.getDateFormatString();
+		
+			if (!pickedCourse.equals("") && !examName.equals("") && !date.isBlank()) {
+				//if ())
+				//examController.addExam(date, location, time);
+			}
+			
+				
+				
+			}
+		});
 
 		JLabel lbl_AddExamToCourse = new JLabel("Add course to exam:");
 		lbl_AddExamToCourse.setBounds(10, 27, 153, 14);
@@ -474,9 +528,6 @@ public class Swing {
 
 		panel_AddExam.add(lbl_AddExamToCourse);
 
-		JDateChooser dateChooser_ToExam = new JDateChooser();
-		dateChooser_ToExam.setBounds(182, 96, 123, 20);
-		panel_AddExam.add(dateChooser_ToExam);
 
 		JLabel lbl_ChooseDateToExam = new JLabel("Choose Date:");
 		lbl_ChooseDateToExam.setBounds(10, 96, 86, 14);
@@ -490,10 +541,10 @@ public class Swing {
 		lblNewLabel_2.setBounds(10, 63, 111, 14);
 		panel_AddExam.add(lblNewLabel_2);
 		
-		textField = new JTextField();
-		textField.setBounds(182, 65, 123, 20);
-		panel_AddExam.add(textField);
-		textField.setColumns(10);
+		textField_EnterExamName = new JTextField();
+		textField_EnterExamName.setBounds(182, 65, 123, 20);
+		panel_AddExam.add(textField_EnterExamName);
+		textField_EnterExamName.setColumns(10);
 
 		Panel panel_RemoveExam = new Panel();
 		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);

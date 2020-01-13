@@ -53,7 +53,7 @@ public class StudentController {
 		while (!studentAdded) {
 			String studentID = this.generateStudentID();
 			if (this.findStudent(studentID) == null) {
-				Student student = new Student(studentID, studentName);
+				Student student = new Student( studentName);
 				student.setStudentID(studentID);
 				this.studentList.add(student);
 				studentAdded = true;

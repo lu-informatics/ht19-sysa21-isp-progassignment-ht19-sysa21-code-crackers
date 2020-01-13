@@ -6,12 +6,11 @@ public class Course {
 
 	private String courseCode;
 	private String name;
-	private double credits;
+	private String credits;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
-	public Course(String courseCode, String courseName, double courseCredits) {
+	public Course(String courseName, String courseCredits) {
 		this.name = courseName;
-		this.courseCode = courseCode;
 		this.credits = courseCredits;
 	}
 
@@ -39,11 +38,11 @@ public class Course {
 		this.name = courseName;
 	}
 
-	public double getCredit() {
+	public String getCredit() {
 		return credits;
 	}
 
-	public void setCredit(double credit) {
+	public void setCredit(String credit) {
 		this.credits = credit;
 	}
 

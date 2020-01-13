@@ -7,8 +7,8 @@ public class Student {
 	private String name;
 	private List<Result> studentResultList = new ArrayList<Result>();
 
-	public Student(String studentID, String studentName) {
-		this.studentID = studentID;
+	public Student( String studentName) {
+		
 		this.name = studentName;
 	}
 

@@ -16,27 +16,37 @@ public class Test {
 
 		ExamController examRegister = new ExamController();
 
-		Course course1 = new Course("C10000", "IS-Projekt", 15);
-		Course course2 = new Course("C10001", "Modellering", 15);
+		Course course1 = new Course( "IS-Projekt", "15");
+		Course course2 = new Course( "Modellering", "15");
 
 	/*	WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
 		WrittenExam writtenExam3 = new WrittenExam();
 		WrittenExam writtenExam4 = new WrittenExam();
 */
-		Student student1 = new Student("S10003", "David");
-		Student student2 = new Student("S10002", "Martin");
-		Student student3 = new Student("S10001, ", "Jenny");
-		Student student4 = new Student("S10000", "Hanna");
+		Student student1 = new Student("David");
+		Student student2 = new Student("Martin");
+		Student student3 = new Student( "Jenny");
+		Student student4 = new Student("Hanna");
+		courseRegister.addCourse("C10001", "15");
+		courseRegister.addCourse("Modellering", "15");
+		studentRegister.addStudent("Martin");
+		studentRegister.updateStudent("S71734", "Peter");
+		for (Student tmp : studentRegister.getStudentList()) {
+			System.out.println(tmp.getStudentID() + tmp.getStudentName());
+		}
 		
 		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
 		
-		//studentRegister.updateStudent("S1003", "John");
+		studentRegister.updateStudent("S10003", "John");
 		
 		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
 		
 		//courseRegister.updateCourse("C10000", "Programmering");
 		courseRegister.removeCourse("C10001");
+		for (Course c : courseRegister.getCourseList()) {
+			System.out.println(c.getCourseCode() + c.getCourseName());
+		}
 		
 		System.out.println(course1.getCourseCode()+ " "+ course1.getCourseName());
 		
