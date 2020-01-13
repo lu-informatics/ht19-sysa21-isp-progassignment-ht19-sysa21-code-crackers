@@ -38,13 +38,14 @@ public class ExamController {
 						ex.setTime(time);
 						ex.setCourse(course);
 						course.getWrittenExamList().add(ex);
-					
+
 						examAdded = true;
 					}
 				}
-			}}
+			}
 		}
-	//}
+	}
+	// }
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
@@ -69,8 +70,7 @@ public class ExamController {
 		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = rand.nextInt(max-min) + min;
-		
+		int range = rand.nextInt(max - min) + min;
 
 		return String.format("E%05d", range);
 	}
