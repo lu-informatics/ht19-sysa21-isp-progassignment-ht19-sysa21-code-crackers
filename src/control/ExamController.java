@@ -26,13 +26,18 @@ public class ExamController {
 			String examID = this.generateExamID();
 			if (this.findExam(examID) == null) {
 				WrittenExam ex = new WrittenExam(examID, date, location, time);
-				ex.setExamID(examID);
-				ex.getMaxPoints(); 
-				ex.setDate(date);
-				ex.setLocation(location);
-				ex.setTime(time);
-				this.examList.add(ex);
-				examAdded = true;
+				for (WrittenExam we : examList) {
+					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
+
+						ex.setExamID(examID);
+						ex.getMaxPoints();
+						ex.setDate(date);
+						ex.setLocation(location);
+						ex.setTime(time);
+						this.examList.add(ex);
+						examAdded = true;
+					}
+				}
 			}
 		}
 	}
