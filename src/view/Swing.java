@@ -516,7 +516,7 @@ public class Swing {
 		
 			if (!newName.equals("")) {
 				
-		courseController.updateCourse(courseParts[1], newName);
+		courseController.updateCourse(courseParts[0], newName); // Något knasigt
 		
 
 		choice_RemoveCourse.remove(updateCourse);
