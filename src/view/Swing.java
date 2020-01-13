@@ -372,7 +372,6 @@ public class Swing {
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String courseName = textField_EnterCourseName.getText();
-				//String p Enumeration<E>ts.toString();
 				String ans = "";
 				for (Enumeration <AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
 				AbstractButton b = button.nextElement();
@@ -381,28 +380,29 @@ public class Swing {
 				}
 				}
 				
-				
-						
-				if (!courseName.equals("")) {
+					if (!courseName.equals("")) {
 					
-					courseController.addCourse(courseName, ans);
+						courseController.addCourse(courseName, ans);
+						
 				}
-				
-				choice_RemoveCourse.removeAll();
-				choice_UpdateCourse.removeAll();
-				choice_AddExamToCourse.removeAll();
-				
+				        
+						
+				        choice_RemoveCourse.removeAll(); /// funkar inte som den ska
+						choice_UpdateCourse.removeAll();
+						choice_AddExamToCourse.removeAll();
 				for (Course tmp : courseController.getCourseList()) {
 					String p = tmp.getCourseCode();
 				
-			groupPoints.clearSelection();	
-			textField_EnterCourseName.setText("");
+			
 				if(!courseName.equals("")) {
 			choice_RemoveCourse.add(p + " ," + courseName + " ," + ans);
 			choice_UpdateCourse.add(p + " ," + courseName + " ," + ans);
-			choice_AddExamToCourse.add(p + " ," + courseName + " ," + ans);			
+			choice_AddExamToCourse.add(p + " ," + courseName + " ," + ans);	
+			
 				}
 				}
+				groupPoints.clearSelection();	
+				textField_EnterCourseName.setText("");
 			
 			}
 	
