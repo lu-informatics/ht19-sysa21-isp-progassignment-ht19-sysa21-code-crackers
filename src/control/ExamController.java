@@ -63,12 +63,13 @@ public class ExamController {
 	}
 
 	private String generateExamID() {
+		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = max - min + 10000;
-		Random rand = new Random();
+		int range = rand.nextInt(max-min) + min;
+		
 
-		return String.format("E%05d", rand.nextInt(range));
+		return String.format("E%05d", range);
 	}
 
 	public void generateLettergrade(String examID, Student student, int points) {

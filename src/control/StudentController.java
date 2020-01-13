@@ -64,12 +64,13 @@ public class StudentController {
 	}
 
 	private String generateStudentID() {
+		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = max - min + 10000;
-		Random rand = new Random();
+		int range = rand.nextInt(max-min) + min;
+	
 
-		return String.format("S%05d", rand.nextInt(range));
+		return String.format("S%05d", range);
 	}
 
 }
