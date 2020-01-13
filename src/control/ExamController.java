@@ -4,8 +4,9 @@ import java.util.*;
 
 import model.Result;
 import model.Student;
+import model.Course;
 import model.WrittenExam;
-import 
+import control.CourseController;
 
 import java.util.List;
 
@@ -21,14 +22,13 @@ public class ExamController {
 		this.examList = examList;
 	}
 
-	public void addExamToCourse(String courseCode, String date, String location, String time) {
+	public void addExamToCourse(Course course, String date, String location, String time) {
 		boolean examAdded = false;
 		while (!examAdded) {
 			String examID = this.generateExamID();
-			for(Course tmpC : CourseControll)
 			if (this.findExam(examID) == null) {
 				WrittenExam ex = new WrittenExam(date, location, time);
-				for (WrittenExam we : examList) {
+				for (WrittenExam we : course.getWrittenExamList()) {
 					//if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
 
 						ex.setExamID(examID);
@@ -36,8 +36,9 @@ public class ExamController {
 						ex.setDate(date);
 						ex.setLocation(location);
 						ex.setTime(time);
-						
+						ex.setCourse(course);
 						this.examList.add(ex);
+					
 						examAdded = true;
 					}
 				}
