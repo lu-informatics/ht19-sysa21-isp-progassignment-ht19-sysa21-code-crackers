@@ -15,8 +15,7 @@ public class WrittenExam {
 	private List<Result> resultList = new ArrayList<Result>();
 	
 
-	public WrittenExam(String examID, String date, String location, String time) {
-		this.examID = examID;
+	public WrittenExam(String date, String location, String time) {
 		this.date = date;
 		this.location = location;
 		this.time = time;

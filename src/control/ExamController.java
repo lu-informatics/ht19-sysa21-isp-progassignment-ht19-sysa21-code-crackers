@@ -25,7 +25,7 @@ public class ExamController {
 		while (!examAdded) {
 			String examID = this.generateExamID();
 			if (this.findExam(examID) == null) {
-				WrittenExam ex = new WrittenExam(examID, date, location, time);
+				WrittenExam ex = new WrittenExam(date, location, time);
 				for (WrittenExam we : examList) {
 					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
 
