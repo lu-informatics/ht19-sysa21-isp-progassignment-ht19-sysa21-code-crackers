@@ -59,12 +59,13 @@ public class CourseController {
 	}
 
 	private String generateCourseID() {
+		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = max - min + 10000;
-		Random rand = new Random();
+		int range = rand.nextInt(max - min) + min;
+		
 
-		return String.format("C%05d", rand.nextInt(range));
+		return String.format("C%05d", range);
 	}
 
 }
