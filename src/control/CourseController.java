@@ -2,7 +2,6 @@ package control;
 
 import java.util.*;
 
-
 import model.Course;
 
 public class CourseController {
@@ -17,12 +16,12 @@ public class CourseController {
 		this.courseList = courseList;
 	}
 
-	public void addCourse(String courseName,int credits) {
+	public void addCourse(String courseName, int credits) {
 		boolean corseAdded = false;
 		while (!corseAdded) {
 			String courseID = this.generateCourseID();
 			if (this.findCourse(courseID) == null) {
-				Course course = new Course(courseID,courseName, credits);
+				Course course = new Course(courseID, courseName, credits);
 				course.setCourseCode(courseID);
 				course.setCredit(credits);
 				this.courseList.add(course);
@@ -50,14 +49,13 @@ public class CourseController {
 		return null;
 	}
 
-	public Course updateCourse(String courseCode, String newCourseName) {
+	public void updateCourse(String courseCode, String newCourseName) {
 		Course foundCourse = this.findCourse(courseCode);
 		if (courseCode != null) {
 			foundCourse.setCourseName(newCourseName);
-			return foundCourse;
 
 		}
-		return null;
+
 	}
 
 	private String generateCourseID() {

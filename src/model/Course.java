@@ -5,12 +5,12 @@ import java.util.*;
 public class Course {
 
 	private String courseCode;
-	private String courseName;
+	private String name;
 	private double credits;
 	private List<WrittenExam> writtenExamList = new ArrayList<WrittenExam>();
 
 	public Course(String courseCode, String courseName, double courseCredits) {
-		this.courseName = courseName;
+		this.name = courseName;
 		this.courseCode = courseCode;
 		this.credits = courseCredits;
 	}
@@ -32,11 +32,11 @@ public class Course {
 	}
 
 	public String getCourseName() {
-		return courseName;
+		return name;
 	}
 
 	public void setCourseName(String courseName) {
-		this.courseName = courseName;
+		this.name = courseName;
 	}
 
 	public double getCredit() {

@@ -16,7 +16,7 @@ public class Test {
 
 		ExamController examRegister = new ExamController();
 
-		Course course1 = new Course("", "IS-Projekt", 15);
+		Course course1 = new Course("C10000", "IS-Projekt", 15);
 		Course course2 = new Course("", "Modellering", 15);
 
 	/*	WrittenExam writtenExam1 = new WrittenExam();
@@ -34,6 +34,12 @@ public class Test {
 		studentRegister.updateStudent("S1003", "John");
 		
 		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
+		
+		courseRegister.updateCourse("C10000", "Programmering");
+		
+		System.out.println(course1.getCourseCode()+ " "+ course1.getCourseName());
+		
+		System.out.println(course2.getCourseCode() + course2.getCourseName());
 
 }
 
