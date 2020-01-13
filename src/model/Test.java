@@ -44,8 +44,8 @@ public class Test {
 		courseRegister.addCourse("IS-Projekt", "15");
 		courseRegister.addCourse("Modellering", "15");
 
-		examRegister.addExam("20 Februari 2020", "RoomA123", "08:00");
-		examRegister.addExam("10 Februari 2020", "RoomA123", "08:00");
+		examRegister.addExamToCourse("IS-Projekt", "20 Februari 2020", "RoomA123", "08:00");
+		examRegister.addExamToCourse("Modellering", "10 Februari 2020", "RoomA123", "08:00");
 
 		student1.addResultToStudent(result1);
 		student1.addResultToStudent(result2);

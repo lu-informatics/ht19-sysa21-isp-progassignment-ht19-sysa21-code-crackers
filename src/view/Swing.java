@@ -548,9 +548,9 @@ public class Swing {
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
-				examController.addExam(date, ans, time);
+				examController.addExamToCourse(pickedCourse, date, ans, time);
 				
-				choice_SelectExam.add(ans + " ," + date + " ," + time);
+				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				
 				
 			}
