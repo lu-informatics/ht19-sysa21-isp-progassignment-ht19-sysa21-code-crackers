@@ -28,8 +28,8 @@ public class Test {
 		Course course1 = new Course("IS-Projekt", "15");
 		Course course2 = new Course("Modellering", "15");
 
-		WrittenExam exam1 = new WrittenExam("", "20 Februari 2020", "RoomA123", "08:00");
-		WrittenExam exam2 = new WrittenExam("", "10 Februari 2020", "RoomA123", "08:00");
+		WrittenExam exam1 = new WrittenExam("20 Februari 2020", "RoomA123", "08:00");
+		WrittenExam exam2 = new WrittenExam("10 Februari 2020", "RoomA123", "08:00");
 
 		Result result1 = new Result();
 		Result result2 = new Result();
