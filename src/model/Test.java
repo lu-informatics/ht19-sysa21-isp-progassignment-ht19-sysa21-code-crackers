@@ -17,7 +17,7 @@ public class Test {
 		ExamController examRegister = new ExamController();
 
 		Course course1 = new Course("C10000", "IS-Projekt", 15);
-		Course course2 = new Course("", "Modellering", 15);
+		Course course2 = new Course("C10001", "Modellering", 15);
 
 	/*	WrittenExam writtenExam1 = new WrittenExam();
 		WrittenExam writtenExam2 = new WrittenExam();
@@ -31,16 +31,18 @@ public class Test {
 		
 		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
 		
-		studentRegister.updateStudent("S1003", "John");
+		//studentRegister.updateStudent("S1003", "John");
 		
 		System.out.println(student1.getStudentName() + " " + student1.getStudentID());
 		
-		courseRegister.updateCourse("C10000", "Programmering");
+		//courseRegister.updateCourse("C10000", "Programmering");
+		courseRegister.removeCourse("C10001");
 		
 		System.out.println(course1.getCourseCode()+ " "+ course1.getCourseName());
 		
-		System.out.println(course2.getCourseCode() + course2.getCourseName());
+		System.out.println(course2.getCourseCode()+ " " + course2.getCourseName());
 
+		
 }
 
 }

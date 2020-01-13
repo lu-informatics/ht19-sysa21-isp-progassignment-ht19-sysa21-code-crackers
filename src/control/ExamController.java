@@ -56,7 +56,7 @@ public class ExamController {
 
 	}
 
-	public String generateExamID() {
+	private String generateExamID() {
 		int max = 99999;
 		int min = 10000;
 		int range = max - min + 10000;
