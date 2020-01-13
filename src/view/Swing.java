@@ -134,15 +134,9 @@ public class Swing {
 		panel_UpdateStudent.add(textField_NewStudentName);
 		textField_NewStudentName.setColumns(10);
 
-		JButton btnUpdate = new JButton("Update student");
-		btnUpdate.setBackground(SystemColor.controlLtHighlight);
-		btnUpdate.setBorder(new LineBorder(SystemColor.controlText, 1, true));
-		btnUpdate.setBounds(188, 205, 125, 23);
-		panel_UpdateStudent.add(btnUpdate);
-
-		JLabel lblResponse = new JLabel("Response:");
-		lblResponse.setBounds(44, 263, 68, 14);
-		panel_UpdateStudent.add(lblResponse);
+		JLabel lblResponse_ForUpdate = new JLabel("Response:");
+		lblResponse_ForUpdate.setBounds(44, 263, 327, 14);
+		panel_UpdateStudent.add(lblResponse_ForUpdate);
 
 		Choice choice_UpdateStudent = new Choice(); // gör combobox
 		choice_UpdateStudent.setBounds(304, 69, 114, 26);
@@ -302,7 +296,40 @@ public class Swing {
 		btnRemoveStudent.setBounds(245, 159, 134, 23);
 		panel_RemoveStudent.add(btnRemoveStudent);
 
-		;
+		JButton btnUpdate = new JButton("Update student");
+		btnUpdate.setBackground(SystemColor.controlLtHighlight);
+		btnUpdate.setBorder(new LineBorder(SystemColor.controlText, 1, true));
+		btnUpdate.setBounds(188, 205, 125, 23);
+		panel_UpdateStudent.add(btnUpdate);
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String updateStudent = choice_UpdateStudent.getSelectedItem();
+				String textForUpdate = textField_NewStudentName.getText();
+				
+                   String [] studentParts = updateStudent.split(",");
+				
+                   		if (!textForUpdate.equals("")) {
+                   studentController.updateStudent(studentParts[1], textForUpdate);
+                   lblResponse_ForUpdate.setText(updateStudent + ": has changed named to " + textForUpdate); 
+                   
+                   choice_RemoveStudent.remove(updateStudent);
+                   choice_UpdateStudent.remove(updateStudent);
+                   choice_SelectStudentForResult.remove(updateStudent);
+                   
+                   
+  	               
+                     choice_RemoveStudent.add(textForUpdate + " ," + studentParts[1]);
+                     choice_UpdateStudent.add(textForUpdate + " ," + studentParts[1]);
+                     choice_SelectStudentForResult.add(textForUpdate + " ," + studentParts[1]);
+                   
+                  
+                   
+               }
+                   	textField_NewStudentName.setText("");
+				
+			}
+			});
 
 		// panel.add(btnAddStudent)
 
