@@ -51,7 +51,6 @@ public class Swing {
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
-	private JTextField textField_EnterExamName;
 
 	/**
 	 * Launch the application.
@@ -518,6 +517,14 @@ public class Swing {
 		JDateChooser dateChooser_ToExam = new JDateChooser();
 		dateChooser_ToExam.setBounds(182, 96, 123, 20);
 		panel_AddExam.add(dateChooser_ToExam);
+		
+		Panel panel_RemoveExam = new Panel();
+		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
+		panel_RemoveExam.setLayout(null);
+		
+		Choice choice_SelectExam = new Choice();
+		choice_SelectExam.setBounds(162, 55, 166, 23);
+		panel_RemoveExam.add(choice_SelectExam);
 
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
@@ -526,9 +533,10 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 			
 		    String pickedCourse = choice_AddExamToCourse.getSelectedItem();
-			String examName = textField_EnterExamName.getText();
+			
 			String date = dateChooser_ToExam.getDateFormatString();	
 			String ans = "";
+			String time = "08:00";
 				for (Enumeration <AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
 					AbstractButton b = button.nextElement();
 						if (b.isSelected()) {
@@ -537,9 +545,14 @@ public class Swing {
 				}
 		
 		
-			if (!pickedCourse.equals("") && !examName.equals("") && !date.isBlank()) {
-				//if ())
-				//examController.addExam(date, location, time);
+			if (!pickedCourse.equals("")) {
+				//if ()) 
+				System.out.println("hej");
+				examController.addExam(date, ans, time);
+				
+				choice_SelectExam.add(ans + " ," + date + " ," + time);
+				
+				
 			}
 			
 				
@@ -563,27 +576,13 @@ public class Swing {
 		Label label_1 = new Label("Response");
 		label_1.setBounds(21, 308, 62, 22);
 		panel_AddExam.add(label_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Enter Exam Name:*");
-		lblNewLabel_2.setBounds(10, 63, 111, 14);
-		panel_AddExam.add(lblNewLabel_2);
-		
-		textField_EnterExamName = new JTextField();
-		textField_EnterExamName.setBounds(182, 65, 123, 20);
-		panel_AddExam.add(textField_EnterExamName);
-		textField_EnterExamName.setColumns(10);
 
-		Panel panel_RemoveExam = new Panel();
-		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
-		panel_RemoveExam.setLayout(null);
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
 		panel_RemoveExam.add(lbl_SelectExam);
 
-		Choice choice_SelectExam = new Choice();
-		choice_SelectExam.setBounds(162, 55, 166, 23);
-		panel_RemoveExam.add(choice_SelectExam);
+		
 
 		Button btn_RemoveExam = new Button("Remove");
 		btn_RemoveExam.setBounds(162, 118, 70, 22);
