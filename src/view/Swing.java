@@ -183,7 +183,7 @@ public class Swing {
 			panel_Result.setLayout(null);
 		 
 		 Choice choice_SelectStudentForResult = new Choice();
-			choice_SelectStudentForResult.setBounds(209, 35, 244, 20);
+			choice_SelectStudentForResult.setBounds(209, 35, 338, 20);
 			panel_Result.add(choice_SelectStudentForResult);
 
 		JButton btnAddStudentButton = new JButton("Add Student");
@@ -599,7 +599,7 @@ public class Swing {
 		panel_AddExam.add(label_ResponseAddExam);
 		
         Choice choice_SelectExamForResult = new Choice();
-		choice_SelectExamForResult.setBounds(211, 110, 242, 20);
+		choice_SelectExamForResult.setBounds(211, 110, 338, 20);
 		panel_Result.add(choice_SelectExamForResult);
 		
 		JButton btnAddExam = new JButton("Add Exam");
