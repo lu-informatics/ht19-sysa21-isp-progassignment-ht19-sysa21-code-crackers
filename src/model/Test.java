@@ -66,23 +66,24 @@ public class Test {
 		course2.addWrittenExam(exam2);
 
 		
-	//	for (Student tmp : studentRegister.getStudentList()) {
-	//		System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
+		for (Student tmp : studentRegister.getStudentList()) {
+			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
 			
-	//	}
-	/*
+		}
+	
 		for (Course ctmp : courseRegister.getCourseList()){
 			 
 			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
 		
 		}
-		
+			
 		for(WrittenExam ee : course1.getWrittenExamList()) {
 			if (ee !=null) {
-			System.out.println( ee.getExamID() + "Date:" + ee.getDate() + ", Location: " + ee.getLocation() + ", Max points: " + ee.getMaxPoints() + ", time: " + ee.getTime());
+			System.out.println("ExamID: " + ee.getExamID() + " Date:" + ee.getDate() + ", Location: " + ee.getLocation() + ", Max points: " + ee.getMaxPoints() + ", time: " + ee.getTime());
 			}
 		}
-		*/
+		System.out.println(exam1.getExamID());
+		
 		
 			
 	}
