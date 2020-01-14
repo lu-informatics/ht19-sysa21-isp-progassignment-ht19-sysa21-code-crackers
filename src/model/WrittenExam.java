@@ -2,7 +2,6 @@ package model;
 
 import java.util.*;
 
-
 public class WrittenExam {
 
 	private String examID;
@@ -13,16 +12,14 @@ public class WrittenExam {
 	private Course course;
 
 	private List<Result> resultList = new ArrayList<Result>();
-	
 
 	public WrittenExam(Course course, String date, String location, String time) {
 		this.date = date;
 		this.location = location;
 		this.time = time;
-		this.course=course;
+		this.course = course;
 	}
-	
-	
+
 	public List<Result> getResultList() {
 		return resultList;
 	}
@@ -67,7 +64,6 @@ public class WrittenExam {
 		return MAXPOINTS;
 	}
 
-
 	public Course getCourse() {
 		return course;
 	}
@@ -80,4 +76,14 @@ public class WrittenExam {
 		this.resultList.add(result);
 	}
 
+	public boolean equals(Object exam) {
+		boolean isSame = false;
+		if (exam instanceof WrittenExam) {
+			if (((WrittenExam)exam).getTime() == this.getTime() && ((WrittenExam)exam).getDate() == this.getDate()
+					&& ((WrittenExam)exam).getLocation() == this.getLocation()) {
+				isSame = true;
+			}
+		}
+		return isSame;
+	}
 }
