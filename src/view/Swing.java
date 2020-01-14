@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Enumeration;
 
+
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -38,6 +39,7 @@ import control.ExamController;
 import control.StudentController;
 import model.Course;
 import model.Student;
+import model.WrittenExam;
 
 public class Swing {
 
@@ -50,6 +52,7 @@ public class Swing {
 	private ExamController examController = new ExamController();
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
+	private JTextField textField_EnterDate;
 
 	/**
 	 * Launch the application.
@@ -137,8 +140,8 @@ public class Swing {
 		lblResponse_ForUpdate.setBounds(44, 263, 327, 14);
 		panel_UpdateStudent.add(lblResponse_ForUpdate);
 
-		Choice choice_UpdateStudent = new Choice(); // gör combobox
-		choice_UpdateStudent.setBounds(304, 69, 114, 26);
+		Choice choice_UpdateStudent = new Choice(); 
+		choice_UpdateStudent.setBounds(219, 69, 199, 26);
 		panel_UpdateStudent.add(choice_UpdateStudent);
 
 		JPanel AnswerStudentID = new JPanel();
@@ -183,7 +186,7 @@ public class Swing {
 			panel_Result.setLayout(null);
 		 
 		 Choice choice_SelectStudentForResult = new Choice();
-			choice_SelectStudentForResult.setBounds(209, 35, 338, 20);
+			choice_SelectStudentForResult.setBounds(209, 35, 244, 20);
 			panel_Result.add(choice_SelectStudentForResult);
 
 		JButton btnAddStudentButton = new JButton("Add Student");
@@ -540,7 +543,7 @@ public class Swing {
 		JLabel lblNewLabel_13 = new JLabel("Enter the date");
 		lblNewLabel_13.setBounds(10, 83, 99, 14);
 
-		JLabel lbl_ChooseLocationToExam = new JLabel("Choose location");
+		JLabel lbl_ChooseLocationToExam = new JLabel("Choose location:");
 		lbl_ChooseLocationToExam.setBounds(10, 136, 111, 14);
 		panel_AddExam.add(lbl_ChooseLocationToExam);
 		
@@ -570,20 +573,17 @@ public class Swing {
 		groupRoom.add(rdbtn_RoomB198);
 		groupRoom.add(rdbtn_RoomB067);
 		
-		JDateChooser dateChooser_ToExam = new JDateChooser();
-		dateChooser_ToExam.setBounds(182, 57, 123, 20);
-		panel_AddExam.add(dateChooser_ToExam);
 		
 		Panel panel_RemoveExam = new Panel();
 		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
 		panel_RemoveExam.setLayout(null);
 		
 		JRadioButton radioButton_time08 = new JRadioButton("08:00-12:00");
-		radioButton_time08.setBounds(176, 89, 109, 23);
+		radioButton_time08.setBounds(176, 107, 109, 23);
 		panel_AddExam.add(radioButton_time08);
 		
 		JRadioButton radioButton_time13 = new JRadioButton("13:00-17:00");
-		radioButton_time13.setBounds(293, 89, 109, 23);
+		radioButton_time13.setBounds(295, 107, 109, 23);
 		panel_AddExam.add(radioButton_time13);
 
 		ButtonGroup timeGroup = new ButtonGroup();
@@ -599,7 +599,7 @@ public class Swing {
 		panel_AddExam.add(label_ResponseAddExam);
 		
         Choice choice_SelectExamForResult = new Choice();
-		choice_SelectExamForResult.setBounds(211, 110, 338, 20);
+		choice_SelectExamForResult.setBounds(211, 110, 242, 20);
 		panel_Result.add(choice_SelectExamForResult);
 		
 		JButton btnAddExam = new JButton("Add Exam");
@@ -617,7 +617,8 @@ public class Swing {
 			
 		   /// Course course = new Course (courseParts[0], courseParts[1]);
 		    
-			String date = dateChooser_ToExam.getDateFormatString();	
+			String date = textField_EnterDate.getText();
+			
 			String ans = "";
 			String time = "";
 			
@@ -641,21 +642,26 @@ public class Swing {
 				System.out.println("hej");
 				examController.addExamToCourse(c, date, ans, time);
 				
-				label_ResponseAddExam.setText("The exam has been added to course: " + c.getCourseName());
+				
+					
+				label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse );
 				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				
 				
-				
+					
 			}
 			
+			textField_EnterDate.setText("");
+			groupRoom.clearSelection();
+			timeGroup.clearSelection();
 			
 				
 				
 			}
 			});
 
-		JLabel lbl_AddExamToCourse = new JLabel("choose course to exam");
+		JLabel lbl_AddExamToCourse = new JLabel("Choose course to exam:");
 		lbl_AddExamToCourse.setBounds(10, 27, 153, 14);
 
 		JLabel lblNewLabel_18 = new JLabel("Choose what exam to add to the course:");
@@ -664,13 +670,22 @@ public class Swing {
 		panel_AddExam.add(lbl_AddExamToCourse);
 
 
-		JLabel lbl_ChooseDateToExam = new JLabel("Select Date:");
+		JLabel lbl_ChooseDateToExam = new JLabel("Enter date:");
 		lbl_ChooseDateToExam.setBounds(10, 63, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
 		
 		JLabel lblNewLabel_2 = new JLabel("Select time:");
-		lblNewLabel_2.setBounds(10, 93, 153, 14);
+		lblNewLabel_2.setBounds(10, 111, 153, 14);
 		panel_AddExam.add(lblNewLabel_2);
+		
+		textField_EnterDate = new JTextField();
+		textField_EnterDate.setBounds(182, 60, 143, 20);
+		panel_AddExam.add(textField_EnterDate);
+		textField_EnterDate.setColumns(10);
+		
+		JLabel lblYyyymmdd = new JLabel("YYYY-MM-DD");
+		lblYyyymmdd.setBounds(10, 78, 86, 14);
+		panel_AddExam.add(lblYyyymmdd);
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
@@ -734,7 +749,13 @@ public class Swing {
 				
 				examController.CalcExamGrade(result);
 				
+				for (WrittenExam ex: examController.getExamList()) {
+				String iD =	ex.getExamID();
+					
+				examController.generateLettergrade(iD, s, result);
 				
+				}	
+				textField_EnterAmountOfPoints.setText("");
 				
 			}
 			});
