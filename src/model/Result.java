@@ -7,10 +7,13 @@ public class Result {
 	private Student student;
 	private WrittenExam writtenExam;
 
-	public void setResult(int result) {
-		if(result <= 100) {
+	public boolean setResult(int result) {
+		boolean setResult = false;
+		if(result <= 100 && result>=0) {
 		this.result = result;
+		setResult =true;
 		}
+		return setResult;
 	}
 
 	public int getResult() {
