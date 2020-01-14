@@ -63,17 +63,30 @@ public class Test {
 
 		result1.setResult(50);
 		result2.setResult(60);
+		
+		course1.addWrittenExam(exam1);
+		course2.addWrittenExam(exam2);
 
+		
 		for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
 			
 		}
 	
-		for (Course ctmp : courseRegister.getCourseList()) {
+		for (Course ctmp : courseRegister.getCourseList()){
+			 
 			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
+		
+		}
+		
+		for(WrittenExam ee : course1.getWrittenExamList()) {
+			if (ee !=null) {
+			System.out.println( ee.getExamID() + "Date:" + ee.getDate() + ", Location: " + ee.getLocation() + ", Max points: " + ee.getMaxPoints() + ", time: " + ee.getTime());
+			}
 		}
 		
 		
+			
 	}
 }
 
