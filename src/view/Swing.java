@@ -224,7 +224,7 @@ public class Swing {
 			
 
 
-		}catch (NullPointerException e){
+		}catch (NullPointerException n){
 			textArea_AddStudent.setText("The student was´nt added, please try again.");
 		}
 		}});
@@ -422,12 +422,13 @@ public class Swing {
 						choice_AddExamToCourse.removeAll();
 				for (Course tmp : courseController.getCourseList()) {
 					String p = tmp.getCourseCode();
+					String cN = tmp.getCourseName();
 				
 			
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(p + " ," + courseName + " ," + ans);
-			choice_UpdateCourse.add(p + " ," + courseName + " ," + ans);
-			choice_AddExamToCourse.add(p + " ," + courseName + " ," + ans);	
+			choice_RemoveCourse.add(p + " ," + cN + " ," + ans);
+			choice_UpdateCourse.add(p + " ," + cN + " ," + ans);
+			choice_AddExamToCourse.add(p + " ," + cN + " ," + ans);	
 			
 				}
 				}
