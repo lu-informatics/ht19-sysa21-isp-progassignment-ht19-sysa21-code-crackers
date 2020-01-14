@@ -8,8 +8,6 @@ import model.WrittenExam;
 import model.Result;
 import model.Student;
 
-import java.util.*;
-
 public class Test {
 
 	public static void main(String[] args) {
@@ -68,11 +66,11 @@ public class Test {
 		course2.addWrittenExam(exam2);
 
 		
-		for (Student tmp : studentRegister.getStudentList()) {
-			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
+	//	for (Student tmp : studentRegister.getStudentList()) {
+	//		System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
 			
-		}
-	
+	//	}
+	/*
 		for (Course ctmp : courseRegister.getCourseList()){
 			 
 			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
@@ -84,7 +82,7 @@ public class Test {
 			System.out.println( ee.getExamID() + "Date:" + ee.getDate() + ", Location: " + ee.getLocation() + ", Max points: " + ee.getMaxPoints() + ", time: " + ee.getTime());
 			}
 		}
-		
+		*/
 		
 			
 	}
