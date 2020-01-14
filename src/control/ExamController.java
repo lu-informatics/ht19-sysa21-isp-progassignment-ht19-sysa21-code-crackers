@@ -26,9 +26,6 @@ public class ExamController {
 	public void addExamToCourse( Course course, String date, String location, String time) {
 		boolean examAdded = false;
 		System.out.println(course);
-		
-	
-		
 				
 		while (!examAdded) {
 			
@@ -37,23 +34,23 @@ public class ExamController {
 				WrittenExam ex = new WrittenExam(course, date, location, time);
 				System.out.println(course);
 				course.getWrittenExamList().add(ex);
-			/*	for (WrittenExam we : c.getWrittenExamList()) {
+				for (WrittenExam we : course.getWrittenExamList()) {
 					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {	
 						ex.setExamID(examID);
-					    ex.setCourse(c);
+					    ex.setCourse(course);
 						ex.getMaxPoints();
 						ex.setDate(date);
 						ex.setLocation(location);
 						ex.setTime(time);
 					
-				*/			
+						
 
 						examAdded = true;
 					}
 				}
 			}
-		//}
-	//}
+		}
+	}
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
