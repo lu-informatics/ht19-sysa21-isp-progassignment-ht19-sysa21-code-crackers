@@ -39,8 +39,6 @@ public class Test {
 		studentRegister.addStudent("Jenny");
 		studentRegister.addStudent("Hanna");
 
-		student1.setStudentID("100");
-
 		courseRegister.addCourse("IS-Projekt", "15");
 		courseRegister.addCourse("Modellering", "15");
 
@@ -66,16 +64,16 @@ public class Test {
 		result1.setResult(50);
 		result2.setResult(60);
 
-		System.out.println("Studenter på Contoso University: ");
 		for (Student tmp : studentRegister.getStudentList()) {
-			System.out.println(tmp.getStudentID() + "," + tmp.getStudentName());
+			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
+			
 		}
- 
-		System.out.println("Kurser som finns på Contoso: ");
-		for (Course cc : courseRegister.getCourseList()) {
-			System.out.println(cc.getCourseCode() + ", " + cc.getCourseName() + ", " + cc.getCredit() + " poäng");
+	
+		for (Course ctmp : courseRegister.getCourseList()) {
+			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
 		}
-
-	} 
+		
+		
+	}
 }
 
