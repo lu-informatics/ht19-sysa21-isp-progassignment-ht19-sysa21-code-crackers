@@ -71,7 +71,9 @@ public class Main {
 		//Swing swing = new Swing(new StudentController(studentRegister));
 		//swing.setVisible(true);
 		
-		
+		//testdata for swing
+		//Swing frame = new Swing (new Controller (Student, Course, Result, WrittenExam));
+		//frame.setVisible(true);
 	}
 
 }
