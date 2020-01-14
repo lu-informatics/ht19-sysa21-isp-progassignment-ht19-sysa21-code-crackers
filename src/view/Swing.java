@@ -132,16 +132,16 @@ public class Swing {
 		textField_NewStudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
 		textField_NewStudentName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
 		textField_NewStudentName.setSelectionColor(SystemColor.activeCaption);
-		textField_NewStudentName.setBounds(188, 169, 133, 20);
+		textField_NewStudentName.setBounds(188, 169, 265, 20);
 		panel_UpdateStudent.add(textField_NewStudentName);
 		textField_NewStudentName.setColumns(10);
 
 		JLabel lblResponse_ForUpdate = new JLabel("Response:");
-		lblResponse_ForUpdate.setBounds(44, 263, 327, 14);
+		lblResponse_ForUpdate.setBounds(44, 263, 447, 14);
 		panel_UpdateStudent.add(lblResponse_ForUpdate);
 
 		Choice choice_UpdateStudent = new Choice(); 
-		choice_UpdateStudent.setBounds(219, 69, 199, 26);
+		choice_UpdateStudent.setBounds(219, 69, 272, 26);
 		panel_UpdateStudent.add(choice_UpdateStudent);
 
 		JPanel AnswerStudentID = new JPanel();
@@ -178,7 +178,7 @@ public class Swing {
 		panel_RemoveStudent.setLayout(null);
 		
 		 Choice choice_RemoveStudent = new Choice();
-		 choice_RemoveStudent.setBounds(232, 59, 147, 20);
+		 choice_RemoveStudent.setBounds(232, 59, 344, 20);
 		 panel_RemoveStudent.add(choice_RemoveStudent);
 		 
 		 JPanel panel_Result = new JPanel();
@@ -186,7 +186,7 @@ public class Swing {
 			panel_Result.setLayout(null);
 		 
 		 Choice choice_SelectStudentForResult = new Choice();
-			choice_SelectStudentForResult.setBounds(209, 35, 244, 20);
+			choice_SelectStudentForResult.setBounds(209, 35, 285, 20);
 			panel_Result.add(choice_SelectStudentForResult);
 
 		JButton btnAddStudentButton = new JButton("Add Student");
@@ -257,7 +257,7 @@ public class Swing {
 
 		JLabel lbl_ResponseForRemovedStudent = new JLabel("Response:");
 		lbl_ResponseForRemovedStudent.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
-		lbl_ResponseForRemovedStudent.setBounds(22, 193, 243, 20);
+		lbl_ResponseForRemovedStudent.setBounds(22, 193, 580, 20);
 		panel_RemoveStudent.add(lbl_ResponseForRemovedStudent);
 
 		JLabel lbl_DoYouWantToRemove = new JLabel("Do you want to remove this student?");
@@ -600,7 +600,7 @@ public class Swing {
 		panel_AddExam.add(label_ResponseAddExam);
 		
         Choice choice_SelectExamForResult = new Choice();
-		choice_SelectExamForResult.setBounds(211, 110, 242, 20);
+		choice_SelectExamForResult.setBounds(211, 110, 283, 20);
 		panel_Result.add(choice_SelectExamForResult);
 		
 		JButton btnAddExam = new JButton("Add Exam");
@@ -736,6 +736,10 @@ public class Swing {
 		Button btn_AddResult = new Button("Add result");
 		btn_AddResult.setBounds(204, 267, 96, 22);
 		panel_Result.add(btn_AddResult);
+		
+		JLabel lbl_Response_LetterGrade = new JLabel("Response");
+		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
+		panel_Result.add(lbl_Response_LetterGrade);
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
