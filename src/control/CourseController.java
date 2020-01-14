@@ -27,8 +27,10 @@ public class CourseController {
 				course.setCredit(credits);
 				this.courseList.add(course);
 				corseAdded = true;
+				System.out.println(course.getCourseCode());
 			}
 		}
+		
 	}
 
 	public Course findCourse(String courseCode) {

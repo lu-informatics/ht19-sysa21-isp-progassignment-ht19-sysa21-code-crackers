@@ -47,7 +47,7 @@ public class Swing {
 	private JTextField textField_NewNameForCourse;
 	private StudentController studentController = new StudentController();
 	private CourseController courseController = new CourseController();
-	private ExamController examController;
+	private ExamController examController = new ExamController();
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 
@@ -423,12 +423,13 @@ public class Swing {
 				for (Course tmp : courseController.getCourseList()) {
 					String p = tmp.getCourseCode();
 					String cN = tmp.getCourseName();
+					String points = tmp.getCredit();
 				
 			
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(p + " ," + cN + " ," + ans);
-			choice_UpdateCourse.add(p + " ," + cN + " ," + ans);
-			choice_AddExamToCourse.add(p + " ," + cN + " ," + ans);	
+			choice_RemoveCourse.add(p + " ," + cN + " ," + points);
+			choice_UpdateCourse.add(p + " ," + cN + " ," + points);
+			choice_AddExamToCourse.add(p + " ," + cN + " ," + points);	
 			
 				}
 				}
@@ -521,21 +522,15 @@ public class Swing {
 		
 			if (!newName.equals("")) {
 				
-		courseController.updateCourse(courseParts[0], newName); // Något knasigt
+		courseController.updateCourse(courseParts[0], newName);
 		
 		choice_RemoveCourse.remove(updateCourse);
 		choice_UpdateCourse.remove(updateCourse);
 		choice_AddExamToCourse.remove(updateCourse);
 		
-		
-			
-		choice_RemoveCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
-		choice_UpdateCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
-		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
-		
-		
-		
-		
+		choice_RemoveCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
+		choice_UpdateCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
+		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		
 			}
 			textField_NewNameForCourse.setText("");
@@ -594,7 +589,14 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 			
 		    String pickedCourse = choice_AddExamToCourse.getSelectedItem();
+		    
+		    String [] courseParts = pickedCourse.split(" ,");
+		    
+		  Course c =  courseController.findCourse(courseParts[0]);
+		  System.out.println(c);
 			
+		   /// Course course = new Course (courseParts[0], courseParts[1]);
+		    
 			String date = dateChooser_ToExam.getDateFormatString();	
 			String ans = "";
 			String time = "08:00";
@@ -609,7 +611,7 @@ public class Swing {
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
-				examController.addExamToCourse(pickedCourse, date, ans, time);
+				examController.addExamToCourse(c, date, ans, time);
 				
 				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				

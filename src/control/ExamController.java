@@ -6,13 +6,14 @@ import model.Result;
 import model.Student;
 import model.Course;
 import model.WrittenExam;
-
+import control.CourseController;
 
 import java.util.List;
 
 public class ExamController {
 
 	private List<WrittenExam> examList = new ArrayList<WrittenExam>();
+	private CourseController courseController = new CourseController();
 
 	public List<WrittenExam> getExamList() {
 		return examList;
@@ -22,29 +23,37 @@ public class ExamController {
 		this.examList = examList;
 	}
 
-	public void addExamToCourse(Course course, String date, String location, String time) {
+	public void addExamToCourse( Course course, String date, String location, String time) {
 		boolean examAdded = false;
+		System.out.println(course);
+		
+	
+		
+				
 		while (!examAdded) {
+			
 			String examID = this.generateExamID();
 			if (this.findExam(examID) == null) {
-				WrittenExam ex = new WrittenExam(date, location, time);
-				for (WrittenExam we : course.getWrittenExamList()) {
-					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {
-
+				WrittenExam ex = new WrittenExam(course, date, location, time);
+				System.out.println(course);
+				course.getWrittenExamList().add(ex);
+			/*	for (WrittenExam we : c.getWrittenExamList()) {
+					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {	
 						ex.setExamID(examID);
+					    ex.setCourse(c);
 						ex.getMaxPoints();
 						ex.setDate(date);
 						ex.setLocation(location);
 						ex.setTime(time);
-						course.getWrittenExamList().add(ex);
+					
+				*/			
 
 						examAdded = true;
 					}
 				}
 			}
-		}
-	}
-	// }
+		//}
+	//}
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
