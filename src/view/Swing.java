@@ -33,7 +33,6 @@ import javax.swing.border.MatteBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-
 import control.CourseController;
 import control.ExamController;
 import control.StudentController;
@@ -46,7 +45,7 @@ public class Swing {
 	private JTextField textField_NewStudentName;
 	private JTextField textField_EnterCourseName;
 	private JTextField textField_NewNameForCourse;
-	private StudentController studentController = new StudentController ();
+	private StudentController studentController = new StudentController();
 	private CourseController courseController = new CourseController();
 	private ExamController examController;
 	private JTextPane textPane_enterStudentName;
@@ -190,7 +189,7 @@ public class Swing {
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+			try {
 				String studentName = textField_EnterStudentName.getText();
 
 				if (!studentName.equals("")) {
@@ -224,7 +223,12 @@ public class Swing {
 				}
 			
 
+
+		}catch (NullPointerException e){
+			System.out.println("The student was´nt added, please try again.");
+		}
 		}});
+		
 		btnAddStudentButton.setBounds(327, 46, 142, 23);
 		AnswerStudentID.add(btnAddStudentButton);
 
