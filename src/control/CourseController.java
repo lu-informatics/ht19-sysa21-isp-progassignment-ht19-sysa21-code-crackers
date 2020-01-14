@@ -52,7 +52,7 @@ public class CourseController {
 
 	public void updateCourse(String courseCode, String newCourseName) {
 		Course foundCourse = this.findCourse(courseCode);
-		if (courseCode != null) {
+		if (foundCourse != null) {
 			foundCourse.setCourseName(newCourseName);
 
 		}
