@@ -183,7 +183,7 @@ public class Swing {
 			panel_Result.setLayout(null);
 		 
 		 Choice choice_SelectStudentForResult = new Choice();
-			choice_SelectStudentForResult.setBounds(209, 35, 104, 20);
+			choice_SelectStudentForResult.setBounds(209, 35, 244, 20);
 			panel_Result.add(choice_SelectStudentForResult);
 
 		JButton btnAddStudentButton = new JButton("Add Student");
@@ -599,7 +599,7 @@ public class Swing {
 		panel_AddExam.add(label_ResponseAddExam);
 		
         Choice choice_SelectExamForResult = new Choice();
-		choice_SelectExamForResult.setBounds(211, 110, 102, 20);
+		choice_SelectExamForResult.setBounds(211, 110, 242, 20);
 		panel_Result.add(choice_SelectExamForResult);
 		
 		JButton btnAddExam = new JButton("Add Exam");
@@ -679,6 +679,21 @@ public class Swing {
 		
 
 		Button btn_RemoveExam = new Button("Remove");
+		btn_RemoveExam.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			String removeExam =	choice_SelectExam.getSelectedItem();
+			
+				if(removeExam!=null) {
+			examController.removeExamFromCourse(removeExam);
+			choice_SelectExam.remove(removeExam);
+			choice_SelectExamForResult.remove(removeExam);
+			
+			
+			
+				}
+			}
+		});
 		btn_RemoveExam.setBounds(162, 118, 70, 22);
 		panel_RemoveExam.add(btn_RemoveExam);
 
@@ -705,6 +720,24 @@ public class Swing {
 		Button btn_AddResult = new Button("Add result");
 		btn_AddResult.setBounds(204, 267, 96, 22);
 		panel_Result.add(btn_AddResult);
+		btn_AddResult.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String student = choice_SelectStudentForResult.getSelectedItem();
+				String exam = choice_SelectExamForResult.getSelectedItem();
+				String points = textField_EnterAmountOfPoints.getText();
+						
+				int result = Integer.parseInt(points);
+				
+				String [] studentPart = student.split(",");
+				Student s = studentController.findStudent(studentPart[1]);
+				
+				examController.CalcExamGrade(result);
+				
+				
+				
+			}
+			});
 
 		// JTextPane textPane_EnterStudentName = new JTextPane();
 		// studentRegister.getStudentList();
