@@ -49,8 +49,7 @@ public class Test {
 		student2.addResultToStudent(result1);
 		student2.addResultToStudent(result1);
 
-		result1.setWrittenExam(exam1);
-		result2.setWrittenExam(exam2);
+		
 		result1.setStudent(student1);
 		result2.setStudent(student2);
 
@@ -66,7 +65,7 @@ public class Test {
 		course2.addWrittenExam(exam2);
 
 		
-		for (Student tmp : studentRegister.getStudentList()) {
+	/*	for (Student tmp : studentRegister.getStudentList()) {
 			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
 			
 		}
@@ -75,14 +74,14 @@ public class Test {
 			 
 			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
 		
-		}
+		}*/
 			
 		for(WrittenExam ee : course1.getWrittenExamList()) {
 			if (ee !=null) {
 			System.out.println("ExamID: " + ee.getExamID() + " Date:" + ee.getDate() + ", Location: " + ee.getLocation() + ", Max points: " + ee.getMaxPoints() + ", time: " + ee.getTime());
 			}
 		}
-		System.out.println(exam1.getExamID());
+		
 		
 		
 			
