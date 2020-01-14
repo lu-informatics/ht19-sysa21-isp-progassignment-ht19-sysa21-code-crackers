@@ -278,7 +278,7 @@ public class Swing {
 		btnRemoveStudent.setBorder(new LineBorder(SystemColor.window, 1, true));
 		btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				try {
 					String p = choice_RemoveStudent.getSelectedItem();
 					
 					String [] pParts = p.split(",");
@@ -293,9 +293,9 @@ public class Swing {
 					//for (Student tmp : studentController.getStudentList()) {
 						//System.out.println(tmp.getStudentID() + tmp.getStudentName());
 					//}
-					
+			}catch (NullPointerException n) {		
 			}
-		});
+			}});
 		btnRemoveStudent.setBackground(SystemColor.window);
 		btnRemoveStudent.setBounds(245, 159, 134, 23);
 		panel_RemoveStudent.add(btnRemoveStudent);
@@ -470,7 +470,7 @@ public class Swing {
 		JButton btn_YesRemoveCourse = new JButton("Remove course");
 		btn_YesRemoveCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
 				String p = choice_RemoveCourse.getSelectedItem();
 				String [] pParts = p.split(",");
 				
@@ -484,8 +484,9 @@ public class Swing {
 				
 				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
 				
-			}
-		});
+				}catch (NullPointerException n) {		
+				}
+				}});
 		btn_YesRemoveCourse.setBounds(262, 119, 137, 23);
 		panel_RemoveCourse.add(btn_YesRemoveCourse);
 
