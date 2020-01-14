@@ -32,6 +32,7 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
+import com.sun.net.httpserver.Authenticator.Result;
 import com.toedter.calendar.JDateChooser;
 
 import control.CourseController;
@@ -488,6 +489,7 @@ public class Swing {
 				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
 				
 				}catch (NullPointerException n) {		
+					
 				}
 				}});
 		btn_YesRemoveCourse.setBounds(262, 119, 137, 23);
@@ -756,14 +758,17 @@ public class Swing {
 				
 				for (WrittenExam ex: examController.getExamList()) {
 				String iD =	ex.getExamID();
-					
+			
 				examController.generateLettergrade(iD, s, result);
 				
-				}	
-				textField_EnterAmountOfPoints.setText("");
+					
 				
+					
 			}
-			});
+				textField_EnterAmountOfPoints.setText("");
+				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
+			}
+		});
 
 		// JTextPane textPane_EnterStudentName = new JTextPane();
 		// studentRegister.getStudentList();
