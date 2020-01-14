@@ -29,9 +29,9 @@ public class Main {
 		Student student3 = new Student("Greg");
 		
 		//Create WrittenExams
-		WrittenExam writtenExam1 = new WrittenExam("20 Januari 2020", "RoomA123", "08:00");
-		WrittenExam writtenExam2 = new WrittenExam("30 Januari 2020", "RoomB067", "08:00");
-		WrittenExam writtenExam3 = new WrittenExam("10 Februari 2020", "RoomA167", "08:00");
+		WrittenExam writtenExam1 = new WrittenExam("20 Jan 2020", "RoomA123", "08:00");
+		WrittenExam writtenExam2 = new WrittenExam("30 Jan 2020", "RoomB067", "08:00");
+		WrittenExam writtenExam3 = new WrittenExam("10 Feb 2020", "RoomA167", "08:00");
 		
 		//Result
 		Result result1 = new Result();
