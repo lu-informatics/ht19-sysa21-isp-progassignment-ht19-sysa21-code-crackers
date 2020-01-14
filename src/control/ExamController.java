@@ -6,14 +6,13 @@ import model.Result;
 import model.Student;
 import model.Course;
 import model.WrittenExam;
-import control.CourseController;
+
 
 import java.util.List;
 
 public class ExamController {
 
 	private List<WrittenExam> examList = new ArrayList<WrittenExam>();
-	private CourseController courseController = new CourseController();
 
 	public List<WrittenExam> getExamList() {
 		return examList;
@@ -34,7 +33,7 @@ public class ExamController {
 				WrittenExam ex = new WrittenExam(course, date, location, time);
 				System.out.println(course);
 				course.getWrittenExamList().add(ex);
-				for (WrittenExam we : course.getWrittenExamList()) {
+			/*	for (WrittenExam we : course.getWrittenExamList()) {
 					if (ex.getTime() != we.getTime() && ex.getDate() != we.getDate()) {	
 						ex.setExamID(examID);
 					    ex.setCourse(course);
@@ -42,15 +41,15 @@ public class ExamController {
 						ex.setDate(date);
 						ex.setLocation(location);
 						ex.setTime(time);
-					
+				*/	
 						
 
 						examAdded = true;
 					}
 				}
 			}
-		}
-	}
+	//	}
+	//}
 
 	public WrittenExam findExam(String examID) {
 		for (WrittenExam e : examList) {
