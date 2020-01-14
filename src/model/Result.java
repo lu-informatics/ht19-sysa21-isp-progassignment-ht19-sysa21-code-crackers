@@ -8,7 +8,9 @@ public class Result {
 	private WrittenExam writtenExam;
 
 	public void setResult(int result) {
+		if(result <= 100) {
 		this.result = result;
+		}
 	}
 
 	public int getResult() {
