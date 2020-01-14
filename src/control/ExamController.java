@@ -6,14 +6,13 @@ import model.Result;
 import model.Student;
 import model.Course;
 import model.WrittenExam;
-import control.CourseController;
+
 
 import java.util.List;
 
 public class ExamController {
 
 	private List<WrittenExam> examList = new ArrayList<WrittenExam>();
-	private CourseController courseController = new CourseController();
 
 	public List<WrittenExam> getExamList() {
 		return examList;
