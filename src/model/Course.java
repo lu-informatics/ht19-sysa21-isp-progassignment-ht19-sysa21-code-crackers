@@ -45,5 +45,13 @@ public class Course {
 	public void setCredit(String credit) {
 		this.credits = credit;
 	}
+	
+	public void addWrittenExamToCourse(WrittenExam writtenExam) {
+		this.writtenExamList.add(writtenExam);
+	}
+	public void removeWrittenExamFromCourse(WrittenExam writtenExam) {
+		this.writtenExamList.remove(writtenExam);
+	}
+	
 
 }

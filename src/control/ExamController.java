@@ -22,7 +22,7 @@ public class ExamController {
 		this.examList = examList;
 	}
 
-	public void addExamToCourse(String course, String date, String location, String time) {
+	public void addExamToCourse(Course course, String date, String location, String time) {
 		boolean examAdded = false;
 		while (!examAdded) {
 			String examID = this.generateExamID();
@@ -36,7 +36,6 @@ public class ExamController {
 						ex.setDate(date);
 						ex.setLocation(location);
 						ex.setTime(time);
-						ex.setCourse(course);
 						course.getWrittenExamList().add(ex);
 
 						examAdded = true;
