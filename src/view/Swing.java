@@ -225,7 +225,7 @@ public class Swing {
 
 
 		}catch (NullPointerException e){
-			System.out.println("The student was´nt added, please try again.");
+			textArea_AddStudent.setText("The student was´nt added, please try again.");
 		}
 		}});
 		
