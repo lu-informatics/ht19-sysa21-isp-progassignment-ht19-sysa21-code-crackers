@@ -523,20 +523,22 @@ public class Swing {
 				
 		courseController.updateCourse(courseParts[0], newName); // Något knasigt
 		
-
 		choice_RemoveCourse.remove(updateCourse);
 		choice_UpdateCourse.remove(updateCourse);
 		choice_AddExamToCourse.remove(updateCourse);
 		
-		choice_RemoveCourse.add(newName);
-		choice_UpdateCourse.add(newName);
-		choice_AddExamToCourse.add(newName);
+		
+			
+		choice_RemoveCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
+		choice_UpdateCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
+		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + " ," + courseParts[2]);
 		
 		
 		
 		
 		
 			}
+			textField_NewNameForCourse.setText("");
 			}
 		});
 
