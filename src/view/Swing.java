@@ -506,9 +506,9 @@ public class Swing {
 		panel_UpdateCourse.add(textField_NewNameForCourse);
 		textField_NewNameForCourse.setColumns(10);
 
-		JLabel lblNewLabel_11 = new JLabel("Response:");
-		lblNewLabel_11.setBounds(41, 221, 119, 14);
-		panel_UpdateCourse.add(lblNewLabel_11);
+		JLabel lbl_ResponsUpdate = new JLabel("Response:");
+		lbl_ResponsUpdate.setBounds(41, 221, 119, 14);
+		panel_UpdateCourse.add(lbl_ResponsUpdate);
 
 		JButton btnUpdateCourse = new JButton("Update course");
 		btnUpdateCourse.setBounds(191, 142, 130, 23);
@@ -581,7 +581,15 @@ public class Swing {
 		Choice choice_SelectExam = new Choice();
 		choice_SelectExam.setBounds(162, 55, 166, 23);
 		panel_RemoveExam.add(choice_SelectExam);
-
+		
+		Label label_ResponseAddExam = new Label("Response");
+		label_ResponseAddExam.setBounds(21, 308, 62, 22);
+		panel_AddExam.add(label_ResponseAddExam);
+		
+        Choice choice_SelectExamForResult = new Choice();
+		choice_SelectExamForResult.setBounds(211, 110, 102, 20);
+		panel_Result.add(choice_SelectExamForResult);
+		
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
 		panel_AddExam.add(btnAddExam);
@@ -613,10 +621,12 @@ public class Swing {
 				System.out.println("hej");
 				examController.addExamToCourse(c, date, ans, time);
 				
+				label_ResponseAddExam.setText("The exam has been added to course: " + c);
 				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
-				
+				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				
 			}
+			
 			
 				
 				
@@ -635,10 +645,6 @@ public class Swing {
 		JLabel lbl_ChooseDateToExam = new JLabel("Choose Date:");
 		lbl_ChooseDateToExam.setBounds(10, 96, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
-
-		Label label_1 = new Label("Response");
-		label_1.setBounds(21, 308, 62, 22);
-		panel_AddExam.add(label_1);
 
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
@@ -665,9 +671,7 @@ public class Swing {
 		panel_Result.add(lbl_EnterAmountOfPoints);
 
 
-		Choice choice_SelectExamForResult = new Choice();
-		choice_SelectExamForResult.setBounds(211, 110, 102, 20);
-		panel_Result.add(choice_SelectExamForResult);
+		
 
 		TextField textField_EnterAmountOfPoints = new TextField();
 		textField_EnterAmountOfPoints.setBounds(209, 193, 104, 22);
