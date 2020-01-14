@@ -3,7 +3,7 @@ package control;
 import java.util.*;
 
 import model.Course;
-import model.WrittenExam;
+
 
 public class CourseController {
 

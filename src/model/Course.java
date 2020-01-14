@@ -46,10 +46,10 @@ public class Course {
 		this.credits = credit;
 	}
 	
-	public void addWrittenExamToCourse(WrittenExam writtenExam) {
+	public void addWrittenExam(WrittenExam writtenExam) {
 		this.writtenExamList.add(writtenExam);
 	}
-	public void removeWrittenExamFromCourse(WrittenExam writtenExam) {
+	public void removeWrittenExam(WrittenExam writtenExam) {
 		this.writtenExamList.remove(writtenExam);
 	}
 	
