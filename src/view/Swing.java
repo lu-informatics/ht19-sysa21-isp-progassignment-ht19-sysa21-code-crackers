@@ -578,6 +578,18 @@ public class Swing {
 		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
 		panel_RemoveExam.setLayout(null);
 		
+		JRadioButton radioButton_time08 = new JRadioButton("08:00-12:00");
+		radioButton_time08.setBounds(176, 89, 109, 23);
+		panel_AddExam.add(radioButton_time08);
+		
+		JRadioButton radioButton_time13 = new JRadioButton("13:00-17:00");
+		radioButton_time13.setBounds(293, 89, 109, 23);
+		panel_AddExam.add(radioButton_time13);
+
+		ButtonGroup timeGroup = new ButtonGroup();
+		timeGroup.add(radioButton_time08);
+		timeGroup.add(radioButton_time13);
+		
 		Choice choice_SelectExam = new Choice();
 		choice_SelectExam.setBounds(162, 55, 166, 23);
 		panel_RemoveExam.add(choice_SelectExam);
@@ -607,23 +619,33 @@ public class Swing {
 		    
 			String date = dateChooser_ToExam.getDateFormatString();	
 			String ans = "";
-			String time = "08:00";
+			String time = "";
+			
+			for (Enumeration <AbstractButton> buttonTime = timeGroup.getElements(); buttonTime.hasMoreElements();) {
+					AbstractButton timeButton = buttonTime.nextElement();
+						if (timeButton.isSelected()) {
+						 time = timeButton.getText();
+		
+						}
+				}
+			
 				for (Enumeration <AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
 					AbstractButton b = button.nextElement();
 						if (b.isSelected()) {
 						 ans = b.getText();
 						}
 				}
-		
-		
+				
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
 				examController.addExamToCourse(c, date, ans, time);
 				
-				label_ResponseAddExam.setText("The exam has been added to course: " + c);
+				label_ResponseAddExam.setText("The exam has been added to course: " + c.getCourseName());
 				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
 				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
+				
+				
 				
 			}
 			
@@ -649,18 +671,6 @@ public class Swing {
 		JLabel lblNewLabel_2 = new JLabel("Select time:");
 		lblNewLabel_2.setBounds(10, 93, 153, 14);
 		panel_AddExam.add(lblNewLabel_2);
-		
-		JRadioButton radioButton_time08 = new JRadioButton("08:00-12:00");
-		radioButton_time08.setBounds(176, 89, 109, 23);
-		panel_AddExam.add(radioButton_time08);
-		
-		JRadioButton radioButton_time13 = new JRadioButton("13:00-17:00");
-		radioButton_time13.setBounds(293, 89, 109, 23);
-		panel_AddExam.add(radioButton_time13);
-
-		ButtonGroup timeGroup = new ButtonGroup();
-		timeGroup.add(radioButton_time08);
-		timeGroup.add(radioButton_time13);
 
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
