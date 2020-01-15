@@ -45,29 +45,4 @@ public class Course {
 	public void setCredit(String credit) {
 		this.credits = credit;
 	}
-
-	
-
-	public WrittenExam findExam(String examID) {
-
-		for (WrittenExam e : writtenExamList) {
-			if (e.getExamID() == (examID)) {
-
-				return e;
-
-			}
-		}
-		return null;
-	}
-
-	public void removeExamFromCourse(String examID) {
-		WrittenExam tmpExam = this.findExam(examID);
-		if (tmpExam != null) {
-			this.writtenExamList.remove(tmpExam);
-		}
-
-	}
-
-
-
 }
