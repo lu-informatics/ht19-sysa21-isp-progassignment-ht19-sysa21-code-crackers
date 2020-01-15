@@ -67,6 +67,7 @@ public class StudentController {
 		return null;
 	}
 
+	//GENTERATE STUDENT ID 
 	private String generateStudentID() {
 		Random rand = new Random();
 		int max = 99999;
