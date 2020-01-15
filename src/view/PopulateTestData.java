@@ -45,9 +45,9 @@ public class PopulateTestData  {
 		Student student3 = new Student("Greg");
 		
 		//Create WrittenExams
-		WrittenExam writtenExam1 = new WrittenExam(course1.getCourseCode(), "20 Jan 2020", "RoomA123", "08:00");
-		WrittenExam writtenExam2 = new WrittenExam(course2.getCourseCode(), "30 Jan 2020", "RoomB067", "08:00");
-		WrittenExam writtenExam3 = new WrittenExam(course3.getCourseCode(), "10 Feb 2020", "RoomA167", "08:00");
+		WrittenExam writtenExam1 = new WrittenExam(course1, "20 Jan 2020", "RoomA123", "08:00");
+		WrittenExam writtenExam2 = new WrittenExam(course2, "30 Jan 2020", "RoomB067", "08:00");
+		WrittenExam writtenExam3 = new WrittenExam(course3, "10 Feb 2020", "RoomA167", "08:00");
 		
 		//Result
 		Result result1 = new Result();
