@@ -17,7 +17,8 @@ public class WrittenExam {
 		this.date = date;
 		this.location = location;
 		this.time = time;
-		this.course = .getCourse() // vill ha en hel kurs.
+		
+		// this.course = course; // vill ha en hel kurs.
 	}
 
 	public List<Result> getResultList() {
