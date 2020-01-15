@@ -56,7 +56,7 @@ public class Swing {
 	private JTextField textField_EnterDate;
 	private JTable table;
 	private  PopulateTestData populate;
-	
+	private WrittenExam writtenExam;
 
 	/**
 	 * Launch the application.
@@ -766,7 +766,7 @@ public class Swing {
 			String removeExam =	choice_SelectExam.getSelectedItem();
 			
 				if(removeExam!=null) {
-			courseController.removeExamFromCourse(removeExam);
+			writtenExam.removeExamFromCourse(removeExam);
 			choice_SelectExam.remove(removeExam);
 			choice_SelectExamForResult.remove(removeExam);
 			
@@ -791,7 +791,9 @@ public class Swing {
 		lbl_EnterAmountOfPoints.setBounds(44, 193, 114, 14);
 		panel_Result.add(lbl_EnterAmountOfPoints);
 
-
+		JLabel lbl_Response_LetterGrade = new JLabel("Response");
+		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
+		panel_Result.add(lbl_Response_LetterGrade);
 		
 
 		TextField textField_EnterAmountOfPoints = new TextField();
@@ -813,12 +815,12 @@ public class Swing {
 				String [] studentPart = student.split(",");
 				Student s = studentController.findStudent(studentPart[1]);
 				
-				examController.CalcExamGrade(result);
+				writtenExam.CalcExamGrade(result);
 				
-				for (WrittenExam ex: examController.getExamList()) {
+				for (WrittenExam ex: writtenExam.getExamList()) {
 				String iD =	ex.getExamID();
 			
-				examController.generateLettergrade(iD, s, result);
+				writtenExam.generateLettergrade(iD, s, result);
 				
 					
 				
@@ -827,11 +829,10 @@ public class Swing {
 				textField_EnterAmountOfPoints.setText("");
 				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
 			}
+			
 		});
 		
-		JLabel lbl_Response_LetterGrade = new JLabel("Response");
-		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
-		panel_Result.add(lbl_Response_LetterGrade);
+	
 		
 
 		// JTextPane textPane_EnterStudentName = new JTextPane();
