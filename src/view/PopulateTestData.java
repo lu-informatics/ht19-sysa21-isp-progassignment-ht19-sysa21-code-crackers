@@ -70,9 +70,9 @@ public class PopulateTestData  {
 		result3.setWrittenExam(writtenExam3);
 		
 		//Connection between result and student
-		student1.addResultToStudent(result1);
-		student2.addResultToStudent(result2);
-		student3.addResultToStudent(result3);
+		//student1.addResultToStudent(result1);
+		//student2.addResultToStudent(result2);
+		//student3.addResultToStudent(result3);
 		
 		//Connection between result and student 
 		result1.setStudent(student1);

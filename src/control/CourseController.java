@@ -4,8 +4,10 @@ import java.util.*;
 
 import model.Course;
 import model.WrittenExam;
+//import control.ExamController;
 
-public class CourseController {
+//public class CourseController {
+	/* private ExamController examController;
 
 	private List<Course> courseList = new ArrayList<Course>();
 
@@ -75,7 +77,7 @@ public class CourseController {
 		while (examId == null) {
 
 			examId = this.generateExamID();
-			if (this.findExam(examId) != null) {
+			if (examController.findExam(examId) != null) {
 				examId = null;
 			}
 		}
@@ -94,21 +96,9 @@ public class CourseController {
 					}
 				}
 			}
-		}*/
+		} //*
 	}
 
-	public WrittenExam findExam(String examID) {
-		for (Course c : courseList) {
-			for (WrittenExam e : c.getWrittenExamList()) {
-				if (e.getExamID() == (examID)) {
-
-					return e;
-					}
-			}
-
-		}
-		return null;
-	}
 
 	public void removeExamFromCourse(String courseID, String examID) {
 		Course c = this.findCourse(courseID);
@@ -129,3 +119,4 @@ public class CourseController {
 		return String.format("E%05d", range);
 	}
 }
+*/

@@ -7,9 +7,9 @@ import model.Student;
 
 import java.util.ArrayList;
 
-public class StudentController {
+//public class StudentController {
 
-	private List<Student> studentList = new ArrayList<Student>();
+	/* private List<Student> studentList = new ArrayList<Student>();
 
 	public List<Student> getStudentList() {
 		return studentList;
@@ -78,3 +78,4 @@ public class StudentController {
 	}
 
 }
+*/
