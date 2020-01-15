@@ -706,13 +706,23 @@ public class Swing {
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
-				courseController.addExamToCourse(courseParts[0], date, ans, time);
+				courseController.addExamToCourse(c, date, ans, time);
+				
+				for (Course tmp : courseController.getCourseList()) {
+					for (WrittenExam ex : tmp.getWrittenExamList()) {
+						
+				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time + " ," + ex.getExamID());
+				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time + " ," + ex.getExamID());
+					}
+					
+					}
+				
+				
 				
 				
 					
 				label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse );
-				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
-				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time);
+				
 				
 				
 					
@@ -765,8 +775,12 @@ public class Swing {
 				
 			String removeExam =	choice_SelectExam.getSelectedItem();
 			
+			String [] examParts = removeExam.split(" ,");
 				if(removeExam!=null) {
-			writtenExam.removeExamFromCourse(removeExam);
+					
+						
+						
+			courseController.removeExamFromCourse(examParts[0], examParts[4]);
 			choice_SelectExam.remove(removeExam);
 			choice_SelectExamForResult.remove(removeExam);
 			
@@ -817,15 +831,19 @@ public class Swing {
 				
 				writtenExam.CalcExamGrade(result);
 				
-				for (WrittenExam ex: writtenExam.getExamList()) {
-				String iD =	ex.getExamID();
+				for (Course tmp : courseController.getCourseList()) {
+					for (WrittenExam iD : tmp.getWrittenExamList()) {
+				
+				String id = iD.getExamID();
+				
 			
-				writtenExam.generateLettergrade(iD, s, result);
+				writtenExam.generateLettergrade(id, s, result);
 				
 					
-				
+				}
 					
 			}
+				
 				textField_EnterAmountOfPoints.setText("");
 				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
 			}
