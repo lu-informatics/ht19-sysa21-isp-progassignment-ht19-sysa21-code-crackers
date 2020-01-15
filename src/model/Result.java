@@ -7,6 +7,10 @@ public class Result {
 	private Student student;
 	private WrittenExam writtenExam;
 
+	public Result() {
+		
+	}
+	
 	public boolean setResult(int result) {
 		boolean setResult = false;
 		if(result <= 100 && result>=0) {
