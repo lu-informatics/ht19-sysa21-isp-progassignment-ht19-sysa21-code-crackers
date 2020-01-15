@@ -397,11 +397,11 @@ public class Swing {
 		tabbedPane_Course.addTab("Add Course", null, panel_AddCourse, null);
 		panel_AddCourse.setLayout(null);
 
-		JRadioButton rdbtn_7_5points = new JRadioButton("7,5 points");
-		rdbtn_7_5points.setBackground(SystemColor.controlLtHighlight);
-		rdbtn_7_5points.setBounds(212, 112, 109, 23);
-		panel_AddCourse.add(rdbtn_7_5points);
-		rdbtn_7_5points.setName("7,5");
+		JRadioButton rdbtn_7_points = new JRadioButton("7 points");
+		rdbtn_7_points.setBackground(SystemColor.controlLtHighlight);
+		rdbtn_7_points.setBounds(212, 112, 109, 23);
+		panel_AddCourse.add(rdbtn_7_points);
+		rdbtn_7_points.setName("7");
 
 		JRadioButton rdbtn_15points = new JRadioButton("15 points");
 		rdbtn_15points.setBackground(SystemColor.controlLtHighlight);
@@ -416,7 +416,7 @@ public class Swing {
 		rdbtn_30points.setName("30");
 		
 		ButtonGroup groupPoints = new ButtonGroup();
-		groupPoints.add(rdbtn_7_5points);
+		groupPoints.add(rdbtn_7_points);
 		groupPoints.add(rdbtn_15points);
 		groupPoints.add(rdbtn_30points);
 		
@@ -446,7 +446,7 @@ public class Swing {
 		panel_AddExam.add(choice_AddExamToCourse);
 		
 		JLabel lblb_addCourseResponse = new JLabel("Response:");
-		lblb_addCourseResponse.setBounds(59, 252, 84, 14);
+		lblb_addCourseResponse.setBounds(24, 252, 578, 14);
 		panel_AddCourse.add(lblb_addCourseResponse);
 
 		
