@@ -113,7 +113,7 @@ public class CourseController {
 		Course c = this.findCourse(courseID);
 		for (WrittenExam ex : c.getWrittenExamList()) {
 
-			if (ex.getExamID() == examID) {
+			if (ex.getExamID().equals(examID)) {
 				c.getWrittenExamList().remove(ex);
 			}
 		}

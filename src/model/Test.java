@@ -22,6 +22,9 @@ public class Test {
 
 		Result result1 = new Result();
 		Result result2 = new Result();
+		
+		Course course1 = new Course("modellering", "15 points");
+		
 
 		studentRegister.addStudent("David");
 		studentRegister.addStudent("Martin");
@@ -31,8 +34,8 @@ public class Test {
 		courseRegister.addCourse("IS-Projekt", "15");
 		courseRegister.addCourse("Modellering", "15");
 
-		courseRegister.addExamToCourse("E12345", "20 Feb 2020", "RoomA123", "08:00");
-		courseRegister.addExamToCourse("E23456", "10 Feb 2020", "RoomA123", "08:00");
+		courseRegister.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
+		//courseRegister.addExamToCourse(course1, "10 Feb 2020", "RoomA123", "08:00");
 
 		student1.addResultToStudent(result1);
 		student1.addResultToStudent(result2);
@@ -73,6 +76,11 @@ public class Test {
 			}
 		}
 		
+		for (Course tmp : courseRegister.getCourseList()) {
+			for (WrittenExam e : tmp.getWrittenExamList()) {
+				System.out.println(e.getExamID());
+			}
+		}
 		
 		
 			

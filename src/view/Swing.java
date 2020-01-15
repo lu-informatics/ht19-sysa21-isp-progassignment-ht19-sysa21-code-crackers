@@ -56,7 +56,7 @@ public class Swing {
 	private JTextField textField_EnterDate;
 	private JTable table;
 	private  PopulateTestData populate;
-	private WrittenExam writtenExam;
+	private WrittenExam writtenExam = new WrittenExam();
 
 	/**
 	 * Launch the application.
@@ -130,8 +130,8 @@ public class Swing {
 		studentController.addStudent("Ronny");
 		studentController.addStudent("Jenny");
 		
-		courseController.addCourse("Sysa21", "15 points");
-		courseController.addCourse("Modeling", "30 points");
+		courseController.addCourse("Sysa21","15 points");
+		courseController.addCourse("Modeling","30 points");
 		
 		//for (Course examForCourse : courseController.getCourseList()) {
 			//courseController.addExamToCourse(examForCourse, "2020-01-01", "Room B067", "08:00-13:00");
@@ -175,7 +175,7 @@ public class Swing {
 		choice_UpdateStudent.setBounds(188, 69, 303, 26);
 		panel_UpdateStudent.add(choice_UpdateStudent);
 		for (Student tmp : studentController.getStudentList()) {
-			choice_UpdateStudent.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+			choice_UpdateStudent.add(tmp.getStudentName() + "," + tmp.getStudentID());
 		}
 		
 
@@ -217,7 +217,7 @@ public class Swing {
 		 choice_RemoveStudent.setBounds(232, 59, 344, 20);
 		 panel_RemoveStudent.add(choice_RemoveStudent);
 		 for (Student tmp : studentController.getStudentList()) {
-			 choice_RemoveStudent.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+			 choice_RemoveStudent.add(tmp.getStudentName() + "," + tmp.getStudentID());
 			}
 		 
 		 JPanel panel_Result = new JPanel();
@@ -228,7 +228,7 @@ public class Swing {
 			choice_SelectStudentForResult.setBounds(209, 35, 370, 20);
 			panel_Result.add(choice_SelectStudentForResult);
 			for (Student tmp : studentController.getStudentList()) {
-				choice_SelectStudentForResult.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+				choice_SelectStudentForResult.add(tmp.getStudentName() + "," + tmp.getStudentID());
 				}
 
 		JButton btnAddStudentButton = new JButton("Add Student");
@@ -262,9 +262,9 @@ public class Swing {
 				textField_EnterStudentName.setText("");
 					if (!studentName.equals("")) {
 						
-				choice_RemoveStudent.add(sName + " ," + p);
-				choice_UpdateStudent.add(sName + " ," + p);
-				choice_SelectStudentForResult.add(sName + " ," + p);
+				choice_RemoveStudent.add(sName + "," + p);
+				choice_UpdateStudent.add(sName + "," + p);
+				choice_SelectStudentForResult.add(sName + "," + p);
 				
 					}
 				}
@@ -373,9 +373,9 @@ public class Swing {
                    
                    
   	               
-                     choice_RemoveStudent.add(textForUpdate + " ," + studentParts[1]);
-                     choice_UpdateStudent.add(textForUpdate + " ," + studentParts[1]);
-                     choice_SelectStudentForResult.add(textForUpdate + " ," + studentParts[1]);
+                     choice_RemoveStudent.add(textForUpdate + "," + studentParts[1]);
+                     choice_UpdateStudent.add(textForUpdate + "," + studentParts[1]);
+                     choice_SelectStudentForResult.add(textForUpdate + "," + studentParts[1]);
                    
                   
                    
@@ -429,7 +429,7 @@ public class Swing {
 		choice_RemoveCourse.setBounds(264, 39, 338, 20);
 		panel_RemoveCourse.add(choice_RemoveCourse);
 		for (Course tmpCourse : courseController.getCourseList()) {
-			choice_RemoveCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+			choice_RemoveCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
 		
 		JPanel panel_UpdateCourse = new JPanel();
@@ -440,7 +440,7 @@ public class Swing {
 		choice_UpdateCourse.setBounds(190, 32, 412, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
 		for (Course tmpCourse : courseController.getCourseList()) {
-			choice_UpdateCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+			choice_UpdateCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
 		
 		JPanel panel_AddExam = new JPanel();
@@ -451,7 +451,7 @@ public class Swing {
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
 		for (Course tmpCourse : courseController.getCourseList()) {
-			choice_AddExamToCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+			choice_AddExamToCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
 		
 		JLabel lblb_addCourseResponse = new JLabel("Response:");
@@ -490,9 +490,9 @@ public class Swing {
 				
 			
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(p + " ," + cN + " ," + points);
-			choice_UpdateCourse.add(p + " ," + cN + " ," + points);
-			choice_AddExamToCourse.add(p + " ," + cN + " ," + points);	
+			choice_RemoveCourse.add(p + "," + cN + "," + points);
+			choice_UpdateCourse.add(p + "," + cN + "," + points);
+			choice_AddExamToCourse.add(p + "," + cN + "," + points);	
 			
 			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + points + " has been added");
 				}
@@ -595,9 +595,9 @@ public class Swing {
 		choice_UpdateCourse.remove(updateCourse);
 		choice_AddExamToCourse.remove(updateCourse);
 		
-		choice_RemoveCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
-		choice_UpdateCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
-		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
+		choice_RemoveCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
+		choice_UpdateCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
+		choice_AddExamToCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
 		
 		lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
 		
@@ -676,7 +676,7 @@ public class Swing {
 			
 		    String pickedCourse = choice_AddExamToCourse.getSelectedItem();
 		    
-		    String [] courseParts = pickedCourse.split(" ,");
+		    String [] courseParts = pickedCourse.split(",");
 		    
 		  Course c =  courseController.findCourse(courseParts[0]);
 		  System.out.println(c);
@@ -708,11 +708,13 @@ public class Swing {
 				System.out.println("hej");
 				courseController.addExamToCourse(c, date, ans, time);
 				
+				
 				for (Course tmp : courseController.getCourseList()) {
 					for (WrittenExam ex : tmp.getWrittenExamList()) {
 						
-				choice_SelectExam.add(pickedCourse + " ," + ans + " ," + date + " ," + time + " ," + ex.getExamID());
-				choice_SelectExamForResult.add(pickedCourse + " ," + ans + " ," + date + " ," + time + " ," + ex.getExamID());
+						
+				choice_SelectExam.add(pickedCourse + "," + ans + "," + date + "," + time + "," + ex.getExamID());
+				choice_SelectExamForResult.add(pickedCourse + "," + ans + "," + date + "," + time + "," + ex.getExamID());
 					}
 					
 					}
@@ -775,7 +777,7 @@ public class Swing {
 				
 			String removeExam =	choice_SelectExam.getSelectedItem();
 			
-			String [] examParts = removeExam.split(" ,");
+			String [] examParts = removeExam.split(",");
 				if(removeExam!=null) {
 					
 						
@@ -826,26 +828,16 @@ public class Swing {
 						
 				int result = Integer.parseInt(points);
 				
+				String [] examParts = exam.split(",");
+				
 				String [] studentPart = student.split(",");
 				Student s = studentController.findStudent(studentPart[1]);
 				
 				writtenExam.CalcExamGrade(result);
-				
-				for (Course tmp : courseController.getCourseList()) {
-					for (WrittenExam iD : tmp.getWrittenExamList()) {
-				
-				String id = iD.getExamID();
-				
-			
-				writtenExam.generateLettergrade(id, s, result);
-				
-					
-				}
-					
-			}
+				writtenExam.generateLettergrade(examParts[5], s, result);
 				
 				textField_EnterAmountOfPoints.setText("");
-				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
+				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + writtenExam.CalcExamGrade(result));
 			}
 			
 		});
