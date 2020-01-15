@@ -457,6 +457,10 @@ public class Swing {
 		Choice choice_AddExamToCourse = new Choice();
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
+		
+		JLabel lblNewLabel_responseAddCourse = new JLabel("Response:");
+		lblNewLabel_responseAddCourse.setBounds(59, 252, 355, 14);
+		panel_AddCourse.add(lblNewLabel_responseAddCourse);
 
 		
 		JButton btnAddCourse = new JButton("Add Course");
@@ -476,6 +480,7 @@ public class Swing {
 					if (!courseName.equals("")) {
 					
 						courseController.addCourse(courseName, ans);
+						lblNewLabel_responseAddCourse.setText(courseName + ", " + ans + " has been added");
 						
 				}
 				        
@@ -517,10 +522,6 @@ public class Swing {
 		textField_EnterCourseName.setBounds(173, 12, 176, 20);
 		panel_AddCourse.add(textField_EnterCourseName);
 		textField_EnterCourseName.setColumns(10);
-		
-		JLabel lblNewLabel = new JLabel("Response:");
-		lblNewLabel.setBounds(59, 252, 84, 14);
-		panel_AddCourse.add(lblNewLabel);
 
 		JLabel lbl_EnterCourseToRemove = new JLabel("Enter the course you want to remove:");
 		lbl_EnterCourseToRemove.setBounds(0, 45, 258, 14);
@@ -599,6 +600,8 @@ public class Swing {
 		
 			}
 			textField_NewNameForCourse.setText("");
+			lbl_ResponsUpdate.setText(updateCourse + " has changed named to " + newName);
+			
 			}
 		});
 
@@ -676,8 +679,6 @@ public class Swing {
 		    
 		  Course c =  courseController.findCourse(courseParts[0]);
 		  System.out.println(c);
-			
-		   /// Course course = new Course (courseParts[0], courseParts[1]);
 		    
 			String date = textField_EnterDate.getText();
 			
@@ -699,7 +700,7 @@ public class Swing {
 						}
 				}
 				
-			if (!pickedCourse.equals("")) {
+			if (!pickedCourse.equals("") && !ans.isBlank() && !date.equals("") && !time.isBlank()) {
 				System.out.println("hej");
 				examController.addExamToCourse(c, date, ans, time);
 				
@@ -711,6 +712,13 @@ public class Swing {
 				
 				
 					
+			}
+			
+				
+			
+			
+			else { label_ResponseAddExam.setText("Fill in all the fields and buttons with valid information");
+				
 			}
 			
 			textField_EnterDate.setText("");
@@ -812,6 +820,7 @@ public class Swing {
 				String [] studentPart = student.split(",");
 				Student s = studentController.findStudent(studentPart[1]);
 				
+				
 				examController.CalcExamGrade(result);
 				
 				for (WrittenExam ex: examController.getExamList()) {
@@ -821,11 +830,11 @@ public class Swing {
 			examController.generateLettergrade(iD, s, result);
 			
 			for ( Student tmp : studentController.getStudentList()) {
+			
+				 
 				
 				
-				
-				
-			lbl_Response_LetterGrade.setText(student + ", will recive grade " + letter);
+			lbl_Response_LetterGrade.setText(student + ", will recive grade " +  tmp.getStudentResultList());
 			}
 					
 			}
