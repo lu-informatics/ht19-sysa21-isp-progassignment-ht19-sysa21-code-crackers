@@ -46,7 +46,7 @@ public class Course {
 		this.credits = credit;
 	}
 
-	public void addExamToCourse(Course course, String date, String location, String time) {
+	public void addExamToCourse(String date, String location, String time) {
 
 		String examId = null;
 
@@ -57,19 +57,11 @@ public class Course {
 				examId = null;
 			}
 		}
-		WrittenExam ex = new WrittenExam(course, date, location, time);
+		WrittenExam ex = new WrittenExam( date, location, time);
 		ex.setExamID(examId);
-		if (course.getWrittenExamList().isEmpty()) {
-			writtenExamList.add(ex);
-		} else {
-			for (WrittenExam we : course.getWrittenExamList()) {
-				if (we.equals(ex)) {
 
-					writtenExamList.add(ex);
+		writtenExamList.add(ex);
 
-				}
-			}
-		}
 	}
 
 	public WrittenExam findExam(String examID) {

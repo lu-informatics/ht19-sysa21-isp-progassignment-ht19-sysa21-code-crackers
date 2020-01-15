@@ -2,7 +2,6 @@ package model;
 
 import control.CourseController;
 import control.StudentController;
-import control.ExamController;
 import model.Course;
 import model.WrittenExam;
 import model.Result;
@@ -15,8 +14,6 @@ public class Test {
 		StudentController studentRegister = new StudentController();
 
 		CourseController courseRegister = new CourseController();
-
-		ExamController examRegister = new ExamController();
 
 		Student student1 = new Student("David");
 		Student student2 = new Student("Martin");
