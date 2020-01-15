@@ -45,7 +45,6 @@ public class Swing {
 	private JTextField textField_NewNameForCourse;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
-	private JTable table;
 	private MainController mainController = new MainController();
 
 	/**
@@ -155,16 +154,6 @@ public class Swing {
 		lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
 		lblEnterStudentsName.setBounds(10, 42, 146, 29);
 		AnswerStudentID.add(lblEnterStudentsName);
-
-		JTabbedPane tabbedPane_Register = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane_Register.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
-		tabbedPane_program.addTab("Register", null, tabbedPane_Register, null);
-
-		JTextArea textArea_StudentRegister = new JTextArea(20, 20);
-
-		JScrollPane panel_StudentRegister = new JScrollPane(textArea_StudentRegister);
-		tabbedPane_Register.addTab("Student Register", null, panel_StudentRegister, null);
-		panel_StudentRegister.setLayout(null);
 
 		JTextArea textArea_AddStudent = new JTextArea();
 		textArea_AddStudent.setBackground(SystemColor.info);
@@ -746,21 +735,5 @@ public class Swing {
 			}
 			
 		});
-		
-
-		JPanel panel_CourseRegister = new JPanel();
-		tabbedPane_Register.addTab("Course Register", null, panel_CourseRegister, null);
-		panel_CourseRegister.setLayout(null);
-
-		JTextPane textPane_CourseRegister = new JTextPane();
-		textPane_CourseRegister.setBounds(21, 11, 400, 198);
-		panel_CourseRegister.add(textPane_CourseRegister);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(21, 11, 400, 198);
-		panel_CourseRegister.add(panel);
-		
-		table = new JTable();
-		panel.add(table);
 	}
 }
