@@ -45,14 +45,7 @@ public class Course {
 	public void setCredit(String credit) {
 		this.credits = credit;
 	}
-	
-	public void addWrittenExam(WrittenExam writtenExam) {
-		this.writtenExamList.add(writtenExam);
-	}
-	public void removeWrittenExam(WrittenExam writtenExam) {
-		this.writtenExamList.remove(writtenExam);
-	}
-	
+
 	public void addExamToCourse(Course course, String date, String location, String time) {
 
 		String examId = null;
@@ -67,17 +60,18 @@ public class Course {
 		WrittenExam ex = new WrittenExam(course, date, location, time);
 		ex.setExamID(examId);
 		if (course.getWrittenExamList().isEmpty()) {
-			course.addWrittenExam(ex);
+			writtenExamList.add(ex);
 		} else {
 			for (WrittenExam we : course.getWrittenExamList()) {
 				if (we.equals(ex)) {
 
-					course.addWrittenExam(ex);
+					writtenExamList.add(ex);
 
 				}
 			}
 		}
 	}
+
 	public WrittenExam findExam(String examID) {
 
 		for (WrittenExam e : writtenExamList) {
@@ -97,6 +91,7 @@ public class Course {
 		}
 
 	}
+
 	private String generateExamID() {
 		Random rand = new Random();
 		int max = 99999;
