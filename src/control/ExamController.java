@@ -49,9 +49,7 @@ public class ExamController {
 
 	public WrittenExam findExam(String examID) {
 
-		for (WrittenExam e : this.writtenExam.getCourse().getWrittenExamList())
-			;
-		{
+		for (WrittenExam e : this.writtenExam.getCourse().getWrittenExamList())	{
 			if (e.getExamID() == (examID)) {
 
 				return e;
@@ -105,6 +103,5 @@ public class ExamController {
 			return "Fail";
 		}
 	}
-}
 
 }
