@@ -78,9 +78,7 @@ public class Swing {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		
-		
-				//Create courses
+		//Create courses
 				Course course1 = new Course("Modeling", "15" );
 				Course course2 = new Course("Programming", "30" );
 				Course course3 = new Course("Music", "7.5" );
@@ -130,12 +128,12 @@ public class Swing {
 				writtenExam2.addResultforExam(result2);
 				writtenExam3.addResultforExam(result3);
 				
-				StudentController studentController = new StudentController();
-				ExamController examController = new ExamController();
-				CourseController courseController = new CourseController();
+				StudentController studentRegister = new StudentController();
+				ExamController examRegister = new ExamController();
+				CourseController courseRegister = new CourseController();
 				
-				studentController.addStudent("Ronny");
-				
+				studentRegister.addStudent("Ronny");
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.controlLtHighlight);
 		frame.setFont(new Font("Courier New", Font.PLAIN, 12));
