@@ -46,23 +46,7 @@ public class Course {
 		this.credits = credit;
 	}
 
-	public void addExamToCourse(String date, String location, String time) {
-
-		String examId = null;
-
-		while (examId == null) {
-
-			examId = this.generateExamID();
-			if (this.findExam(examId) != null) {
-				examId = null;
-			}
-		}
-		WrittenExam ex = new WrittenExam( date, location, time);
-		ex.setExamID(examId);
-
-		writtenExamList.add(ex);
-
-	}
+	
 
 	public WrittenExam findExam(String examID) {
 
@@ -84,13 +68,6 @@ public class Course {
 
 	}
 
-	private String generateExamID() {
-		Random rand = new Random();
-		int max = 99999;
-		int min = 10000;
-		int range = rand.nextInt(max - min) + min;
 
-		return String.format("E%05d", range);
-	}
 
 }
