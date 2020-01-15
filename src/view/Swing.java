@@ -612,7 +612,7 @@ public class Swing {
 						}
 				}
 				
-			if (!pickedCourse.equals("")) {
+			if (!pickedCourse.equals("") && !date.equals("")) {
 				
 				System.out.println("hej");
 				mainController.addExamToCourse(c, date, ans, time);
@@ -718,6 +718,8 @@ public class Swing {
 				String [] examParts = exam.split(",");
 				
 				String [] studentPart = student.split(",");
+				
+				if (!points.equals(""))
 				
 				mainController.generateLetterGrade(examParts[6], studentPart[1], result);
 				
