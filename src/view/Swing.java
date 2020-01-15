@@ -428,6 +428,9 @@ public class Swing {
 		Choice choice_RemoveCourse = new Choice();
 		choice_RemoveCourse.setBounds(264, 39, 338, 20);
 		panel_RemoveCourse.add(choice_RemoveCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_RemoveCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JPanel panel_UpdateCourse = new JPanel();
 		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
@@ -436,6 +439,9 @@ public class Swing {
 		Choice choice_UpdateCourse = new Choice();
 		choice_UpdateCourse.setBounds(190, 32, 412, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_UpdateCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JPanel panel_AddExam = new JPanel();
 		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
@@ -444,6 +450,9 @@ public class Swing {
 		Choice choice_AddExamToCourse = new Choice();
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_AddExamToCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JLabel lblb_addCourseResponse = new JLabel("Response:");
 		lblb_addCourseResponse.setBounds(24, 252, 578, 14);
@@ -487,7 +496,11 @@ public class Swing {
 			
 			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + points + " has been added");
 				}
+				else 
+					lblb_addCourseResponse.setText("Put in valid information");
 				}
+				
+				
 				groupPoints.clearSelection();	
 				textField_EnterCourseName.setText("");
 				
@@ -586,7 +599,7 @@ public class Swing {
 		choice_UpdateCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		
-		lbl_ResponsUpdate.setText(updateCourse + " has changed name to" + newName);
+		lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
 		
 			}
 			textField_NewNameForCourse.setText("");
