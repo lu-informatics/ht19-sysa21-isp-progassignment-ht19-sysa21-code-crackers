@@ -24,10 +24,8 @@ public class CourseController {
 			if (this.findCourse(courseID) == null) {
 				Course course = new Course( courseName, credits);
 				course.setCourseCode(courseID);
-				course.setCredit(credits);
 				this.courseList.add(course);
 				corseAdded = true;
-				System.out.println(course.getCourseCode());
 			}
 		}
 		

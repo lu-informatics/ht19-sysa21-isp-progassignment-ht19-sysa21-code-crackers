@@ -25,8 +25,6 @@ public class ExamController {
 
 		String examId = null;
 
-		// System.out.println(course);
-
 		while (examId == null) {
 
 			examId = this.generateExamID();
@@ -36,7 +34,6 @@ public class ExamController {
 		}
 		WrittenExam ex = new WrittenExam(course, date, location, time);
 		ex.setExamID(examId);
-		// System.out.println(course);
 		if (course.getWrittenExamList().isEmpty()) {
 			course.addWrittenExam(ex);
 		} else {
@@ -102,7 +99,7 @@ public class ExamController {
 		} else if (result >= 85 && result <= 100) {
 			return "A";
 		} else {
-			return "U";
+			return "Fail";
 		}
 	}
 
