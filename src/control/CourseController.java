@@ -96,6 +96,28 @@ public class CourseController {
 		}
 	}
 
+	public WrittenExam findExam(String courseID, String examID) {
+		Course c = this.findCourse(courseID); 
+		for (WrittenExam e : c.getWrittenExamList()) {
+			if (e.getExamID() == (examID)) {
+
+				return e;
+
+			}
+		}
+		return null;
+	}
+
+	public void removeExamFromCourse(String courseID, String examID) {
+		Course c = this.findCourse(courseID);
+		for(WrittenExam ex : c.getWrittenExamList()) {
+		
+		if (ex.getExamID() == examID) {
+			c.getWrittenExamList().remove(ex);
+		}
+		}
+	}
+
 	private String generateExamID() {
 		Random rand = new Random();
 		int max = 99999;
