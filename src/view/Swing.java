@@ -133,9 +133,9 @@ public class Swing {
 		courseController.addCourse("Sysa21", "15 points");
 		courseController.addCourse("Modeling", "30 points");
 		
-		for (Course examForCourse : courseController.getCourseList()) {
-			courseController.addExamToCourse(examForCourse, "2020-01-01", "Room B067", "08:00-13:00");
-		}
+		//for (Course examForCourse : courseController.getCourseList()) {
+			//courseController.addExamToCourse(examForCourse, "2020-01-01", "Room B067", "08:00-13:00");
+		//}
 		
 		
 
