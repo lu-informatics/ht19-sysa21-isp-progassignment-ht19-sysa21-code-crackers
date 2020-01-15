@@ -68,7 +68,7 @@ public class CourseController {
 		return String.format("C%05d", range);
 	}
 
-	public void addExamToCourse(String courseID, String date, String location, String time) {
+	public void addExamToCourse(Course course, String date, String location, String time) {
 
 		String examId = null;
 
@@ -79,18 +79,17 @@ public class CourseController {
 				examId = null;
 			}
 		}
-		WrittenExam ex = new WrittenExam(courseID, date, location, time);
-		Course c = this.findCourse(courseID);
+		WrittenExam ex = new WrittenExam(course , date, location, time);
 		ex.setExamID(examId);
 		for (Course co : courseList) {
 
 			if (co.getWrittenExamList().isEmpty()) {
-				c.getWrittenExamList().add(ex);
+				course.getWrittenExamList().add(ex);
 			} else {
 				for (WrittenExam we : co.getWrittenExamList()) {
 					if (we.equals(ex)) {
 
-						c.getWrittenExamList().add(ex);
+						course.getWrittenExamList().add(ex);
 					}
 				}
 			}
