@@ -9,7 +9,7 @@ import model.Result;
 import model.Student;
 import model.WrittenExam;
 
-public class PopulateTestData extends JFrame {
+public class PopulateTestData  {
 	private CourseController courseController;
 	private StudentController studentController;
 	

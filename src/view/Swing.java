@@ -534,7 +534,7 @@ public class Swing {
 				choice_UpdateCourse.remove(p);
 				choice_AddExamToCourse.remove(p);
 				
-				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
+				lbl_ResponseForRemoveCourse.setText("Respons: " + p + " has been removed");
 				
 				}catch (NullPointerException n) {		
 					lbl_ResponseForRemoveCourse.setText("Respons: No course found to be removed");
