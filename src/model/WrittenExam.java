@@ -13,11 +13,10 @@ public class WrittenExam {
 
 	private List<Result> resultList = new ArrayList<Result>();
 
-	public WrittenExam(Course course, String date, String location, String time) {
+	public WrittenExam( String date, String location, String time) {
 		this.date = date;
 		this.location = location;
 		this.time = time;
-		this.course = course;
 	}
 
 	public List<Result> getResultList() {
