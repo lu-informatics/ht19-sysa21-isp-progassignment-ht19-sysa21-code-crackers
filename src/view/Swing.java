@@ -444,6 +444,10 @@ public class Swing {
 		Choice choice_AddExamToCourse = new Choice();
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
+		
+		JLabel lblb_addCourseResponse = new JLabel("Response:");
+		lblb_addCourseResponse.setBounds(59, 252, 84, 14);
+		panel_AddCourse.add(lblb_addCourseResponse);
 
 		
 		JButton btnAddCourse = new JButton("Add Course");
@@ -481,10 +485,12 @@ public class Swing {
 			choice_UpdateCourse.add(p + " ," + cN + " ," + points);
 			choice_AddExamToCourse.add(p + " ," + cN + " ," + points);	
 			
+			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + points + " has been added");
 				}
 				}
 				groupPoints.clearSelection();	
 				textField_EnterCourseName.setText("");
+				
 			
 			}
 	
@@ -504,10 +510,6 @@ public class Swing {
 		textField_EnterCourseName.setBounds(173, 12, 176, 20);
 		panel_AddCourse.add(textField_EnterCourseName);
 		textField_EnterCourseName.setColumns(10);
-		
-		JLabel lblNewLabel = new JLabel("Response:");
-		lblNewLabel.setBounds(59, 252, 84, 14);
-		panel_AddCourse.add(lblNewLabel);
 
 		JLabel lbl_EnterCourseToRemove = new JLabel("Enter the course you want to remove:");
 		lbl_EnterCourseToRemove.setBounds(0, 45, 258, 14);
@@ -583,6 +585,8 @@ public class Swing {
 		choice_RemoveCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		choice_UpdateCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
+		
+		lbl_ResponsUpdate.setText(updateCourse + " has changed name to" + newName);
 		
 			}
 			textField_NewNameForCourse.setText("");
@@ -689,7 +693,7 @@ public class Swing {
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
-				courseController.addExamToCourse(c, date, ans, time);
+				courseController.addExamToCourse(courseParts[0], date, ans, time);
 				
 				
 					
@@ -749,7 +753,7 @@ public class Swing {
 			String removeExam =	choice_SelectExam.getSelectedItem();
 			
 				if(removeExam!=null) {
-			examController.removeExamFromCourse(removeExam);
+			courseController.removeExamFromCourse(removeExam);
 			choice_SelectExam.remove(removeExam);
 			choice_SelectExamForResult.remove(removeExam);
 			
@@ -784,10 +788,6 @@ public class Swing {
 		Button btn_AddResult = new Button("Add result");
 		btn_AddResult.setBounds(204, 267, 96, 22);
 		panel_Result.add(btn_AddResult);
-		
-		JLabel lbl_Response_LetterGrade = new JLabel("Response");
-		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
-		panel_Result.add(lbl_Response_LetterGrade);
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -815,6 +815,11 @@ public class Swing {
 				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
 			}
 		});
+		
+		JLabel lbl_Response_LetterGrade = new JLabel("Response");
+		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
+		panel_Result.add(lbl_Response_LetterGrade);
+		
 
 		// JTextPane textPane_EnterStudentName = new JTextPane();
 		// studentRegister.getStudentList();
