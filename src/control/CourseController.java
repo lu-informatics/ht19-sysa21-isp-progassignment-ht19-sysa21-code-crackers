@@ -81,7 +81,8 @@ public class CourseController {
 		}
 		WrittenExam ex = new WrittenExam(course , date, location, time);
 		ex.setExamID(examId);
-		for (Course co : courseList) {
+		course.getWrittenExamList().add(ex);
+	/*	for (Course co : courseList) {
 
 			if (co.getWrittenExamList().isEmpty()) {
 				course.getWrittenExamList().add(ex);
@@ -93,7 +94,7 @@ public class CourseController {
 					}
 				}
 			}
-		}
+		}*/
 	}
 
 	public WrittenExam findExam(String examID) {
