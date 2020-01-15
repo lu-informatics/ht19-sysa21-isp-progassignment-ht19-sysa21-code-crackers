@@ -68,53 +68,55 @@ public class CourseController {
 		return String.format("C%05d", range);
 	}
 
-	public void addExamToCourse(Course course, String date, String location, String time) {
+	public void addExamToCourse(String courseID, String date, String location, String time) {
 
 		String examId = null;
 
 		while (examId == null) {
 
 			examId = this.generateExamID();
-			if (course.findExam(examId) != null) {
+			if (this.findExam(examId) != null) {
 				examId = null;
 			}
 		}
-		WrittenExam ex = new WrittenExam(course, date, location, time);
+		WrittenExam ex = new WrittenExam(courseID, date, location, time);
+		Course c = this.findCourse(courseID);
 		ex.setExamID(examId);
-		for (Course c : courseList) {
+		for (Course co : courseList) {
 
-			if (c.getWrittenExamList().isEmpty()) {
-				course.getWrittenExamList().add(ex);
+			if (co.getWrittenExamList().isEmpty()) {
+				c.getWrittenExamList().add(ex);
 			} else {
-				for (WrittenExam we : c.getWrittenExamList()) {
+				for (WrittenExam we : co.getWrittenExamList()) {
 					if (we.equals(ex)) {
 
-						course.getWrittenExamList().add(ex);
+						c.getWrittenExamList().add(ex);
 					}
 				}
 			}
 		}
 	}
 
-	public WrittenExam findExam(String courseID, String examID) {
-		Course c = this.findCourse(courseID); 
-		for (WrittenExam e : c.getWrittenExamList()) {
-			if (e.getExamID() == (examID)) {
+	public WrittenExam findExam(String examID) {
+		for (Course c : courseList) {
+			for (WrittenExam e : c.getWrittenExamList()) {
+				if (e.getExamID() == (examID)) {
 
-				return e;
-
+					return e;
+					}
 			}
+
 		}
 		return null;
 	}
 
 	public void removeExamFromCourse(String courseID, String examID) {
 		Course c = this.findCourse(courseID);
-		for(WrittenExam ex : c.getWrittenExamList()) {
-		
-		if (ex.getExamID() == examID) {
-			c.getWrittenExamList().remove(ex);
-		}
+		for (WrittenExam ex : c.getWrittenExamList()) {
+
+			if (ex.getExamID() == examID) {
+				c.getWrittenExamList().remove(ex);
+			}
 		}
 	}
 
