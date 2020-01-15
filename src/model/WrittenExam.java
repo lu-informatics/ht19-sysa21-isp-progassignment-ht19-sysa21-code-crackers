@@ -88,18 +88,18 @@ public class WrittenExam {
 		}
 		return isSame;
 	}
-	public void generateLettergrade(String examID, Student student, int points) {
+	public void generateLetterGrade(String examID, Student student, int points) {
 		Result result = new Result();
 		WrittenExam ex = course.findExam(examID);
 		result.setStudent(student);
 		result.setWrittenExam(ex);
 		result.setResult(points);
-		result.setLetterGrade(this.CalcExamGrade(points));
+		result.setLetterGrade(this.calcExamGrade(points));
 		ex.addResultforExam(result);
 
 	}
 
-	public String CalcExamGrade(int result) {
+	public String calcExamGrade(int result) {
 
 		if (result >= 50 && result < 55) {
 			return "E";
