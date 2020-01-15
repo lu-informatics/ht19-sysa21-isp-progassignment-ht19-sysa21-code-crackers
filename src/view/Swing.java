@@ -397,11 +397,11 @@ public class Swing {
 		tabbedPane_Course.addTab("Add Course", null, panel_AddCourse, null);
 		panel_AddCourse.setLayout(null);
 
-		JRadioButton rdbtn_7_5points = new JRadioButton("7,5 points");
-		rdbtn_7_5points.setBackground(SystemColor.controlLtHighlight);
-		rdbtn_7_5points.setBounds(212, 112, 109, 23);
-		panel_AddCourse.add(rdbtn_7_5points);
-		rdbtn_7_5points.setName("7,5");
+		JRadioButton rdbtn_7_points = new JRadioButton("7 points");
+		rdbtn_7_points.setBackground(SystemColor.controlLtHighlight);
+		rdbtn_7_points.setBounds(212, 112, 109, 23);
+		panel_AddCourse.add(rdbtn_7_points);
+		rdbtn_7_points.setName("7");
 
 		JRadioButton rdbtn_15points = new JRadioButton("15 points");
 		rdbtn_15points.setBackground(SystemColor.controlLtHighlight);
@@ -416,7 +416,7 @@ public class Swing {
 		rdbtn_30points.setName("30");
 		
 		ButtonGroup groupPoints = new ButtonGroup();
-		groupPoints.add(rdbtn_7_5points);
+		groupPoints.add(rdbtn_7_points);
 		groupPoints.add(rdbtn_15points);
 		groupPoints.add(rdbtn_30points);
 		
@@ -428,6 +428,9 @@ public class Swing {
 		Choice choice_RemoveCourse = new Choice();
 		choice_RemoveCourse.setBounds(264, 39, 338, 20);
 		panel_RemoveCourse.add(choice_RemoveCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_RemoveCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JPanel panel_UpdateCourse = new JPanel();
 		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
@@ -436,6 +439,9 @@ public class Swing {
 		Choice choice_UpdateCourse = new Choice();
 		choice_UpdateCourse.setBounds(190, 32, 412, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_UpdateCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JPanel panel_AddExam = new JPanel();
 		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
@@ -444,9 +450,12 @@ public class Swing {
 		Choice choice_AddExamToCourse = new Choice();
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
+		for (Course tmpCourse : courseController.getCourseList()) {
+			choice_AddExamToCourse.add(tmpCourse.getCourseCode() + ", " + tmpCourse.getCourseName() + ", " + tmpCourse.getCredit());
+		}
 		
 		JLabel lblb_addCourseResponse = new JLabel("Response:");
-		lblb_addCourseResponse.setBounds(59, 252, 84, 14);
+		lblb_addCourseResponse.setBounds(24, 252, 578, 14);
 		panel_AddCourse.add(lblb_addCourseResponse);
 
 		
@@ -487,7 +496,11 @@ public class Swing {
 			
 			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + points + " has been added");
 				}
+				else 
+					lblb_addCourseResponse.setText("Put in valid information");
 				}
+				
+				
 				groupPoints.clearSelection();	
 				textField_EnterCourseName.setText("");
 				
@@ -534,7 +547,7 @@ public class Swing {
 				choice_UpdateCourse.remove(p);
 				choice_AddExamToCourse.remove(p);
 				
-				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
+				lbl_ResponseForRemoveCourse.setText("Respons: " + p + " has been removed");
 				
 				}catch (NullPointerException n) {		
 					lbl_ResponseForRemoveCourse.setText("Respons: No course found to be removed");
@@ -586,7 +599,7 @@ public class Swing {
 		choice_UpdateCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		choice_AddExamToCourse.add(courseParts [0] + ", " + newName + ", " + courseParts[2]);
 		
-		lbl_ResponsUpdate.setText(updateCourse + " has changed name to" + newName);
+		lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
 		
 			}
 			textField_NewNameForCourse.setText("");
