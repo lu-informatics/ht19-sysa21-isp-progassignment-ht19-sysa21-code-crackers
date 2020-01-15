@@ -12,6 +12,10 @@ public class WrittenExam {
 	private Course course;
 
 	private List<Result> resultList = new ArrayList<Result>();
+	
+	public WrittenExam () {
+		
+	}
 
 	public WrittenExam( Course course, String date, String location, String time) {
 		this.date = date;
@@ -90,7 +94,9 @@ public class WrittenExam {
 	}
 	public void generateLetterGrade(String examID, Student student, int points) {
 		Result result = new Result();
-		WrittenExam ex = course.findExam(examID);
+	WrittenExam ex = course.findExam(examID);
+	
+		
 		result.setStudent(student);
 		result.setWrittenExam(ex);
 		result.setResult(points);

@@ -52,7 +52,7 @@ public class Result {
 	public void generateLetterGrade(String examID, Student student, int points) {
 		Result result = new Result();
 		
-
+		
 		WrittenExam ex = result.getWrittenExam();
 		result.setStudent(student);
 		result.setWrittenExam(ex);
