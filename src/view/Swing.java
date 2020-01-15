@@ -624,8 +624,6 @@ public class Swing {
 		    
 		  Course c =  courseController.findCourse(courseParts[0]);
 		  System.out.println(c);
-			
-		   /// Course course = new Course (courseParts[0], courseParts[1]);
 		    
 			String date = textField_EnterDate.getText();
 			
@@ -647,7 +645,7 @@ public class Swing {
 						}
 				}
 				
-			if (!pickedCourse.equals("")) {
+			if (!pickedCourse.equals("") && !ans.isBlank() && !date.equals("") && !time.isBlank()) {
 				System.out.println("hej");
 				examController.addExamToCourse(c, date, ans, time);
 				
@@ -659,6 +657,10 @@ public class Swing {
 				
 				
 					
+			}
+			
+			else { label_ResponseAddExam.setText("Fill in all the fields and buttons with valid information");
+				
 			}
 			
 			textField_EnterDate.setText("");
@@ -769,11 +771,11 @@ public class Swing {
 			examController.generateLettergrade(iD, s, result);
 			
 			for ( Student tmp : studentController.getStudentList()) {
+			
+				 
 				
 				
-				
-				
-			lbl_Response_LetterGrade.setText(student + ", will recive grade " + letter);
+			lbl_Response_LetterGrade.setText(student + ", will recive grade " +  tmp.getStudentResultList());
 			}
 					
 			}
