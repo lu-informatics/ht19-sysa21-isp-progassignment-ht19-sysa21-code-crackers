@@ -53,6 +53,7 @@ public class Swing {
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
+	private ExamController examController = new ExamController();
 
 	/**
 	 * Launch the application.
@@ -647,9 +648,8 @@ public class Swing {
 				}
 				
 			if (!pickedCourse.equals("")) {
-				//if ()) 
 				System.out.println("hej");
-				courseController.addExamToCourse(c, date, ans, time);
+				examController.addExamToCourse(c, date, ans, time);
 				
 				
 					
@@ -764,15 +764,21 @@ public class Swing {
 				
 				for (WrittenExam ex: examController.getExamList()) {
 				String iD =	ex.getExamID();
+				
 			
-				examController.generateLettergrade(iD, s, result);
+			examController.generateLettergrade(iD, s, result);
+			
+			for ( Student tmp : studentController.getStudentList()) {
 				
-					
 				
+				
+				
+			lbl_Response_LetterGrade.setText(student + ", will recive grade " + letter);
+			}
 					
 			}
 				textField_EnterAmountOfPoints.setText("");
-				lbl_Response_LetterGrade.setText(student + ", will recive grade" );
+				
 			}
 		});
 

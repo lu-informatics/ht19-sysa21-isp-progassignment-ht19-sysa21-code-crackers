@@ -76,14 +76,18 @@
 		}
 
 		public void generateLettergrade(String examID, Student student, int points) {
+			
 			Result result = new Result();
 			WrittenExam ex = this.findExam(examID);
 			result.setStudent(student);
+			student.addResultToStudent(result);
 			result.setWrittenExam(ex);
 			result.setResult(points);
 			result.setLetterGrade(this.CalcExamGrade(points));
 			ex.addResultforExam(result);
+			
 
+			
 		}
 
 		public String CalcExamGrade(int result) {
