@@ -1,22 +1,36 @@
-package application;
+package view;
 
 import control.CourseController;
 import control.StudentController;
-import control.ExamController;
 import model.Course;
 import model.Result;
 import model.Student;
 import model.WrittenExam;
-import view.Swing;
 
-public class Main {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+public class PopulateTestData {
+	private CourseController courseController;
+	private StudentController studentController;
+	
+	public CourseController getCourseController() {
+		return courseController;
+	}
+	public void setCourseController(CourseController courseController) {
+		this.courseController = courseController;
+	}
+	public StudentController getStudentController() {
+		return studentController;
+	}
+	public void setStudentController(StudentController studentController) {
+		this.studentController = studentController;
+	}
+	
+	public PopulateTestData (CourseController courseRegister, StudentController studentRegister ) {
+		this.studentController = studentRegister;
+		this.courseController = courseRegister;
 		
-		CourseController courseRegister = new CourseController();
-		StudentController studentRegister = new StudentController();
-		ExamController examRegister = new ExamController();
+	//	CourseController courseRegister = new CourseController();
+		//StudentController studentRegister = new StudentController();
+		//ExamController examRegister = new ExamController();
 		
 		//Create courses
 		Course course1 = new Course("Modeling", "15" );
@@ -74,6 +88,8 @@ public class Main {
 		//testdata for swing
 		//Swing frame = new Swing (new Controller (Student, Course, Result, WrittenExam));
 		//frame.setVisible(true);
+		
 	}
+	
 
 }
