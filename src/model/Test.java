@@ -37,8 +37,8 @@ public class Test {
 		courseRegister.addCourse("IS-Projekt", "15");
 		courseRegister.addCourse("Modellering", "15");
 
-		examRegister.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
-		examRegister.addExamToCourse(course2, "10 Feb 2020", "RoomA123", "08:00");
+		courseRegister.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
+		courseRegister.addExamToCourse(course2, "10 Feb 2020", "RoomA123", "08:00");
 
 		student1.addResultToStudent(result1);
 		student1.addResultToStudent(result2);
@@ -58,8 +58,6 @@ public class Test {
 		result1.setResult(50);
 		result2.setResult(60);
 		
-		course1.addWrittenExam(exam1);
-		course2.addWrittenExam(exam2);
 
 		
 	/*	for (Student tmp : studentRegister.getStudentList()) {
