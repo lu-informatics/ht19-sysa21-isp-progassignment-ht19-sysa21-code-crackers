@@ -124,6 +124,20 @@ public class Swing {
 
 		// lblNewLabel_18.setBounds(10, 22, 432, 273);
 		// panel_9.add(lblNewLabel_18);
+		
+		
+		studentController.addStudent("Martin");
+		studentController.addStudent("Ronny");
+		studentController.addStudent("Jenny");
+		
+		courseController.addCourse("Sysa21", "15 points");
+		courseController.addCourse("Modeling", "30 points");
+		
+		for (Course examForCourse : courseController.getCourseList()) {
+			courseController.addExamToCourse(examForCourse, "2020-01-01", "Room B067", "08:00-13:00");
+		}
+		
+		
 
 		JTabbedPane tabbedPane_Student = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Student.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -160,6 +174,10 @@ public class Swing {
 		choice_UpdateStudent.setBackground(SystemColor.text);
 		choice_UpdateStudent.setBounds(188, 69, 303, 26);
 		panel_UpdateStudent.add(choice_UpdateStudent);
+		for (Student tmp : studentController.getStudentList()) {
+			choice_UpdateStudent.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+		}
+		
 
 		JPanel AnswerStudentID = new JPanel();
 		AnswerStudentID.setForeground(SystemColor.desktop);
@@ -198,6 +216,9 @@ public class Swing {
 		 choice_RemoveStudent.setBackground(SystemColor.text);
 		 choice_RemoveStudent.setBounds(232, 59, 344, 20);
 		 panel_RemoveStudent.add(choice_RemoveStudent);
+		 for (Student tmp : studentController.getStudentList()) {
+			 choice_RemoveStudent.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+			}
 		 
 		 JPanel panel_Result = new JPanel();
 			tabbedPane_program.addTab("Results", null, panel_Result, null);
@@ -206,6 +227,9 @@ public class Swing {
 		 Choice choice_SelectStudentForResult = new Choice();
 			choice_SelectStudentForResult.setBounds(209, 35, 370, 20);
 			panel_Result.add(choice_SelectStudentForResult);
+			for (Student tmp : studentController.getStudentList()) {
+				choice_SelectStudentForResult.add(tmp.getStudentName() + " ," + tmp.getStudentID());
+				}
 
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.setForeground(Color.BLACK);
