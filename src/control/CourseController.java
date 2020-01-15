@@ -5,7 +5,19 @@ import java.util.*;
 import model.Course;
 
 
-public class CourseController {
+public class CourseController { 
+	
+	CourseController courseController; //Simulation for testdata
+	
+	
+	public CourseController() {
+		this.courseController = new CourseController(); //blank controller holding no data
+	}
+	
+	public CourseController(CourseController courseController) { //creates a controller holding data that is contained in the parameter classes
+		this.courseController = courseController;
+	}
+	
 
 	private List<Course> courseList = new ArrayList<Course>();
 
