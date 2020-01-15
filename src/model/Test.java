@@ -1,6 +1,6 @@
 package model;
 
-import control.MainController
+import control.MainController;
 import model.Course;
 import model.WrittenExam;
 import model.Result;
@@ -10,9 +10,9 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		StudentController studentRegister = new StudentController();
+		
 
-		CourseController courseRegister = new CourseController();
+		MainController controller =  new MainController();
 
 		Student student1 = new Student("David");
 		Student student2 = new Student("Martin");
@@ -28,16 +28,16 @@ public class Test {
 		Result result1 = new Result();
 		Result result2 = new Result();
 
-		studentRegister.addStudent("David");
-		studentRegister.addStudent("Martin");
-		studentRegister.addStudent("Jenny");
-		studentRegister.addStudent("Hanna");
+		controller.addStudent("David");
+		controller.addStudent("Martin");
+		controller.addStudent("Jenny");
+		controller.addStudent("Hanna");
 
-		courseRegister.addCourse("IS-Projekt", "15");
-		courseRegister.addCourse("Modellering", "15");
+		controller.addCourse("IS-Projekt", "15");
+		controller.addCourse("Modellering", "15");
 
-		courseRegister.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
-		courseRegister.addExamToCourse(course2, "10 Feb 2020", "RoomA123", "08:00");
+		controller.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
+		controller.addExamToCourse(course2, "10 Feb 2020", "RoomA123", "08:00");
 
 		student1.addResultToStudent(result1);
 		student1.addResultToStudent(result2);
@@ -56,19 +56,26 @@ public class Test {
 
 		result1.setResult(50);
 		result2.setResult(60);
+		result1.setWrittenExam(exam1);
+		result2.setWrittenExam(exam2);
+	
 		
 
 		
-	/*	for (Student tmp : studentRegister.getStudentList()) {
+		for (Student tmp : controller.getStudentList()) {
 			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
+		
+			//for(Result r : tmp.getStudentResultList()) {
+			//	System.out.println( r.getResult()+ r.getLetterGrade());
+			//}
 			
 		}
 	
-		for (Course ctmp : courseRegister.getCourseList()){
+		for (Course ctmp : controller.getCourseList()){
 			 
 			System.out.println("Coursecode:" + ctmp.getCourseCode() + ", Course name:" + ctmp.getCourseName() + ", Cours credit:" + ctmp.getCredit());
 		
-		}*/
+		}
 			
 		for(WrittenExam ee : course1.getWrittenExamList()) {
 			if (ee !=null) {
