@@ -19,6 +19,23 @@ public class StudentController {
 		this.studentList = studentList;
 	}
 
+	// ADD ((C)RUD)
+	public void addStudent(String studentName) {
+		boolean studentAdded = false;
+		while (!studentAdded) {
+			String studentID = this.generateStudentID();
+			if (this.findStudent(studentID) == null) {
+				Student student = new Student(studentName);
+				student.setStudentID(studentID);
+				this.studentList.add(student);
+				studentAdded = true;
+			}
+
+		}
+
+	}
+
+	// FIND (C(R)UD)
 	public Student findStudent(String studentID) {
 		for (Student s : studentList) {
 			if (s.getStudentID().equals(studentID)) {
@@ -30,14 +47,7 @@ public class StudentController {
 		return null;
 	}
 
-	public Student removeStudent(String studentID) {
-		Student tmpStudent = this.findStudent(studentID);
-		if (tmpStudent != null) {
-			this.studentList.remove(tmpStudent);
-		}
-		return null;
-	}
-
+	// UPDATE (CR(U)D)
 	public void updateStudent(String studentID, String newName) {
 
 		Student tmpStudent = this.findStudent(studentID);
@@ -48,27 +58,21 @@ public class StudentController {
 
 	}
 
-	public void addStudent(String studentName) {
-		boolean studentAdded = false;
-		while (!studentAdded) {
-			String studentID = this.generateStudentID();
-			if (this.findStudent(studentID) == null) {
-				Student student = new Student( studentName);
-				student.setStudentID(studentID);
-				this.studentList.add(student);
-				studentAdded = true;
-			}
-
+	// REMOVE (CRU(D))
+	public Student removeStudent(String studentID) {
+		Student tmpStudent = this.findStudent(studentID);
+		if (tmpStudent != null) {
+			this.studentList.remove(tmpStudent);
 		}
-
+		return null;
 	}
 
+	//GENTERATE STUDENT ID 
 	private String generateStudentID() {
 		Random rand = new Random();
 		int max = 99999;
 		int min = 10000;
-		int range = rand.nextInt(max-min) + min;
-	
+		int range = rand.nextInt(max - min) + min;
 
 		return String.format("S%05d", range);
 	}

@@ -36,7 +36,6 @@ import javax.swing.border.MatteBorder;
 import com.toedter.calendar.JDateChooser;
 
 import control.CourseController;
-import control.ExamController;
 import control.StudentController;
 import model.Course;
 import model.Student;
@@ -56,15 +55,23 @@ public class Swing {
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
 	private JTable table;
+	private  PopulateTestData populate;
 	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		StudentController studentController = new StudentController();
+		CourseController courseController = new CourseController();
+	
 		
-	PopulateTestData populate = new PopulateTestData (studentController, courseController);
-
+	PopulateTestData populate = new PopulateTestData (courseController, studentController);
+	studentController = populate.getStudentController();
+	courseController = populate.getCourseController();
+	
+	
+	
 
 
 		EventQueue.invokeLater(new Runnable() {

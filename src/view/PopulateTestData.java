@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.JFrame;
+
 import control.CourseController;
 import control.StudentController;
 import model.Course;
@@ -7,7 +9,7 @@ import model.Result;
 import model.Student;
 import model.WrittenExam;
 
-public class PopulateTestData {
+public class PopulateTestData extends JFrame {
 	private CourseController courseController;
 	private StudentController studentController;
 	
@@ -43,9 +45,9 @@ public class PopulateTestData {
 		Student student3 = new Student("Greg");
 		
 		//Create WrittenExams
-		WrittenExam writtenExam1 = new WrittenExam(course1, "20 Jan 2020", "RoomA123", "08:00");
-		WrittenExam writtenExam2 = new WrittenExam(course2, "30 Jan 2020", "RoomB067", "08:00");
-		WrittenExam writtenExam3 = new WrittenExam(course3, "10 Feb 2020", "RoomA167", "08:00");
+		WrittenExam writtenExam1 = new WrittenExam("20 Jan 2020", "RoomA123", "08:00");
+		WrittenExam writtenExam2 = new WrittenExam("30 Jan 2020", "RoomB067", "08:00");
+		WrittenExam writtenExam3 = new WrittenExam("10 Feb 2020", "RoomA167", "08:00");
 		
 		//Result
 		Result result1 = new Result();
@@ -58,9 +60,9 @@ public class PopulateTestData {
 		writtenExam3.setCourse(course3);
 		
 		//Connection between exam and course
-		course1.addWrittenExam(writtenExam1);
-		course2.addWrittenExam(writtenExam2);
-		course3.addWrittenExam(writtenExam3);
+		//course1.addWrittenExam(writtenExam1);
+		//course2.addWrittenExam(writtenExam2);
+		//course3.addWrittenExam(writtenExam3);
 		
 		//Connection between result and writtenExam
 		result1.setWrittenExam(writtenExam1);
@@ -88,6 +90,10 @@ public class PopulateTestData {
 		//testdata for swing
 		//Swing frame = new Swing (new Controller (Student, Course, Result, WrittenExam));
 		//frame.setVisible(true);
+		
+		studentController.addStudent("Greg");
+		studentController.addStudent("Lisa");
+		studentController.addStudent("Ronny");
 		
 	}
 	
