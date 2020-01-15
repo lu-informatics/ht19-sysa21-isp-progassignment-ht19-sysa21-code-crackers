@@ -14,11 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Enumeration;
 
-
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -32,15 +30,13 @@ import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
 
-import com.sun.net.httpserver.Authenticator.Result;
-import com.toedter.calendar.JDateChooser;
-
 import control.CourseController;
 import control.ExamController;
 import control.StudentController;
 import model.Course;
 import model.Student;
 import model.WrittenExam;
+import model.Result;
 
 public class Swing {
 
@@ -82,6 +78,62 @@ public class Swing {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//Create courses
+				Course course1 = new Course("Modeling", "15" );
+				Course course2 = new Course("Programming", "30" );
+				Course course3 = new Course("Music", "7.5" );
+				
+				//Create students
+				Student student1 = new Student("Ronny");
+				Student student2 = new Student("Lisa");
+				Student student3 = new Student("Greg");
+				
+				//Create WrittenExams
+				WrittenExam writtenExam1 = new WrittenExam(course1, "20 Jan 2020", "RoomA123", "08:00");
+				WrittenExam writtenExam2 = new WrittenExam(course2, "30 Jan 2020", "RoomB067", "08:00");
+				WrittenExam writtenExam3 = new WrittenExam(course3, "10 Feb 2020", "RoomA167", "08:00");
+				
+				//Result
+				Result result1 = new Result();
+				Result result2 = new Result();
+				Result result3 = new Result();
+				
+				//Connection between course and exam
+				writtenExam1.setCourse(course1);
+				writtenExam2.setCourse(course2);
+				writtenExam3.setCourse(course3);
+				
+				//Connection between exam and course
+				course1.addWrittenExam(writtenExam1);
+				course2.addWrittenExam(writtenExam2);
+				course3.addWrittenExam(writtenExam3);
+				
+				//Connection between result and writtenExam
+				result1.setWrittenExam(writtenExam1);
+				result2.setWrittenExam(writtenExam2);
+				result3.setWrittenExam(writtenExam3);
+				
+				//Connection between result and student
+				student1.addResultToStudent(result1);
+				student2.addResultToStudent(result2);
+				student3.addResultToStudent(result3);
+				
+				//Connection between result and student 
+				result1.setStudent(student1);
+				result2.setStudent(student2);
+				result3.setStudent(student3);
+				
+				//Connection between writtenExam and result
+				writtenExam1.addResultforExam(result1);
+				writtenExam2.addResultforExam(result2);
+				writtenExam3.addResultforExam(result3);
+				
+				StudentController studentRegister = new StudentController();
+				ExamController examRegister = new ExamController();
+				CourseController courseRegister = new CourseController();
+				
+				studentRegister.addStudent("Ronny");
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.controlLtHighlight);
 		frame.setFont(new Font("Courier New", Font.PLAIN, 12));
