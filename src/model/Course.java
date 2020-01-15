@@ -53,5 +53,57 @@ public class Course {
 		this.writtenExamList.remove(writtenExam);
 	}
 	
+	public void addExamToCourse(Course course, String date, String location, String time) {
+
+		String examId = null;
+
+		while (examId == null) {
+
+			examId = this.generateExamID();
+			if (this.findExam(examId) != null) {
+				examId = null;
+			}
+		}
+		WrittenExam ex = new WrittenExam(course, date, location, time);
+		ex.setExamID(examId);
+		if (course.getWrittenExamList().isEmpty()) {
+			course.addWrittenExam(ex);
+		} else {
+			for (WrittenExam we : course.getWrittenExamList()) {
+				if (we.equals(ex)) {
+
+					course.addWrittenExam(ex);
+
+				}
+			}
+		}
+	}
+	public WrittenExam findExam(String examID) {
+
+		for (WrittenExam e : writtenExamList) {
+			if (e.getExamID() == (examID)) {
+
+				return e;
+
+			}
+		}
+		return null;
+	}
+
+	public void removeExamFromCourse(String examID) {
+		WrittenExam tmpExam = this.findExam(examID);
+		if (tmpExam != null) {
+			this.writtenExamList.remove(tmpExam);
+		}
+
+	}
+	private String generateExamID() {
+		Random rand = new Random();
+		int max = 99999;
+		int min = 10000;
+		int range = rand.nextInt(max - min) + min;
+
+		return String.format("E%05d", range);
+	}
 
 }
