@@ -56,7 +56,7 @@ public class Swing {
 	private JTextField textField_EnterDate;
 	private JTable table;
 	private  PopulateTestData populate;
-	private WrittenExam writtenExam = new WrittenExam();
+	private Result resultClass = new Result();
 
 	/**
 	 * Launch the application.
@@ -833,11 +833,11 @@ public class Swing {
 				String [] studentPart = student.split(",");
 				Student s = studentController.findStudent(studentPart[1]);
 				
-				writtenExam.CalcExamGrade(result);
-				writtenExam.generateLettergrade(examParts[5], s, result);
+				//writtenExam.CalcExamGrade(result);
+				//writtenExam.generateLettergrade(examParts[5], s, result);
 				
 				textField_EnterAmountOfPoints.setText("");
-				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + writtenExam.CalcExamGrade(result));
+				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + resultClass.calcExamGrade(result));
 			}
 			
 		});

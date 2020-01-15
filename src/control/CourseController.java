@@ -87,7 +87,7 @@ public class CourseController {
 				course.getWrittenExamList().add(ex);
 			} else {
 				for (WrittenExam we : co.getWrittenExamList()) {
-					if (we.equals(ex)) {
+					if (!we.equals(ex)) {
 
 						course.getWrittenExamList().add(ex);
 					}
