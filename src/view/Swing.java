@@ -51,32 +51,18 @@ public class Swing {
 	private JTextField textField_NewStudentName;
 	private JTextField textField_EnterCourseName;
 	private JTextField textField_NewNameForCourse;
-	//private StudentController studentController = new StudentController();
-	//private CourseController courseController = new CourseController();
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
 	private JTable table;
 	private  PopulateTestData populate;
 	private WrittenExam writtenExam = new WrittenExam();
-	//private ExamController examController = new ExamController();
 	private MainController mainController = new MainController();
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		//StudentController studentController = new StudentController();
-		//CourseController courseController = new CourseController();
-	
-		
-	//PopulateTestData populate = new PopulateTestData (courseController, studentController);
-	//studentController = populate.getStudentController();
-	//courseController = populate.getCourseController();
-	
-	
-	
-
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
