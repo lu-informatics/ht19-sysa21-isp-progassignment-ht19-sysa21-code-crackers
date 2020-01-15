@@ -1,7 +1,6 @@
 package model;
 
-import control.CourseController;
-import control.StudentController;
+import control.MainController
 import model.Course;
 import model.WrittenExam;
 import model.Result;
