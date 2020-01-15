@@ -13,10 +13,11 @@ public class WrittenExam {
 
 	private List<Result> resultList = new ArrayList<Result>();
 
-	public WrittenExam( String course, String date, String location, String time) {
+	public WrittenExam( String courseID, String date, String location, String time) {
 		this.date = date;
 		this.location = location;
 		this.time = time;
+		this.course = this.getCourse();
 		
 		// this.course = course; // vill ha en hel kurs.
 	}

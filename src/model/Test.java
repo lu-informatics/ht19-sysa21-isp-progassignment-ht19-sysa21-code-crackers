@@ -20,12 +20,6 @@ public class Test {
 		Student student3 = new Student("Jenny");
 		Student student4 = new Student("Hanna");
 
-		Course course1 = new Course("IS-Projekt", "15");
-		Course course2 = new Course("Modellering", "15");
-
-		WrittenExam exam1 = new WrittenExam(course1,"20 Feb 2020", "RoomA123", "08:00");
-		WrittenExam exam2 = new WrittenExam(course2,"10 Feb 2020", "RoomA123", "08:00");
-
 		Result result1 = new Result();
 		Result result2 = new Result();
 
@@ -37,8 +31,8 @@ public class Test {
 		courseRegister.addCourse("IS-Projekt", "15");
 		courseRegister.addCourse("Modellering", "15");
 
-		examRegister.addExamToCourse(course1, "20 Feb 2020", "RoomA123", "08:00");
-		examRegister.addExamToCourse(course2, "10 Feb 2020", "RoomA123", "08:00");
+		courseRegister.addExamToCourse("E12345", "20 Feb 2020", "RoomA123", "08:00");
+		courseRegister.addExamToCourse("E23456", "10 Feb 2020", "RoomA123", "08:00");
 
 		student1.addResultToStudent(result1);
 		student1.addResultToStudent(result2);
@@ -50,16 +44,16 @@ public class Test {
 		result1.setStudent(student1);
 		result2.setStudent(student2);
 
-		exam1.setCourse(course1);
-		exam2.setCourse(course2);
-		exam1.addResultforExam(result1);
-		exam2.addResultforExam(result2);
+	//	exam1.setCourse(course1);
+		//exam2.setCourse(course2);
+		//exam1.addResultforExam(result1);
+		//exam2.addResultforExam(result2);
 
 		result1.setResult(50);
 		result2.setResult(60);
 		
-		course1.addWrittenExam(exam1);
-		course2.addWrittenExam(exam2);
+	//	course1.addWrittenExam(exam1);
+		//course2.addWrittenExam(exam2);
 
 		
 	/*	for (Student tmp : studentRegister.getStudentList()) {
