@@ -196,7 +196,7 @@ public class Swing {
 		btnAddStudentButton.setBackground(SystemColor.controlLtHighlight);
 		btnAddStudentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			try {
+			 
 				String studentName = textField_EnterStudentName.getText();
 
 				if (!studentName.equals("")) {
@@ -231,9 +231,8 @@ public class Swing {
 			
 
 
-		}catch (NullPointerException n){
-			textArea_AddStudent.setText("The student was´nt added, please try again.");
-		}
+	
+		
 		}});
 		
 		btnAddStudentButton.setBounds(354, 46, 109, 23);
@@ -304,6 +303,7 @@ public class Swing {
 						//System.out.println(tmp.getStudentID() + tmp.getStudentName());
 					//}
 			}catch (NullPointerException n) {		
+				lbl_ResponseForRemovedStudent.setText("Response: No student found to be removed");
 			}
 			}});
 		btnRemoveStudent.setBackground(SystemColor.controlLtHighlight);
@@ -495,7 +495,7 @@ public class Swing {
 				lbl_ResponseForRemoveCourse.setText("Respons: " + p + "has been removed");
 				
 				}catch (NullPointerException n) {		
-					
+					lbl_ResponseForRemoveCourse.setText("Respons: No course found to be removed");
 				}
 				}});
 		btn_YesRemoveCourse.setBounds(262, 119, 137, 23);
