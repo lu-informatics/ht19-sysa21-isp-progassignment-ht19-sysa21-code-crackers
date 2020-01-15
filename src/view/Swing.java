@@ -50,7 +50,6 @@ public class Swing {
 	private JTextField textField_NewNameForCourse;
 	private StudentController studentController = new StudentController();
 	private CourseController courseController = new CourseController();
-	private ExamController examController = new ExamController();
 	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
@@ -650,7 +649,7 @@ public class Swing {
 			if (!pickedCourse.equals("")) {
 				//if ()) 
 				System.out.println("hej");
-				examController.addExamToCourse(c, date, ans, time);
+				courseController.addExamToCourse(c, date, ans, time);
 				
 				
 					
