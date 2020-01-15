@@ -118,8 +118,8 @@ public class Swing {
 		lblEnterTheStudent.setBounds(26, 71, 152, 24);
 		panel_UpdateStudent.add(lblEnterTheStudent);
 
-		JLabel lblEnterTheNew = new JLabel("Enter the new name:");
-		lblEnterTheNew.setBounds(26, 171, 170, 14);
+		JLabel lblEnterTheNew = new JLabel("Enter the new name:*");
+		lblEnterTheNew.setBounds(26, 171, 160, 14);
 		panel_UpdateStudent.add(lblEnterTheNew);
 
 		textField_NewStudentName = new JTextField();
@@ -442,7 +442,7 @@ public class Swing {
 		panel_RemoveCourse.add(lbl_EnterCourseToRemove);
 
 		JLabel lbl_ResponseForRemoveCourse = new JLabel("Response:");
-		lbl_ResponseForRemoveCourse.setBounds(33, 164, 499, 14);
+		lbl_ResponseForRemoveCourse.setBounds(33, 164, 569, 14);
 		panel_RemoveCourse.add(lbl_ResponseForRemoveCourse);
 
 		JButton btn_YesRemoveCourse = new JButton("Remove course");
@@ -477,7 +477,7 @@ public class Swing {
 		lbl_CourseToBeUpdated.setBounds(10, 38, 174, 14);
 		panel_UpdateCourse.add(lbl_CourseToBeUpdated);
 
-		JLabel lbl_NewNameForCourse = new JLabel("Enter the new name:");
+		JLabel lbl_NewNameForCourse = new JLabel("Enter the new name:*");
 		lbl_NewNameForCourse.setBounds(10, 103, 137, 14);
 		panel_UpdateCourse.add(lbl_NewNameForCourse);
 
@@ -487,7 +487,7 @@ public class Swing {
 		textField_NewNameForCourse.setColumns(10);
 
 		JLabel lbl_ResponsUpdate = new JLabel("Response:");
-		lbl_ResponsUpdate.setBounds(41, 221, 483, 14);
+		lbl_ResponsUpdate.setBounds(41, 221, 561, 14);
 		panel_UpdateCourse.add(lbl_ResponsUpdate);
 
 		JButton btnUpdateCourse = new JButton("Update course");
@@ -522,7 +522,7 @@ public class Swing {
 		JLabel lblNewLabel_13 = new JLabel("Enter the date");
 		lblNewLabel_13.setBounds(10, 83, 99, 14);
 
-		JLabel lbl_ChooseLocationToExam = new JLabel("Choose location:");
+		JLabel lbl_ChooseLocationToExam = new JLabel("Choose location:*");
 		lbl_ChooseLocationToExam.setBounds(10, 136, 111, 14);
 		panel_AddExam.add(lbl_ChooseLocationToExam);
 		
@@ -642,11 +642,11 @@ public class Swing {
 
 		panel_AddExam.add(lbl_AddExamToCourse);
 
-		JLabel lbl_ChooseDateToExam = new JLabel("Enter date:");
+		JLabel lbl_ChooseDateToExam = new JLabel("Enter date:*");
 		lbl_ChooseDateToExam.setBounds(10, 63, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
 		
-		JLabel lblNewLabel_2 = new JLabel("Select time:");
+		JLabel lblNewLabel_2 = new JLabel("Select time:*");
 		lblNewLabel_2.setBounds(10, 111, 153, 14);
 		panel_AddExam.add(lblNewLabel_2);
 		
@@ -690,7 +690,7 @@ public class Swing {
 		lbl_SelectExamForResult.setBounds(44, 116, 87, 14);
 		panel_Result.add(lbl_SelectExamForResult);
 
-		JLabel lbl_EnterAmountOfPoints = new JLabel("Score:");
+		JLabel lbl_EnterAmountOfPoints = new JLabel("Score:*");
 		lbl_EnterAmountOfPoints.setBounds(44, 193, 114, 14);
 		panel_Result.add(lbl_EnterAmountOfPoints);
 
