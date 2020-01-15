@@ -18,7 +18,6 @@ import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,18 +30,11 @@ import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import javax.swing.border.MatteBorder;
-
-
-import com.toedter.calendar.JDateChooser;
-
-//import control.CourseController;
-//import control.StudentController;
 import model.Course;
 import model.Student;
 import model.WrittenExam;
 import javax.swing.JTable;
 import model.Result;
-//import control.ExamController;
 import control.MainController;
 
 public class Swing {
@@ -51,12 +43,9 @@ public class Swing {
 	private JTextField textField_NewStudentName;
 	private JTextField textField_EnterCourseName;
 	private JTextField textField_NewNameForCourse;
-	private JTextPane textPane_enterStudentName;
 	private JTextField textField_EnterStudentName;
 	private JTextField textField_EnterDate;
 	private JTable table;
-	private  PopulateTestData populate;
-	private WrittenExam writtenExam = new WrittenExam();
 	private MainController mainController = new MainController();
 
 	/**
