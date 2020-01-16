@@ -108,12 +108,11 @@ public class MainController {
 	public void removeExamFromCourse(String courseID, String examID) {
 		Course c = this.findCourse(courseID);
 		WrittenExam ex = this.findExam(examID);
-		
 
-			if (ex.getExamID().equals(examID)) {
-				c.getWrittenExamList().remove(ex);
-			}
-		
+		if (ex.getExamID().equals(examID)) {
+			c.getWrittenExamList().remove(ex);
+		}
+
 	}
 
 	// GENERATES AN EXAM ID AND IT STARTS WITH THE LETTER E
@@ -207,7 +206,6 @@ public class MainController {
 	public void addResult(String studentID, String examID, int points) {
 		WrittenExam we = this.findExam(examID);
 		Student s = this.findStudent(studentID);
-		// if(s.getStudentResultList().getWrittenExam().getExamID() != examID) {
 
 		Result result = new Result(points, we, s);
 		result.setStudent(s);
