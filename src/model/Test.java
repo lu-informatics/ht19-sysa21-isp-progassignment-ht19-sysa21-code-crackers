@@ -61,7 +61,6 @@ public class Test {
 		result2.setWrittenExam(exam2);
 	
 		
-
 		
 		for (Student tmp : controller.getStudentList()) {
 				System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
