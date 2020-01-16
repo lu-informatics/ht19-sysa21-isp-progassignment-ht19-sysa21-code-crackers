@@ -109,13 +109,15 @@ public class MainController {
 	
 
 	  public void addResult(String studentID,String examID, int points) {
-	  WrittenExam we = this.findExam(examID); Student s =
-	  this.findStudent(studentID);
+	  WrittenExam we = this.findExam(examID); 
+	  Student s = this.findStudent(studentID);
+	 // if(s.getStudentResultList().getWrittenExam().getExamID() != examID) {
 	  
 	  Result result = new Result(points, we, s); result.setStudent(s);
 	  result.setWrittenExam(we); result.setLetterGrade(this.calcExamGrade(points));
 	  s.addResultToStudent(result);
 	   
+	//  }
 	  }
 	 
 
