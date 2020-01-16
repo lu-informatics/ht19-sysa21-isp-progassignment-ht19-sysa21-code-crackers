@@ -609,8 +609,6 @@ public class Swing {
 			}
 		}
 		
-		
-		
 		Label label_ResponseAddExam = new Label("Response");
 		label_ResponseAddExam.setBounds(21, 308, 562, 22);
 		panel_AddExam.add(label_ResponseAddExam);
@@ -661,6 +659,8 @@ public class Swing {
 				System.out.println("hej");
 				mainController.addExamToCourse(c, date, location, time);
 				
+				choice_SelectExamForResult.removeAll();
+				choice_SelectExam.removeAll();
 				for (Course tmp : mainController.getCourseList()) {
 					for (WrittenExam ex : tmp.getWrittenExamList()) {
 						
