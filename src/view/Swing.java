@@ -311,6 +311,7 @@ public class Swing {
                      choice_SelectStudentForResult.add(textForUpdate + "," + studentParts[1]);
                 
                }
+                   		else lblResponse_ForUpdate.setText("Student was not updated cause to no name entered");
                    	textField_NewStudentName.setText("");
                    	
 				}
