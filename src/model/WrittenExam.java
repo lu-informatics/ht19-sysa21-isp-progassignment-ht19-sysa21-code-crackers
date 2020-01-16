@@ -78,7 +78,7 @@ public class WrittenExam {
 		this.course = course;
 	}
 
-	public void addResultforExam(Result result) { // Ta bort?
+	public void addResultforExam(Result result) { // vid utökning av programmet för att räkna ut median behövs denna metod
 		this.resultList.add(result);
 	}
 
