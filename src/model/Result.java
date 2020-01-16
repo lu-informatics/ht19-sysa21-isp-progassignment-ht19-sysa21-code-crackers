@@ -7,7 +7,7 @@ public class Result {
 	private Student student;
 	private WrittenExam writtenExam;
 
-	public Result() { //int result, WrittenExam exam, Student student
+	public Result(int result, WrittenExam exam, Student student) {
 		
 		this.result = result;
 		this.letterGrade = letterGrade;

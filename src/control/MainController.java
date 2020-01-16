@@ -106,21 +106,20 @@ public class MainController {
 	}
 	// GENERATE A LETTERGRADE AND ADD RESULT TO A STUDENT AND A EXAM
 
-	// Använda denna istället för den under? i så fall ändra construktorn
-	/*
-	 * public void addResult(String studentID,String examID, int points) {
-	 * WrittenExam we = this.findExam(examID); Student s =
-	 * this.findStudent(studentID);
-	 * 
-	 * Result result = new Result(points, we, s); result.setStudent(s);
-	 * result.setWrittenExam(we); result.setLetterGrade(this.calcExamGrade(points));
-	 * s.addResultToStudent(result);
-	 * 
-	 * 
-	 * }
-	 */
+	
 
-	// GENERATE A LETTERGRADE AND ADD RESULT TO A STUDENT AND A EXAM
+	  public void addResult(String studentID,String examID, int points) {
+	  WrittenExam we = this.findExam(examID); Student s =
+	  this.findStudent(studentID);
+	  
+	  Result result = new Result(points, we, s); result.setStudent(s);
+	  result.setWrittenExam(we); result.setLetterGrade(this.calcExamGrade(points));
+	  s.addResultToStudent(result);
+	   
+	  }
+	 
+
+/*	// GENERATE A LETTERGRADE AND ADD RESULT TO A STUDENT AND A EXAM
 
 	public void generateLetterGrade(String examID, String studentID, int points) {
 
@@ -135,7 +134,7 @@ public class MainController {
 		ex.addResultforExam(result);
 		student.addResultToStudent(result);
 
-	}
+	}*/
 
 	// CALCULATE A LETTER GRADE WITH GIVEN POINTS
 	public String calcExamGrade(int result) {
