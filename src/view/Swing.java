@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Enumeration;
 
-
 import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -94,22 +93,21 @@ public class Swing {
 		tabbedPane_Contoso.setBackground(SystemColor.controlLtHighlight);
 		tabbedPane_Contoso.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tabbedPane_program.addTab("Contoso University", null, tabbedPane_Contoso, null);
-		
+
 		mainController.addStudent("Martin");
 		mainController.addStudent("Ronny");
 		mainController.addStudent("Jenny");
-		
-		mainController.addCourse("Sysa21","15 points");
-		mainController.addCourse("Modeling","30 points");
-		
-		for ( Course c : mainController.getCourseList()) {
-		Course tmp = mainController.findCourse(c.getCourseCode());
-			
-		mainController.addExamToCourse(tmp, "2020-02-02", "Room B067", "08:00-13:00");
-		
+
+		mainController.addCourse("Sysa21", "15 points");
+		mainController.addCourse("Modeling", "30 points");
+
+		for (Course c : mainController.getCourseList()) {
+			Course tmp = mainController.findCourse(c.getCourseCode());
+
+			mainController.addExamToCourse(tmp, "2020-02-02", "Room B067", "08:00-13:00");
+
 		}
 
-		
 		JTabbedPane tabbedPane_Student = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Student.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		tabbedPane_Student.setBackground(SystemColor.controlLtHighlight);
@@ -141,7 +139,7 @@ public class Swing {
 		lblResponse_ForUpdate.setBounds(44, 263, 447, 14);
 		panel_UpdateStudent.add(lblResponse_ForUpdate);
 
-		Choice choice_UpdateStudent = new Choice(); 
+		Choice choice_UpdateStudent = new Choice();
 		choice_UpdateStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_UpdateStudent.setBackground(SystemColor.text);
 		choice_UpdateStudent.setBounds(188, 69, 303, 26);
@@ -149,7 +147,7 @@ public class Swing {
 		for (Student tmp : mainController.getStudentList()) {
 			choice_UpdateStudent.add(tmp.getStudentName() + "," + tmp.getStudentID());
 		}
-		
+
 		JPanel AnswerStudentID = new JPanel();
 		AnswerStudentID.setForeground(SystemColor.desktop);
 		AnswerStudentID.setBackground(SystemColor.controlLtHighlight);
@@ -168,70 +166,70 @@ public class Swing {
 		textArea_AddStudent.setBackground(SystemColor.info);
 		textArea_AddStudent.setBounds(10, 138, 243, 57);
 		AnswerStudentID.add(textArea_AddStudent);
-		
+
 		JPanel panel_RemoveStudent = new JPanel();
 		panel_RemoveStudent.setBackground(UIManager.getColor("CheckBox.interiorBackground"));
 		tabbedPane_Student.addTab("Remove Student", null, panel_RemoveStudent, null);
 		panel_RemoveStudent.setLayout(null);
-		
-		 Choice choice_RemoveStudent = new Choice();
-		 choice_RemoveStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		 choice_RemoveStudent.setBackground(SystemColor.text);
-		 choice_RemoveStudent.setBounds(232, 59, 344, 20);
-		 panel_RemoveStudent.add(choice_RemoveStudent);
-		 for (Student tmp : mainController.getStudentList()) {
-			 choice_RemoveStudent.add(tmp.getStudentName() + "," + tmp.getStudentID());
-			}
-		 
-		 JPanel panel_Result = new JPanel();
-		 panel_Result.setBackground(Color.WHITE);
-			tabbedPane_program.addTab("Results", null, panel_Result, null);
-			panel_Result.setLayout(null);
-		 
-		 Choice choice_SelectStudentForResult = new Choice();
-			choice_SelectStudentForResult.setBounds(209, 35, 370, 20);
-			panel_Result.add(choice_SelectStudentForResult);
-			for (Student tmp : mainController.getStudentList()) {
-				choice_SelectStudentForResult.add(tmp.getStudentName() + "," + tmp.getStudentID());
-				}
+
+		Choice choice_RemoveStudent = new Choice();
+		choice_RemoveStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		choice_RemoveStudent.setBackground(SystemColor.text);
+		choice_RemoveStudent.setBounds(232, 59, 344, 20);
+		panel_RemoveStudent.add(choice_RemoveStudent);
+		for (Student tmp : mainController.getStudentList()) {
+			choice_RemoveStudent.add(tmp.getStudentName() + "," + tmp.getStudentID());
+		}
+
+		JPanel panel_Result = new JPanel();
+		panel_Result.setBackground(Color.WHITE);
+		tabbedPane_program.addTab("Results", null, panel_Result, null);
+		panel_Result.setLayout(null);
+
+		Choice choice_SelectStudentForResult = new Choice();
+		choice_SelectStudentForResult.setBounds(209, 35, 370, 20);
+		panel_Result.add(choice_SelectStudentForResult);
+		for (Student tmp : mainController.getStudentList()) {
+			choice_SelectStudentForResult.add(tmp.getStudentName() + "," + tmp.getStudentID());
+		}
 
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.setForeground(Color.BLACK);
 		btnAddStudentButton.setBackground(new Color(255, 255, 255));
 		btnAddStudentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			 
+
 				String studentName = textField_EnterStudentName.getText();
 
 				if (!studentName.equals("")) {
 					mainController.addStudent(studentName);
 					textArea_AddStudent.setText("The student has been registered");
 				}
-			
+
 				else {
 					textArea_AddStudent.setText("Put valid information in fields: student name");
 				}
-				
+
 				choice_RemoveStudent.removeAll();
 				choice_UpdateStudent.removeAll();
 				choice_SelectStudentForResult.removeAll();
-				
+
 				for (Student tmp : mainController.getStudentList()) {
 					String sNumber = tmp.getStudentID();
 					String sName = tmp.getStudentName();
-				
 
-				textField_EnterStudentName.setText("");
+					textField_EnterStudentName.setText("");
 					if (!studentName.equals("")) {
-						
-				choice_RemoveStudent.add(sName + "," + sNumber);
-				choice_UpdateStudent.add(sName + "," + sNumber);
-				choice_SelectStudentForResult.add(sName + "," + sNumber);
-				
+
+						choice_RemoveStudent.add(sName + "," + sNumber);
+						choice_UpdateStudent.add(sName + "," + sNumber);
+						choice_SelectStudentForResult.add(sName + "," + sNumber);
+
 					}
 				}
-		}});
-		
+			}
+		});
+
 		btnAddStudentButton.setBounds(354, 46, 109, 23);
 		AnswerStudentID.add(btnAddStudentButton);
 
@@ -241,7 +239,7 @@ public class Swing {
 		textField_EnterStudentName.setBounds(166, 47, 163, 20);
 		AnswerStudentID.add(textField_EnterStudentName);
 		textField_EnterStudentName.setColumns(10);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Valid characters a-z, A-Z");
 		lblNewLabel_1.setBounds(10, 77, 176, 14);
 		AnswerStudentID.add(lblNewLabel_1);
@@ -273,19 +271,20 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String student = choice_RemoveStudent.getSelectedItem();
-					
-					String [] studentParts = student.split(",");
-					mainController.removeStudent(studentParts [1]);
-					
+
+					String[] studentParts = student.split(",");
+					mainController.removeStudent(studentParts[1]);
+
 					choice_RemoveStudent.remove(student);
 					choice_UpdateStudent.remove(student);
 					choice_SelectStudentForResult.remove(student);
 					lbl_ResponseForRemovedStudent.setText("Response: " + student + " " + "has been removed");
-					
-			}catch (NullPointerException n) {		
-				lbl_ResponseForRemovedStudent.setText("Response: No student found to be removed");
+
+				} catch (NullPointerException n) {
+					lbl_ResponseForRemovedStudent.setText("Response: No student found to be removed");
+				}
 			}
-			}});
+		});
 		btnRemoveStudent.setBackground(SystemColor.controlLtHighlight);
 		btnRemoveStudent.setBounds(245, 159, 134, 23);
 		panel_RemoveStudent.add(btnRemoveStudent);
@@ -298,33 +297,34 @@ public class Swing {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-				
-				String updateStudent = choice_UpdateStudent.getSelectedItem();
-				String textForUpdate = textField_NewStudentName.getText();
-				
-                   String [] studentParts = updateStudent.split(",");
-				
-                   		if (!textForUpdate.equals("")) {
-                   			mainController.updateStudent(studentParts[1], textForUpdate);
-                   lblResponse_ForUpdate.setText(updateStudent + ": has changed named to " + textForUpdate); 
-                   
-                   	choice_RemoveStudent.remove(updateStudent);
-                   	choice_UpdateStudent.remove(updateStudent);
-                   	choice_SelectStudentForResult.remove(updateStudent);
-                   
-                     choice_RemoveStudent.add(textForUpdate + "," + studentParts[1]);
-                     choice_UpdateStudent.add(textForUpdate + "," + studentParts[1]);
-                     choice_SelectStudentForResult.add(textForUpdate + "," + studentParts[1]);
-                
-               }
-                   		else lblResponse_ForUpdate.setText("Student was not updated cause to no name entered");
-                   	textField_NewStudentName.setText("");
-                   	
-				}
-				catch (NullPointerException n) {		
+
+					String updateStudent = choice_UpdateStudent.getSelectedItem();
+					String textForUpdate = textField_NewStudentName.getText();
+
+					String[] studentParts = updateStudent.split(",");
+
+					if (!textForUpdate.equals("")) {
+						mainController.updateStudent(studentParts[1], textForUpdate);
+						lblResponse_ForUpdate.setText(updateStudent + ": has changed named to " + textForUpdate);
+
+						choice_RemoveStudent.remove(updateStudent);
+						choice_UpdateStudent.remove(updateStudent);
+						choice_SelectStudentForResult.remove(updateStudent);
+
+						choice_RemoveStudent.add(textForUpdate + "," + studentParts[1]);
+						choice_UpdateStudent.add(textForUpdate + "," + studentParts[1]);
+						choice_SelectStudentForResult.add(textForUpdate + "," + studentParts[1]);
+
+					} else
+						lblResponse_ForUpdate.setText("Student was not updated cause to no name entered");
+					textField_NewStudentName.setText("");
+
+				} catch (NullPointerException n) {
 					lblResponse_ForUpdate.setText("Response: No student was updated");
-				
-			}}});
+
+				}
+			}
+		});
 
 		JTabbedPane tabbedPane_Course = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Course.setBackground(SystemColor.controlLtHighlight);
@@ -353,98 +353,97 @@ public class Swing {
 		rdbtn_30points.setBounds(212, 161, 109, 23);
 		panel_AddCourse.add(rdbtn_30points);
 		rdbtn_30points.setName("30");
-		
+
 		ButtonGroup groupPoints = new ButtonGroup();
 		groupPoints.add(rdbtn_7_points);
 		groupPoints.add(rdbtn_15points);
 		groupPoints.add(rdbtn_30points);
-		
-		
+
 		JPanel panel_RemoveCourse = new JPanel();
 		panel_RemoveCourse.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Remove Course", null, panel_RemoveCourse, null);
 		panel_RemoveCourse.setLayout(null);
-		
+
 		Choice choice_RemoveCourse = new Choice();
 		choice_RemoveCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_RemoveCourse.setBounds(264, 39, 338, 20);
 		panel_RemoveCourse.add(choice_RemoveCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
-			choice_RemoveCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
+			choice_RemoveCourse
+					.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
-		
+
 		JPanel panel_UpdateCourse = new JPanel();
 		panel_UpdateCourse.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
 		panel_UpdateCourse.setLayout(null);
-		
+
 		Choice choice_UpdateCourse = new Choice();
 		choice_UpdateCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_UpdateCourse.setBounds(190, 32, 412, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
-			choice_UpdateCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
+			choice_UpdateCourse
+					.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
-		
+
 		JPanel panel_AddExam = new JPanel();
 		panel_AddExam.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
 		panel_AddExam.setLayout(null);
-		
+
 		Choice choice_AddExamToCourse = new Choice();
 		choice_AddExamToCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
-			choice_AddExamToCourse.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
+			choice_AddExamToCourse
+					.add(tmpCourse.getCourseCode() + "," + tmpCourse.getCourseName() + "," + tmpCourse.getCredit());
 		}
-		
+
 		JLabel lblb_addCourseResponse = new JLabel("Response:");
 		lblb_addCourseResponse.setBounds(24, 252, 578, 14);
 		panel_AddCourse.add(lblb_addCourseResponse);
 
-		
 		JButton btnAddCourse = new JButton("Add Course");
 		btnAddCourse.setBounds(200, 214, 121, 23);
 		panel_AddCourse.add(btnAddCourse);
 		btnAddCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				String courseName = textField_EnterCourseName.getText();
 				String points = "";
-				for (Enumeration <AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
-				AbstractButton b = button.nextElement();
+				for (Enumeration<AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
+					AbstractButton b = button.nextElement();
 					if (b.isSelected()) {
-					 points = b.getText();
+						points = b.getText();
+					}
 				}
+				if (!courseName.equals("")) {
+					mainController.addCourse(courseName, points);
+
 				}
-					if (!courseName.equals("")) {
-						mainController.addCourse(courseName, points);
-						
-				}
-				        choice_RemoveCourse.removeAll(); 
-						choice_UpdateCourse.removeAll();
-						choice_AddExamToCourse.removeAll();
+				choice_RemoveCourse.removeAll();
+				choice_UpdateCourse.removeAll();
+				choice_AddExamToCourse.removeAll();
 				for (Course tmp : mainController.getCourseList()) {
 					String p = tmp.getCourseCode();
 					String cN = tmp.getCourseName();
 					String credits = tmp.getCredit();
-				
-			
-				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(p + "," + cN + "," + credits);
-			choice_UpdateCourse.add(p + "," + cN + "," + credits);
-			choice_AddExamToCourse.add(p + "," + cN + "," + credits);	
-			
-			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + credits + " has been added");
+
+					if (!courseName.equals("")) {
+						choice_RemoveCourse.add(p + "," + cN + "," + credits);
+						choice_UpdateCourse.add(p + "," + cN + "," + credits);
+						choice_AddExamToCourse.add(p + "," + cN + "," + credits);
+
+						lblb_addCourseResponse.setText("Course: " + p + " ," + cN + " ," + credits + " has been added");
+					} else
+						lblb_addCourseResponse.setText("Put in valid information");
 				}
-				else 
-					lblb_addCourseResponse.setText("Put in valid information");
-				}
-				groupPoints.clearSelection();	
+				groupPoints.clearSelection();
 				textField_EnterCourseName.setText("");
 			}
-	});
+		});
 
 		JLabel lbl_AddCourseEnterName = new JLabel("Enter the course name:*");
 		lbl_AddCourseEnterName.setBounds(10, 14, 153, 14);
@@ -472,23 +471,22 @@ public class Swing {
 		btn_YesRemoveCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-				String course = choice_RemoveCourse.getSelectedItem();
-				String [] courseParts = course.split(",");
-				
-				mainController.removeCourse(courseParts [1]);
-				
-				
-				
-				choice_RemoveCourse.remove(course);
-				choice_UpdateCourse.remove(course);
-				choice_AddExamToCourse.remove(course);
-				
-				lbl_ResponseForRemoveCourse.setText("Respons: " + course + " has been removed");
-				
-				}catch (NullPointerException n) {		
+					String course = choice_RemoveCourse.getSelectedItem();
+					String[] courseParts = course.split(",");
+
+					mainController.removeCourse(courseParts[1]);
+
+					choice_RemoveCourse.remove(course);
+					choice_UpdateCourse.remove(course);
+					choice_AddExamToCourse.remove(course);
+
+					lbl_ResponseForRemoveCourse.setText("Respons: " + course + " has been removed");
+
+				} catch (NullPointerException n) {
 					lbl_ResponseForRemoveCourse.setText("Respons: No course found to be removed");
 				}
-				}});
+			}
+		});
 		btn_YesRemoveCourse.setBounds(262, 119, 137, 23);
 		panel_RemoveCourse.add(btn_YesRemoveCourse);
 
@@ -518,29 +516,29 @@ public class Swing {
 		panel_UpdateCourse.add(btnUpdateCourse);
 		btnUpdateCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-		String updateCourse = choice_UpdateCourse.getSelectedItem();
-		String newName = textField_NewNameForCourse.getText();
-		String [] courseParts = updateCourse.split(",");
-		
-			if (!newName.equals("")) {
-				
-				mainController.updateCourse(courseParts[0], newName);
-		
-		choice_RemoveCourse.remove(updateCourse);
-		choice_UpdateCourse.remove(updateCourse);
-		choice_AddExamToCourse.remove(updateCourse);
-		
-		choice_RemoveCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
-		choice_UpdateCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
-		choice_AddExamToCourse.add(courseParts [0] + "," + newName + "," + courseParts[2]);
-		
-		lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
-		
-			}
-			else { lbl_ResponsUpdate.setText("Put in valid course name");
-			}
-			textField_NewNameForCourse.setText("");
+
+				String updateCourse = choice_UpdateCourse.getSelectedItem();
+				String newName = textField_NewNameForCourse.getText();
+				String[] courseParts = updateCourse.split(",");
+
+				if (!newName.equals("")) {
+
+					mainController.updateCourse(courseParts[0], newName);
+
+					choice_RemoveCourse.remove(updateCourse);
+					choice_UpdateCourse.remove(updateCourse);
+					choice_AddExamToCourse.remove(updateCourse);
+
+					choice_RemoveCourse.add(courseParts[0] + "," + newName + "," + courseParts[2]);
+					choice_UpdateCourse.add(courseParts[0] + "," + newName + "," + courseParts[2]);
+					choice_AddExamToCourse.add(courseParts[0] + "," + newName + "," + courseParts[2]);
+
+					lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
+
+				} else {
+					lbl_ResponsUpdate.setText("Put in valid course name");
+				}
+				textField_NewNameForCourse.setText("");
 			}
 		});
 
@@ -550,7 +548,7 @@ public class Swing {
 		JLabel lbl_ChooseLocationToExam = new JLabel("Choose location:*");
 		lbl_ChooseLocationToExam.setBounds(10, 136, 111, 14);
 		panel_AddExam.add(lbl_ChooseLocationToExam);
-		
+
 		JRadioButton rdnbtn_RoomA123 = new JRadioButton("Room A123");
 		rdnbtn_RoomA123.setBackground(Color.WHITE);
 		rdnbtn_RoomA123.setBounds(176, 136, 109, 23);
@@ -574,23 +572,23 @@ public class Swing {
 		rdbtn_RoomB067.setBounds(176, 215, 109, 23);
 		panel_AddExam.add(rdbtn_RoomB067);
 		rdbtn_RoomB067.setName("Room B067");
-		
+
 		ButtonGroup groupRoom = new ButtonGroup();
 		groupRoom.add(rdnbtn_RoomA123);
 		groupRoom.add(rdbtn_RoomA167);
 		groupRoom.add(rdbtn_RoomB198);
 		groupRoom.add(rdbtn_RoomB067);
-		
+
 		Panel panel_RemoveExam = new Panel();
 		panel_RemoveExam.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
 		panel_RemoveExam.setLayout(null);
-		
+
 		JRadioButton radioButton_time08 = new JRadioButton("08:00-12:00");
 		radioButton_time08.setBackground(Color.WHITE);
 		radioButton_time08.setBounds(176, 107, 109, 23);
 		panel_AddExam.add(radioButton_time08);
-		
+
 		JRadioButton radioButton_time13 = new JRadioButton("13:00-17:00");
 		radioButton_time13.setBackground(Color.WHITE);
 		radioButton_time13.setBounds(295, 107, 109, 23);
@@ -599,86 +597,91 @@ public class Swing {
 		ButtonGroup timeGroup = new ButtonGroup();
 		timeGroup.add(radioButton_time08);
 		timeGroup.add(radioButton_time13);
-		
+
 		Choice choice_SelectExam = new Choice();
 		choice_SelectExam.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_SelectExam.setBounds(162, 55, 440, 23);
 		panel_RemoveExam.add(choice_SelectExam);
 		for (Course cc : mainController.getCourseList()) {
 			for (WrittenExam exam : cc.getWrittenExamList()) {
-				choice_SelectExam.add(exam.getCourse().getCourseCode() + ","+ exam.getCourse().getCourseName() + "," + exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + "," + exam.getExamID());
+				choice_SelectExam.add(exam.getCourse().getCourseCode() + "," + exam.getCourse().getCourseName() + ","
+						+ exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + "," + exam.getExamID());
 			}
 		}
-		
+
 		Label label_ResponseAddExam = new Label("Response");
 		label_ResponseAddExam.setBounds(21, 308, 562, 22);
 		panel_AddExam.add(label_ResponseAddExam);
-		
-        Choice choice_SelectExamForResult = new Choice();
+
+		Choice choice_SelectExamForResult = new Choice();
 		choice_SelectExamForResult.setBounds(211, 110, 370, 20);
 		panel_Result.add(choice_SelectExamForResult);
 		for (Course cc : mainController.getCourseList()) {
 			for (WrittenExam exam : cc.getWrittenExamList()) {
-				choice_SelectExamForResult.add(exam.getCourse().getCourseCode() + ","+ exam.getCourse().getCourseName() + "," + exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + "," + exam.getExamID());
+				choice_SelectExamForResult.add(exam.getCourse().getCourseCode() + "," + exam.getCourse().getCourseName()
+						+ "," + exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + ","
+						+ exam.getExamID());
 			}
 		}
-		
+
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
 		panel_AddExam.add(btnAddExam);
 		btnAddExam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-		    String pickedCourse = choice_AddExamToCourse.getSelectedItem();
-		    
-		    String [] courseParts = pickedCourse.split(",");
-		    
-		  Course c =  mainController.findCourse(courseParts[0]);
-		    
-			String date = textField_EnterDate.getText();
-			String location = "";
-			String time = "";
-			
-			for (Enumeration <AbstractButton> buttonTime = timeGroup.getElements(); buttonTime.hasMoreElements();) {
+
+				String pickedCourse = choice_AddExamToCourse.getSelectedItem();
+
+				String[] courseParts = pickedCourse.split(",");
+
+				Course c = mainController.findCourse(courseParts[0]);
+
+				String date = textField_EnterDate.getText();
+				String location = "";
+				String time = "";
+
+				for (Enumeration<AbstractButton> buttonTime = timeGroup.getElements(); buttonTime.hasMoreElements();) {
 					AbstractButton timeButton = buttonTime.nextElement();
-						if (timeButton.isSelected()) {
-						 time = timeButton.getText();
-		
-						}
+					if (timeButton.isSelected()) {
+						time = timeButton.getText();
+
+					}
 				}
-			
-				for (Enumeration <AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
+
+				for (Enumeration<AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
 					AbstractButton b = button.nextElement();
-						if (b.isSelected()) {
-						 location = b.getText();
-						}
+					if (b.isSelected()) {
+						location = b.getText();
+					}
 				}
-				
-			if (!pickedCourse.equals("") && !date.equals("") && !location.equals("") && !time.equals("") ) {
-				
-				mainController.addExamToCourse(c, date, location, time);
-				
-				choice_SelectExamForResult.removeAll();
-				choice_SelectExam.removeAll();
-				for (Course tmp : mainController.getCourseList()) {
-					for (WrittenExam ex : tmp.getWrittenExamList()) {
-						
-						
-				choice_SelectExam.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
-				choice_SelectExamForResult.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
+
+				if (!pickedCourse.equals("") && !date.equals("") && !location.equals("") && !time.equals("")) {
+
+					mainController.addExamToCourse(c, date, location, time);
+
+					choice_SelectExamForResult.removeAll();
+					choice_SelectExam.removeAll();
+					for (Course tmp : mainController.getCourseList()) {
+						for (WrittenExam ex : tmp.getWrittenExamList()) {
+
+							choice_SelectExam
+									.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + ","
+											+ ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
+							choice_SelectExamForResult
+									.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + ","
+											+ ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
+						}
 					}
-					}
-				label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse );		
+					label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse);
+				} else {
+					label_ResponseAddExam.setText("Please put information in all required fields");
+				}
+
+				textField_EnterDate.setText("");
+				groupRoom.clearSelection();
+				timeGroup.clearSelection();
 			}
-			else {
-				label_ResponseAddExam.setText("Please put information in all required fields");
-			}
-			
-			textField_EnterDate.setText("");
-			groupRoom.clearSelection();
-			timeGroup.clearSelection();	
-			}
-			});
+		});
 
 		JLabel lbl_AddExamToCourse = new JLabel("Choose course to exam:");
 		lbl_AddExamToCourse.setBounds(10, 27, 153, 14);
@@ -691,16 +694,16 @@ public class Swing {
 		JLabel lbl_ChooseDateToExam = new JLabel("Enter date:*");
 		lbl_ChooseDateToExam.setBounds(10, 63, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
-		
+
 		JLabel lblNewLabel_2 = new JLabel("Select time:*");
 		lblNewLabel_2.setBounds(10, 111, 153, 14);
 		panel_AddExam.add(lblNewLabel_2);
-		
+
 		textField_EnterDate = new JTextField();
 		textField_EnterDate.setBounds(182, 60, 143, 20);
 		panel_AddExam.add(textField_EnterDate);
 		textField_EnterDate.setColumns(10);
-		
+
 		JLabel lblYyyymmdd = new JLabel("YYYY-MM-DD");
 		lblYyyymmdd.setBounds(10, 78, 86, 14);
 		panel_AddExam.add(lblYyyymmdd);
@@ -708,7 +711,7 @@ public class Swing {
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
 		panel_RemoveExam.add(lbl_SelectExam);
-		
+
 		JLabel lbl_RemoveExamRespons = new JLabel("Response:");
 		lbl_RemoveExamRespons.setBounds(116, 173, 287, 14);
 		panel_RemoveExam.add(lbl_RemoveExamRespons);
@@ -720,20 +723,19 @@ public class Swing {
 		btn_RemoveExam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-			String removeExam =	choice_SelectExam.getSelectedItem();
-			
-			String [] examParts = removeExam.split(",");
-				if(removeExam!=null) {
-								
-			mainController.removeExamFromCourse(examParts[0], examParts[5]);
-			choice_SelectExam.remove(removeExam);
-			choice_SelectExamForResult.remove(removeExam);
-			lbl_RemoveExamRespons.setText("The exam was succesfully removed");
+					String removeExam = choice_SelectExam.getSelectedItem();
+
+					String[] examParts = removeExam.split(",");
+					if (removeExam != null) {
+
+						mainController.removeExamFromCourse(examParts[0], examParts[5]);
+						choice_SelectExam.remove(removeExam);
+						choice_SelectExamForResult.remove(removeExam);
+						lbl_RemoveExamRespons.setText("The exam was succesfully removed");
+					}
+				} catch (NullPointerException n) {
+					lbl_RemoveExamRespons.setText("Their is no exam to remove");
 				}
-			}
-			catch  (NullPointerException n) {
-				lbl_RemoveExamRespons.setText("Their is no exam to remove");
-			}
 			}
 		});
 		btn_RemoveExam.setBounds(162, 118, 70, 22);
@@ -754,7 +756,6 @@ public class Swing {
 		JLabel lbl_Response_LetterGrade = new JLabel("Response");
 		lbl_Response_LetterGrade.setBounds(40, 314, 551, 14);
 		panel_Result.add(lbl_Response_LetterGrade);
-		
 
 		TextField textField_EnterAmountOfPoints = new TextField();
 		textField_EnterAmountOfPoints.setBounds(209, 193, 104, 22);
@@ -763,40 +764,39 @@ public class Swing {
 		Button btn_AddResult = new Button("Add result");
 		btn_AddResult.setBounds(204, 267, 96, 22);
 		panel_Result.add(btn_AddResult);
-		
+
 		JLabel lbl_validpoints = new JLabel("Please enter avlid score: 0-100 points");
 		lbl_validpoints.setBounds(44, 232, 192, 14);
 		panel_Result.add(lbl_validpoints);
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
+
 				String student = choice_SelectStudentForResult.getSelectedItem();
 				String exam = choice_SelectExamForResult.getSelectedItem();
 				String points = textField_EnterAmountOfPoints.getText();
-						
-				int result = Integer.parseInt(points);
-				
-				String [] examParts = exam.split(",");
-				
-				String [] studentPart = student.split(",");
-				
-				if (!points.equals("") && !exam.equals("") && !student.equals("")) {
-					
-				mainController.addResult(studentPart[1], examParts[5], result);
-				
-				textField_EnterAmountOfPoints.setText("");
-				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
-				}
-				
-				else {
-			
-				lbl_Response_LetterGrade.setText("Please enter valid score: 0-100 points.");
-				}
-				
-			}});
-		
-	}		
-}
-	
 
+				int result = Integer.parseInt(points);
+
+				String[] examParts = exam.split(",");
+
+				String[] studentPart = student.split(",");
+
+				if (!points.equals("") && !exam.equals("") && !student.equals("")) {
+
+					mainController.addResult(studentPart[1], examParts[5], result);
+
+					textField_EnterAmountOfPoints.setText("");
+					lbl_Response_LetterGrade
+							.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
+				}
+
+				else {
+
+					lbl_Response_LetterGrade.setText("Please enter valid score: 0-100 points.");
+				}
+
+			}
+		});
+
+	}
+}
