@@ -786,8 +786,7 @@ public class Swing {
 					mainController.addResult(studentPart[1], examParts[5], result);
 
 					textField_EnterAmountOfPoints.setText("");
-					lbl_Response_LetterGrade
-							.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
+					lbl_Response_LetterGrade.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
 				}
 
 				else {
