@@ -34,7 +34,6 @@ import model.Course;
 import model.Student;
 import model.WrittenExam;
 import javax.swing.JTable;
-import model.Result;
 import control.MainController;
 
 public class Swing {
