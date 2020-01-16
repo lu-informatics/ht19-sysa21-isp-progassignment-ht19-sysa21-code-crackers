@@ -423,7 +423,7 @@ public class Swing {
 						mainController.addCourse(courseName, points);
 						
 				}
-				        choice_RemoveCourse.removeAll(); /// funkar inte som den ska
+				        choice_RemoveCourse.removeAll(); 
 						choice_UpdateCourse.removeAll();
 						choice_AddExamToCourse.removeAll();
 				for (Course tmp : mainController.getCourseList()) {
@@ -635,7 +635,6 @@ public class Swing {
 		    String [] courseParts = pickedCourse.split(",");
 		    
 		  Course c =  mainController.findCourse(courseParts[0]);
-		  System.out.println(c);
 		    
 			String date = textField_EnterDate.getText();
 			String location = "";
@@ -780,7 +779,6 @@ public class Swing {
 				
 				if (!points.equals("") && !exam.equals("") && !student.equals(""))
 				
-			//	mainController.generateLetterGrade(examParts[6], studentPart[1], result);
 				mainController.addResult(studentPart[1], examParts[6], result);
 				
 				for (Student su : mainController.getStudentList()) {
