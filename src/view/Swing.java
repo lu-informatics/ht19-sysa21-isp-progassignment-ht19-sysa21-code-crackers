@@ -665,8 +665,8 @@ public class Swing {
 					for (WrittenExam ex : tmp.getWrittenExamList()) {
 						
 						
-				choice_SelectExam.add(pickedCourse + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
-				choice_SelectExamForResult.add(pickedCourse + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
+				choice_SelectExam.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
+				choice_SelectExamForResult.add(tmp.getCourseCode() + "," + tmp.getCourseName() + "," + ex.getLocation() + "," + ex.getDate() + "," + ex.getTime() + "," + ex.getExamID());
 					}
 					}
 				label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse );		
@@ -726,7 +726,7 @@ public class Swing {
 			String [] examParts = removeExam.split(",");
 				if(removeExam!=null) {
 								
-			mainController.removeExamFromCourse(examParts[0], examParts[6]);
+			mainController.removeExamFromCourse(examParts[0], examParts[5]);
 			choice_SelectExam.remove(removeExam);
 			choice_SelectExamForResult.remove(removeExam);
 			lbl_RemoveExamRespons.setText("The exam was succesfully removed");
@@ -779,7 +779,7 @@ public class Swing {
 				
 				if (!points.equals("") && !exam.equals("") && !student.equals(""))
 				
-				mainController.addResult(studentPart[1], examParts[6], result);
+				mainController.addResult(studentPart[1], examParts[5], result);
 				
 				for (Student su : mainController.getStudentList()) {
 					for (Result ru : su.getStudentResultList()) {
