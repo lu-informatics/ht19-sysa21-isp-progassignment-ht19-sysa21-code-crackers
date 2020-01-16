@@ -149,7 +149,7 @@ public class MainController {
 			return "B";
 		} else if (result >= 85 && result <= 100) {
 			return "A";
-		} else if (result >= 0 && result <= 54) {
+		} else if (result >= 0 && result <= 49) {
 			return "Fail";
 		}
 		return null;

@@ -749,8 +749,8 @@ public class Swing {
 				
 				if (!points.equals(""))
 				
-				mainController.generateLetterGrade(examParts[6], studentPart[1], result);
-				//mainController.addResult(studentPart[1], examParts[6], result);
+			//	mainController.generateLetterGrade(examParts[6], studentPart[1], result);
+				mainController.addResult(studentPart[1], examParts[6], result);
 				
 				for (Student su : mainController.getStudentList()) {
 					for (Result ru : su.getStudentResultList()) {
