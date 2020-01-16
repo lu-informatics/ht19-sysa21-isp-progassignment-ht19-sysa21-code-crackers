@@ -12,18 +12,17 @@ public class WrittenExam {
 	private Course course;
 
 	private List<Result> resultList = new ArrayList<Result>();
-	
-	public WrittenExam () {
-		
+
+	public WrittenExam() {
+
 	}
 
-	public WrittenExam( Course course, String date, String location, String time) {
+	public WrittenExam(Course course, String date, String location, String time) {
 		this.date = date;
 		this.location = location;
 		this.time = time;
 		this.course = course;
-		
-		
+
 	}
 
 	public List<Result> getResultList() {
@@ -78,23 +77,9 @@ public class WrittenExam {
 		this.course = course;
 	}
 
-	public void addResultforExam(Result result) { // vid utökning av programmet för att räkna ut median behövs denna metod
+	public void addResultforExam(Result result) { // vid utökning av programmet för att räkna ut median behövs denna
+													// metod
 		this.resultList.add(result);
 	}
-
-	/*public boolean equals(Object exam) {
-		boolean isSame = false;
-		if (exam instanceof WrittenExam) {
-			if (((WrittenExam)exam).getTime() == this.getTime() && ((WrittenExam)exam).getDate() == this.getDate()
-					&& ((WrittenExam)exam).getLocation() == this.getLocation()) {
-				isSame = true;
-			}
-		}
-		return isSame;
-	}
-	*/
-
-
-
 
 }
