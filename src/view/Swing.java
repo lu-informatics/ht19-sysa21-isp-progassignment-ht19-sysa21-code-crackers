@@ -291,6 +291,7 @@ public class Swing {
 		panel_UpdateStudent.add(btnUpdate);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
 				
 				String updateStudent = choice_UpdateStudent.getSelectedItem();
 				String textForUpdate = textField_NewStudentName.getText();
@@ -311,9 +312,12 @@ public class Swing {
                 
                }
                    	textField_NewStudentName.setText("");
+                   	
+				}
+				catch (NullPointerException n) {		
+					lblResponse_ForUpdate.setText("Response: No student was updated");
 				
-			}
-			});
+			}}});
 
 		JTabbedPane tabbedPane_Course = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Course.setBackground(SystemColor.controlLtHighlight);
