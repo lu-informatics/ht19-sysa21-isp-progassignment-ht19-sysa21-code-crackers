@@ -474,7 +474,7 @@ public class Swing {
 					String course = choice_RemoveCourse.getSelectedItem();
 					String[] courseParts = course.split(",");
 
-					mainController.removeCourse(courseParts[1]);
+					mainController.removeCourse(courseParts[0]);
 
 					choice_RemoveCourse.remove(course);
 					choice_UpdateCourse.remove(course);
