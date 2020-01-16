@@ -37,7 +37,7 @@ public class Student {
 
 	}
 
-	public Result findResult(int result) { //Ta bort?
+	public Result findResult(int result) { 
 		for (Result r : studentResultList) {
 			if (r.getResult() == result) {
 				return r;
