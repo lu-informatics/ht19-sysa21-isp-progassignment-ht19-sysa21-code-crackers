@@ -764,6 +764,10 @@ public class Swing {
 		Button btn_AddResult = new Button("Add result");
 		btn_AddResult.setBounds(204, 267, 96, 22);
 		panel_Result.add(btn_AddResult);
+		
+		JLabel lbl_validpoints = new JLabel("Please enter avlid score: 0-100 points");
+		lbl_validpoints.setBounds(44, 232, 192, 14);
+		panel_Result.add(lbl_validpoints);
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
