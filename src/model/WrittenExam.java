@@ -22,7 +22,6 @@ public class WrittenExam {
 		this.location = location;
 		this.time = time;
 		this.course = course;
-
 	}
 
 	public List<Result> getResultList() {
