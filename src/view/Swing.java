@@ -93,7 +93,7 @@ public class Swing {
 
 		JTabbedPane tabbedPane_Contoso = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Contoso.setBackground(SystemColor.controlLtHighlight);
-		tabbedPane_Contoso.setFont(new Font("Microsoft JhengHei", Font.BOLD, 16));
+		tabbedPane_Contoso.setFont(new Font("Tahoma", Font.BOLD, 16));
 		tabbedPane_program.addTab("Contoso University", null, tabbedPane_Contoso, null);
 		
 		mainController.addStudent("Martin");
@@ -124,8 +124,8 @@ public class Swing {
 		panel_UpdateStudent.add(lblEnterTheNew);
 
 		textField_NewStudentName = new JTextField();
-		textField_NewStudentName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
-		textField_NewStudentName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
+		textField_NewStudentName.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		textField_NewStudentName.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		textField_NewStudentName.setSelectionColor(SystemColor.activeCaption);
 		textField_NewStudentName.setBounds(188, 169, 265, 20);
 		panel_UpdateStudent.add(textField_NewStudentName);
@@ -136,6 +136,7 @@ public class Swing {
 		panel_UpdateStudent.add(lblResponse_ForUpdate);
 
 		Choice choice_UpdateStudent = new Choice(); 
+		choice_UpdateStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_UpdateStudent.setBackground(SystemColor.text);
 		choice_UpdateStudent.setBounds(188, 69, 303, 26);
 		panel_UpdateStudent.add(choice_UpdateStudent);
@@ -152,13 +153,14 @@ public class Swing {
 		JLabel lblEnterStudentsName = new JLabel("Enter Students name:*");
 		lblEnterStudentsName.setForeground(SystemColor.controlText);
 		lblEnterStudentsName.setBackground(SystemColor.controlText);
-		lblEnterStudentsName.setFont(new Font("Microsoft JhengHei", Font.BOLD, 13));
+		lblEnterStudentsName.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblEnterStudentsName.setBounds(10, 42, 146, 29);
 		AnswerStudentID.add(lblEnterStudentsName);
 
 		JTextArea textArea_AddStudent = new JTextArea();
+		textArea_AddStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		textArea_AddStudent.setBackground(SystemColor.info);
-		textArea_AddStudent.setBounds(32, 138, 243, 57);
+		textArea_AddStudent.setBounds(10, 138, 243, 57);
 		AnswerStudentID.add(textArea_AddStudent);
 		
 		JPanel panel_RemoveStudent = new JPanel();
@@ -167,6 +169,7 @@ public class Swing {
 		panel_RemoveStudent.setLayout(null);
 		
 		 Choice choice_RemoveStudent = new Choice();
+		 choice_RemoveStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		 choice_RemoveStudent.setBackground(SystemColor.text);
 		 choice_RemoveStudent.setBounds(232, 59, 344, 20);
 		 panel_RemoveStudent.add(choice_RemoveStudent);
@@ -175,6 +178,7 @@ public class Swing {
 			}
 		 
 		 JPanel panel_Result = new JPanel();
+		 panel_Result.setBackground(Color.WHITE);
 			tabbedPane_program.addTab("Results", null, panel_Result, null);
 			panel_Result.setLayout(null);
 		 
@@ -187,7 +191,7 @@ public class Swing {
 
 		JButton btnAddStudentButton = new JButton("Add Student");
 		btnAddStudentButton.setForeground(Color.BLACK);
-		btnAddStudentButton.setBackground(SystemColor.controlLtHighlight);
+		btnAddStudentButton.setBackground(new Color(255, 255, 255));
 		btnAddStudentButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			 
@@ -226,13 +230,14 @@ public class Swing {
 		AnswerStudentID.add(btnAddStudentButton);
 
 		textField_EnterStudentName = new JTextField();
+		textField_EnterStudentName.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		textField_EnterStudentName.setBackground(SystemColor.text);
 		textField_EnterStudentName.setBounds(166, 47, 163, 20);
 		AnswerStudentID.add(textField_EnterStudentName);
 		textField_EnterStudentName.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Valid characters a-z, A-Z");
-		lblNewLabel_1.setBounds(20, 75, 176, 14);
+		lblNewLabel_1.setBounds(10, 77, 176, 14);
 		AnswerStudentID.add(lblNewLabel_1);
 
 		JLabel label = new JLabel("");
@@ -240,24 +245,24 @@ public class Swing {
 		panel_RemoveStudent.add(label);
 
 		JLabel lbl_StudentToBeRemoved = new JLabel("Select the student to remove:");
-		lbl_StudentToBeRemoved.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
+		lbl_StudentToBeRemoved.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lbl_StudentToBeRemoved.setBounds(23, 51, 203, 28);
 		panel_RemoveStudent.add(lbl_StudentToBeRemoved);
 
 		JLabel lbl_ResponseForRemovedStudent = new JLabel("Response:");
 		lbl_ResponseForRemovedStudent.setBackground(SystemColor.info);
-		lbl_ResponseForRemovedStudent.setFont(new Font("Microsoft JhengHei", Font.BOLD, 10));
+		lbl_ResponseForRemovedStudent.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lbl_ResponseForRemovedStudent.setBounds(22, 193, 580, 20);
 		panel_RemoveStudent.add(lbl_ResponseForRemovedStudent);
 
 		JLabel lbl_DoYouWantToRemove = new JLabel("Do you want to remove this student?");
-		lbl_DoYouWantToRemove.setFont(new Font("Microsoft JhengHei", Font.BOLD, 11));
+		lbl_DoYouWantToRemove.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lbl_DoYouWantToRemove.setBounds(23, 162, 228, 14);
 		panel_RemoveStudent.add(lbl_DoYouWantToRemove);
 
 		JButton btnRemoveStudent = new JButton("Remove Student");
 		btnRemoveStudent.setForeground(Color.BLACK);
-		btnRemoveStudent.setBorder(new LineBorder(new Color(255, 255, 255), 1, true));
+		btnRemoveStudent.setBackground(new Color(255, 255, 255));
 		btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -280,8 +285,8 @@ public class Swing {
 		panel_RemoveStudent.add(btnRemoveStudent);
 
 		JButton btnUpdate = new JButton("Update student");
-		btnUpdate.setBackground(SystemColor.controlLtHighlight);
-		btnUpdate.setBorder(new LineBorder(SystemColor.controlText, 1, true));
+		btnUpdate.setBackground(SystemColor.controlHighlight);
+		btnUpdate.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		btnUpdate.setBounds(188, 205, 125, 23);
 		panel_UpdateStudent.add(btnUpdate);
 		btnUpdate.addActionListener(new ActionListener() {
@@ -312,7 +317,7 @@ public class Swing {
 
 		JTabbedPane tabbedPane_Course = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Course.setBackground(SystemColor.controlLtHighlight);
-		tabbedPane_Course.setFont(new Font("Microsoft JhengHei", Font.BOLD, 12));
+		tabbedPane_Course.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		tabbedPane_program.addTab("Course", null, tabbedPane_Course, null);
 
 		JPanel panel_AddCourse = new JPanel();
@@ -345,10 +350,12 @@ public class Swing {
 		
 		
 		JPanel panel_RemoveCourse = new JPanel();
+		panel_RemoveCourse.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Remove Course", null, panel_RemoveCourse, null);
 		panel_RemoveCourse.setLayout(null);
 		
 		Choice choice_RemoveCourse = new Choice();
+		choice_RemoveCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_RemoveCourse.setBounds(264, 39, 338, 20);
 		panel_RemoveCourse.add(choice_RemoveCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
@@ -356,10 +363,12 @@ public class Swing {
 		}
 		
 		JPanel panel_UpdateCourse = new JPanel();
+		panel_UpdateCourse.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Update Course", null, panel_UpdateCourse, null);
 		panel_UpdateCourse.setLayout(null);
 		
 		Choice choice_UpdateCourse = new Choice();
+		choice_UpdateCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_UpdateCourse.setBounds(190, 32, 412, 20);
 		panel_UpdateCourse.add(choice_UpdateCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
@@ -367,10 +376,12 @@ public class Swing {
 		}
 		
 		JPanel panel_AddExam = new JPanel();
+		panel_AddExam.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Add Exam", null, panel_AddExam, null);
 		panel_AddExam.setLayout(null);
 		
 		Choice choice_AddExamToCourse = new Choice();
+		choice_AddExamToCourse.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_AddExamToCourse.setBounds(182, 27, 270, 20);
 		panel_AddExam.add(choice_AddExamToCourse);
 		for (Course tmpCourse : mainController.getCourseList()) {
@@ -433,13 +444,13 @@ public class Swing {
 		panel_AddCourse.add(lbl_SelectAmountOfPoints);
 
 		textField_EnterCourseName = new JTextField();
-		textField_EnterCourseName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(0, 0, 0)));
+		textField_EnterCourseName.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		textField_EnterCourseName.setBounds(173, 12, 176, 20);
 		panel_AddCourse.add(textField_EnterCourseName);
 		textField_EnterCourseName.setColumns(10);
 
 		JLabel lbl_EnterCourseToRemove = new JLabel("Enter the course you want to remove:");
-		lbl_EnterCourseToRemove.setBounds(0, 45, 258, 14);
+		lbl_EnterCourseToRemove.setBounds(10, 39, 258, 14);
 		panel_RemoveCourse.add(lbl_EnterCourseToRemove);
 
 		JLabel lbl_ResponseForRemoveCourse = new JLabel("Response:");
@@ -528,21 +539,25 @@ public class Swing {
 		panel_AddExam.add(lbl_ChooseLocationToExam);
 		
 		JRadioButton rdnbtn_RoomA123 = new JRadioButton("Room A123");
+		rdnbtn_RoomA123.setBackground(Color.WHITE);
 		rdnbtn_RoomA123.setBounds(176, 136, 109, 23);
 		panel_AddExam.add(rdnbtn_RoomA123);
 		rdnbtn_RoomA123.setName("Room A123");
 
 		JRadioButton rdbtn_RoomA167 = new JRadioButton("Room A167");
+		rdbtn_RoomA167.setBackground(Color.WHITE);
 		rdbtn_RoomA167.setBounds(176, 162, 109, 23);
 		panel_AddExam.add(rdbtn_RoomA167);
 		rdbtn_RoomA167.setName("Room A167");
 
 		JRadioButton rdbtn_RoomB198 = new JRadioButton("Room B198");
+		rdbtn_RoomB198.setBackground(Color.WHITE);
 		rdbtn_RoomB198.setBounds(176, 188, 109, 23);
 		panel_AddExam.add(rdbtn_RoomB198);
 		rdbtn_RoomB198.setName("Room B198");
 
 		JRadioButton rdbtn_RoomB067 = new JRadioButton("Room B067");
+		rdbtn_RoomB067.setBackground(Color.WHITE);
 		rdbtn_RoomB067.setBounds(176, 215, 109, 23);
 		panel_AddExam.add(rdbtn_RoomB067);
 		rdbtn_RoomB067.setName("Room B067");
@@ -554,14 +569,17 @@ public class Swing {
 		groupRoom.add(rdbtn_RoomB067);
 		
 		Panel panel_RemoveExam = new Panel();
+		panel_RemoveExam.setBackground(Color.WHITE);
 		tabbedPane_Course.addTab("Remove Exam", null, panel_RemoveExam, null);
 		panel_RemoveExam.setLayout(null);
 		
 		JRadioButton radioButton_time08 = new JRadioButton("08:00-12:00");
+		radioButton_time08.setBackground(Color.WHITE);
 		radioButton_time08.setBounds(176, 107, 109, 23);
 		panel_AddExam.add(radioButton_time08);
 		
 		JRadioButton radioButton_time13 = new JRadioButton("13:00-17:00");
+		radioButton_time13.setBackground(Color.WHITE);
 		radioButton_time13.setBounds(295, 107, 109, 23);
 		panel_AddExam.add(radioButton_time13);
 
@@ -570,6 +588,7 @@ public class Swing {
 		timeGroup.add(radioButton_time13);
 		
 		Choice choice_SelectExam = new Choice();
+		choice_SelectExam.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_SelectExam.setBounds(162, 55, 440, 23);
 		panel_RemoveExam.add(choice_SelectExam);
 		
@@ -665,6 +684,9 @@ public class Swing {
 		panel_RemoveExam.add(lbl_SelectExam);
 
 		Button btn_RemoveExam = new Button("Remove");
+		btn_RemoveExam.setBackground(SystemColor.controlHighlight);
+		btn_RemoveExam.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btn_RemoveExam.setForeground(Color.BLACK);
 		btn_RemoveExam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
