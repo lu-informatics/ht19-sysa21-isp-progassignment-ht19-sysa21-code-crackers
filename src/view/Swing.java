@@ -767,6 +767,7 @@ public class Swing {
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				try {
 				String student = choice_SelectStudentForResult.getSelectedItem();
 				String exam = choice_SelectExamForResult.getSelectedItem();
 				String points = textField_EnterAmountOfPoints.getText();
@@ -794,6 +795,9 @@ public class Swing {
 				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
 			}
 			
-		});
+			catch  (NullPointerException n) {
+					lbl_Response_LetterGrade.setText("Please enter valid score: 0-100 points.");
+			
+			}}});
 	}
 }
