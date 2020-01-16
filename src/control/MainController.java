@@ -107,12 +107,13 @@ public class MainController {
 	// REMOVE AN EXAM FROM A COURSE
 	public void removeExamFromCourse(String courseID, String examID) {
 		Course c = this.findCourse(courseID);
-		for (WrittenExam ex : c.getWrittenExamList()) {
+		WrittenExam ex = this.findExam(examID);
+		
 
 			if (ex.getExamID().equals(examID)) {
 				c.getWrittenExamList().remove(ex);
 			}
-		}
+		
 	}
 
 	// GENERATES AN EXAM ID AND IT STARTS WITH THE LETTER E
