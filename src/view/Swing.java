@@ -102,6 +102,13 @@ public class Swing {
 		
 		mainController.addCourse("Sysa21","15 points");
 		mainController.addCourse("Modeling","30 points");
+		
+		for ( Course c : mainController.getCourseList()) {
+		Course tmp = mainController.findCourse(c.getCourseCode());
+			
+		mainController.addExamToCourse(tmp, "2020-02-02", "Room B067", "08:00-13:00");
+		
+		}
 
 		
 		JTabbedPane tabbedPane_Student = new JTabbedPane(JTabbedPane.TOP);
@@ -596,6 +603,13 @@ public class Swing {
 		choice_SelectExam.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		choice_SelectExam.setBounds(162, 55, 440, 23);
 		panel_RemoveExam.add(choice_SelectExam);
+		for (Course cc : mainController.getCourseList()) {
+			for (WrittenExam exam : cc.getWrittenExamList()) {
+				choice_SelectExam.add(exam.getCourse().getCourseCode() + ","+ exam.getCourse().getCourseName() + "," + exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + "," + exam.getExamID());
+			}
+		}
+		
+		
 		
 		Label label_ResponseAddExam = new Label("Response");
 		label_ResponseAddExam.setBounds(21, 308, 562, 22);
@@ -604,6 +618,11 @@ public class Swing {
         Choice choice_SelectExamForResult = new Choice();
 		choice_SelectExamForResult.setBounds(211, 110, 370, 20);
 		panel_Result.add(choice_SelectExamForResult);
+		for (Course cc : mainController.getCourseList()) {
+			for (WrittenExam exam : cc.getWrittenExamList()) {
+				choice_SelectExamForResult.add(exam.getCourse().getCourseCode() + ","+ exam.getCourse().getCourseName() + "," + exam.getLocation() + "," + exam.getDate() + "," + exam.getTime() + "," + exam.getExamID());
+			}
+		}
 		
 		JButton btnAddExam = new JButton("Add Exam");
 		btnAddExam.setBounds(182, 267, 96, 23);
@@ -619,7 +638,7 @@ public class Swing {
 		  System.out.println(c);
 		    
 			String date = textField_EnterDate.getText();
-			String ans = "";
+			String location = "";
 			String time = "";
 			
 			for (Enumeration <AbstractButton> buttonTime = timeGroup.getElements(); buttonTime.hasMoreElements();) {
@@ -633,14 +652,14 @@ public class Swing {
 				for (Enumeration <AbstractButton> button = groupRoom.getElements(); button.hasMoreElements();) {
 					AbstractButton b = button.nextElement();
 						if (b.isSelected()) {
-						 ans = b.getText();
+						 location = b.getText();
 						}
 				}
 				
 			if (!pickedCourse.equals("") && !date.equals("")) {
 				
 				System.out.println("hej");
-				mainController.addExamToCourse(c, date, ans, time);
+				mainController.addExamToCourse(c, date, location, time);
 				
 				for (Course tmp : mainController.getCourseList()) {
 					for (WrittenExam ex : tmp.getWrittenExamList()) {
