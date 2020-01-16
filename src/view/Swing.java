@@ -218,16 +218,16 @@ public class Swing {
 				choice_SelectStudentForResult.removeAll();
 				
 				for (Student tmp : mainController.getStudentList()) {
-					String p = tmp.getStudentID();
+					String sNumber = tmp.getStudentID();
 					String sName = tmp.getStudentName();
 				
 
 				textField_EnterStudentName.setText("");
 					if (!studentName.equals("")) {
 						
-				choice_RemoveStudent.add(sName + "," + p);
-				choice_UpdateStudent.add(sName + "," + p);
-				choice_SelectStudentForResult.add(sName + "," + p);
+				choice_RemoveStudent.add(sName + "," + sNumber);
+				choice_UpdateStudent.add(sName + "," + sNumber);
+				choice_SelectStudentForResult.add(sName + "," + sNumber);
 				
 					}
 				}
@@ -273,15 +273,15 @@ public class Swing {
 		btnRemoveStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					String p = choice_RemoveStudent.getSelectedItem();
+					String student = choice_RemoveStudent.getSelectedItem();
 					
-					String [] pParts = p.split(",");
-					mainController.removeStudent(pParts [1]);
+					String [] studentParts = student.split(",");
+					mainController.removeStudent(studentParts [1]);
 					
-					choice_RemoveStudent.remove(p);
-					choice_UpdateStudent.remove(p);
-					choice_SelectStudentForResult.remove(p);
-					lbl_ResponseForRemovedStudent.setText("Response: " + p + " " + "has been removed");
+					choice_RemoveStudent.remove(student);
+					choice_UpdateStudent.remove(student);
+					choice_SelectStudentForResult.remove(student);
+					lbl_ResponseForRemovedStudent.setText("Response: " + student + " " + "has been removed");
 					
 			}catch (NullPointerException n) {		
 				lbl_ResponseForRemovedStudent.setText("Response: No student found to be removed");
@@ -412,15 +412,15 @@ public class Swing {
 			public void actionPerformed(ActionEvent e) {
 				
 				String courseName = textField_EnterCourseName.getText();
-				String ans = "";
+				String points = "";
 				for (Enumeration <AbstractButton> button = groupPoints.getElements(); button.hasMoreElements();) {
 				AbstractButton b = button.nextElement();
 					if (b.isSelected()) {
-					 ans = b.getText();
+					 points = b.getText();
 				}
 				}
 					if (!courseName.equals("")) {
-						mainController.addCourse(courseName, ans);
+						mainController.addCourse(courseName, points);
 						
 				}
 				        choice_RemoveCourse.removeAll(); /// funkar inte som den ska
@@ -429,15 +429,15 @@ public class Swing {
 				for (Course tmp : mainController.getCourseList()) {
 					String p = tmp.getCourseCode();
 					String cN = tmp.getCourseName();
-					String points = tmp.getCredit();
+					String credits = tmp.getCredit();
 				
 			
 				if(!courseName.equals("")) {
-			choice_RemoveCourse.add(p + "," + cN + "," + points);
-			choice_UpdateCourse.add(p + "," + cN + "," + points);
-			choice_AddExamToCourse.add(p + "," + cN + "," + points);	
+			choice_RemoveCourse.add(p + "," + cN + "," + credits);
+			choice_UpdateCourse.add(p + "," + cN + "," + credits);
+			choice_AddExamToCourse.add(p + "," + cN + "," + credits);	
 			
-			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + points + " has been added");
+			lblb_addCourseResponse.setText("Course: "+ p + " ," + cN + " ," + credits + " has been added");
 				}
 				else 
 					lblb_addCourseResponse.setText("Put in valid information");
@@ -473,18 +473,18 @@ public class Swing {
 		btn_YesRemoveCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-				String p = choice_RemoveCourse.getSelectedItem();
-				String [] pParts = p.split(",");
+				String course = choice_RemoveCourse.getSelectedItem();
+				String [] courseParts = course.split(",");
 				
-				mainController.removeCourse(pParts [1]);
+				mainController.removeCourse(courseParts [1]);
 				
 				
 				
-				choice_RemoveCourse.remove(p);
-				choice_UpdateCourse.remove(p);
-				choice_AddExamToCourse.remove(p);
+				choice_RemoveCourse.remove(course);
+				choice_UpdateCourse.remove(course);
+				choice_AddExamToCourse.remove(course);
 				
-				lbl_ResponseForRemoveCourse.setText("Respons: " + p + " has been removed");
+				lbl_ResponseForRemoveCourse.setText("Respons: " + course + " has been removed");
 				
 				}catch (NullPointerException n) {		
 					lbl_ResponseForRemoveCourse.setText("Respons: No course found to be removed");
@@ -538,6 +538,8 @@ public class Swing {
 		
 		lbl_ResponsUpdate.setText(updateCourse + " has changed name to " + newName);
 		
+			}
+			else { lbl_ResponsUpdate.setText("Put in valid course name");
 			}
 			textField_NewNameForCourse.setText("");
 			}
@@ -654,9 +656,8 @@ public class Swing {
 						}
 				}
 				
-			if (!pickedCourse.equals("") && !date.equals("")) {
+			if (!pickedCourse.equals("") && !date.equals("") && !location.equals("") && !time.equals("") ) {
 				
-				System.out.println("hej");
 				mainController.addExamToCourse(c, date, location, time);
 				
 				choice_SelectExamForResult.removeAll();
@@ -670,6 +671,9 @@ public class Swing {
 					}
 					}
 				label_ResponseAddExam.setText("The exam has been added to course: " + pickedCourse );		
+			}
+			else {
+				label_ResponseAddExam.setText("Please put information in all required fields");
 			}
 			
 			textField_EnterDate.setText("");
@@ -774,7 +778,7 @@ public class Swing {
 				
 				String [] studentPart = student.split(",");
 				
-				if (!points.equals(""))
+				if (!points.equals("") && !exam.equals("") && !student.equals(""))
 				
 			//	mainController.generateLetterGrade(examParts[6], studentPart[1], result);
 				mainController.addResult(studentPart[1], examParts[6], result);
