@@ -102,6 +102,7 @@ public class Swing {
 		
 		mainController.addCourse("Sysa21","15 points");
 		mainController.addCourse("Modeling","30 points");
+
 		
 		JTabbedPane tabbedPane_Student = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane_Student.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -722,10 +723,11 @@ public class Swing {
 				if (!points.equals(""))
 				
 				mainController.generateLetterGrade(examParts[6], studentPart[1], result);
+				//mainController.addResult(studentPart[1], examParts[6], result);
 				
 				for (Student su : mainController.getStudentList()) {
 					for (Result ru : su.getStudentResultList()) {
-						System.out.println(ru.getResult() + ru.getLetterGrade());
+						System.out.println(ru.getResult() + ru.getLetterGrade() + ru.getWrittenExam());
 					}
 					
 				}

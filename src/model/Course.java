@@ -45,7 +45,7 @@ public class Course {
 	public void setCredit(String credit) {
 		this.credits = credit;
 	}
-	public WrittenExam findExam(String examID) {
+	public WrittenExam findExam(String examID) { //ta bort? finns i controllern.
 		for(WrittenExam exam:writtenExamList) {
 			if(exam.getExamID().equals(examID)) {
 				return exam;

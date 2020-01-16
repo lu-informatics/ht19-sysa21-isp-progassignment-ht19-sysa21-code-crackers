@@ -23,7 +23,7 @@ public class WrittenExam {
 		this.time = time;
 		this.course = course;
 		
-		// this.course = course; // vill ha en hel kurs.
+		
 	}
 
 	public List<Result> getResultList() {
@@ -78,11 +78,11 @@ public class WrittenExam {
 		this.course = course;
 	}
 
-	public void addResultforExam(Result result) {
+	public void addResultforExam(Result result) { // Ta bort?
 		this.resultList.add(result);
 	}
 
-	public boolean equals(Object exam) {
+	/*public boolean equals(Object exam) {
 		boolean isSame = false;
 		if (exam instanceof WrittenExam) {
 			if (((WrittenExam)exam).getTime() == this.getTime() && ((WrittenExam)exam).getDate() == this.getDate()
@@ -92,7 +92,7 @@ public class WrittenExam {
 		}
 		return isSame;
 	}
-	
+	*/
 
 
 

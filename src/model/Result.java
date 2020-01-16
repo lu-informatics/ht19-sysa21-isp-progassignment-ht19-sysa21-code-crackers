@@ -7,7 +7,12 @@ public class Result {
 	private Student student;
 	private WrittenExam writtenExam;
 
-	public Result() {
+	public Result() { //int result, WrittenExam exam, Student student
+		
+		this.result = result;
+		this.letterGrade = letterGrade;
+		this.student = student;
+		this.writtenExam = writtenExam;
 		
 	}
 	

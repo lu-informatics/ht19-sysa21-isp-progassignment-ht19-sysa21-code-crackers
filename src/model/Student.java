@@ -37,7 +37,7 @@ public class Student {
 
 	}
 
-	public Result findResult(int result) { //Behöver vi denna?
+	public Result findResult(int result) { //Ta bort?
 		for (Result r : studentResultList) {
 			if (r.getResult() == result) {
 				return r;

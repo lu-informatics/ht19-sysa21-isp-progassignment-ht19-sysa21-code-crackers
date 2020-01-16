@@ -88,6 +88,7 @@ public class MainController {
 
 		return String.format("S%05d", range);
 	}
+
 	
 	//(C(R)UD)
 	public WrittenExam findExam(String examID) {
@@ -105,8 +106,23 @@ public class MainController {
 			}
 			return null;
 	}
+	// GENERATE A LETTERGRADE AND ADD RESULT TO A STUDENT AND A EXAM
+	
+	//Använda denna istället för den under? i så fall ändra construktorn
+	/*public void addResult(String studentID,String examID, int points) {
+		WrittenExam we = this.findExam(examID);
+		Student s = this.findStudent(studentID);
+		
+		Result result = new Result(points, we, s);
+		result.setStudent(s);
+		result.setWrittenExam(we);
+		result.setLetterGrade(this.calcExamGrade(points));
+		s.addResultToStudent(result);
+		
+		
+	} */
 				
-	// GENERATE A LETTERGRADE AND ADD IT TO A STUDENT AND A EXAM
+	// GENERATE A LETTERGRADE AND ADD RESULT TO A STUDENT AND A EXAM
 	
 	public void generateLetterGrade(String examID, String studentID, int points) {
 		
@@ -120,7 +136,7 @@ public class MainController {
 			result.setResult(points);
 			result.setLetterGrade(this.calcExamGrade(points));
 			ex.addResultforExam(result);
-			student.addResultToStudent(result);
+			student.addResultToStudent(result); 
 
 		}
          // CALCULATE A LETTER GRADE WITH GIVEN POINTS
@@ -136,9 +152,10 @@ public class MainController {
 				return "B";
 			} else if (result >= 85 && result <= 100) {
 				return "A";
-			} else {
+			} else if (result >=0 && result <=54) {
 				return "Fail";
 			}
+			return null;
 		}
 		
 		
@@ -209,7 +226,7 @@ public class MainController {
 					WrittenExam ex = new WrittenExam(course , date, location, time);
 					ex.setExamID(examId);
 					course.getWrittenExamList().add(ex);
-		/*	for (Course co : courseList) {
+		/*	for (Course co : courseList) {  TA BORT!
 
 				if (co.getWrittenExamList().isEmpty()) {
 					course.getWrittenExamList().add(ex);

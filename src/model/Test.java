@@ -25,8 +25,9 @@ public class Test {
 		WrittenExam exam1 = new WrittenExam(course1,"20 Feb 2020", "RoomA123", "08:00");
 		WrittenExam exam2 = new WrittenExam(course2,"10 Feb 2020", "RoomA123", "08:00");
 
-		Result result1 = new Result();
-		Result result2 = new Result();
+		Result result1 = new Result(50, exam1, student1);
+		Result result2 = new Result(60, exam2, student2);
+		
 
 		controller.addStudent("David");
 		controller.addStudent("Martin");
@@ -54,8 +55,8 @@ public class Test {
 		exam1.addResultforExam(result1);
 		exam2.addResultforExam(result2);
 
-		result1.setResult(50);
-		result2.setResult(60);
+	//	result1.setResult(50);
+		//result2.setResult(60);
 		result1.setWrittenExam(exam1);
 		result2.setWrittenExam(exam2);
 	
@@ -63,13 +64,10 @@ public class Test {
 
 		
 		for (Student tmp : controller.getStudentList()) {
-			System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
-		
-			//for(Result r : tmp.getStudentResultList()) {
-			//	System.out.println( r.getResult()+ r.getLetterGrade());
-			//}
+				System.out.println( " StudentID: " + tmp.getStudentID() + ", Name: " + tmp.getStudentName());
+			}
 			
-		}
+		
 	
 		for (Course ctmp : controller.getCourseList()){
 			 
