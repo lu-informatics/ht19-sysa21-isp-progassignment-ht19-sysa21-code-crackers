@@ -7,8 +7,8 @@ public class Student {
 	private String name;
 	private List<Result> studentResultList = new ArrayList<Result>();
 
-	public Student( String studentName) {
-		
+	public Student(String studentName) {
+
 		this.name = studentName;
 	}
 
@@ -34,10 +34,9 @@ public class Student {
 
 	public List<Result> getStudentResultList() {
 		return studentResultList;
-
 	}
 
-	public Result findResult(int result) { 
+	public Result findResult(int result) {
 		for (Result r : studentResultList) {
 			if (r.getResult() == result) {
 				return r;
@@ -49,6 +48,5 @@ public class Student {
 	public void addResultToStudent(Result result) {
 		this.studentResultList.add(result);
 	}
-	
 
 }
