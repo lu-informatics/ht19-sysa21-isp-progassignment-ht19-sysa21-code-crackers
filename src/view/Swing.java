@@ -767,7 +767,7 @@ public class Swing {
 		btn_AddResult.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				try {
+				
 				String student = choice_SelectStudentForResult.getSelectedItem();
 				String exam = choice_SelectExamForResult.getSelectedItem();
 				String points = textField_EnterAmountOfPoints.getText();
@@ -778,26 +778,22 @@ public class Swing {
 				
 				String [] studentPart = student.split(",");
 				
-				if (!points.equals("") && !exam.equals("") && !student.equals(""))
-				
-				mainController.addResult(studentPart[1], examParts[5], result);
-				
-				for (Student su : mainController.getStudentList()) {
-					for (Result ru : su.getStudentResultList()) {
-						System.out.println(ru.getResult() + ru.getLetterGrade() + ru.getWrittenExam());
-					}
+				if (!points.equals("") && !exam.equals("") && !student.equals("")) {
 					
-				}
-				
-				
+				mainController.addResult(studentPart[1], examParts[5], result);
 				
 				textField_EnterAmountOfPoints.setText("");
 				lbl_Response_LetterGrade.setText(student + ", will recive grade: " + mainController.calcExamGrade(result));
-			}
+				}
+				
+				else {
 			
-			catch  (NullPointerException n) {
-					lbl_Response_LetterGrade.setText("Please enter valid score: 0-100 points.");
-			
-			}}});
-	}
+				lbl_Response_LetterGrade.setText("Please enter valid score: 0-100 points.");
+				}
+				
+			}});
+		
+	}		
 }
+	
+
