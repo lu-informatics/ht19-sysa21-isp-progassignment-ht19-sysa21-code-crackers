@@ -240,9 +240,9 @@ public class Swing {
 		AnswerStudentID.add(textField_EnterStudentName);
 		textField_EnterStudentName.setColumns(10);
 
-		JLabel lblNewLabel_1 = new JLabel("Valid characters a-z, A-Z");
-		lblNewLabel_1.setBounds(10, 77, 176, 14);
-		AnswerStudentID.add(lblNewLabel_1);
+		JLabel lblValidCharactersAddStudent = new JLabel("Valid characters a-z, A-Z");
+		lblValidCharactersAddStudent.setBounds(10, 77, 176, 14);
+		AnswerStudentID.add(lblValidCharactersAddStudent);
 
 		JLabel label = new JLabel("");
 		label.setBounds(52, 51, 48, 14);
@@ -695,9 +695,9 @@ public class Swing {
 		lbl_ChooseDateToExam.setBounds(10, 63, 86, 14);
 		panel_AddExam.add(lbl_ChooseDateToExam);
 
-		JLabel lblNewLabel_2 = new JLabel("Select time:*");
-		lblNewLabel_2.setBounds(10, 111, 153, 14);
-		panel_AddExam.add(lblNewLabel_2);
+		JLabel lblSelectTime = new JLabel("Select time:*");
+		lblSelectTime.setBounds(10, 111, 153, 14);
+		panel_AddExam.add(lblSelectTime);
 
 		textField_EnterDate = new JTextField();
 		textField_EnterDate.setBounds(182, 60, 143, 20);
