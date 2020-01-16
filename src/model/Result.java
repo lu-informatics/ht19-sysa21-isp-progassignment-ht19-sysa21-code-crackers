@@ -10,9 +10,8 @@ public class Result {
 	public Result(int result, WrittenExam exam, Student student) {
 		
 		this.result = result;
-		this.letterGrade = letterGrade;
 		this.student = student;
-		this.writtenExam = writtenExam;
+		this.writtenExam = exam;
 		
 	}
 	
