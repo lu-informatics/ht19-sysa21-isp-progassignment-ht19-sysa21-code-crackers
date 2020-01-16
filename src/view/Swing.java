@@ -687,6 +687,10 @@ public class Swing {
 		JLabel lbl_SelectExam = new JLabel("Select exam:");
 		lbl_SelectExam.setBounds(51, 61, 94, 14);
 		panel_RemoveExam.add(lbl_SelectExam);
+		
+		JLabel lbl_RemoveExamRespons = new JLabel("Response:");
+		lbl_RemoveExamRespons.setBounds(116, 173, 287, 14);
+		panel_RemoveExam.add(lbl_RemoveExamRespons);
 
 		Button btn_RemoveExam = new Button("Remove");
 		btn_RemoveExam.setBackground(SystemColor.controlHighlight);
@@ -694,7 +698,7 @@ public class Swing {
 		btn_RemoveExam.setForeground(Color.BLACK);
 		btn_RemoveExam.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
 			String removeExam =	choice_SelectExam.getSelectedItem();
 			
 			String [] examParts = removeExam.split(",");
@@ -703,12 +707,16 @@ public class Swing {
 			mainController.removeExamFromCourse(examParts[0], examParts[4]);
 			choice_SelectExam.remove(removeExam);
 			choice_SelectExamForResult.remove(removeExam);
+			lbl_RemoveExamRespons.setText("The exam was succesfully removed");
 				}
+			}
+			catch  (NullPointerException n) {
+				lbl_RemoveExamRespons.setText("Their is no exam to remove");
+			}
 			}
 		});
 		btn_RemoveExam.setBounds(162, 118, 70, 22);
 		panel_RemoveExam.add(btn_RemoveExam);
-
 
 		JLabel lbl_SelectStudentForResult = new JLabel("Select student:");
 		lbl_SelectStudentForResult.setBounds(44, 41, 104, 14);
